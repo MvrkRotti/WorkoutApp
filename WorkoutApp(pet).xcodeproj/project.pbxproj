@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EAFD2B6E4BB80065FE23 /* AppDelegate.swift */; };
 		CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EAFF2B6E4BB80065FE23 /* SceneDelegate.swift */; };
-		CED9EB022B6E4BB80065FE23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB012B6E4BB80065FE23 /* ViewController.swift */; };
-		CED9EB052B6E4BB80065FE23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED9EB032B6E4BB80065FE23 /* Main.storyboard */; };
+		CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB012B6E4BB80065FE23 /* WelcomeViewController.swift */; };
 		CED9EB072B6E4BBB0065FE23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CED9EB062B6E4BBB0065FE23 /* Assets.xcassets */; };
 		CED9EB0A2B6E4BBB0065FE23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED9EB082B6E4BBB0065FE23 /* LaunchScreen.storyboard */; };
+		CED9EB132B6E4CAD0065FE23 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB122B6E4CAD0065FE23 /* Router.swift */; };
+		CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB162B6E4D240065FE23 /* UIColor.swift */; };
+		CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB182B6E4D5C0065FE23 /* Resources.swift */; };
+		CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB1E2B6E4E1A0065FE23 /* SignUpButton.swift */; };
+		CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB212B6E4E680065FE23 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CED9EAFA2B6E4BB80065FE23 /* WorkoutApp(pet).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WorkoutApp(pet).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED9EAFD2B6E4BB80065FE23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED9EAFF2B6E4BB80065FE23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CED9EB012B6E4BB80065FE23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CED9EB042B6E4BB80065FE23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CED9EB012B6E4BB80065FE23 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		CED9EB062B6E4BBB0065FE23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CED9EB092B6E4BBB0065FE23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CED9EB0B2B6E4BBB0065FE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CED9EB122B6E4CAD0065FE23 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CED9EB162B6E4D240065FE23 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		CED9EB182B6E4D5C0065FE23 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
+		CED9EB1E2B6E4E1A0065FE23 /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
+		CED9EB212B6E4E680065FE23 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,83 @@
 		CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */ = {
 			isa = PBXGroup;
 			children = (
-				CED9EAFD2B6E4BB80065FE23 /* AppDelegate.swift */,
-				CED9EAFF2B6E4BB80065FE23 /* SceneDelegate.swift */,
-				CED9EB012B6E4BB80065FE23 /* ViewController.swift */,
-				CED9EB032B6E4BB80065FE23 /* Main.storyboard */,
-				CED9EB062B6E4BBB0065FE23 /* Assets.xcassets */,
-				CED9EB082B6E4BBB0065FE23 /* LaunchScreen.storyboard */,
+				CED9EB1A2B6E4D6F0065FE23 /* Application */,
+				CED9EB142B6E4CE70065FE23 /* Resources */,
+				CED9EB112B6E4CA20065FE23 /* Router */,
+				CED9EB1B2B6E4DCA0065FE23 /* WelcomeScreen */,
+				CED9EB202B6E4E480065FE23 /* RegistrationScreen */,
 				CED9EB0B2B6E4BBB0065FE23 /* Info.plist */,
 			);
 			path = "WorkoutApp(pet)";
+			sourceTree = "<group>";
+		};
+		CED9EB112B6E4CA20065FE23 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB122B6E4CAD0065FE23 /* Router.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CED9EB142B6E4CE70065FE23 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB152B6E4D060065FE23 /* Ext-s */,
+				CED9EB182B6E4D5C0065FE23 /* Resources.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CED9EB152B6E4D060065FE23 /* Ext-s */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB162B6E4D240065FE23 /* UIColor.swift */,
+			);
+			path = "Ext-s";
+			sourceTree = "<group>";
+		};
+		CED9EB1A2B6E4D6F0065FE23 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EAFD2B6E4BB80065FE23 /* AppDelegate.swift */,
+				CED9EAFF2B6E4BB80065FE23 /* SceneDelegate.swift */,
+				CED9EB062B6E4BBB0065FE23 /* Assets.xcassets */,
+				CED9EB082B6E4BBB0065FE23 /* LaunchScreen.storyboard */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		CED9EB1B2B6E4DCA0065FE23 /* WelcomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB1C2B6E4DFC0065FE23 /* UIElements */,
+				CED9EB012B6E4BB80065FE23 /* WelcomeViewController.swift */,
+			);
+			path = WelcomeScreen;
+			sourceTree = "<group>";
+		};
+		CED9EB1C2B6E4DFC0065FE23 /* UIElements */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB1D2B6E4E060065FE23 /* SignUpButton */,
+			);
+			path = UIElements;
+			sourceTree = "<group>";
+		};
+		CED9EB1D2B6E4E060065FE23 /* SignUpButton */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB1E2B6E4E1A0065FE23 /* SignUpButton.swift */,
+			);
+			path = SignUpButton;
+			sourceTree = "<group>";
+		};
+		CED9EB202B6E4E480065FE23 /* RegistrationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB212B6E4E680065FE23 /* RegistrationViewController.swift */,
+			);
+			path = RegistrationScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +202,6 @@
 			files = (
 				CED9EB0A2B6E4BBB0065FE23 /* LaunchScreen.storyboard in Resources */,
 				CED9EB072B6E4BBB0065FE23 /* Assets.xcassets in Resources */,
-				CED9EB052B6E4BB80065FE23 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,23 +212,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CED9EB022B6E4BB80065FE23 /* ViewController.swift in Sources */,
+				CED9EB132B6E4CAD0065FE23 /* Router.swift in Sources */,
+				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
+				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
+				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
+				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
+				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CED9EB032B6E4BB80065FE23 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CED9EB042B6E4BB80065FE23 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		CED9EB082B6E4BBB0065FE23 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -295,7 +367,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Ru.WorkoutApp-pet-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -313,7 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Ru.WorkoutApp-pet-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
