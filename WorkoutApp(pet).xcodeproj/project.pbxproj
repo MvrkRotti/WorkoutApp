@@ -22,6 +22,12 @@
 		CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB282B6E796E0065FE23 /* MainLogo.swift */; };
 		CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB2A2B6E7AE10065FE23 /* SignInLabel.swift */; };
 		CED9EB2D2B6E7D460065FE23 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB2C2B6E7D460065FE23 /* BaseTextField.swift */; };
+		CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB322B6E8B6E0065FE23 /* RegistrationLabel.swift */; };
+		CED9EB352B6FCC610065FE23 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB342B6FCC610065FE23 /* NameTextField.swift */; };
+		CED9EB372B6FD4A20065FE23 /* LastNameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB362B6FD4A20065FE23 /* LastNameTextField.swift */; };
+		CED9EB392B6FD5460065FE23 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB382B6FD5450065FE23 /* EmailTextField.swift */; };
+		CED9EB3B2B700CD20065FE23 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB3A2B700CD20065FE23 /* PasswordTextField.swift */; };
+		CED9EB3D2B700CF30065FE23 /* ConfirmPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB3C2B700CF30065FE23 /* ConfirmPasswordTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +48,12 @@
 		CED9EB282B6E796E0065FE23 /* MainLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogo.swift; sourceTree = "<group>"; };
 		CED9EB2A2B6E7AE10065FE23 /* SignInLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInLabel.swift; sourceTree = "<group>"; };
 		CED9EB2C2B6E7D460065FE23 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
+		CED9EB322B6E8B6E0065FE23 /* RegistrationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLabel.swift; sourceTree = "<group>"; };
+		CED9EB342B6FCC610065FE23 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
+		CED9EB362B6FD4A20065FE23 /* LastNameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastNameTextField.swift; sourceTree = "<group>"; };
+		CED9EB382B6FD5450065FE23 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
+		CED9EB3A2B700CD20065FE23 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
+		CED9EB3C2B700CF30065FE23 /* ConfirmPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +176,11 @@
 		CED9EB2F2B6E7F9D0065FE23 /* TextFields */ = {
 			isa = PBXGroup;
 			children = (
+				CED9EB342B6FCC610065FE23 /* NameTextField.swift */,
+				CED9EB362B6FD4A20065FE23 /* LastNameTextField.swift */,
+				CED9EB382B6FD5450065FE23 /* EmailTextField.swift */,
+				CED9EB3A2B700CD20065FE23 /* PasswordTextField.swift */,
+				CED9EB3C2B700CF30065FE23 /* ConfirmPasswordTextField.swift */,
 			);
 			path = TextFields;
 			sourceTree = "<group>";
@@ -171,6 +188,7 @@
 		CED9EB302B6E7FA30065FE23 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
+				CED9EB322B6E8B6E0065FE23 /* RegistrationLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -251,17 +269,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CED9EB392B6FD5460065FE23 /* EmailTextField.swift in Sources */,
+				CED9EB372B6FD4A20065FE23 /* LastNameTextField.swift in Sources */,
+				CED9EB3B2B700CD20065FE23 /* PasswordTextField.swift in Sources */,
 				CED9EB132B6E4CAD0065FE23 /* WelcomeRouter.swift in Sources */,
 				CED9EB272B6E72C80065FE23 /* WelcomeAssembler.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
+				CED9EB352B6FCC610065FE23 /* NameTextField.swift in Sources */,
 				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
 				CED9EB2D2B6E7D460065FE23 /* BaseTextField.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
+				CED9EB3D2B700CF30065FE23 /* ConfirmPasswordTextField.swift in Sources */,
 				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
 				CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */,
+				CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */,
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
 				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,
 			);
