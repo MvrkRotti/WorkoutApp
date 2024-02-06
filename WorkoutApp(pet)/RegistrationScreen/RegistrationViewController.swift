@@ -11,13 +11,15 @@ class RegistrationViewController: UIViewController {
     
     //MARK: - Variables
     
+    var router: RegistrationRouter!
+    
     let registrationLabel = RegistrationLabel()
     let nameTextField = NameTextField()
     let lastNameTextField = LastNameTextField()
     let emailTextField = EmailTextField()
     let passwordTextField = PasswordTextField()
     let confirmPasswordTextField = ConfirmPasswordTextField()
-    let sighUpButton = SignUpButton()
+    let regSighUpButton = SignUpButton()
     
     //MARK: - Lifecycle
     
@@ -25,6 +27,7 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         navigationBarAppearence()
         setupUI()
+        setupActions()
         setupLayout()
     }
 }
@@ -38,28 +41,31 @@ private extension RegistrationViewController {
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
     }
     
+    
+    
     private func setupUI() {
         view.backgroundColor = UIColor(
             patternImage: UIImage(named: "backGroundImage")!)
         
-        view.addSubview(registrationLabel)
-        view.addSubview(nameTextField)
-        view.addSubview(lastNameTextField)
-        view.addSubview(emailTextField)
-        view.addSubview(passwordTextField)
-        view.addSubview(confirmPasswordTextField)
-        view.addSubview(sighUpButton)
+        view.setupView(registrationLabel)
+        view.setupView(nameTextField)
+        view.setupView(lastNameTextField)
+        view.setupView(emailTextField)
+        view.setupView(passwordTextField)
+        view.setupView(confirmPasswordTextField)
+        view.setupView(regSighUpButton)
+
+
+    }
+    
+    private func setupActions() {
+        regSighUpButton.signUpTapped = { [weak self] in
+            guard let self = self else { return }
+            self.router?.pushHomeScreen()
+        }
     }
     
     private func setupLayout() {
-        
-        registrationLabel.translatesAutoresizingMaskIntoConstraints = false
-        nameTextField.translatesAutoresizingMaskIntoConstraints = false
-        lastNameTextField.translatesAutoresizingMaskIntoConstraints = false
-        emailTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        confirmPasswordTextField.translatesAutoresizingMaskIntoConstraints = false
-        sighUpButton.translatesAutoresizingMaskIntoConstraints = false
 
         NSLayoutConstraint.activate([
             registrationLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
@@ -95,10 +101,10 @@ private extension RegistrationViewController {
             confirmPasswordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             confirmPasswordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            sighUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            sighUpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
-            sighUpButton.widthAnchor.constraint(equalToConstant: 200),
-            sighUpButton.heightAnchor.constraint(equalToConstant: 40)
+            regSighUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            regSighUpButton.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -80),
+            regSighUpButton.widthAnchor.constraint(equalToConstant: 200),
+            regSighUpButton.heightAnchor.constraint(equalToConstant: 40)
         ])
         
     }

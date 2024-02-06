@@ -61,6 +61,13 @@ private extension WelcomeViewController {
             guard let self = self else { return }
             self.router?.pushRegistrationScreen()
         }
+        
+        signInButton.signInTapped = { [weak self ] in
+            guard let self = self else { return }
+            self.router?.pushAutoristrationScreen()
+        }
+        
+        
     }
     
     private func setupLayout() {
@@ -83,6 +90,5 @@ private extension WelcomeViewController {
         
     }
 }
-
 
 

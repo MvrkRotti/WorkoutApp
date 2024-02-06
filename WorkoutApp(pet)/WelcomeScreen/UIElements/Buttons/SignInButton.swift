@@ -15,6 +15,7 @@ final class SignInButton: UIButton {
         super.init(frame: frame)
         setupAppearence()
         setupAction()
+        makeSystem(self)
     }
     
     @available(*, unavailable)

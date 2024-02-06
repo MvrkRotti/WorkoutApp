@@ -21,13 +21,27 @@
 		CED9EB272B6E72C80065FE23 /* WelcomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB262B6E72C80065FE23 /* WelcomeAssembler.swift */; };
 		CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB282B6E796E0065FE23 /* MainLogo.swift */; };
 		CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB2A2B6E7AE10065FE23 /* SignInLabel.swift */; };
-		CED9EB2D2B6E7D460065FE23 /* BaseTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB2C2B6E7D460065FE23 /* BaseTextField.swift */; };
 		CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB322B6E8B6E0065FE23 /* RegistrationLabel.swift */; };
 		CED9EB352B6FCC610065FE23 /* NameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB342B6FCC610065FE23 /* NameTextField.swift */; };
 		CED9EB372B6FD4A20065FE23 /* LastNameTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB362B6FD4A20065FE23 /* LastNameTextField.swift */; };
 		CED9EB392B6FD5460065FE23 /* EmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB382B6FD5450065FE23 /* EmailTextField.swift */; };
 		CED9EB3B2B700CD20065FE23 /* PasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB3A2B700CD20065FE23 /* PasswordTextField.swift */; };
 		CED9EB3D2B700CF30065FE23 /* ConfirmPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB3C2B700CF30065FE23 /* ConfirmPasswordTextField.swift */; };
+		CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB3F2B7011970065FE23 /* AuthorisationViewController.swift */; };
+		CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */; };
+		CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */; };
+		CED9EB492B7146760065FE23 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB482B7146760065FE23 /* UIView.swift */; };
+		CED9EB4D2B715A1A0065FE23 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4C2B715A1A0065FE23 /* HomeScreenViewController.swift */; };
+		CED9EB4F2B715A520065FE23 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4E2B715A520065FE23 /* RegistrationRouter.swift */; };
+		CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB512B715A870065FE23 /* RegistrationAssembler.swift */; };
+		CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */; };
+		CED9EB572B715F690065FE23 /* AuthorisationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB562B715F690065FE23 /* AuthorisationRouter.swift */; };
+		CED9EB592B715F850065FE23 /* AuthorisationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB582B715F850065FE23 /* AuthorisationAssembler.swift */; };
+		CED9EB602B7254E40065FE23 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB5F2B7254E40065FE23 /* BaseController.swift */; };
+		CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB622B7258DD0065FE23 /* TabController.swift */; };
+		CED9EB682B7259750065FE23 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB672B7259750065FE23 /* ProfileViewController.swift */; };
+		CED9EB6A2B7259BB0065FE23 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB692B7259BB0065FE23 /* NotesViewController.swift */; };
+		CED9EB6C2B7259DE0065FE23 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB6B2B7259DE0065FE23 /* ProgressViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,13 +61,27 @@
 		CED9EB262B6E72C80065FE23 /* WelcomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeAssembler.swift; sourceTree = "<group>"; };
 		CED9EB282B6E796E0065FE23 /* MainLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainLogo.swift; sourceTree = "<group>"; };
 		CED9EB2A2B6E7AE10065FE23 /* SignInLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInLabel.swift; sourceTree = "<group>"; };
-		CED9EB2C2B6E7D460065FE23 /* BaseTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTextField.swift; sourceTree = "<group>"; };
 		CED9EB322B6E8B6E0065FE23 /* RegistrationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLabel.swift; sourceTree = "<group>"; };
 		CED9EB342B6FCC610065FE23 /* NameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameTextField.swift; sourceTree = "<group>"; };
 		CED9EB362B6FD4A20065FE23 /* LastNameTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastNameTextField.swift; sourceTree = "<group>"; };
 		CED9EB382B6FD5450065FE23 /* EmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTextField.swift; sourceTree = "<group>"; };
 		CED9EB3A2B700CD20065FE23 /* PasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordTextField.swift; sourceTree = "<group>"; };
 		CED9EB3C2B700CF30065FE23 /* ConfirmPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordTextField.swift; sourceTree = "<group>"; };
+		CED9EB3F2B7011970065FE23 /* AuthorisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorisationViewController.swift; sourceTree = "<group>"; };
+		CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInEmailTextField.swift; sourceTree = "<group>"; };
+		CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPasswordTextField.swift; sourceTree = "<group>"; };
+		CED9EB482B7146760065FE23 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		CED9EB4C2B715A1A0065FE23 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		CED9EB4E2B715A520065FE23 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		CED9EB512B715A870065FE23 /* RegistrationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembler.swift; sourceTree = "<group>"; };
+		CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInButton.swift; sourceTree = "<group>"; };
+		CED9EB562B715F690065FE23 /* AuthorisationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorisationRouter.swift; sourceTree = "<group>"; };
+		CED9EB582B715F850065FE23 /* AuthorisationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorisationAssembler.swift; sourceTree = "<group>"; };
+		CED9EB5F2B7254E40065FE23 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
+		CED9EB622B7258DD0065FE23 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
+		CED9EB672B7259750065FE23 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		CED9EB692B7259BB0065FE23 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		CED9EB6B2B7259DE0065FE23 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,12 +114,18 @@
 		CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */ = {
 			isa = PBXGroup;
 			children = (
+				CED9EB5E2B7254DB0065FE23 /* Base */,
 				CED9EB142B6E4CE70065FE23 /* Resources */,
 				CED9EB1A2B6E4D6F0065FE23 /* Application */,
 				CED9EB1B2B6E4DCA0065FE23 /* WelcomeScreen */,
 				CED9EB202B6E4E480065FE23 /* RegistrationScreen */,
+				CED9EB3E2B70112E0065FE23 /* AuthorisationScreen */,
+				CED9EB612B7258B50065FE23 /* TabController */,
+				CED9EB4B2B7159EC0065FE23 /* HomeScreen */,
+				CED9EB642B72594B0065FE23 /* ProgressScreen */,
+				CED9EB652B7259560065FE23 /* NotesScreen */,
+				CED9EB662B7259620065FE23 /* ProfileScreen */,
 				CED9EB0B2B6E4BBB0065FE23 /* Info.plist */,
-				CED9EB2C2B6E7D460065FE23 /* BaseTextField.swift */,
 			);
 			path = "WorkoutApp(pet)";
 			sourceTree = "<group>";
@@ -99,18 +133,19 @@
 		CED9EB142B6E4CE70065FE23 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				CED9EB152B6E4D060065FE23 /* Ext-s */,
+				CED9EB152B6E4D060065FE23 /* Extensions */,
 				CED9EB182B6E4D5C0065FE23 /* Resources.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		CED9EB152B6E4D060065FE23 /* Ext-s */ = {
+		CED9EB152B6E4D060065FE23 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				CED9EB162B6E4D240065FE23 /* UIColor.swift */,
+				CED9EB482B7146760065FE23 /* UIView.swift */,
 			);
-			path = "Ext-s";
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		CED9EB1A2B6E4D6F0065FE23 /* Application */ = {
@@ -129,8 +164,8 @@
 			children = (
 				CED9EB122B6E4CAD0065FE23 /* WelcomeRouter.swift */,
 				CED9EB262B6E72C80065FE23 /* WelcomeAssembler.swift */,
-				CED9EB1C2B6E4DFC0065FE23 /* UIElements */,
 				CED9EB012B6E4BB80065FE23 /* WelcomeViewController.swift */,
+				CED9EB1C2B6E4DFC0065FE23 /* UIElements */,
 			);
 			path = WelcomeScreen;
 			sourceTree = "<group>";
@@ -148,6 +183,7 @@
 		CED9EB202B6E4E480065FE23 /* RegistrationScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CED9EB532B715A9D0065FE23 /* Navigation */,
 				CED9EB2E2B6E7F890065FE23 /* UIElements */,
 				CED9EB212B6E4E680065FE23 /* RegistrationViewController.swift */,
 			);
@@ -198,6 +234,92 @@
 			children = (
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		CED9EB3E2B70112E0065FE23 /* AuthorisationScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB562B715F690065FE23 /* AuthorisationRouter.swift */,
+				CED9EB582B715F850065FE23 /* AuthorisationAssembler.swift */,
+				CED9EB3F2B7011970065FE23 /* AuthorisationViewController.swift */,
+				CED9EB422B7012240065FE23 /* Buttons */,
+				CED9EB412B7012160065FE23 /* TextFields */,
+			);
+			path = AuthorisationScreen;
+			sourceTree = "<group>";
+		};
+		CED9EB412B7012160065FE23 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */,
+				CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
+		CED9EB422B7012240065FE23 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		CED9EB4B2B7159EC0065FE23 /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB4C2B715A1A0065FE23 /* HomeScreenViewController.swift */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		CED9EB532B715A9D0065FE23 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB4E2B715A520065FE23 /* RegistrationRouter.swift */,
+				CED9EB512B715A870065FE23 /* RegistrationAssembler.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CED9EB5E2B7254DB0065FE23 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB5F2B7254E40065FE23 /* BaseController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CED9EB612B7258B50065FE23 /* TabController */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB622B7258DD0065FE23 /* TabController.swift */,
+			);
+			path = TabController;
+			sourceTree = "<group>";
+		};
+		CED9EB642B72594B0065FE23 /* ProgressScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB6B2B7259DE0065FE23 /* ProgressViewController.swift */,
+			);
+			path = ProgressScreen;
+			sourceTree = "<group>";
+		};
+		CED9EB652B7259560065FE23 /* NotesScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB692B7259BB0065FE23 /* NotesViewController.swift */,
+			);
+			path = NotesScreen;
+			sourceTree = "<group>";
+		};
+		CED9EB662B7259620065FE23 /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CED9EB672B7259750065FE23 /* ProfileViewController.swift */,
+			);
+			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,20 +393,34 @@
 			files = (
 				CED9EB392B6FD5460065FE23 /* EmailTextField.swift in Sources */,
 				CED9EB372B6FD4A20065FE23 /* LastNameTextField.swift in Sources */,
+				CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */,
+				CED9EB6C2B7259DE0065FE23 /* ProgressViewController.swift in Sources */,
+				CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */,
 				CED9EB3B2B700CD20065FE23 /* PasswordTextField.swift in Sources */,
 				CED9EB132B6E4CAD0065FE23 /* WelcomeRouter.swift in Sources */,
 				CED9EB272B6E72C80065FE23 /* WelcomeAssembler.swift in Sources */,
+				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
+				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
+				CED9EB572B715F690065FE23 /* AuthorisationRouter.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
+				CED9EB4F2B715A520065FE23 /* RegistrationRouter.swift in Sources */,
+				CED9EB682B7259750065FE23 /* ProfileViewController.swift in Sources */,
 				CED9EB352B6FCC610065FE23 /* NameTextField.swift in Sources */,
 				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
-				CED9EB2D2B6E7D460065FE23 /* BaseTextField.swift in Sources */,
+				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
+				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
+				CED9EB592B715F850065FE23 /* AuthorisationAssembler.swift in Sources */,
 				CED9EB3D2B700CF30065FE23 /* ConfirmPasswordTextField.swift in Sources */,
 				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
+				CED9EB602B7254E40065FE23 /* BaseController.swift in Sources */,
+				CED9EB4D2B715A1A0065FE23 /* HomeScreenViewController.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
+				CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */,
 				CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */,
+				CED9EB6A2B7259BB0065FE23 /* NotesViewController.swift in Sources */,
 				CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */,
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
 				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,

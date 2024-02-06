@@ -14,4 +14,8 @@ final class WelcomeRouter {
     func pushRegistrationScreen() {
         welcomeViewController?.navigationController?.pushViewController(RegistrationViewController(), animated: true)
     }
+    
+    func pushAutoristrationScreen() {
+        welcomeViewController?.navigationController?.pushViewController(AuthorisationViewController(), animated: true)
+    }
 }

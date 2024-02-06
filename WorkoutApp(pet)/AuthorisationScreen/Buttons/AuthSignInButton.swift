@@ -1,46 +1,43 @@
 //
-//  SignUpButton.swift
+//  AuthSignInButton.swift
 //  WorkoutApp(pet)
 //
-//  Created by Danilius on 03.02.2024.
+//  Created by Danilius on 05.02.2024.
 //
 
 import UIKit
 
-final class SignUpButton: UIButton {
-    
-    var signUpTapped: (() -> Void)?
-    
+final class AuthSignInButton: UIButton {
+
+    var signInTapped: (() -> Void)?
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAppearence()
         setupAction()
         makeSystem(self)
     }
-    
+
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-private extension SignUpButton {
+private extension AuthSignInButton {
     func setupAppearence() {
-        
-        setTitle(Resources.autorizedScreen.signUp, for: .normal)
+
+        setTitle(Resources.autorizedScreen.signIn, for: .normal)
         layer.cornerRadius = 15
         backgroundColor = Resources.Colors.customOrange
     }
-    
+
     @objc
-    func signUpDidTapped() {
-        signUpTapped?()
+    func signInDidTapped() {
+        signInTapped?()
     }
-    
+
     func setupAction() {
-        addTarget(self, action: #selector(signUpDidTapped), for: .touchUpInside)
+        addTarget(self, action: #selector(signInDidTapped), for: .touchUpInside)
     }
 }
-
-
-
