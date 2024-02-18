@@ -30,8 +30,6 @@ private extension HomeScreenViewController {
     
     func setupLayout() {
         NSLayoutConstraint.activate([
-            tableView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-            tableView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             tableView.topAnchor.constraint(equalTo: view.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -63,7 +61,7 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Hello"
+        cell.textLabel?.text = "Hi"
         return cell
     }
     
