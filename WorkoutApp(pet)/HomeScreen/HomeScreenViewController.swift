@@ -9,10 +9,21 @@ import UIKit
 
 final class HomeScreenViewController: UIViewController {
     
+    private let viewModel: HomeViewModel
     var router: HomeRouter!
     
     let tableView = UITableView()
-        
+    
+    
+    init(_ viewModel: HomeViewModel = HomeViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSettings()
@@ -20,6 +31,7 @@ final class HomeScreenViewController: UIViewController {
         setupUI()
         setupLayout()
     }
+    
 }
 
 private extension HomeScreenViewController {
@@ -42,6 +54,13 @@ private extension HomeScreenViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        
+        viewModel.exerciseUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+            
+        }
     }
     
     func navigationBarAppearence() {
@@ -50,18 +69,19 @@ private extension HomeScreenViewController {
         navigationController?.navigationBar.barTintColor = Resources.Colors.customGrey
         navigationController?.navigationBar.alpha = 0.9
     }
+    
 }
 
 
 extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        10
+        viewModel.allExercises.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = "Hi"
+        cell.textLabel?.text = viewModel.allExercises[indexPath.row].type
         return cell
     }
     

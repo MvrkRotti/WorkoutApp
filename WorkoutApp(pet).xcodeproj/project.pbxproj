@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */; };
+		CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC22B8256C000ACB21C /* NetworkService.swift */; };
+		CE1A8BC52B82644D00ACB21C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* HomeViewModel.swift */; };
 		CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */; };
 		CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */; };
 		CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */; };
@@ -54,6 +57,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		CE1A8BC22B8256C000ACB21C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		CE1A8BC42B82644D00ACB21C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
 		CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -113,6 +119,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1A8BBA2B822EDB00ACB21C /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				CE1A8BC22B8256C000ACB21C /* NetworkService.swift */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		CE1A8BBD2B822F1E00ACB21C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		CEAC7E012B81F27900AF05CD /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +199,8 @@
 		CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */ = {
 			isa = PBXGroup;
 			children = (
+				CE1A8BBD2B822F1E00ACB21C /* Model */,
+				CE1A8BBA2B822EDB00ACB21C /* NetworkService */,
 				CED9EB142B6E4CE70065FE23 /* Resources */,
 				CED9EB1A2B6E4D6F0065FE23 /* Application */,
 				CED9EB1B2B6E4DCA0065FE23 /* WelcomeScreen */,
@@ -332,6 +356,7 @@
 			children = (
 				CEAC7E1C2B82253C00AF05CD /* Navigation */,
 				CED9EB4C2B715A1A0065FE23 /* HomeScreenViewController.swift */,
+				CE1A8BC42B82644D00ACB21C /* HomeViewModel.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -458,16 +483,19 @@
 				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
+				CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */,
 				CED9EB4F2B715A520065FE23 /* RegistrationRouter.swift in Sources */,
 				CED9EB352B6FCC610065FE23 /* NameTextField.swift in Sources */,
 				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
 				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
+				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
 				CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */,
 				CEAC7E0D2B81F40D00AF05CD /* NotesAssembler.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
 				CED9EB3D2B700CF30065FE23 /* ConfirmPasswordTextField.swift in Sources */,
 				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
+				CE1A8BC52B82644D00ACB21C /* HomeViewModel.swift in Sources */,
 				CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */,
 				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
 				CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */,
