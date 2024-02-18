@@ -50,9 +50,9 @@ private extension WelcomeViewController {
         
         view.backgroundColor = Resources.Colors.customGrey
         
-        view.addSubview(mainLogo)
-        view.addSubview(signUpButton)
-        view.addSubview(registrStack)
+        view.setupView(mainLogo)
+        view.setupView(signUpButton)
+        view.setupView(registrStack)
         
     }
     
@@ -72,17 +72,14 @@ private extension WelcomeViewController {
     
     private func setupLayout() {
         
-        mainLogo.translatesAutoresizingMaskIntoConstraints = false
-        signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        registrStack.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             mainLogo.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             mainLogo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
-            signUpButton.bottomAnchor.constraint(equalTo: registrStack.topAnchor, constant: -50),
+            signUpButton.bottomAnchor.constraint(equalTo: registrStack.topAnchor, constant: -10),
             signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signUpButton.widthAnchor.constraint(equalToConstant: 150),
+            signUpButton.widthAnchor.constraint(equalToConstant: 250),
+            signUpButton.heightAnchor.constraint(equalToConstant: 45),
             
             registrStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             registrStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40)

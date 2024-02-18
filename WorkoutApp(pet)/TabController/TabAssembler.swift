@@ -1,5 +1,5 @@
 //
-//  AuthorisationAssembler.swift
+//  TabAssembler.swift
 //  WorkoutApp(pet)
 //
 //  Created by Danilius on 18.02.2024.
@@ -7,15 +7,15 @@
 
 import UIKit
 
-struct AuthorisationAssembler {
+struct TabAssembler {
     
     static func buildModule() -> UIViewController {
         
-        let viewController = AuthorisationViewController()
-        let router = AutoristaionRouter()
+        let viewController = TabController()
+        let router = TabRouter()
         
         viewController.router = router
-        router.authotisationViewController = viewController
+        router.tabController = viewController
         
         return viewController
     }

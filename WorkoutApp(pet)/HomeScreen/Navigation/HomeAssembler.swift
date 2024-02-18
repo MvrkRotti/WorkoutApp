@@ -1,21 +1,22 @@
 //
-//  AuthorisationAssembler.swift
+//  HomeAssembler.swift
 //  WorkoutApp(pet)
 //
 //  Created by Danilius on 18.02.2024.
 //
 
+
 import UIKit
 
-struct AuthorisationAssembler {
+struct HomeAssembler {
     
     static func buildModule() -> UIViewController {
         
-        let viewController = AuthorisationViewController()
-        let router = AutoristaionRouter()
+        let viewController = HomeScreenViewController()
+        let router = HomeRouter()
         
         viewController.router = router
-        router.authotisationViewController = viewController
+        router.homeViewController = viewController
         
         return viewController
     }

@@ -12,6 +12,6 @@ final class RegistrationRouter {
     weak var registrationViewController: RegistrationViewController?
 
     func pushHomeScreen() {
-        registrationViewController?.navigationController?.pushViewController(HomeScreenViewController(), animated: true)
+        registrationViewController?.navigationController?.pushViewController(TabAssembler.buildModule(), animated: true)
     }
 }

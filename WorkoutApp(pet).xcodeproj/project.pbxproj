@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */; };
+		CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */; };
+		CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */; };
+		CEAC7E092B81F3ED00AF05CD /* ProgressAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E082B81F3ED00AF05CD /* ProgressAssembler.swift */; };
+		CEAC7E0B2B81F3FD00AF05CD /* ProgressRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E0A2B81F3FD00AF05CD /* ProgressRouter.swift */; };
+		CEAC7E0D2B81F40D00AF05CD /* NotesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E0C2B81F40D00AF05CD /* NotesAssembler.swift */; };
+		CEAC7E0F2B81F41600AF05CD /* NotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E0E2B81F41600AF05CD /* NotesRouter.swift */; };
+		CEAC7E112B81F42900AF05CD /* ProfileAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E102B81F42900AF05CD /* ProfileAssembler.swift */; };
+		CEAC7E132B81F43700AF05CD /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E122B81F43700AF05CD /* ProfileRouter.swift */; };
+		CEAC7E152B81F46500AF05CD /* AuthorisationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E142B81F46500AF05CD /* AuthorisationAssembler.swift */; };
+		CEAC7E172B81F47100AF05CD /* AutoristaionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E162B81F47100AF05CD /* AutoristaionRouter.swift */; };
+		CEAC7E192B81F6CE00AF05CD /* TabAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E182B81F6CE00AF05CD /* TabAssembler.swift */; };
+		CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E1A2B81F6D900AF05CD /* TabRouter.swift */; };
 		CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EAFD2B6E4BB80065FE23 /* AppDelegate.swift */; };
 		CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EAFF2B6E4BB80065FE23 /* SceneDelegate.swift */; };
 		CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB012B6E4BB80065FE23 /* WelcomeViewController.swift */; };
@@ -35,16 +48,25 @@
 		CED9EB4F2B715A520065FE23 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4E2B715A520065FE23 /* RegistrationRouter.swift */; };
 		CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB512B715A870065FE23 /* RegistrationAssembler.swift */; };
 		CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */; };
-		CED9EB572B715F690065FE23 /* AuthorisationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB562B715F690065FE23 /* AuthorisationRouter.swift */; };
-		CED9EB592B715F850065FE23 /* AuthorisationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB582B715F850065FE23 /* AuthorisationAssembler.swift */; };
-		CED9EB602B7254E40065FE23 /* BaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB5F2B7254E40065FE23 /* BaseController.swift */; };
 		CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB622B7258DD0065FE23 /* TabController.swift */; };
-		CED9EB682B7259750065FE23 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB672B7259750065FE23 /* ProfileViewController.swift */; };
-		CED9EB6A2B7259BB0065FE23 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB692B7259BB0065FE23 /* NotesViewController.swift */; };
-		CED9EB6C2B7259DE0065FE23 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB6B2B7259DE0065FE23 /* ProgressViewController.swift */; };
+		CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */; };
+		CED9EB6C2B7259DE0065FE23 /* ProgressScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB6B2B7259DE0065FE23 /* ProgressScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
+		CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
+		CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		CEAC7E082B81F3ED00AF05CD /* ProgressAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressAssembler.swift; sourceTree = "<group>"; };
+		CEAC7E0A2B81F3FD00AF05CD /* ProgressRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRouter.swift; sourceTree = "<group>"; };
+		CEAC7E0C2B81F40D00AF05CD /* NotesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotesAssembler.swift; path = "WorkoutApp(pet)/NotesScreen/Navigation/NotesAssembler.swift"; sourceTree = SOURCE_ROOT; };
+		CEAC7E0E2B81F41600AF05CD /* NotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRouter.swift; sourceTree = "<group>"; };
+		CEAC7E102B81F42900AF05CD /* ProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembler.swift; sourceTree = "<group>"; };
+		CEAC7E122B81F43700AF05CD /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		CEAC7E142B81F46500AF05CD /* AuthorisationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorisationAssembler.swift; sourceTree = "<group>"; };
+		CEAC7E162B81F47100AF05CD /* AutoristaionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoristaionRouter.swift; sourceTree = "<group>"; };
+		CEAC7E182B81F6CE00AF05CD /* TabAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabAssembler.swift; sourceTree = "<group>"; };
+		CEAC7E1A2B81F6D900AF05CD /* TabRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabRouter.swift; sourceTree = "<group>"; };
 		CED9EAFA2B6E4BB80065FE23 /* WorkoutApp(pet).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WorkoutApp(pet).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED9EAFD2B6E4BB80065FE23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED9EAFF2B6E4BB80065FE23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,13 +97,9 @@
 		CED9EB4E2B715A520065FE23 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		CED9EB512B715A870065FE23 /* RegistrationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembler.swift; sourceTree = "<group>"; };
 		CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInButton.swift; sourceTree = "<group>"; };
-		CED9EB562B715F690065FE23 /* AuthorisationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorisationRouter.swift; sourceTree = "<group>"; };
-		CED9EB582B715F850065FE23 /* AuthorisationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorisationAssembler.swift; sourceTree = "<group>"; };
-		CED9EB5F2B7254E40065FE23 /* BaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseController.swift; sourceTree = "<group>"; };
 		CED9EB622B7258DD0065FE23 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
-		CED9EB672B7259750065FE23 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		CED9EB692B7259BB0065FE23 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
-		CED9EB6B2B7259DE0065FE23 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreenViewController.swift; sourceTree = "<group>"; };
+		CED9EB6B2B7259DE0065FE23 /* ProgressScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +113,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CEAC7E012B81F27900AF05CD /* ProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC7E1F2B82255D00AF05CD /* Navigation */,
+				CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */,
+			);
+			path = ProfileScreen;
+			sourceTree = "<group>";
+		};
+		CEAC7E1C2B82253C00AF05CD /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */,
+				CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CEAC7E1D2B82254700AF05CD /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC7E082B81F3ED00AF05CD /* ProgressAssembler.swift */,
+				CEAC7E0A2B81F3FD00AF05CD /* ProgressRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CEAC7E1E2B82255200AF05CD /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC7E0C2B81F40D00AF05CD /* NotesAssembler.swift */,
+				CEAC7E0E2B81F41600AF05CD /* NotesRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CEAC7E1F2B82255D00AF05CD /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CEAC7E102B81F42900AF05CD /* ProfileAssembler.swift */,
+				CEAC7E122B81F43700AF05CD /* ProfileRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
 		CED9EAF12B6E4BB80065FE23 = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +177,6 @@
 		CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */ = {
 			isa = PBXGroup;
 			children = (
-				CED9EB5E2B7254DB0065FE23 /* Base */,
 				CED9EB142B6E4CE70065FE23 /* Resources */,
 				CED9EB1A2B6E4D6F0065FE23 /* Application */,
 				CED9EB1B2B6E4DCA0065FE23 /* WelcomeScreen */,
@@ -124,7 +186,7 @@
 				CED9EB4B2B7159EC0065FE23 /* HomeScreen */,
 				CED9EB642B72594B0065FE23 /* ProgressScreen */,
 				CED9EB652B7259560065FE23 /* NotesScreen */,
-				CED9EB662B7259620065FE23 /* ProfileScreen */,
+				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
 				CED9EB0B2B6E4BBB0065FE23 /* Info.plist */,
 			);
 			path = "WorkoutApp(pet)";
@@ -239,11 +301,11 @@
 		CED9EB3E2B70112E0065FE23 /* AuthorisationScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CED9EB562B715F690065FE23 /* AuthorisationRouter.swift */,
-				CED9EB582B715F850065FE23 /* AuthorisationAssembler.swift */,
 				CED9EB3F2B7011970065FE23 /* AuthorisationViewController.swift */,
 				CED9EB422B7012240065FE23 /* Buttons */,
 				CED9EB412B7012160065FE23 /* TextFields */,
+				CEAC7E142B81F46500AF05CD /* AuthorisationAssembler.swift */,
+				CEAC7E162B81F47100AF05CD /* AutoristaionRouter.swift */,
 			);
 			path = AuthorisationScreen;
 			sourceTree = "<group>";
@@ -268,6 +330,7 @@
 		CED9EB4B2B7159EC0065FE23 /* HomeScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC7E1C2B82253C00AF05CD /* Navigation */,
 				CED9EB4C2B715A1A0065FE23 /* HomeScreenViewController.swift */,
 			);
 			path = HomeScreen;
@@ -282,17 +345,11 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		CED9EB5E2B7254DB0065FE23 /* Base */ = {
-			isa = PBXGroup;
-			children = (
-				CED9EB5F2B7254E40065FE23 /* BaseController.swift */,
-			);
-			path = Base;
-			sourceTree = "<group>";
-		};
 		CED9EB612B7258B50065FE23 /* TabController */ = {
 			isa = PBXGroup;
 			children = (
+				CEAC7E182B81F6CE00AF05CD /* TabAssembler.swift */,
+				CEAC7E1A2B81F6D900AF05CD /* TabRouter.swift */,
 				CED9EB622B7258DD0065FE23 /* TabController.swift */,
 			);
 			path = TabController;
@@ -301,7 +358,8 @@
 		CED9EB642B72594B0065FE23 /* ProgressScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CED9EB6B2B7259DE0065FE23 /* ProgressViewController.swift */,
+				CEAC7E1D2B82254700AF05CD /* Navigation */,
+				CED9EB6B2B7259DE0065FE23 /* ProgressScreenViewController.swift */,
 			);
 			path = ProgressScreen;
 			sourceTree = "<group>";
@@ -309,17 +367,10 @@
 		CED9EB652B7259560065FE23 /* NotesScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CED9EB692B7259BB0065FE23 /* NotesViewController.swift */,
+				CEAC7E1E2B82255200AF05CD /* Navigation */,
+				CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */,
 			);
 			path = NotesScreen;
-			sourceTree = "<group>";
-		};
-		CED9EB662B7259620065FE23 /* ProfileScreen */ = {
-			isa = PBXGroup;
-			children = (
-				CED9EB672B7259750065FE23 /* ProfileViewController.swift */,
-			);
-			path = ProfileScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,38 +442,47 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEAC7E132B81F43700AF05CD /* ProfileRouter.swift in Sources */,
 				CED9EB392B6FD5460065FE23 /* EmailTextField.swift in Sources */,
 				CED9EB372B6FD4A20065FE23 /* LastNameTextField.swift in Sources */,
+				CEAC7E192B81F6CE00AF05CD /* TabAssembler.swift in Sources */,
 				CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */,
-				CED9EB6C2B7259DE0065FE23 /* ProgressViewController.swift in Sources */,
+				CED9EB6C2B7259DE0065FE23 /* ProgressScreenViewController.swift in Sources */,
 				CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */,
+				CEAC7E172B81F47100AF05CD /* AutoristaionRouter.swift in Sources */,
 				CED9EB3B2B700CD20065FE23 /* PasswordTextField.swift in Sources */,
+				CEAC7E152B81F46500AF05CD /* AuthorisationAssembler.swift in Sources */,
 				CED9EB132B6E4CAD0065FE23 /* WelcomeRouter.swift in Sources */,
+				CEAC7E112B81F42900AF05CD /* ProfileAssembler.swift in Sources */,
 				CED9EB272B6E72C80065FE23 /* WelcomeAssembler.swift in Sources */,
 				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
-				CED9EB572B715F690065FE23 /* AuthorisationRouter.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
 				CED9EB4F2B715A520065FE23 /* RegistrationRouter.swift in Sources */,
-				CED9EB682B7259750065FE23 /* ProfileViewController.swift in Sources */,
 				CED9EB352B6FCC610065FE23 /* NameTextField.swift in Sources */,
 				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
 				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
+				CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */,
+				CEAC7E0D2B81F40D00AF05CD /* NotesAssembler.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
-				CED9EB592B715F850065FE23 /* AuthorisationAssembler.swift in Sources */,
 				CED9EB3D2B700CF30065FE23 /* ConfirmPasswordTextField.swift in Sources */,
+				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
+				CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */,
 				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
+				CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
-				CED9EB602B7254E40065FE23 /* BaseController.swift in Sources */,
+				CEAC7E0B2B81F3FD00AF05CD /* ProgressRouter.swift in Sources */,
 				CED9EB4D2B715A1A0065FE23 /* HomeScreenViewController.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
+				CEAC7E092B81F3ED00AF05CD /* ProgressAssembler.swift in Sources */,
 				CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */,
 				CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */,
-				CED9EB6A2B7259BB0065FE23 /* NotesViewController.swift in Sources */,
+				CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */,
 				CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */,
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
+				CEAC7E0F2B81F41600AF05CD /* NotesRouter.swift in Sources */,
 				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,7 +28,7 @@ private extension SignInButton {
     func setupAppearence() {
         
         setTitle(Resources.autorizedScreen.signIn, for: .normal)
-        setTitleColor(Resources.Colors.customOrange, for: .normal)
+        setTitleColor(Resources.Colors.customCoral, for: .normal)
         let buttonTitleStr = NSMutableAttributedString(string: Resources.autorizedScreen.signIn)
         buttonTitleStr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, buttonTitleStr.length))
         setAttributedTitle(buttonTitleStr, for: .normal)

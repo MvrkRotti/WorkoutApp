@@ -10,9 +10,6 @@ import UIKit
 enum Resources {
     
     enum TextField {
-        enum Colors {
-            static let borderColor = UIColor(hexString: "#007FFF")
-        }
         
         enum Strings {
             static let firstName = "First Name"
@@ -29,7 +26,8 @@ enum Resources {
     }
     
     enum Colors {
-        static let customOrange = UIColor(hexString: "#FB7445")
+        static let barItemActive = UIColor(hexString: "#007FFF")
+        static let customCoral = UIColor(hexString: "#6ADADA")
         static let customRed = UIColor(hexString: "#EE373F")
         static let customGrey = UIColor(hexString: "#393939")
         static let customWhite = UIColor(hexString: "#FFFFFF")
@@ -58,17 +56,35 @@ enum Resources {
     }
     
     enum TabBar {
-        enum TabBarIcons {
-            static let homeIcon = UIImage(named: "homeTabIcon")
-            static let progressIcon = UIImage(named: "progressTabIcon")
-            static let notesIcon = UIImage(named: "notesTabIcon")
-            static let profileIcon = UIImage(named: "porfileTabIcon")
+//        enum TabBarIcons {
+//            static let homeIcon = UIImage(named: "homeTabIcon")
+//            static let progressIcon = UIImage(named: "progressTabIcon")
+//            static let notesIcon = UIImage(named: "notesTabIcon")
+//            static let profileIcon = UIImage(named: "porfileTabIcon")
+//        }
+        
+        static func icon(for tab: Tabs) -> UIImage? {
+            switch tab {
+            case .home: return UIImage(named: "homeTabIcon")
+            case .progress: return UIImage(named: "progressTabIcon")
+            case .notes: return UIImage(named: "notesTabIcon")
+            case .profile: return UIImage(named: "porfileTabIcon")
+            }
         }
-        enum TabBarHeaders {
-            static let homeHeader = "Home"
-            static let progressHeader = "My Progress"
-            static let notesHeader = "My Notes"
-            static let profileHeader = "My Profile"
+//        enum TabBarHeaders {
+//            static let homeHeader = "Home"
+//            static let progressHeader = "My Progress"
+//            static let notesHeader = "My Notes"
+//            static let profileHeader = "My Profile"
+//        }
+        
+        static func title(for tab: Tabs) -> String {
+            switch tab {
+            case .home: return "Home"
+            case .progress: return "Progress"
+            case .notes: return "Notes"
+            case .profile: return "Profile"
+            }
         }
     }
 }

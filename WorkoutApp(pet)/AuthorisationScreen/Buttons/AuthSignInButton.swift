@@ -29,7 +29,7 @@ private extension AuthSignInButton {
 
         setTitle(Resources.autorizedScreen.signIn, for: .normal)
         layer.cornerRadius = 15
-        backgroundColor = Resources.Colors.customOrange
+        backgroundColor = Resources.Colors.customCoral
     }
 
     @objc

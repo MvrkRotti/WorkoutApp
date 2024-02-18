@@ -26,8 +26,6 @@ private extension NameTextField {
     func setupAppearence() {
         
         layer.cornerRadius = 15
-        layer.borderColor = Resources.TextField.Colors.borderColor.cgColor
-        layer.borderWidth = 2
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         placeholder = Resources.TextField.Strings.firstName
         textColor = Resources.Colors.customWhite

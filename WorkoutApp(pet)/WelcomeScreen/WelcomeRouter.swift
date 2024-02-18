@@ -12,10 +12,10 @@ final class WelcomeRouter {
     weak var welcomeViewController: WelcomeViewController?
 
     func pushRegistrationScreen() {
-        welcomeViewController?.navigationController?.pushViewController(RegistrationViewController(), animated: true)
+        welcomeViewController?.navigationController?.pushViewController(RegistrationAssembler.buildModule(), animated: true)
     }
     
     func pushAutoristrationScreen() {
-        welcomeViewController?.navigationController?.pushViewController(AuthorisationViewController(), animated: true)
+        welcomeViewController?.navigationController?.pushViewController(AuthorisationAssembler.buildModule(), animated: true)
     }
 }

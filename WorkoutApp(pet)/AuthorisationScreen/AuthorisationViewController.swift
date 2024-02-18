@@ -11,7 +11,7 @@ final class AuthorisationViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: AuthorisationRouter!
+    var router: AutoristaionRouter!
     
     let emailTextField = LogInEmailTextField()
     let passwordTextField = LogInPasswordTextField()
@@ -75,21 +75,23 @@ private extension AuthorisationViewController {
         
         NSLayoutConstraint.activate([
             
-            emailTextField.widthAnchor.constraint(equalToConstant: 334),
-            emailTextField.heightAnchor.constraint(equalToConstant: 44),
-            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 150),
+            emailTextField.widthAnchor.constraint(equalToConstant: 335),
+            emailTextField.heightAnchor.constraint(equalToConstant: 50),
+            emailTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             passwordTextField.widthAnchor.constraint(equalToConstant: 334),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 44),
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 45),
+            passwordTextField.heightAnchor.constraint(equalTo: emailTextField.heightAnchor),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
             passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            authSignInButton.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 50),
+            authSignInButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             authSignInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            authSignInButton.widthAnchor.constraint(equalToConstant: 200)
+            authSignInButton.widthAnchor.constraint(equalToConstant: 335),
+            authSignInButton.heightAnchor.constraint(equalToConstant: 50),
+
             
         ])
     }
