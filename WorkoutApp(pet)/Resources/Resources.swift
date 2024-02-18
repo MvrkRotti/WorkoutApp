@@ -37,6 +37,7 @@ enum Resources {
         static let mainLogoFont = UIFont.boldSystemFont(ofSize: 40)
         static let autLabelFont = UIFont.systemFont(ofSize: 15)
         static let registrationLabelFont = UIFont.systemFont(ofSize: 26, weight: .bold)
+        static let cellNameLabelFont = UIFont.systemFont(ofSize: 20, weight: .semibold)
     }
     
     enum Images {

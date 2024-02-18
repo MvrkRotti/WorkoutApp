@@ -8,13 +8,12 @@
 import UIKit
 
 final class HomeScreenViewController: UIViewController {
-    
+    //MARK: - Variables
     private let viewModel: HomeViewModel
     var router: HomeRouter!
-    
     let tableView = UITableView()
     
-    
+    //MARK: - Lifecycle
     init(_ viewModel: HomeViewModel = HomeViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -49,20 +48,6 @@ private extension HomeScreenViewController {
         ])
     }
     
-    
-    func tableViewSettings() {
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        
-        viewModel.exerciseUpdated = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-            
-        }
-    }
-    
     func navigationBarAppearence() {
         navigationItem.title = "Home"
         navigationController?.isNavigationBarHidden = false
@@ -70,6 +55,17 @@ private extension HomeScreenViewController {
         navigationController?.navigationBar.alpha = 0.9
     }
     
+    func tableViewSettings() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.register(ExerciseCell.self, forCellReuseIdentifier: ExerciseCell.identifier)
+
+        viewModel.exerciseUpdated = { [weak self] in
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
+    }
 }
 
 
@@ -80,8 +76,9 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = viewModel.allExercises[indexPath.row].type
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseCell.identifier, for: indexPath) as? ExerciseCell else { fatalError("Unable to dequeue CoinCell in HomeController") }
+        let exercise = viewModel.allExercises[indexPath.row]
+        cell.configure(with: exercise)
         return cell
     }
     

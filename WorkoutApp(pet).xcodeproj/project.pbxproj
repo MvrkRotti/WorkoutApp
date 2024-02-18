@@ -10,6 +10,7 @@
 		CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */; };
 		CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC22B8256C000ACB21C /* NetworkService.swift */; };
 		CE1A8BC52B82644D00ACB21C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* HomeViewModel.swift */; };
+		CE1A8BC72B826BC800ACB21C /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC62B826BC800ACB21C /* ExerciseCell.swift */; };
 		CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */; };
 		CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */; };
 		CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */; };
@@ -60,6 +61,7 @@
 		CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		CE1A8BC22B8256C000ACB21C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE1A8BC42B82644D00ACB21C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CE1A8BC62B826BC800ACB21C /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
 		CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				CEAC7E1C2B82253C00AF05CD /* Navigation */,
 				CED9EB4C2B715A1A0065FE23 /* HomeScreenViewController.swift */,
 				CE1A8BC42B82644D00ACB21C /* HomeViewModel.swift */,
+				CE1A8BC62B826BC800ACB21C /* ExerciseCell.swift */,
 			);
 			path = HomeScreen;
 			sourceTree = "<group>";
@@ -470,6 +473,7 @@
 				CEAC7E132B81F43700AF05CD /* ProfileRouter.swift in Sources */,
 				CED9EB392B6FD5460065FE23 /* EmailTextField.swift in Sources */,
 				CED9EB372B6FD4A20065FE23 /* LastNameTextField.swift in Sources */,
+				CE1A8BC72B826BC800ACB21C /* ExerciseCell.swift in Sources */,
 				CEAC7E192B81F6CE00AF05CD /* TabAssembler.swift in Sources */,
 				CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */,
 				CED9EB6C2B7259DE0065FE23 /* ProgressScreenViewController.swift in Sources */,
