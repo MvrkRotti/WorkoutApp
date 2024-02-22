@@ -1,5 +1,5 @@
 //
-//  LastNameTextField.swift
+//  EmailTextField.swift
 //  WorkoutApp(pet)
 //
 //  Created by Danilius on 04.02.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class LastNameTextField: UITextField {
+final class EmailTextField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,14 +21,14 @@ final class LastNameTextField: UITextField {
     }
 }
 
-private extension LastNameTextField {
+private extension EmailTextField {
     
     func setupAppearence() {
         
         layer.cornerRadius = 15
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
-        placeholder = Resources.TextField.Strings.lastName
-        textColor = Resources.Colors.customWhite
-        backgroundColor = Resources.Colors.customGrey   
+        placeholder = Resources.TextField.Strings.email
+        textColor = Resources.Colors.white
+        backgroundColor = Resources.Colors.customDarkGrey  
     }
 }

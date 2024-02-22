@@ -48,7 +48,7 @@ class WelcomeViewController: UIViewController {
 private extension WelcomeViewController {
     private func setupUI() {
         
-        view.backgroundColor = Resources.Colors.customGrey
+        view.backgroundColor = Resources.Colors.customDarkGrey
         
         view.setupView(mainLogo)
         view.setupView(signUpButton)

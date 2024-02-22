@@ -7,11 +7,10 @@
 
 import UIKit
 
-final class EmailTextField: UITextField {
+final class LogInEmailTextField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupAppearence()
     }
     
@@ -19,16 +18,21 @@ final class EmailTextField: UITextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
+        return CGRect(x: 330, y: 11, width: 20, height: 20)
+    }
 }
 
-private extension EmailTextField {
+private extension LogInEmailTextField {
     
     func setupAppearence() {
         
         layer.cornerRadius = 15
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         placeholder = Resources.TextField.Strings.email
-        textColor = Resources.Colors.customWhite
-        backgroundColor = Resources.Colors.customGrey  
+        textColor = Resources.Colors.white
+        backgroundColor = Resources.Colors.customDarkGrey
+        clearButtonMode = .whileEditing
     }
 }

@@ -1,13 +1,13 @@
 //
-//  SignInLabel.swift
+//  GenderLabel.swift
 //  WorkoutApp(pet)
 //
-//  Created by Danilius on 03.02.2024.
+//  Created by Danilius on 22.02.2024.
 //
 
 import UIKit
 
-final class SignInLabel: UILabel {
+final class GenderLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,13 +21,10 @@ final class SignInLabel: UILabel {
     }
 }
 
-private extension SignInLabel {
+private extension GenderLabel {
     func setupAppearence() {
-        textColor = Resources.Colors.customWhite
-        textAlignment = .left
-        font = Resources.Fonts.autLabelFont
-        text = Resources.autorizedScreen.alreadyHaveAcc
+        textColor = Resources.Colors.black
+        font = Resources.Fonts.profileLabelFont
+        text = "Gender: "
     }
 }
-
-

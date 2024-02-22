@@ -26,11 +26,15 @@ enum Resources {
     }
     
     enum Colors {
-        static let barItemActive = UIColor(hexString: "#007FFF")
         static let customCoral = UIColor(hexString: "#6ADADA")
         static let customRed = UIColor(hexString: "#EE373F")
-        static let customGrey = UIColor(hexString: "#393939")
-        static let customWhite = UIColor(hexString: "#FFFFFF")
+        static let customDarkGrey = UIColor(hexString: "#393939")
+        static let customGray = UIColor(hexString: "#D9D9D9")
+        static let white = UIColor(hexString: "#FFFFFF")
+        static let black = UIColor(hexString: "#000000")
+        static let gradientTopColor = UIColor(hexString: "#007FFF")
+        static let gradientMiddleColor = UIColor(hexString: "#65ACF4")
+        static let GradientBottomColor = UIColor(hexString: "#82EED4")
     }
     
     enum Fonts {
@@ -38,11 +42,14 @@ enum Resources {
         static let autLabelFont = UIFont.systemFont(ofSize: 15)
         static let registrationLabelFont = UIFont.systemFont(ofSize: 26, weight: .bold)
         static let cellNameLabelFont = UIFont.systemFont(ofSize: 20, weight: .semibold)
+        static let profileLabelFont = UIFont.systemFont(ofSize: 22)
+        static let bmiDescriptionFont = UIFont.systemFont(ofSize: 12)
     }
     
     enum Images {
         static let mainLogo = UIImage(named: "mainLogoImage")
         static let firstBackgroundImage = UIImage(named: "backGroundImage")
+        static let cellArrow = UIImage(named: "cellArrow")
     }
     
     enum autorizedScreen {
@@ -57,12 +64,6 @@ enum Resources {
     }
     
     enum TabBar {
-//        enum TabBarIcons {
-//            static let homeIcon = UIImage(named: "homeTabIcon")
-//            static let progressIcon = UIImage(named: "progressTabIcon")
-//            static let notesIcon = UIImage(named: "notesTabIcon")
-//            static let profileIcon = UIImage(named: "porfileTabIcon")
-//        }
         
         static func icon(for tab: Tabs) -> UIImage? {
             switch tab {
@@ -72,12 +73,6 @@ enum Resources {
             case .profile: return UIImage(named: "porfileTabIcon")
             }
         }
-//        enum TabBarHeaders {
-//            static let homeHeader = "Home"
-//            static let progressHeader = "My Progress"
-//            static let notesHeader = "My Notes"
-//            static let profileHeader = "My Profile"
-//        }
         
         static func title(for tab: Tabs) -> String {
             switch tab {

@@ -1,5 +1,5 @@
 //
-//  PasswordTextField.swift
+//  NameTextField.swift
 //  WorkoutApp(pet)
 //
 //  Created by Danilius on 04.02.2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class PasswordTextField: UITextField {
+final class NameTextField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,14 +21,14 @@ final class PasswordTextField: UITextField {
     }
 }
 
-private extension PasswordTextField {
+private extension NameTextField {
     
     func setupAppearence() {
         
         layer.cornerRadius = 15
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
-        placeholder = Resources.TextField.Strings.password
-        textColor = Resources.Colors.customWhite
-        backgroundColor = Resources.Colors.customGrey 
+        placeholder = Resources.TextField.Strings.firstName
+        textColor = Resources.Colors.white
+        backgroundColor = Resources.Colors.customDarkGrey
     }
 }

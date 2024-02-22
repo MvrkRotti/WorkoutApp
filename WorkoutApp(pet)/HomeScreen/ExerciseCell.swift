@@ -25,7 +25,7 @@ final class ExerciseCell: UITableViewCell {
     }()
     private let cellNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Resources.Colors.customGrey
+        label.textColor = Resources.Colors.customDarkGrey
         label.textAlignment = .left
         label.font = Resources.Fonts.cellNameLabelFont
         label.text = "Error"
@@ -35,8 +35,7 @@ final class ExerciseCell: UITableViewCell {
     private let arrowImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = UIImage(named: "cellArrow")
-//        iv.tintColor = .black
+        iv.image = Resources.Images.cellArrow
         return iv
     }()
     
@@ -74,9 +73,7 @@ final class ExerciseCell: UITableViewCell {
             cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
             cellView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.95),
             cellView.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1),
-//            cellView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 8),
-//            cellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
-            
+
             cellNameLabel.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 25),
             cellNameLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
             

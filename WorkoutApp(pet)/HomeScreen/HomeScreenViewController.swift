@@ -51,7 +51,7 @@ private extension HomeScreenViewController {
     func navigationBarAppearence() {
         navigationItem.title = "Home"
         navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.barTintColor = Resources.Colors.customGrey
+        navigationController?.navigationBar.barTintColor = Resources.Colors.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
     }
     

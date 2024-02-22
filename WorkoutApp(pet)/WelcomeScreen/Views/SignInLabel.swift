@@ -1,5 +1,5 @@
 //
-//  RegistrationLabel.swift
+//  SignInLabel.swift
 //  WorkoutApp(pet)
 //
 //  Created by Danilius on 03.02.2024.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-final class RegistrationLabel: UILabel {
+final class SignInLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupAppearence()
+        
     }
     
     @available(*, unavailable)
@@ -21,15 +21,13 @@ final class RegistrationLabel: UILabel {
     }
 }
 
-private extension RegistrationLabel {
-    
+private extension SignInLabel {
     func setupAppearence() {
-        
-        text = Resources.RegistrationScreen.registrationLabel
-        font = Resources.Fonts.registrationLabelFont
+        textColor = Resources.Colors.white
         textAlignment = .left
-        numberOfLines = 0
-        textColor = Resources.Colors.customWhite
-        
+        font = Resources.Fonts.autLabelFont
+        text = Resources.autorizedScreen.alreadyHaveAcc
     }
 }
+
+

@@ -36,6 +36,4 @@ extension UIView {
         addSubview(view)
         view.translatesAutoresizingMaskIntoConstraints = false
     }
-    
-    
 }
