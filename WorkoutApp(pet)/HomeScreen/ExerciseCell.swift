@@ -32,6 +32,14 @@ final class ExerciseCell: UITableViewCell {
         return label
     }()
     
+    private let arrowImage: UIImageView = {
+        let iv = UIImageView()
+        iv.contentMode = .scaleAspectFit
+        iv.image = UIImage(named: "cellArrow")
+//        iv.tintColor = .black
+        return iv
+    }()
+    
     //MARK: - Lifecycle
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -60,6 +68,7 @@ final class ExerciseCell: UITableViewCell {
     private func setupUI() {
         self.setupView(cellView)
         cellView.setupView(cellNameLabel)
+        cellView.setupView(arrowImage)
         
         NSLayoutConstraint.activate([
             cellView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5),
@@ -69,7 +78,11 @@ final class ExerciseCell: UITableViewCell {
 //            cellView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -8),
             
             cellNameLabel.leadingAnchor.constraint(equalTo: cellView.leadingAnchor, constant: 25),
-            cellNameLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor)
+            cellNameLabel.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
+            
+            arrowImage.centerYAnchor.constraint(equalTo: cellView.centerYAnchor),
+            arrowImage.trailingAnchor.constraint(equalTo: cellView.trailingAnchor, constant: -10)
+
         ])
     }
 }

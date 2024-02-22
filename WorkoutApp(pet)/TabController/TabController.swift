@@ -78,7 +78,7 @@ final class TabController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         configureAppearance()
-        switchTo(tab: .home)
+        switchTo(tab: .profile)
     }
 
     required init?(coder: NSCoder) {

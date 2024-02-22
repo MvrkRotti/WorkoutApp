@@ -137,9 +137,17 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		CE1A8BC82B878EB700ACB21C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CEAC7E012B81F27900AF05CD /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE1A8BC82B878EB700ACB21C /* Views */,
 				CEAC7E1F2B82255D00AF05CD /* Navigation */,
 				CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */,
 			);
@@ -201,7 +209,6 @@
 		CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */ = {
 			isa = PBXGroup;
 			children = (
-				CE1A8BBD2B822F1E00ACB21C /* Model */,
 				CE1A8BBA2B822EDB00ACB21C /* NetworkService */,
 				CED9EB142B6E4CE70065FE23 /* Resources */,
 				CED9EB1A2B6E4D6F0065FE23 /* Application */,
@@ -213,6 +220,7 @@
 				CED9EB642B72594B0065FE23 /* ProgressScreen */,
 				CED9EB652B7259560065FE23 /* NotesScreen */,
 				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
+				CE1A8BBD2B822F1E00ACB21C /* Model */,
 				CED9EB0B2B6E4BBB0065FE23 /* Info.plist */,
 			);
 			path = "WorkoutApp(pet)";
