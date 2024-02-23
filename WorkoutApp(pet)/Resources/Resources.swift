@@ -11,12 +11,15 @@ enum Resources {
     
     enum TextField {
         
-        enum Strings {
+        enum PlaceholderString {
             static let firstName = "First Name"
             static let lastName = "Last Name"
             static let email = "Email"
             static let password = "Password"
             static let confirmPassword = "Confirm Password"
+            static let age = "Your Age"
+            static let weight = "Your Weight"
+            static let height = "Your Height"
         }
         
         enum Images {
@@ -68,7 +71,7 @@ enum Resources {
         static func icon(for tab: Tabs) -> UIImage? {
             switch tab {
             case .home: return UIImage(named: "homeTabIcon")
-            case .progress: return UIImage(named: "progressTabIcon")
+//            case .progress: return UIImage(named: "progressTabIcon")
             case .notes: return UIImage(named: "notesTabIcon")
             case .profile: return UIImage(named: "porfileTabIcon")
             }
@@ -77,7 +80,7 @@ enum Resources {
         static func title(for tab: Tabs) -> String {
             switch tab {
             case .home: return "Home"
-            case .progress: return "Progress"
+//            case .progress: return "Progress"
             case .notes: return "Notes"
             case .profile: return "Profile"
             }

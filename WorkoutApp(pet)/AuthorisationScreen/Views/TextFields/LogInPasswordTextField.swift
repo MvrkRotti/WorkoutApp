@@ -32,7 +32,7 @@ private extension LogInPasswordTextField {
         
         layer.cornerRadius = 15
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
-        placeholder = Resources.TextField.Strings.email
+        placeholder = Resources.TextField.PlaceholderString.email
         textColor = Resources.Colors.white
         backgroundColor = Resources.Colors.customDarkGrey
         clearButtonMode = .whileEditing

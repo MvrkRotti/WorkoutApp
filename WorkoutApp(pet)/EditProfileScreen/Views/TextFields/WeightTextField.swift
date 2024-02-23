@@ -1,17 +1,15 @@
 //
-//  PasswordTextField.swift
+//  WeightTextField.swift
 //  WorkoutApp(pet)
 //
-//  Created by Danilius on 04.02.2024.
+//  Created by Danilius on 23.02.2024.
 //
 
 import UIKit
 
-final class PasswordTextField: UITextField {
-    
+final class WeightTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupAppearence()
     }
     
@@ -21,14 +19,12 @@ final class PasswordTextField: UITextField {
     }
 }
 
-private extension PasswordTextField {
-    
+private extension WeightTextField {
     func setupAppearence() {
-        
         layer.cornerRadius = 15
+        placeholder = Resources.TextField.PlaceholderString.weight
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
-        placeholder = Resources.TextField.PlaceholderString.password
         textColor = Resources.Colors.white
-        backgroundColor = Resources.Colors.customDarkGrey 
+        backgroundColor = Resources.Colors.black
     }
 }

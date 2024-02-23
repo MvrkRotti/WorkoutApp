@@ -27,7 +27,7 @@ private extension NameTextField {
         
         layer.cornerRadius = 15
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
-        placeholder = Resources.TextField.Strings.firstName
+        placeholder = Resources.TextField.PlaceholderString.firstName
         textColor = Resources.Colors.white
         backgroundColor = Resources.Colors.customDarkGrey
     }

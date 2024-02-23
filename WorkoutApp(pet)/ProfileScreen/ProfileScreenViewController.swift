@@ -11,6 +11,8 @@ final class ProfileScreenViewController: UIViewController {
     
     //MARK: - Variables
     
+    var router: ProfileRouter!
+    
     private let photoView = ProfilePhotoView(frame: CGRect())
     private let photoLabel = PhotoLabel()
     private let nameLabel = NameLabel()
@@ -41,18 +43,27 @@ final class ProfileScreenViewController: UIViewController {
         setGradientBackground()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+
+    }
+    
 }
 
 private extension ProfileScreenViewController {
     
     func navigationBarAppearence() {
-        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: nil)
+        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonDidTapped))
         
         navigationItem.title = "My Profile"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = Resources.Colors.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationItem.rightBarButtonItem = editButton
+    }
+    
+    @objc func editButtonDidTapped() {
+        navigationController?.pushViewController(EditProfileViewController(), animated: true)
     }
     
     func setupUI() {

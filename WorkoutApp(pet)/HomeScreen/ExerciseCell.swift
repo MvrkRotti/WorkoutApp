@@ -53,7 +53,7 @@ final class ExerciseCell: UITableViewCell {
     public func configure(with exercise: Exercise) {
         self.exercise = exercise
         
-        self.cellNameLabel.text = exercise.type.uppercased()
+        self.cellNameLabel.text = exercise.muscle.uppercased()
     }
     
     //MARK: - PrepareForReuse

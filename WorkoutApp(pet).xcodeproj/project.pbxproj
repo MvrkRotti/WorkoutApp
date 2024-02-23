@@ -20,6 +20,12 @@
 		CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BDC2B87E64E00ACB21C /* HeightLabel.swift */; };
 		CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */; };
 		CE1A8BE12B87E67900ACB21C /* BMIDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */; };
+		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
+		CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */; };
+		CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */; };
+		CE8D50EF2B88E53400A14719 /* AgeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50EE2B88E53400A14719 /* AgeTextField.swift */; };
+		CE8D50F12B88E9EF00A14719 /* WeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F02B88E9EF00A14719 /* WeightTextField.swift */; };
+		CE8D50F32B88EA7400A14719 /* HeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F22B88EA7400A14719 /* HeightTextField.swift */; };
 		CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */; };
 		CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */; };
 		CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */; };
@@ -80,6 +86,12 @@
 		CE1A8BDC2B87E64E00ACB21C /* HeightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightLabel.swift; sourceTree = "<group>"; };
 		CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILabel.swift; sourceTree = "<group>"; };
 		CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIDescriptionLabel.swift; sourceTree = "<group>"; };
+		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenRouter.swift; sourceTree = "<group>"; };
+		CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenAssembler.swift; sourceTree = "<group>"; };
+		CE8D50EE2B88E53400A14719 /* AgeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeTextField.swift; sourceTree = "<group>"; };
+		CE8D50F02B88E9EF00A14719 /* WeightTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTextField.swift; sourceTree = "<group>"; };
+		CE8D50F22B88EA7400A14719 /* HeightTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightTextField.swift; sourceTree = "<group>"; };
 		CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
 		CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -215,6 +227,43 @@
 			path = ProfilePhotoView;
 			sourceTree = "<group>";
 		};
+		CE8D50E22B88939000A14719 /* EditProfileScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D50EA2B88A0B600A14719 /* Views */,
+				CE8D50E52B88984B00A14719 /* Navigation */,
+				CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */,
+			);
+			path = EditProfileScreen;
+			sourceTree = "<group>";
+		};
+		CE8D50E52B88984B00A14719 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */,
+				CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CE8D50EA2B88A0B600A14719 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D50EB2B88A0BD00A14719 /* TextFields */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE8D50EB2B88A0BD00A14719 /* TextFields */ = {
+			isa = PBXGroup;
+			children = (
+				CE8D50EE2B88E53400A14719 /* AgeTextField.swift */,
+				CE8D50F02B88E9EF00A14719 /* WeightTextField.swift */,
+				CE8D50F22B88EA7400A14719 /* HeightTextField.swift */,
+			);
+			path = TextFields;
+			sourceTree = "<group>";
+		};
 		CEAC7E012B81F27900AF05CD /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +340,7 @@
 				CED9EB642B72594B0065FE23 /* ProgressScreen */,
 				CED9EB652B7259560065FE23 /* NotesScreen */,
 				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
+				CE8D50E22B88939000A14719 /* EditProfileScreen */,
 				CE1A8BBD2B822F1E00ACB21C /* Model */,
 				CED9EB0B2B6E4BBB0065FE23 /* Info.plist */,
 			);
@@ -552,6 +602,7 @@
 				CEAC7E152B81F46500AF05CD /* AuthorisationAssembler.swift in Sources */,
 				CED9EB132B6E4CAD0065FE23 /* WelcomeRouter.swift in Sources */,
 				CEAC7E112B81F42900AF05CD /* ProfileAssembler.swift in Sources */,
+				CE8D50EF2B88E53400A14719 /* AgeTextField.swift in Sources */,
 				CE1A8BD72B87E63000ACB21C /* GenderLabel.swift in Sources */,
 				CED9EB272B6E72C80065FE23 /* WelcomeAssembler.swift in Sources */,
 				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
@@ -559,9 +610,11 @@
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
 				CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */,
+				CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */,
 				CED9EB4F2B715A520065FE23 /* RegistrationRouter.swift in Sources */,
 				CED9EB352B6FCC610065FE23 /* NameTextField.swift in Sources */,
 				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
+				CE8D50F32B88EA7400A14719 /* HeightTextField.swift in Sources */,
 				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
 				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
@@ -584,12 +637,15 @@
 				CEAC7E092B81F3ED00AF05CD /* ProgressAssembler.swift in Sources */,
 				CE1A8BD22B87E60200ACB21C /* PhotoLabel.swift in Sources */,
 				CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */,
+				CE8D50F12B88E9EF00A14719 /* WeightTextField.swift in Sources */,
 				CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */,
+				CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */,
 				CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */,
 				CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */,
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
 				CEAC7E0F2B81F41600AF05CD /* NotesRouter.swift in Sources */,
 				CE1A8BD52B87E62500ACB21C /* NameLabel.swift in Sources */,
+				CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */,
 				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,
 				CE1A8BD02B87DC7700ACB21C /* ProfilePhotoView.swift in Sources */,
 			);

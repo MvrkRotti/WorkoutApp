@@ -27,7 +27,7 @@ private extension ConfirmPasswordTextField {
         
         layer.cornerRadius = 15
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
-        placeholder = Resources.TextField.Strings.confirmPassword
+        placeholder = Resources.TextField.PlaceholderString.confirmPassword
         textColor = Resources.Colors.white
         backgroundColor = Resources.Colors.customDarkGrey
     }
