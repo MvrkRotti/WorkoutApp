@@ -57,7 +57,7 @@ private extension ProfileScreenViewController {
         
         navigationItem.title = "My Profile"
         navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.barTintColor = Resources.Colors.customDarkGrey
+        navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationItem.rightBarButtonItem = editButton
     }
@@ -93,11 +93,11 @@ private extension ProfileScreenViewController {
 
 extension ProfileScreenViewController {
     func setGradientBackground() {
-        let topColor = Resources.Colors.gradientTopColor.cgColor
+        let topColor = Resources.CommonColors.gradientTopColor.cgColor
         
-        let middleColor = Resources.Colors.gradientMiddleColor.cgColor
+        let middleColor = Resources.CommonColors.gradientMiddleColor.cgColor
         
-        let bottomColor = Resources.Colors.GradientBottomColor.cgColor
+        let bottomColor = Resources.CommonColors.GradientBottomColor.cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [topColor, middleColor, bottomColor]

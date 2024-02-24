@@ -27,9 +27,9 @@ final class SignUpButton: UIButton {
 private extension SignUpButton {
     func setupAppearence() {
         
-        setTitle(Resources.autorizedScreen.signUp, for: .normal)
+        setTitle(Resources.AutorizedScreenStrings.signUp, for: .normal)
         layer.cornerRadius = 15
-        backgroundColor = Resources.Colors.customCoral
+        backgroundColor = Resources.CommonColors.customCoral
     }
     
     @objc

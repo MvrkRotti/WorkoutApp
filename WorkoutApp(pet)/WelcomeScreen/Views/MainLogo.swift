@@ -24,6 +24,6 @@ final class MainLogo: UIImageView {
 private extension MainLogo {
     func setupAppearence() {
         contentMode = .scaleAspectFit
-        image = Resources.Images.mainLogo
+        image = Resources.CommonImages.mainLogo
     }
 }

@@ -23,8 +23,8 @@ final class WeightLabel: UILabel {
 
 private extension WeightLabel {
     func setupAppearence() {
-        textColor = Resources.Colors.black
-        font = Resources.Fonts.profileLabelFont
+        textColor = Resources.CommonColors.black
+        font = Resources.CommonFonts.profileLabelFont
         text = "Weight: "
     }
 }

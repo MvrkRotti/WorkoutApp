@@ -23,10 +23,10 @@ final class SignInLabel: UILabel {
 
 private extension SignInLabel {
     func setupAppearence() {
-        textColor = Resources.Colors.white
+        textColor = Resources.CommonColors.white
         textAlignment = .left
-        font = Resources.Fonts.autLabelFont
-        text = Resources.autorizedScreen.alreadyHaveAcc
+        font = Resources.CommonFonts.autLabelFont
+        text = Resources.AutorizedScreenStrings.alreadyHaveAcc
     }
 }
 

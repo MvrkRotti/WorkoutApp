@@ -23,8 +23,8 @@ final class GenderLabel: UILabel {
 
 private extension GenderLabel {
     func setupAppearence() {
-        textColor = Resources.Colors.black
-        font = Resources.Fonts.profileLabelFont
+        textColor = Resources.CommonColors.black
+        font = Resources.CommonFonts.profileLabelFont
         text = "Gender: "
     }
 }

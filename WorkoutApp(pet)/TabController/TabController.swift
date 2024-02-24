@@ -93,9 +93,9 @@ final class TabController: UITabBarController {
     }
 
     private func configureAppearance() {
-        tabBar.tintColor = Resources.Colors.customCoral
-        tabBar.unselectedItemTintColor = Resources.Colors.white
-        tabBar.barTintColor = Resources.Colors.customDarkGrey
+        tabBar.tintColor = Resources.CommonColors.customCoral
+        tabBar.unselectedItemTintColor = Resources.CommonColors.white
+        tabBar.barTintColor = Resources.CommonColors.customDarkGrey
         tabBar.layer.masksToBounds = true
         tabBar.alpha = 0.9
 

@@ -23,8 +23,8 @@ final class PhotoLabel: UILabel {
 
 private extension PhotoLabel {
     func setupAppearence() {
-        textColor = Resources.Colors.black
-        font = Resources.Fonts.autLabelFont
+        textColor = Resources.CommonColors.black
+        font = Resources.CommonFonts.autLabelFont
         numberOfLines = 0
         textAlignment = .center
         text = "Your\nPhoto"

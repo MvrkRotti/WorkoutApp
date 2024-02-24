@@ -25,11 +25,11 @@ private extension RegistrationLabel {
     
     func setupAppearence() {
         
-        text = Resources.RegistrationScreen.registrationLabel
-        font = Resources.Fonts.registrationLabelFont
+        text = Resources.RegistrationScreenStrings.registrationLabel
+        font = Resources.CommonFonts.registrationLabelFont
         textAlignment = .left
         numberOfLines = 0
-        textColor = Resources.Colors.white
+        textColor = Resources.CommonColors.white
         
     }
 }

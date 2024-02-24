@@ -27,11 +27,12 @@ final class SignInButton: UIButton {
 private extension SignInButton {
     func setupAppearence() {
         
-        setTitle(Resources.autorizedScreen.signIn, for: .normal)
-        setTitleColor(Resources.Colors.customCoral, for: .normal)
-        let buttonTitleStr = NSMutableAttributedString(string: Resources.autorizedScreen.signIn)
+        setTitle(Resources.AutorizedScreenStrings.signIn, for: .normal)
+        setTitleColor(Resources.CommonColors.customCoral, for: .normal)
+        let buttonTitleStr = NSMutableAttributedString(string: Resources.AutorizedScreenStrings.signIn)
         buttonTitleStr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, buttonTitleStr.length))
         setAttributedTitle(buttonTitleStr, for: .normal)
+
     }
     
     @objc
@@ -42,14 +43,5 @@ private extension SignInButton {
     func setupAction() {
         addTarget(self, action: #selector(signUpDidTapped), for: .touchUpInside)
     }
-    
 }
 
-//private let signInButton: UIButton = {
-//    let button = UIButton()
-//    button.setTitleColor(Resources.Colors.customOrange, for: .normal)
-//    let buttonTitleStr = NSMutableAttributedString(string: Resources.autorizedScreen.signIn)
-//    buttonTitleStr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, buttonTitleStr.length))
-//    button.setAttributedTitle(buttonTitleStr, for: .normal)
-//    return button
-//}()

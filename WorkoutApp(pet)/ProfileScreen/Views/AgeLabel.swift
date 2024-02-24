@@ -23,8 +23,8 @@ final class AgeLabel: UILabel {
 
 private extension AgeLabel {
     func setupAppearence() {
-        textColor = Resources.Colors.black
-        font = Resources.Fonts.profileLabelFont
+        textColor = Resources.CommonColors.black
+        font = Resources.CommonFonts.profileLabelFont
         text = "Age: "
     }
 }

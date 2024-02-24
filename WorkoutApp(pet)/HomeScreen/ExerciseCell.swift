@@ -20,14 +20,14 @@ final class ExerciseCell: UITableViewCell {
     private let cellView: UIView = {
        let view = UIView()
         view.layer.cornerRadius = 15
-        view.backgroundColor = Resources.Colors.customCoral
+        view.backgroundColor = Resources.CommonColors.customCoral
         return view
     }()
     private let cellNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Resources.Colors.customDarkGrey
+        label.textColor = Resources.CommonColors.customDarkGrey
         label.textAlignment = .left
-        label.font = Resources.Fonts.cellNameLabelFont
+        label.font = Resources.CommonFonts.cellNameLabelFont
         label.text = "Error"
         return label
     }()
@@ -35,7 +35,7 @@ final class ExerciseCell: UITableViewCell {
     private let arrowImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = Resources.Images.cellArrow
+        iv.image = Resources.CommonImages.cellArrow
         return iv
     }()
     

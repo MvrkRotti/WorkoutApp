@@ -24,9 +24,9 @@ final class ProfilePhotoView: UIImageView {
 private extension ProfilePhotoView {
     func setupAppearence() {
         contentMode = .scaleAspectFit
-        backgroundColor = Resources.Colors.customGray
+        backgroundColor = Resources.CommonColors.customGray
         layer.borderWidth = 1.5
-        layer.borderColor = Resources.Colors.customDarkGrey.cgColor
+        layer.borderColor = Resources.CommonColors.customDarkGrey.cgColor
         layer.cornerRadius = 140 / 2
     }
 }

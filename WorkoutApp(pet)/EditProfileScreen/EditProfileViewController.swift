@@ -9,16 +9,15 @@ import UIKit
 
 final class EditProfileViewController: UIViewController {
     
-    
-
-
     //MARK: - Variables
     var router: EditProfileScreenRouter!
-    
-    let profilePhoto = ProfilePhotoView(frame: CGRect())
-    let ageTextField = AgeTextField()
-    let weightTextField = WeightTextField()
-    let heightTextField = HeightTextField()
+        
+    private let profilePhoto = ProfilePhotoView(frame: CGRect())
+    private let ageTextField = AgeTextField()
+    private let weightTextField = WeightTextField()
+    private let heightTextField = HeightTextField()
+    private let genderSelector = GenderSegmentController(items: ["Female", "Male"])
+    private let selectPhotoButton = SelectPhotoButton()
     
         //MARK: - UI Components
     
@@ -31,11 +30,10 @@ final class EditProfileViewController: UIViewController {
     }()
     
     //MARK: - Lifecycle
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Resources.Colors.customDarkGrey
+        view.backgroundColor = Resources.CommonColors.customDarkGrey
         navigationBarAppearence()
         setupUI()
         setupLayout()
@@ -54,7 +52,7 @@ extension EditProfileViewController {
 
         navigationItem.title = "Edit profile"
         navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.barTintColor = Resources.Colors.customDarkGrey
+        navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationItem.rightBarButtonItem = editButton
     }
@@ -62,6 +60,8 @@ extension EditProfileViewController {
     func setupUI() {
         view.setupView(profilePhoto)
         view.setupView(profileStack)
+        view.setupView(genderSelector)
+        profilePhoto.setupView(selectPhotoButton)
     }
     
     func setupLayout() {
@@ -82,6 +82,14 @@ extension EditProfileViewController {
             
             profileStack.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 35),
             profileStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            genderSelector.topAnchor.constraint(equalTo: profileStack.bottomAnchor, constant: 15),
+            genderSelector.widthAnchor.constraint(equalTo: profileStack.widthAnchor),
+            genderSelector.heightAnchor.constraint(equalToConstant: 44),
+            genderSelector.centerXAnchor.constraint(equalTo: profileStack.centerXAnchor),
+            
+            selectPhotoButton.centerXAnchor.constraint(equalTo: profilePhoto.centerXAnchor),
+            selectPhotoButton.centerYAnchor.constraint(equalTo: profilePhoto.centerYAnchor),
         ])
     }
 }

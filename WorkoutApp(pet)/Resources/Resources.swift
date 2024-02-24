@@ -28,9 +28,12 @@ enum Resources {
         }
     }
     
-    enum Colors {
+    enum CommonStrings {
+        static let selectPhoto = "Select\nPhoto"
+    }
+    
+    enum CommonColors {
         static let customCoral = UIColor(hexString: "#6ADADA")
-        static let customRed = UIColor(hexString: "#EE373F")
         static let customDarkGrey = UIColor(hexString: "#393939")
         static let customGray = UIColor(hexString: "#D9D9D9")
         static let white = UIColor(hexString: "#FFFFFF")
@@ -40,7 +43,7 @@ enum Resources {
         static let GradientBottomColor = UIColor(hexString: "#82EED4")
     }
     
-    enum Fonts {
+    enum CommonFonts {
         static let mainLogoFont = UIFont.boldSystemFont(ofSize: 40)
         static let autLabelFont = UIFont.systemFont(ofSize: 15)
         static let registrationLabelFont = UIFont.systemFont(ofSize: 26, weight: .bold)
@@ -49,19 +52,19 @@ enum Resources {
         static let bmiDescriptionFont = UIFont.systemFont(ofSize: 12)
     }
     
-    enum Images {
+    enum CommonImages {
         static let mainLogo = UIImage(named: "mainLogoImage")
         static let firstBackgroundImage = UIImage(named: "backGroundImage")
         static let cellArrow = UIImage(named: "cellArrow")
     }
     
-    enum autorizedScreen {
+    enum AutorizedScreenStrings {
         static let signIn = "Sign In"
         static let signUp = "Sign Up"
         static let alreadyHaveAcc = "Already have an account?"
     }
     
-    enum RegistrationScreen {
+    enum RegistrationScreenStrings {
         static let navBarText = "Registration"
         static let registrationLabel = "Create your account"
     }
