@@ -20,14 +20,13 @@ final class LogInEmailTextField: UITextField {
     }
     
     override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: 330, y: 11, width: 20, height: 20)
+        return CGRect(x: 290, y: 15, width: 20, height: 20)
     }
 }
 
 private extension LogInEmailTextField {
     
     func setupAppearence() {
-        
         layer.cornerRadius = 15
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         placeholder = Resources.TextField.PlaceholderString.email
@@ -36,3 +35,4 @@ private extension LogInEmailTextField {
         clearButtonMode = .whileEditing
     }
 }
+

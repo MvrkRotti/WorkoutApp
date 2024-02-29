@@ -11,7 +11,7 @@ struct WelcomeAssembler {
     
     static func buildModule() -> UIViewController {
         
-        let viewController = WelcomeViewController()
+        let viewController = WelcomeViewController(WelcomeRouter())
         let router = WelcomeRouter()
         
         viewController.router = router

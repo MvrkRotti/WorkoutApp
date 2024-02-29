@@ -30,5 +30,28 @@ private extension ConfirmPasswordTextField {
         placeholder = Resources.TextField.PlaceholderString.confirmPassword
         textColor = Resources.CommonColors.white
         backgroundColor = Resources.CommonColors.customDarkGrey
+        textContentType = .password
+        isSecureTextEntry = true
     }
 }
+
+extension RegistrationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case nameTextField:
+            lastNameTextField.becomeFirstResponder()
+        case lastNameTextField:
+            emailTextField.becomeFirstResponder()
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            confirmPasswordTextField.becomeFirstResponder()
+        case confirmPasswordTextField:
+            view.endEditing(true)
+        default:
+            break
+        }
+        return true
+    }
+}
+

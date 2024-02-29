@@ -29,6 +29,6 @@ private extension LastNameTextField {
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         placeholder = Resources.TextField.PlaceholderString.lastName
         textColor = Resources.CommonColors.white
-        backgroundColor = Resources.CommonColors.customDarkGrey   
+        backgroundColor = Resources.CommonColors.customDarkGrey
     }
 }

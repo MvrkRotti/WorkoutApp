@@ -64,7 +64,7 @@
 import UIKit
 
 enum Tabs: Int, CaseIterable {
-    case home
+    case exercises
 //    case progress
     case notes
     case profile
@@ -78,7 +78,7 @@ final class TabController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         configureAppearance()
-        switchTo(tab: .profile)
+        switchTo(tab: .exercises)
     }
 
     required init?(coder: NSCoder) {
@@ -86,8 +86,6 @@ final class TabController: UITabBarController {
         configureAppearance()
     }
     
-    
-
     func switchTo(tab: Tabs) {
         selectedIndex = tab.rawValue
     }
@@ -112,7 +110,7 @@ final class TabController: UITabBarController {
 
     private func getController(for tab: Tabs) -> UIViewController {
         switch tab {
-        case .home: return HomeScreenViewController()
+        case .exercises: return ExerciseScreenViewController()
 //        case .progress: return ProgressScreenViewController()
         case .notes: return NotesScreenViewController()
         case .profile: return ProfileScreenViewController()

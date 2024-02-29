@@ -37,8 +37,8 @@ private extension RegistrationViewController {
     private func navigationBarAppearence() {
         navigationController?.isNavigationBarHidden = false
         title = "Registration"
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationController?.navigationBar.barTintColor = Resources.CommonColors.black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Resources.CommonColors.white]
     }
     
     
@@ -54,8 +54,12 @@ private extension RegistrationViewController {
         view.setupView(passwordTextField)
         view.setupView(confirmPasswordTextField)
         view.setupView(regSighUpButton)
-
-
+        
+        nameTextField.delegate = self
+        lastNameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        confirmPasswordTextField.delegate = self
     }
     
     private func setupActions() {
@@ -106,6 +110,6 @@ private extension RegistrationViewController {
             regSighUpButton.widthAnchor.constraint(equalToConstant: 335),
             regSighUpButton.heightAnchor.constraint(equalToConstant: 50)
         ])
-        
     }
 }
+

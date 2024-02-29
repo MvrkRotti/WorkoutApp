@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class HomeViewModel {
+class ExerciseViewModel {
     
     let networkService = NetworkService()
     var exerciseUpdated: (()->Void)?

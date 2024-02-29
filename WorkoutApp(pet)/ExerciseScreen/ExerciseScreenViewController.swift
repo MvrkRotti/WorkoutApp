@@ -7,14 +7,14 @@
 
 import UIKit
 
-final class HomeScreenViewController: UIViewController {
+final class ExerciseScreenViewController: UIViewController {
     //MARK: - Variables
-    private let viewModel: HomeViewModel
+    private let viewModel: ExerciseViewModel
     var router: HomeRouter!
     let tableView = UITableView()
     
     //MARK: - Lifecycle
-    init(_ viewModel: HomeViewModel = HomeViewModel()) {
+    init(_ viewModel: ExerciseViewModel = ExerciseViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,9 +31,13 @@ final class HomeScreenViewController: UIViewController {
         setupLayout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+            tabBarController?.tabBar.isHidden = false
+        }
+    
 }
 
-private extension HomeScreenViewController {
+private extension ExerciseScreenViewController {
     
     func setupUI() {
         view.setupView(tableView)
@@ -69,7 +73,7 @@ private extension HomeScreenViewController {
 }
 
 
-extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
+extension ExerciseScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.allExercises.count
@@ -88,6 +92,10 @@ extension HomeScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = ExerciseInfoController()
+//        self.navigationController?.pushViewController(vc, animated: true)
+        present(vc, animated: true, completion: nil)
     }
     
     

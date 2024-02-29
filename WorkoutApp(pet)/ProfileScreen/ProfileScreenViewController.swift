@@ -45,9 +45,7 @@ final class ProfileScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
-
     }
-    
 }
 
 private extension ProfileScreenViewController {

@@ -21,7 +21,7 @@ class LogInPasswordTextField: UITextField {
     }
     
     override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: 330, y: 11, width: 20, height: 20)
+        return CGRect(x: 290, y: 15, width: 20, height: 20)
     }
 }
 
@@ -29,13 +29,26 @@ private extension LogInPasswordTextField {
     
     
     func setupAppearence() {
-        
         layer.cornerRadius = 15
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
-        placeholder = Resources.TextField.PlaceholderString.email
+        placeholder = Resources.TextField.PlaceholderString.password
         textColor = Resources.CommonColors.white
         backgroundColor = Resources.CommonColors.customDarkGrey
         clearButtonMode = .whileEditing
         isSecureTextEntry = true
+    }
+}
+
+extension AuthorisationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            view.endEditing(true)
+        default:
+            break
+        }
+        return true
     }
 }

@@ -34,8 +34,8 @@ private extension AuthorisationViewController {
     private func navigationBarAppearence() {
         navigationController?.isNavigationBarHidden = false
         title = "Log In"
-        navigationController?.navigationBar.barTintColor = UIColor.black
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.white]
+        navigationController?.navigationBar.barTintColor = Resources.CommonColors.black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Resources.CommonColors.white]
     }
     
     private func setupUI() {
@@ -48,6 +48,7 @@ private extension AuthorisationViewController {
         emailTextField.addSubview(emailTextFieldImageView)
         emailTextField.leftViewMode = .always
         emailTextField.leftView = emailTextFieldImageView
+        emailTextField.delegate = self
         
         let passwordTextFieldImageView = UIImageView(frame: CGRect(x: 8.0, y: 12.0, width: 20.0, height: 20.0))
         let passImage = Resources.TextField.Images.passLogo
@@ -56,6 +57,7 @@ private extension AuthorisationViewController {
         passwordTextField.addSubview(passwordTextFieldImageView)
         passwordTextField.leftViewMode = .always
         passwordTextField.leftView = passwordTextFieldImageView
+        passwordTextField.delegate = self
     
         view.setupView(emailTextField)
         view.setupView(passwordTextField)
@@ -71,8 +73,6 @@ private extension AuthorisationViewController {
     }
     
     private func setupLayout() {
-        
-        
         NSLayoutConstraint.activate([
             
             emailTextField.widthAnchor.constraint(equalToConstant: 335),
@@ -91,8 +91,7 @@ private extension AuthorisationViewController {
             authSignInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             authSignInButton.widthAnchor.constraint(equalToConstant: 335),
             authSignInButton.heightAnchor.constraint(equalToConstant: 50),
-
-            
         ])
     }
 }
+

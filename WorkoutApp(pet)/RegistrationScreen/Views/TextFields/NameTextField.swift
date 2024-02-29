@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class NameTextField: UITextField {
+final class NameTextField: UITextField, UITextFieldDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,7 +24,7 @@ final class NameTextField: UITextField {
 private extension NameTextField {
     
     func setupAppearence() {
-        
+        delegate = self
         layer.cornerRadius = 15
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         placeholder = Resources.TextField.PlaceholderString.firstName

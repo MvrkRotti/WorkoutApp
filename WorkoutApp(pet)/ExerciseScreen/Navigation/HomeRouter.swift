@@ -10,7 +10,7 @@ import UIKit
 
 final class HomeRouter {
     
-    weak var homeViewController: HomeScreenViewController?
+    weak var homeViewController: ExerciseScreenViewController?
 //
 //    func pushRegistrationScreen() {
 //        homeViewController?.navigationController?.pushViewController(RegistrationViewController(), animated: true)

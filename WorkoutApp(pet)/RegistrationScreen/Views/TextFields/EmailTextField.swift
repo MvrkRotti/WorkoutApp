@@ -29,6 +29,7 @@ private extension EmailTextField {
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         placeholder = Resources.TextField.PlaceholderString.email
         textColor = Resources.CommonColors.white
-        backgroundColor = Resources.CommonColors.customDarkGrey  
+        backgroundColor = Resources.CommonColors.customDarkGrey
+        keyboardType = .emailAddress
     }
 }

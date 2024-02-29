@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
     let mainLogo = MainLogo(frame: CGRect())
     let signInLabel = SignInLabel()
     
-    var router: WelcomeRouter!
+    var router: WelcomeRouter
     
     
     
@@ -32,6 +32,15 @@ class WelcomeViewController: UIViewController {
     
     
     //MARK: - Lifecycle
+    
+    init(_ router: WelcomeRouter) {
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,12 +68,12 @@ private extension WelcomeViewController {
     private func setupActions() {
         signUpButton.signUpTapped = { [weak self] in
             guard let self = self else { return }
-            self.router?.pushRegistrationScreen()
+            self.router.pushRegistrationScreen()
         }
         
         signInButton.signInTapped = { [weak self ] in
             guard let self = self else { return }
-            self.router?.pushAutoristrationScreen()
+            self.router.pushAutoristrationScreen()
         }
         
         

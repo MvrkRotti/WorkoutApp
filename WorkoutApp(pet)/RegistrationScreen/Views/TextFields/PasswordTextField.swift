@@ -29,6 +29,8 @@ private extension PasswordTextField {
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         placeholder = Resources.TextField.PlaceholderString.password
         textColor = Resources.CommonColors.white
-        backgroundColor = Resources.CommonColors.customDarkGrey 
+        backgroundColor = Resources.CommonColors.customDarkGrey
+        textContentType = .password
+        isSecureTextEntry = true
     }
 }

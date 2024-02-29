@@ -73,7 +73,7 @@ enum Resources {
         
         static func icon(for tab: Tabs) -> UIImage? {
             switch tab {
-            case .home: return UIImage(named: "homeTabIcon")
+            case .exercises: return UIImage(named: "ExercisesTabIcon")
 //            case .progress: return UIImage(named: "progressTabIcon")
             case .notes: return UIImage(named: "notesTabIcon")
             case .profile: return UIImage(named: "porfileTabIcon")
@@ -82,7 +82,7 @@ enum Resources {
         
         static func title(for tab: Tabs) -> String {
             switch tab {
-            case .home: return "Home"
+            case .exercises: return "Handbook"
 //            case .progress: return "Progress"
             case .notes: return "Notes"
             case .profile: return "Profile"

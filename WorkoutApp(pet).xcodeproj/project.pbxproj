@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */; };
 		CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC22B8256C000ACB21C /* NetworkService.swift */; };
-		CE1A8BC52B82644D00ACB21C /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* HomeViewModel.swift */; };
+		CE1A8BC52B82644D00ACB21C /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */; };
 		CE1A8BC72B826BC800ACB21C /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC62B826BC800ACB21C /* ExerciseCell.swift */; };
 		CE1A8BD02B87DC7700ACB21C /* ProfilePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BCF2B87DC7700ACB21C /* ProfilePhotoView.swift */; };
 		CE1A8BD22B87E60200ACB21C /* PhotoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BD12B87E60200ACB21C /* PhotoLabel.swift */; };
@@ -28,6 +28,7 @@
 		CE8D50F32B88EA7400A14719 /* HeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F22B88EA7400A14719 /* HeightTextField.swift */; };
 		CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F42B8A35BB00A14719 /* GenderSegmentController.swift */; };
 		CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F62B8A40BD00A14719 /* SelectPhotoButton.swift */; };
+		CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA4EC72B8D09C70004F369 /* ExerciseInfoController.swift */; };
 		CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */; };
 		CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */; };
 		CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */; };
@@ -65,7 +66,7 @@
 		CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */; };
 		CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */; };
 		CED9EB492B7146760065FE23 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB482B7146760065FE23 /* UIView.swift */; };
-		CED9EB4D2B715A1A0065FE23 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4C2B715A1A0065FE23 /* HomeScreenViewController.swift */; };
+		CED9EB4D2B715A1A0065FE23 /* ExerciseScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4C2B715A1A0065FE23 /* ExerciseScreenViewController.swift */; };
 		CED9EB4F2B715A520065FE23 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4E2B715A520065FE23 /* RegistrationRouter.swift */; };
 		CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB512B715A870065FE23 /* RegistrationAssembler.swift */; };
 		CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */; };
@@ -77,7 +78,7 @@
 /* Begin PBXFileReference section */
 		CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		CE1A8BC22B8256C000ACB21C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		CE1A8BC42B82644D00ACB21C /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
 		CE1A8BC62B826BC800ACB21C /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
 		CE1A8BCF2B87DC7700ACB21C /* ProfilePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoView.swift; sourceTree = "<group>"; };
 		CE1A8BD12B87E60200ACB21C /* PhotoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLabel.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		CE8D50F22B88EA7400A14719 /* HeightTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightTextField.swift; sourceTree = "<group>"; };
 		CE8D50F42B8A35BB00A14719 /* GenderSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSegmentController.swift; sourceTree = "<group>"; };
 		CE8D50F62B8A40BD00A14719 /* SelectPhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
+		CEAA4EC72B8D09C70004F369 /* ExerciseInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoController.swift; sourceTree = "<group>"; };
 		CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
 		CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
@@ -135,7 +137,7 @@
 		CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInEmailTextField.swift; sourceTree = "<group>"; };
 		CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPasswordTextField.swift; sourceTree = "<group>"; };
 		CED9EB482B7146760065FE23 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		CED9EB4C2B715A1A0065FE23 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		CED9EB4C2B715A1A0065FE23 /* ExerciseScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseScreenViewController.swift; sourceTree = "<group>"; };
 		CED9EB4E2B715A520065FE23 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		CED9EB512B715A870065FE23 /* RegistrationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembler.swift; sourceTree = "<group>"; };
 		CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInButton.swift; sourceTree = "<group>"; };
@@ -270,6 +272,14 @@
 			path = TextFields;
 			sourceTree = "<group>";
 		};
+		CEAA4EC62B8CFBCD0004F369 /* ExerciseInfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CEAA4EC72B8D09C70004F369 /* ExerciseInfoController.swift */,
+			);
+			path = ExerciseInfoScreen;
+			sourceTree = "<group>";
+		};
 		CEAC7E012B81F27900AF05CD /* ProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,7 +352,8 @@
 				CED9EB202B6E4E480065FE23 /* RegistrationScreen */,
 				CED9EB3E2B70112E0065FE23 /* AuthorisationScreen */,
 				CED9EB612B7258B50065FE23 /* TabController */,
-				CED9EB4B2B7159EC0065FE23 /* HomeScreen */,
+				CED9EB4B2B7159EC0065FE23 /* ExerciseScreen */,
+				CEAA4EC62B8CFBCD0004F369 /* ExerciseInfoScreen */,
 				CED9EB642B72594B0065FE23 /* ProgressScreen */,
 				CED9EB652B7259560065FE23 /* NotesScreen */,
 				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
@@ -477,15 +488,15 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		CED9EB4B2B7159EC0065FE23 /* HomeScreen */ = {
+		CED9EB4B2B7159EC0065FE23 /* ExerciseScreen */ = {
 			isa = PBXGroup;
 			children = (
 				CEAC7E1C2B82253C00AF05CD /* Navigation */,
-				CED9EB4C2B715A1A0065FE23 /* HomeScreenViewController.swift */,
-				CE1A8BC42B82644D00ACB21C /* HomeViewModel.swift */,
+				CED9EB4C2B715A1A0065FE23 /* ExerciseScreenViewController.swift */,
+				CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */,
 				CE1A8BC62B826BC800ACB21C /* ExerciseCell.swift */,
 			);
-			path = HomeScreen;
+			path = ExerciseScreen;
 			sourceTree = "<group>";
 		};
 		CED9EB532B715A9D0065FE23 /* Navigation */ = {
@@ -624,6 +635,7 @@
 				CE8D50F32B88EA7400A14719 /* HeightTextField.swift in Sources */,
 				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
+				CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */,
 				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
 				CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */,
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
@@ -632,14 +644,14 @@
 				CED9EB3D2B700CF30065FE23 /* ConfirmPasswordTextField.swift in Sources */,
 				CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */,
 				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
-				CE1A8BC52B82644D00ACB21C /* HomeViewModel.swift in Sources */,
+				CE1A8BC52B82644D00ACB21C /* ExerciseViewModel.swift in Sources */,
 				CE1A8BDB2B87E64500ACB21C /* WeightLabel.swift in Sources */,
 				CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */,
 				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
 				CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
 				CEAC7E0B2B81F3FD00AF05CD /* ProgressRouter.swift in Sources */,
-				CED9EB4D2B715A1A0065FE23 /* HomeScreenViewController.swift in Sources */,
+				CED9EB4D2B715A1A0065FE23 /* ExerciseScreenViewController.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
 				CEAC7E092B81F3ED00AF05CD /* ProgressAssembler.swift in Sources */,

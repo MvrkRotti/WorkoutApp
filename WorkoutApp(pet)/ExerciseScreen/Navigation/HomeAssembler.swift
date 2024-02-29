@@ -12,7 +12,7 @@ struct HomeAssembler {
     
     static func buildModule() -> UIViewController {
         
-        let viewController = HomeScreenViewController()
+        let viewController = ExerciseScreenViewController()
         let router = HomeRouter()
         
         viewController.router = router
