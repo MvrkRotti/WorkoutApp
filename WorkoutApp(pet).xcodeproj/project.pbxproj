@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE00CCDA2B922DAB001E1E8B /* ExerciseNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCD92B922DAB001E1E8B /* ExerciseNameLabel.swift */; };
+		CE00CCDC2B922DB7001E1E8B /* ExerciseTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCDB2B922DB7001E1E8B /* ExerciseTypeLabel.swift */; };
+		CE00CCDE2B922DC8001E1E8B /* EquipmentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCDD2B922DC8001E1E8B /* EquipmentLabel.swift */; };
+		CE00CCE02B922DDA001E1E8B /* DifficultyLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCDF2B922DDA001E1E8B /* DifficultyLabel.swift */; };
+		CE00CCE22B922DE6001E1E8B /* InstructionsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCE12B922DE6001E1E8B /* InstructionsLabel.swift */; };
+		CE00CCE42B9232C1001E1E8B /* ExerciseInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCE32B9232C1001E1E8B /* ExerciseInfoViewModel.swift */; };
+		CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCE52B923763001E1E8B /* MuscleLabel.swift */; };
 		CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */; };
 		CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC22B8256C000ACB21C /* NetworkService.swift */; };
 		CE1A8BC52B82644D00ACB21C /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */; };
@@ -76,6 +83,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CE00CCD92B922DAB001E1E8B /* ExerciseNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNameLabel.swift; sourceTree = "<group>"; };
+		CE00CCDB2B922DB7001E1E8B /* ExerciseTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTypeLabel.swift; sourceTree = "<group>"; };
+		CE00CCDD2B922DC8001E1E8B /* EquipmentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentLabel.swift; sourceTree = "<group>"; };
+		CE00CCDF2B922DDA001E1E8B /* DifficultyLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DifficultyLabel.swift; sourceTree = "<group>"; };
+		CE00CCE12B922DE6001E1E8B /* InstructionsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsLabel.swift; sourceTree = "<group>"; };
+		CE00CCE32B9232C1001E1E8B /* ExerciseInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoViewModel.swift; sourceTree = "<group>"; };
+		CE00CCE52B923763001E1E8B /* MuscleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleLabel.swift; sourceTree = "<group>"; };
 		CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		CE1A8BC22B8256C000ACB21C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +171,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE00CCD82B922D8D001E1E8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE00CCD92B922DAB001E1E8B /* ExerciseNameLabel.swift */,
+				CE00CCDB2B922DB7001E1E8B /* ExerciseTypeLabel.swift */,
+				CE00CCE52B923763001E1E8B /* MuscleLabel.swift */,
+				CE00CCDD2B922DC8001E1E8B /* EquipmentLabel.swift */,
+				CE00CCDF2B922DDA001E1E8B /* DifficultyLabel.swift */,
+				CE00CCE12B922DE6001E1E8B /* InstructionsLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		CE1A8BBA2B822EDB00ACB21C /* NetworkService */ = {
 			isa = PBXGroup;
 			children = (
@@ -275,7 +302,9 @@
 		CEAA4EC62B8CFBCD0004F369 /* ExerciseInfoScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE00CCD82B922D8D001E1E8B /* Views */,
 				CEAA4EC72B8D09C70004F369 /* ExerciseInfoController.swift */,
+				CE00CCE32B9232C1001E1E8B /* ExerciseInfoViewModel.swift */,
 			);
 			path = ExerciseInfoScreen;
 			sourceTree = "<group>";
@@ -604,6 +633,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE00CCE22B922DE6001E1E8B /* InstructionsLabel.swift in Sources */,
 				CEAC7E132B81F43700AF05CD /* ProfileRouter.swift in Sources */,
 				CED9EB392B6FD5460065FE23 /* EmailTextField.swift in Sources */,
 				CED9EB372B6FD4A20065FE23 /* LastNameTextField.swift in Sources */,
@@ -618,6 +648,7 @@
 				CEAC7E172B81F47100AF05CD /* AutoristaionRouter.swift in Sources */,
 				CED9EB3B2B700CD20065FE23 /* PasswordTextField.swift in Sources */,
 				CEAC7E152B81F46500AF05CD /* AuthorisationAssembler.swift in Sources */,
+				CE00CCDC2B922DB7001E1E8B /* ExerciseTypeLabel.swift in Sources */,
 				CED9EB132B6E4CAD0065FE23 /* WelcomeRouter.swift in Sources */,
 				CEAC7E112B81F42900AF05CD /* ProfileAssembler.swift in Sources */,
 				CE8D50EF2B88E53400A14719 /* AgeTextField.swift in Sources */,
@@ -626,6 +657,7 @@
 				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
+				CE00CCE02B922DDA001E1E8B /* DifficultyLabel.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
 				CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */,
 				CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */,
@@ -635,6 +667,7 @@
 				CE8D50F32B88EA7400A14719 /* HeightTextField.swift in Sources */,
 				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
+				CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */,
 				CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */,
 				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
 				CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */,
@@ -649,6 +682,7 @@
 				CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */,
 				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
 				CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */,
+				CE00CCE42B9232C1001E1E8B /* ExerciseInfoViewModel.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
 				CEAC7E0B2B81F3FD00AF05CD /* ProgressRouter.swift in Sources */,
 				CED9EB4D2B715A1A0065FE23 /* ExerciseScreenViewController.swift in Sources */,
@@ -658,12 +692,14 @@
 				CE1A8BD22B87E60200ACB21C /* PhotoLabel.swift in Sources */,
 				CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */,
 				CE8D50F12B88E9EF00A14719 /* WeightTextField.swift in Sources */,
+				CE00CCDA2B922DAB001E1E8B /* ExerciseNameLabel.swift in Sources */,
 				CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */,
 				CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */,
 				CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */,
 				CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */,
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
 				CEAC7E0F2B81F41600AF05CD /* NotesRouter.swift in Sources */,
+				CE00CCDE2B922DC8001E1E8B /* EquipmentLabel.swift in Sources */,
 				CE1A8BD52B87E62500ACB21C /* NameLabel.swift in Sources */,
 				CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */,
 				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,

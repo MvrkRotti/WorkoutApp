@@ -92,10 +92,12 @@ extension ExerciseScreenViewController: UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let exercise = viewModel.allExercises[indexPath.row]
         
-        let vc = ExerciseInfoController()
+        let viewModel = ExerciseInfoViewModel(exercise)
+        let viewController = ExerciseInfoController(viewModel)
 //        self.navigationController?.pushViewController(vc, animated: true)
-        present(vc, animated: true, completion: nil)
+        present(viewController, animated: true, completion: nil)
     }
     
     
