@@ -56,6 +56,7 @@ final class ExerciseInfoController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = Resources.CommonColors.black
         setupUI()
+        setupLayout()
         
         nameLabel.text = viewModel.nameLabel
         typeLabel.text = viewModel.typeLabel
@@ -77,7 +78,9 @@ private extension ExerciseInfoController {
         scrollView.setupView(nameLabel)
         scrollView.setupView(exerciseInfoStack)
         
-        
+    }
+    
+    func setupLayout() {
         NSLayoutConstraint.activate([
             scrollView.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor),
             scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

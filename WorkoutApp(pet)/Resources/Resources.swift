@@ -40,7 +40,7 @@ enum Resources {
         static let black = UIColor(hexString: "#000000")
         static let gradientTopColor = UIColor(hexString: "#007FFF")
         static let gradientMiddleColor = UIColor(hexString: "#65ACF4")
-        static let GradientBottomColor = UIColor(hexString: "#82EED4")
+        static let gradientBottomColor = UIColor(hexString: "#82EED4")
     }
     
     enum CommonFonts {
@@ -56,6 +56,8 @@ enum Resources {
         static let mainLogo = UIImage(named: "mainLogoImage")
         static let firstBackgroundImage = UIImage(named: "backGroundImage")
         static let cellArrow = UIImage(named: "cellArrow")
+        static let trainNotesBackgoundImage = UIImage(named: "trainNotesBG")
+        static let foodNotesBackgoundImage = UIImage(named: "foodNotesBG")
     }
     
     enum AutorizedScreenStrings {

@@ -78,7 +78,7 @@ final class TabController: UITabBarController {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
 
         configureAppearance()
-        switchTo(tab: .exercises)
+        switchTo(tab: .notes)
     }
 
     required init?(coder: NSCoder) {

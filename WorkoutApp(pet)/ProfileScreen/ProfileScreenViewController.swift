@@ -95,7 +95,7 @@ extension ProfileScreenViewController {
         
         let middleColor = Resources.CommonColors.gradientMiddleColor.cgColor
         
-        let bottomColor = Resources.CommonColors.GradientBottomColor.cgColor
+        let bottomColor = Resources.CommonColors.gradientBottomColor.cgColor
         
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [topColor, middleColor, bottomColor]
