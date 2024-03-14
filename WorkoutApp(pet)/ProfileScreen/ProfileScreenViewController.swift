@@ -52,6 +52,7 @@ private extension ProfileScreenViewController {
     
     func navigationBarAppearence() {
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonDidTapped))
+
         
         navigationItem.title = "My Profile"
         navigationController?.isNavigationBarHidden = false
@@ -63,6 +64,7 @@ private extension ProfileScreenViewController {
     @objc func editButtonDidTapped() {
         navigationController?.pushViewController(EditProfileViewController(), animated: true)
     }
+    
     
     func setupUI() {
         

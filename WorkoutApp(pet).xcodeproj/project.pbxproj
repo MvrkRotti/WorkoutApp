@@ -15,8 +15,15 @@
 		CE00CCE42B9232C1001E1E8B /* ExerciseInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCE32B9232C1001E1E8B /* ExerciseInfoViewModel.swift */; };
 		CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCE52B923763001E1E8B /* MuscleLabel.swift */; };
 		CE00CCE92B974AC4001E1E8B /* TrainNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCE82B974AC4001E1E8B /* TrainNotesView.swift */; };
-		CE00CCEB2B974ACD001E1E8B /* FoodNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEA2B974ACD001E1E8B /* FoodNotesView.swift */; };
-		CE00CCED2B977C70001E1E8B /* TrainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEC2B977C70001E1E8B /* TrainTableView.swift */; };
+		CE00CCED2B977C70001E1E8B /* TrainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEC2B977C70001E1E8B /* TrainCollectionView.swift */; };
+		CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */; };
+		CE00CCF22B98E0A4001E1E8B /* TrainViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */; };
+		CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */; };
+		CE0ED7362B9C60AF009340D0 /* FoodNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED7352B9C60AF009340D0 /* FoodNotesInfoViewController.swift */; };
+		CE0ED7652BA0D3CB009340D0 /* FoodNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED7642BA0D3CB009340D0 /* FoodNotesView.swift */; };
+		CE0ED7672BA0D3D8009340D0 /* FoodViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED7662BA0D3D8009340D0 /* FoodViewLabel.swift */; };
+		CE0ED7692BA0D3EA009340D0 /* FoodCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED7682BA0D3EA009340D0 /* FoodCollectionView.swift */; };
+		CE0ED76B2BA0D403009340D0 /* FoodNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED76A2BA0D403009340D0 /* FoodNoteCell.swift */; };
 		CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */; };
 		CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC22B8256C000ACB21C /* NetworkService.swift */; };
 		CE1A8BC52B82644D00ACB21C /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */; };
@@ -94,8 +101,15 @@
 		CE00CCE32B9232C1001E1E8B /* ExerciseInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoViewModel.swift; sourceTree = "<group>"; };
 		CE00CCE52B923763001E1E8B /* MuscleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleLabel.swift; sourceTree = "<group>"; };
 		CE00CCE82B974AC4001E1E8B /* TrainNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesView.swift; sourceTree = "<group>"; };
-		CE00CCEA2B974ACD001E1E8B /* FoodNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNotesView.swift; sourceTree = "<group>"; };
-		CE00CCEC2B977C70001E1E8B /* TrainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainTableView.swift; sourceTree = "<group>"; };
+		CE00CCEC2B977C70001E1E8B /* TrainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCollectionView.swift; sourceTree = "<group>"; };
+		CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNoteCell.swift; sourceTree = "<group>"; };
+		CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewLabel.swift; sourceTree = "<group>"; };
+		CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesInfoViewController.swift; sourceTree = "<group>"; };
+		CE0ED7352B9C60AF009340D0 /* FoodNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNotesInfoViewController.swift; sourceTree = "<group>"; };
+		CE0ED7642BA0D3CB009340D0 /* FoodNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNotesView.swift; sourceTree = "<group>"; };
+		CE0ED7662BA0D3D8009340D0 /* FoodViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewLabel.swift; sourceTree = "<group>"; };
+		CE0ED7682BA0D3EA009340D0 /* FoodCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCollectionView.swift; sourceTree = "<group>"; };
+		CE0ED76A2BA0D403009340D0 /* FoodNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNoteCell.swift; sourceTree = "<group>"; };
 		CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		CE1A8BC22B8256C000ACB21C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
@@ -193,11 +207,41 @@
 		CE00CCE72B974AAD001E1E8B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE00CCE82B974AC4001E1E8B /* TrainNotesView.swift */,
-				CE00CCEA2B974ACD001E1E8B /* FoodNotesView.swift */,
-				CE00CCEC2B977C70001E1E8B /* TrainTableView.swift */,
+				CE00CCF02B98E06B001E1E8B /* TrainNotesView */,
+				CE0ED7632BA0D394009340D0 /* FoodNotesView */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CE00CCF02B98E06B001E1E8B /* TrainNotesView */ = {
+			isa = PBXGroup;
+			children = (
+				CE00CCE82B974AC4001E1E8B /* TrainNotesView.swift */,
+				CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */,
+				CE00CCEC2B977C70001E1E8B /* TrainCollectionView.swift */,
+				CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */,
+			);
+			path = TrainNotesView;
+			sourceTree = "<group>";
+		};
+		CE00CCF42B9AF745001E1E8B /* NotesInfoScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */,
+				CE0ED7352B9C60AF009340D0 /* FoodNotesInfoViewController.swift */,
+			);
+			path = NotesInfoScreen;
+			sourceTree = "<group>";
+		};
+		CE0ED7632BA0D394009340D0 /* FoodNotesView */ = {
+			isa = PBXGroup;
+			children = (
+				CE0ED7642BA0D3CB009340D0 /* FoodNotesView.swift */,
+				CE0ED7662BA0D3D8009340D0 /* FoodViewLabel.swift */,
+				CE0ED7682BA0D3EA009340D0 /* FoodCollectionView.swift */,
+				CE0ED76A2BA0D403009340D0 /* FoodNoteCell.swift */,
+			);
+			path = FoodNotesView;
 			sourceTree = "<group>";
 		};
 		CE1A8BBA2B822EDB00ACB21C /* NetworkService */ = {
@@ -401,6 +445,7 @@
 				CEAA4EC62B8CFBCD0004F369 /* ExerciseInfoScreen */,
 				CED9EB642B72594B0065FE23 /* ProgressScreen */,
 				CED9EB652B7259560065FE23 /* NotesScreen */,
+				CE00CCF42B9AF745001E1E8B /* NotesInfoScreen */,
 				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
 				CE8D50E22B88939000A14719 /* EditProfileScreen */,
 				CE1A8BBD2B822F1E00ACB21C /* Model */,
@@ -650,7 +695,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE00CCF22B98E0A4001E1E8B /* TrainViewLabel.swift in Sources */,
+				CE0ED7362B9C60AF009340D0 /* FoodNotesInfoViewController.swift in Sources */,
 				CE00CCE22B922DE6001E1E8B /* InstructionsLabel.swift in Sources */,
+				CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */,
 				CEAC7E132B81F43700AF05CD /* ProfileRouter.swift in Sources */,
 				CED9EB392B6FD5460065FE23 /* EmailTextField.swift in Sources */,
 				CED9EB372B6FD4A20065FE23 /* LastNameTextField.swift in Sources */,
@@ -669,7 +717,6 @@
 				CED9EB132B6E4CAD0065FE23 /* WelcomeRouter.swift in Sources */,
 				CEAC7E112B81F42900AF05CD /* ProfileAssembler.swift in Sources */,
 				CE8D50EF2B88E53400A14719 /* AgeTextField.swift in Sources */,
-				CE00CCEB2B974ACD001E1E8B /* FoodNotesView.swift in Sources */,
 				CE1A8BD72B87E63000ACB21C /* GenderLabel.swift in Sources */,
 				CED9EB272B6E72C80065FE23 /* WelcomeAssembler.swift in Sources */,
 				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
@@ -684,6 +731,7 @@
 				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
 				CE8D50F32B88EA7400A14719 /* HeightTextField.swift in Sources */,
 				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
+				CE0ED7652BA0D3CB009340D0 /* FoodNotesView.swift in Sources */,
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
 				CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */,
 				CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */,
@@ -691,22 +739,26 @@
 				CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */,
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
 				CEAC7E0D2B81F40D00AF05CD /* NotesAssembler.swift in Sources */,
+				CE0ED76B2BA0D403009340D0 /* FoodNoteCell.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
 				CED9EB3D2B700CF30065FE23 /* ConfirmPasswordTextField.swift in Sources */,
 				CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */,
 				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
 				CE1A8BC52B82644D00ACB21C /* ExerciseViewModel.swift in Sources */,
 				CE1A8BDB2B87E64500ACB21C /* WeightLabel.swift in Sources */,
+				CE0ED7692BA0D3EA009340D0 /* FoodCollectionView.swift in Sources */,
 				CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */,
+				CE0ED7672BA0D3D8009340D0 /* FoodViewLabel.swift in Sources */,
 				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
 				CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */,
 				CE00CCE42B9232C1001E1E8B /* ExerciseInfoViewModel.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
 				CEAC7E0B2B81F3FD00AF05CD /* ProgressRouter.swift in Sources */,
+				CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */,
 				CED9EB4D2B715A1A0065FE23 /* ExerciseScreenViewController.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
-				CE00CCED2B977C70001E1E8B /* TrainTableView.swift in Sources */,
+				CE00CCED2B977C70001E1E8B /* TrainCollectionView.swift in Sources */,
 				CEAC7E092B81F3ED00AF05CD /* ProgressAssembler.swift in Sources */,
 				CE1A8BD22B87E60200ACB21C /* PhotoLabel.swift in Sources */,
 				CE00CCE92B974AC4001E1E8B /* TrainNotesView.swift in Sources */,
