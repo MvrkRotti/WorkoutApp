@@ -10,32 +10,16 @@ import UIKit
 final class NotesScreenViewController: UIViewController {
     //MARK: - Variables
     
-    let trainNote = ["1 DAY: Chest and triceps",
-                     "2 DAY: Back and biceps",
-                     "3 DAY: Legs and shoulders",
-                     "Home: Yoga"]
+    private let trainNote = [
+        "1 DAY:": "Chest and triceps",
+        "2 DAY:": "Back and biceps",
+        "3 DAY:": "Legs and shoulders",
+        "Home:": "Yoga"].sorted(by: <)
     
-    let foodNote = ["Breakfast", "lunch", "Snack", "Dinner"]
+    private let segmentedController = TrainSegmentedController(items: ["Male", "Female"])
     
-    private let trainView = TrainNotesView()
     private let trainViewLabel = TrainViewLabel()
     private let trainCollectionView = TrainCollectionView()
-    
-    private let foodView = FoodNotesView()
-    private let foodViewLabel = FoodViewLabel()
-    private let foodCollectionView = FoodCollectionView()
-    
-    
-    //MARK: - UIElements
-    
-    private lazy var viewsStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [trainView, foodView])
-        stack.axis = .vertical
-        stack.spacing = 15
-        //        stack.alignment = .center
-        stack.distribution = .fillEqually
-        return stack
-    }()
     
     //MARK: - Lifecycle
     
@@ -48,30 +32,16 @@ final class NotesScreenViewController: UIViewController {
     }
     
 }
+//MARK: - NavBar appearence
 
 extension NotesScreenViewController {
     
     func navigationBarAppearence() {
-        navigationItem.title = "My Notes"
+        //        navigationItem.title = "My Notes"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
-    }
-    //MARK: - UI Setup
-    
-    func setupUI() {
-        view.backgroundColor = Resources.CommonColors.customDarkGrey
-        trainCollectionView.backgroundColor = UIColor.clear
-        foodCollectionView.backgroundColor = UIColor.clear
-        
-        view.setupView(viewsStack)
-        
-        trainView.setupView(trainViewLabel)
-        trainView.setupView(trainCollectionView)
-        
-        foodView.setupView(foodViewLabel)
-        foodView.setupView(foodCollectionView)
-        
+        navigationItem.titleView = segmentedController
     }
     
     //MARK: - Set Delegates
@@ -79,75 +49,53 @@ extension NotesScreenViewController {
     private func setDelegates() {
         trainCollectionView.delegate = self
         trainCollectionView.dataSource = self
+    }
+    //MARK: - UI Setup
+    
+    func setupUI() {
+        view.backgroundColor = UIColor(
+            patternImage: UIImage(named: "backGroundImage")!)
         
-        foodCollectionView.delegate = self
-        foodCollectionView.dataSource = self
+        view.setupView(trainCollectionView)
+        trainCollectionView.setupView(trainViewLabel)
+        
     }
     
     func setupLayout() {
-        NSLayoutConstraint.activate([
+        NSLayoutConstraint.activate([            
+            trainCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            trainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            trainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            trainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
-            viewsStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
-            viewsStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            viewsStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            viewsStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            
-            trainViewLabel.topAnchor.constraint(equalTo: trainView.topAnchor, constant: 10),
-            trainViewLabel.leadingAnchor.constraint(equalTo: trainView.leadingAnchor, constant: 20),
-            
-            trainCollectionView.topAnchor.constraint(equalTo: trainViewLabel.bottomAnchor),
-            trainCollectionView.leadingAnchor.constraint(equalTo: trainView.leadingAnchor),
-            trainCollectionView.trailingAnchor.constraint(equalTo: trainView.trailingAnchor),
-            trainCollectionView.bottomAnchor.constraint(equalTo: trainView.bottomAnchor, constant: -10),
-            
-            foodViewLabel.topAnchor.constraint(equalTo: foodView.topAnchor, constant: 10),
-            foodViewLabel.leadingAnchor.constraint(equalTo: foodView.leadingAnchor, constant: 20),
-            
-            foodCollectionView.topAnchor.constraint(equalTo: foodViewLabel.bottomAnchor),
-            foodCollectionView.leadingAnchor.constraint(equalTo: foodView.leadingAnchor),
-            foodCollectionView.trailingAnchor.constraint(equalTo: foodView.trailingAnchor),
-            foodCollectionView.bottomAnchor.constraint(equalTo: foodView.bottomAnchor, constant: -10),
+            trainViewLabel.topAnchor.constraint(equalTo: trainCollectionView.topAnchor, constant: 15),
+            trainViewLabel.leadingAnchor.constraint(equalTo: trainCollectionView.leadingAnchor, constant: 20)
         ])
     }
 }
 
+//MARK: - UICollectionView Delegate and Data Source
+
 extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == trainCollectionView {
-            return trainNote.count
-        } else {
-            return foodNote.count
-        }
+        return trainNote.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == trainCollectionView {
-            guard let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: TrainNoteCell.identifier,
-                    for: indexPath) as? TrainNoteCell
-            else { fatalError("Failed to dequeue CustomCollectionViewCell in viewController")
-            }
-            cell.layer.cornerRadius = 15
-            cell.layer.masksToBounds = true
-            let item = self.trainNote[indexPath.row]
-            cell.configure(with: item)
-            
-            return cell
-            
-        } else {
-            
-            guard let cell = collectionView.dequeueReusableCell(
-                    withReuseIdentifier: FoodNoteCell.identifier,
-                    for: indexPath) as? FoodNoteCell
-            else { fatalError("Failed to dequeue CustomCollectionViewCell in viewController")
-            }
-            cell.layer.cornerRadius = 15
-            cell.layer.masksToBounds = true
-            let item = self.foodNote[indexPath.row]
-            cell.configure(with: item)
-            
-            return cell
+        guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: TrainNoteCell.identifier,
+                for: indexPath) as? TrainNoteCell
+        else { fatalError("Failed to dequeue CustomCollectionViewCell in viewController")
         }
+        cell.layer.cornerRadius = 15
+        cell.layer.masksToBounds = true
+        let day = String(Array(trainNote)[indexPath.row].key)
+        let name = String(Array(trainNote)[indexPath.row].value)
+        cell.configure(with: day, and: name)
+        cell.contentView.layer.cornerRadius = 15
+        
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -158,9 +106,10 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
 
 extension NotesScreenViewController: UICollectionViewDelegateFlowLayout {
     
+    //Setup size for cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let widthSize = (trainView.frame.width) - 40
-        let heightSize = (trainView.frame.height/7)
+        let widthSize = (view.frame.width) - 40
+        let heightSize = (view.frame.height/6)
         
         return CGSize(width: widthSize, height: heightSize)
     }
@@ -170,13 +119,9 @@ extension NotesScreenViewController: UICollectionViewDelegateFlowLayout {
         return 15
     }
     
-    //    //Horizontal spacing
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-    //        return 20
-    //    }
-    
+    //Setup header space
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: self.trainView.frame.width, height: 10)
+        return CGSize(width: self.view.frame.width, height: 50)
     }
 }
 

@@ -18,9 +18,19 @@ final class TrainNoteCell: UICollectionViewCell {
     
     private let trainDayLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Resources.CommonColors.black
+        label.textColor = .black
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 17)
+        label.font = .systemFont(ofSize: 25)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private let nameOfTrainLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.textAlignment = .center
+        label.font = .systemFont(ofSize: 30, weight: .bold)
+        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
@@ -42,26 +52,34 @@ final class TrainNoteCell: UICollectionViewCell {
     }
     //MARK: - Cell Configure
     
-    public func configure(with text: String) {
-        self.trainDayLabel.text = text
+    public func configure(with dayText: String, and nameText: String) {
+        self.trainDayLabel.text = dayText
+        self.nameOfTrainLabel.text = nameText
         self.setupUI()
     }
+    
+    
     
     override func prepareForReuse() {
         super.prepareForReuse()
         self.trainDayLabel.text = nil
+        self.nameOfTrainLabel.text = nil
     }
+    
 }
-
-    //MARK: - UI Setup
+//MARK: - UI Setup
 private extension TrainNoteCell {
     
     func setupUI() {
-        setupView(trainDayLabel)
+        addSubview(trainDayLabel)
+        addSubview(nameOfTrainLabel)
         
         NSLayoutConstraint.activate([
-            trainDayLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            trainDayLabel.centerYAnchor.constraint(equalTo: centerYAnchor)
+            trainDayLabel.topAnchor.constraint(equalTo: topAnchor, constant: 28),
+            trainDayLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 21),
+            
+            nameOfTrainLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            nameOfTrainLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }
     
