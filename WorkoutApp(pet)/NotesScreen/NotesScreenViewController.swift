@@ -10,11 +10,18 @@ import UIKit
 final class NotesScreenViewController: UIViewController {
     //MARK: - Variables
     
-    private let trainNote = [
+    let networkService = NetworkService()
+    
+    private let maleTrainNote = [
         "1 DAY:": "Chest and triceps",
         "2 DAY:": "Back and biceps",
         "3 DAY:": "Legs and shoulders",
         "Home:": "Yoga"].sorted(by: <)
+
+    private let femaleTrainNote = [
+        "3 DAY:": "Test",
+        "4 DAY:": "Test",
+        "5 DAY:": "Legs and shoulders"].sorted(by: <)
     
     private let segmentedController = TrainSegmentedController(items: ["Male", "Female"])
     
@@ -36,8 +43,8 @@ final class NotesScreenViewController: UIViewController {
 
 extension NotesScreenViewController {
     
+    
     func navigationBarAppearence() {
-        //        navigationItem.title = "My Notes"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
@@ -78,8 +85,12 @@ extension NotesScreenViewController {
 
 extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trainNote.count
-        
+        if segmentedController.selectedSegmentIndex == 0 {
+            return maleTrainNote.count
+            
+        } else {
+            return femaleTrainNote.count
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -90,13 +101,25 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
         }
         cell.layer.cornerRadius = 15
         cell.layer.masksToBounds = true
-        let day = String(Array(trainNote)[indexPath.row].key)
-        let name = String(Array(trainNote)[indexPath.row].value)
-        cell.configure(with: day, and: name)
+        
+        if segmentedController.selectedSegmentIndex == 0 {
+            let day = String(Array(maleTrainNote)[indexPath.row].key)
+            let name = String(Array(maleTrainNote)[indexPath.row].value)
+            cell.configure(with: day, and: name)
+        } else if segmentedController.selectedSegmentIndex == 1 {
+            let day = String(Array(femaleTrainNote)[indexPath.row].key)
+            let name = String(Array(femaleTrainNote)[indexPath.row].value)
+            cell.configure(with: day, and: name)
+        }
         cell.contentView.layer.cornerRadius = 15
+        
+        DispatchQueue.main.async {
+            collectionView.reloadData()
+        }
         
         return cell
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = TrainNotesInfoViewController()
