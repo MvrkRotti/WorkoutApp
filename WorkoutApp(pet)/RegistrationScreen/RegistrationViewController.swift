@@ -13,13 +13,23 @@ class RegistrationViewController: UIViewController {
     
     var router: RegistrationRouter!
     
-    let registrationLabel = RegistrationLabel()
-    let nameTextField = NameTextField()
-    let lastNameTextField = LastNameTextField()
-    let emailTextField = EmailTextField()
-    let passwordTextField = PasswordTextField()
-    let confirmPasswordTextField = ConfirmPasswordTextField()
-    let regSighUpButton = SignUpButton()
+    private let registrationLabel = RegistrationLabel()
+     let nameField = CustomTextField(fieldType: .name)
+     let lastNameField = CustomTextField(fieldType: .lastName)
+     let emailField = CustomTextField(fieldType: .email)
+     let passwordField = CustomTextField(fieldType: .password)
+     let confirmPasswordField = CustomTextField(fieldType: .confirmPassword)
+    private let regSighUpButton = SignUpButton()
+    //MARK: - UIComponents
+    
+    private lazy var textFieldStack: UIStackView = {
+        let stack = UIStackView(arrangedSubviews: [nameField, lastNameField, emailField, passwordField, confirmPasswordField])
+        stack.axis = .vertical
+        stack.spacing = 20
+        stack.alignment = .center
+        return stack
+    }()
+
     
     //MARK: - Lifecycle
     
@@ -27,15 +37,20 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         navigationBarAppearence()
         setupUI()
+        setupTextFieldDelegate()
         setupActions()
         setupLayout()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
 }
 
 private extension RegistrationViewController {
     
     private func navigationBarAppearence() {
-        navigationController?.isNavigationBarHidden = false
         title = "Registration"
         navigationController?.navigationBar.barTintColor = Resources.CommonColors.black
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Resources.CommonColors.white]
@@ -48,18 +63,16 @@ private extension RegistrationViewController {
             patternImage: UIImage(named: "backGroundImage")!)
         
         view.setupView(registrationLabel)
-        view.setupView(nameTextField)
-        view.setupView(lastNameTextField)
-        view.setupView(emailTextField)
-        view.setupView(passwordTextField)
-        view.setupView(confirmPasswordTextField)
+        view.setupView(textFieldStack)
         view.setupView(regSighUpButton)
-        
-        nameTextField.delegate = self
-        lastNameTextField.delegate = self
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-        confirmPasswordTextField.delegate = self
+    }
+    
+    private func setupTextFieldDelegate() {
+        nameField.delegate = self
+        lastNameField.delegate = self
+        emailField.delegate = self
+        passwordField.delegate = self
+        confirmPasswordField.delegate = self
     }
     
     private func setupActions() {
@@ -75,41 +88,35 @@ private extension RegistrationViewController {
             registrationLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
             registrationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 28),
             
-            nameTextField.widthAnchor.constraint(equalToConstant: 335),
-            nameTextField.heightAnchor.constraint(equalToConstant: 50),
-            nameTextField.topAnchor.constraint(equalTo: registrationLabel.bottomAnchor, constant: 30),
-            nameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            nameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
-            lastNameTextField.widthAnchor.constraint(equalToConstant: 335),
-            lastNameTextField.heightAnchor.constraint(equalTo: nameTextField.heightAnchor),
-            lastNameTextField.topAnchor.constraint(equalTo: nameTextField.bottomAnchor, constant: 20),
-            lastNameTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            lastNameTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
-            emailTextField.widthAnchor.constraint(equalToConstant: 335),
-            emailTextField.heightAnchor.constraint(equalTo: nameTextField.heightAnchor),
-            emailTextField.topAnchor.constraint(equalTo: lastNameTextField.bottomAnchor, constant: 20),
-            emailTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            emailTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
-            passwordTextField.widthAnchor.constraint(equalToConstant: 335),
-            passwordTextField.heightAnchor.constraint(equalTo: nameTextField.heightAnchor),
-            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
-            passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            
-            confirmPasswordTextField.widthAnchor.constraint(equalToConstant: 335),
-            confirmPasswordTextField.heightAnchor.constraint(equalTo: nameTextField.heightAnchor),
-            confirmPasswordTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
-            confirmPasswordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            confirmPasswordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            textFieldStack.topAnchor.constraint(equalTo: registrationLabel.bottomAnchor, constant: 30),
+            textFieldStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            textFieldStack.widthAnchor.constraint(equalTo: view.widthAnchor),
             
             regSighUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             regSighUpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
             regSighUpButton.widthAnchor.constraint(equalToConstant: 335),
             regSighUpButton.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+}
+
+extension RegistrationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case nameField:
+            lastNameField.becomeFirstResponder()
+        case lastNameField:
+            emailField.becomeFirstResponder()
+        case emailField:
+            passwordField.becomeFirstResponder()
+        case passwordField:
+            confirmPasswordField.becomeFirstResponder()
+        case confirmPasswordField:
+            view.endEditing(true)
+        default:
+            break
+        }
+        return true
     }
 }
 
