@@ -38,6 +38,7 @@ final class NotesScreenViewController: UIViewController {
         setDelegates()
     }
     
+    
 }
 //MARK: - NavBar appearence
 

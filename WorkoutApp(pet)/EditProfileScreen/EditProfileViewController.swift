@@ -46,7 +46,7 @@ final class EditProfileViewController: UIViewController {
 
 //MARK: - UI Setup
 
-extension EditProfileViewController {
+private extension EditProfileViewController {
     func navigationBarAppearence() {
         let editButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
 

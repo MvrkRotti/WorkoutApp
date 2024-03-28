@@ -24,18 +24,7 @@ final class CustomTextField: UITextField {
         super.init(frame: .zero)
         
         setupLayout()
-        
-        backgroundColor = Resources.CommonColors.customDarkGrey
-        layer.cornerRadius = 15
-        textColor = Resources.CommonColors.white
-        alpha = 0.95
-        
-        returnKeyType = .done
-        autocorrectionType = .no
-        autocapitalizationType = .none
-        
-        leftViewMode = .always
-        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.size.height))
+        setupAppearence()
         
         switch fieldType {
         case .name:
@@ -60,8 +49,24 @@ final class CustomTextField: UITextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+private extension CustomTextField {
+    func setupAppearence() {
+        backgroundColor = Resources.CommonColors.customDarkGrey
+        layer.cornerRadius = 15
+        textColor = Resources.CommonColors.white
+        alpha = 0.95
+        
+        returnKeyType = .done
+        autocorrectionType = .no
+        autocapitalizationType = .none
+        
+        leftViewMode = .always
+        leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.size.height))
+    }
     
-    private func setupLayout() {
+    func setupLayout() {
         NSLayoutConstraint.activate([
             self.heightAnchor.constraint(equalToConstant: 50),
             self.widthAnchor.constraint(equalToConstant: 350)

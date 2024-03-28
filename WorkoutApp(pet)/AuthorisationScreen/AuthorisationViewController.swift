@@ -31,14 +31,14 @@ final class AuthorisationViewController: UIViewController {
 
 private extension AuthorisationViewController {
     
-    private func navigationBarAppearence() {
+    func navigationBarAppearence() {
         navigationController?.isNavigationBarHidden = false
         title = "Log In"
         navigationController?.navigationBar.barTintColor = Resources.CommonColors.black
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Resources.CommonColors.white]
     }
     
-    private func setupUI() {
+    func setupUI() {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
 
         let emailTextFieldImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20.0, height: 20.0))
@@ -65,14 +65,14 @@ private extension AuthorisationViewController {
 
     }
     
-    private func setupActions() {
+    func setupActions() {
         authSignInButton.signInTapped = { [weak self] in
             guard let self = self else { return }
             self.router?.pushHomeScreen()
         }
     }
     
-    private func setupLayout() {
+    func setupLayout() {
         NSLayoutConstraint.activate([
             
             emailTextField.widthAnchor.constraint(equalToConstant: 335),

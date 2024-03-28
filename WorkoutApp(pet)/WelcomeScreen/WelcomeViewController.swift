@@ -11,10 +11,10 @@ class WelcomeViewController: UIViewController {
     
     //MARK: - Variables
     
-    let signUpButton = SignUpButton()
-    let signInButton = SignInButton()
-    let mainLogo = MainLogo(frame: CGRect())
-    let signInLabel = SignInLabel()
+    private let signUpButton = SignUpButton()
+    private let signInButton = SignInButton()
+    private let mainLogo = MainLogo(frame: CGRect())
+    private let signInLabel = SignInLabel()
     
     var router: WelcomeRouter
     
@@ -55,7 +55,7 @@ class WelcomeViewController: UIViewController {
 }
 
 private extension WelcomeViewController {
-    private func setupUI() {
+    func setupUI() {
         
         view.backgroundColor = Resources.CommonColors.customDarkGrey
         
@@ -65,7 +65,7 @@ private extension WelcomeViewController {
         
     }
     
-    private func setupActions() {
+    func setupActions() {
         signUpButton.signUpTapped = { [weak self] in
             guard let self = self else { return }
             self.router.pushRegistrationScreen()
@@ -79,7 +79,7 @@ private extension WelcomeViewController {
         
     }
     
-    private func setupLayout() {
+    func setupLayout() {
         
         NSLayoutConstraint.activate([
             mainLogo.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),

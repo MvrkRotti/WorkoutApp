@@ -41,6 +41,7 @@
 		CE3C12FB2BB2EC93003F3561 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12FA2BB2EC93003F3561 /* FirebaseFirestore */; };
 		CE3C12FD2BB2EC94003F3561 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12FC2BB2EC94003F3561 /* FirebaseDatabase */; };
 		CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C12FE2BB32086003F3561 /* CustomTextField.swift */; };
+		CE3C13032BB5D606003F3561 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */; };
 		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
 		CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */; };
 		CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */; };
@@ -120,6 +121,7 @@
 		CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIDescriptionLabel.swift; sourceTree = "<group>"; };
 		CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE3C12FE2BB32086003F3561 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenRouter.swift; sourceTree = "<group>"; };
 		CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenAssembler.swift; sourceTree = "<group>"; };
@@ -312,6 +314,14 @@
 				CE3C12FE2BB32086003F3561 /* CustomTextField.swift */,
 			);
 			path = TextField;
+			sourceTree = "<group>";
+		};
+		CE3C13012BB5D5F8003F3561 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CE8D50E22B88939000A14719 /* EditProfileScreen */ = {
@@ -564,6 +574,7 @@
 		CED9EB4B2B7159EC0065FE23 /* ExerciseScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CE3C13012BB5D5F8003F3561 /* Views */,
 				CEAC7E1C2B82253C00AF05CD /* Navigation */,
 				CED9EB4C2B715A1A0065FE23 /* ExerciseScreenViewController.swift */,
 				CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */,
@@ -690,6 +701,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE3C13032BB5D606003F3561 /* ActivityIndicator.swift in Sources */,
 				CE00CCF22B98E0A4001E1E8B /* TrainViewLabel.swift in Sources */,
 				CE0ED7362B9C60AF009340D0 /* FoodNotesInfoViewController.swift in Sources */,
 				CE00CCE22B922DE6001E1E8B /* InstructionsLabel.swift in Sources */,

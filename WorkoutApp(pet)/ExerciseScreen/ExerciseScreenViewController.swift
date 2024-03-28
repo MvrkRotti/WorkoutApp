@@ -11,7 +11,8 @@ final class ExerciseScreenViewController: UIViewController {
     //MARK: - Variables
     private let viewModel: ExerciseViewModel
     var router: HomeRouter!
-    let tableView = UITableView()
+    private let tableView = UITableView()
+    private let activityIndicator = CustomActivityIndicator(frame: CGRect(), text: "Loading")
     
     //MARK: - Lifecycle
     init(_ viewModel: ExerciseViewModel = ExerciseViewModel()) {
@@ -29,6 +30,7 @@ final class ExerciseScreenViewController: UIViewController {
         navigationBarAppearence()
         setupUI()
         setupLayout()
+        activityIndicator.startAnimating()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,11 +43,15 @@ private extension ExerciseScreenViewController {
     
     func setupUI() {
         view.setupView(tableView)
+        tableView.setupView(activityIndicator)
     }
     
     func setupLayout() {
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            activityIndicator.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            activityIndicator.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            
+            tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
@@ -83,8 +89,10 @@ extension ExerciseScreenViewController: UITableViewDataSource, UITableViewDelega
         guard let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseCell.identifier, for: indexPath) as? ExerciseCell else { fatalError("Unable to dequeue CoinCell in HomeController") }
         let exercise = viewModel.allExercises[indexPath.row]
         cell.configure(with: exercise)
+        activityIndicator.stopAnimating()
         return cell
     }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
