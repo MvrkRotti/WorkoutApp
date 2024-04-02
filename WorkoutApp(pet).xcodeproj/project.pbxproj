@@ -18,8 +18,6 @@
 		CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */; };
 		CE00CCF22B98E0A4001E1E8B /* TrainViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */; };
 		CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */; };
-		CE0ED7362B9C60AF009340D0 /* FoodNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED7352B9C60AF009340D0 /* FoodNotesInfoViewController.swift */; };
-		CE0ED76F2BA6E5D9009340D0 /* TrainSegmentedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0ED76E2BA6E5D9009340D0 /* TrainSegmentedController.swift */; };
 		CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */; };
 		CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC22B8256C000ACB21C /* NetworkService.swift */; };
 		CE1A8BC52B82644D00ACB21C /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */; };
@@ -42,6 +40,8 @@
 		CE3C12FD2BB2EC94003F3561 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12FC2BB2EC94003F3561 /* FirebaseDatabase */; };
 		CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C12FE2BB32086003F3561 /* CustomTextField.swift */; };
 		CE3C13032BB5D606003F3561 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */; };
+		CE3C13052BB9724C003F3561 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13042BB9724C003F3561 /* NoteModel.swift */; };
+		CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13062BBB25D4003F3561 /* AddNoteButton.swift */; };
 		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
 		CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */; };
 		CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */; };
@@ -54,8 +54,6 @@
 		CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */; };
 		CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */; };
 		CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */; };
-		CEAC7E092B81F3ED00AF05CD /* ProgressAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E082B81F3ED00AF05CD /* ProgressAssembler.swift */; };
-		CEAC7E0B2B81F3FD00AF05CD /* ProgressRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E0A2B81F3FD00AF05CD /* ProgressRouter.swift */; };
 		CEAC7E0D2B81F40D00AF05CD /* NotesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E0C2B81F40D00AF05CD /* NotesAssembler.swift */; };
 		CEAC7E0F2B81F41600AF05CD /* NotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E0E2B81F41600AF05CD /* NotesRouter.swift */; };
 		CEAC7E112B81F42900AF05CD /* ProfileAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E102B81F42900AF05CD /* ProfileAssembler.swift */; };
@@ -89,7 +87,6 @@
 		CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */; };
 		CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB622B7258DD0065FE23 /* TabController.swift */; };
 		CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */; };
-		CED9EB6C2B7259DE0065FE23 /* ProgressScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB6B2B7259DE0065FE23 /* ProgressScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,8 +101,6 @@
 		CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNoteCell.swift; sourceTree = "<group>"; };
 		CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewLabel.swift; sourceTree = "<group>"; };
 		CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesInfoViewController.swift; sourceTree = "<group>"; };
-		CE0ED7352B9C60AF009340D0 /* FoodNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodNotesInfoViewController.swift; sourceTree = "<group>"; };
-		CE0ED76E2BA6E5D9009340D0 /* TrainSegmentedController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainSegmentedController.swift; sourceTree = "<group>"; };
 		CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		CE1A8BC22B8256C000ACB21C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
@@ -122,6 +117,8 @@
 		CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE3C12FE2BB32086003F3561 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		CE3C13042BB9724C003F3561 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		CE3C13062BBB25D4003F3561 /* AddNoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteButton.swift; sourceTree = "<group>"; };
 		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenRouter.swift; sourceTree = "<group>"; };
 		CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenAssembler.swift; sourceTree = "<group>"; };
@@ -134,8 +131,6 @@
 		CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
 		CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
 		CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
-		CEAC7E082B81F3ED00AF05CD /* ProgressAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressAssembler.swift; sourceTree = "<group>"; };
-		CEAC7E0A2B81F3FD00AF05CD /* ProgressRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressRouter.swift; sourceTree = "<group>"; };
 		CEAC7E0C2B81F40D00AF05CD /* NotesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotesAssembler.swift; path = "WorkoutApp(pet)/NotesScreen/Navigation/NotesAssembler.swift"; sourceTree = SOURCE_ROOT; };
 		CEAC7E0E2B81F41600AF05CD /* NotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRouter.swift; sourceTree = "<group>"; };
 		CEAC7E102B81F42900AF05CD /* ProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembler.swift; sourceTree = "<group>"; };
@@ -171,7 +166,6 @@
 		CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInButton.swift; sourceTree = "<group>"; };
 		CED9EB622B7258DD0065FE23 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreenViewController.swift; sourceTree = "<group>"; };
-		CED9EB6B2B7259DE0065FE23 /* ProgressScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				CE00CCF02B98E06B001E1E8B /* TrainNotesView */,
-				CE0ED76E2BA6E5D9009340D0 /* TrainSegmentedController.swift */,
+				CE3C13062BBB25D4003F3561 /* AddNoteButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -227,7 +221,6 @@
 			isa = PBXGroup;
 			children = (
 				CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */,
-				CE0ED7352B9C60AF009340D0 /* FoodNotesInfoViewController.swift */,
 			);
 			path = NotesInfoScreen;
 			sourceTree = "<group>";
@@ -244,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */,
+				CE3C13042BB9724C003F3561 /* NoteModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -392,15 +386,6 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		CEAC7E1D2B82254700AF05CD /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				CEAC7E082B81F3ED00AF05CD /* ProgressAssembler.swift */,
-				CEAC7E0A2B81F3FD00AF05CD /* ProgressRouter.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
 		CEAC7E1E2B82255200AF05CD /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
@@ -447,7 +432,6 @@
 				CED9EB612B7258B50065FE23 /* TabController */,
 				CED9EB4B2B7159EC0065FE23 /* ExerciseScreen */,
 				CEAA4EC62B8CFBCD0004F369 /* ExerciseInfoScreen */,
-				CED9EB642B72594B0065FE23 /* ProgressScreen */,
 				CED9EB652B7259560065FE23 /* NotesScreen */,
 				CE00CCF42B9AF745001E1E8B /* NotesInfoScreen */,
 				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
@@ -601,15 +585,6 @@
 			path = TabController;
 			sourceTree = "<group>";
 		};
-		CED9EB642B72594B0065FE23 /* ProgressScreen */ = {
-			isa = PBXGroup;
-			children = (
-				CEAC7E1D2B82254700AF05CD /* Navigation */,
-				CED9EB6B2B7259DE0065FE23 /* ProgressScreenViewController.swift */,
-			);
-			path = ProgressScreen;
-			sourceTree = "<group>";
-		};
 		CED9EB652B7259560065FE23 /* NotesScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -703,7 +678,6 @@
 			files = (
 				CE3C13032BB5D606003F3561 /* ActivityIndicator.swift in Sources */,
 				CE00CCF22B98E0A4001E1E8B /* TrainViewLabel.swift in Sources */,
-				CE0ED7362B9C60AF009340D0 /* FoodNotesInfoViewController.swift in Sources */,
 				CE00CCE22B922DE6001E1E8B /* InstructionsLabel.swift in Sources */,
 				CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */,
 				CEAC7E132B81F43700AF05CD /* ProfileRouter.swift in Sources */,
@@ -713,7 +687,6 @@
 				CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */,
 				CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */,
 				CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */,
-				CED9EB6C2B7259DE0065FE23 /* ProgressScreenViewController.swift in Sources */,
 				CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */,
 				CEAC7E172B81F47100AF05CD /* AutoristaionRouter.swift in Sources */,
 				CEAC7E152B81F46500AF05CD /* AuthorisationAssembler.swift in Sources */,
@@ -724,7 +697,6 @@
 				CE1A8BD72B87E63000ACB21C /* GenderLabel.swift in Sources */,
 				CED9EB272B6E72C80065FE23 /* WelcomeAssembler.swift in Sources */,
 				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
-				CE0ED76F2BA6E5D9009340D0 /* TrainSegmentedController.swift in Sources */,
 				CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
@@ -739,7 +711,9 @@
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
 				CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */,
 				CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */,
+				CE3C13052BB9724C003F3561 /* NoteModel.swift in Sources */,
 				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
+				CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */,
 				CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */,
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
 				CEAC7E0D2B81F40D00AF05CD /* NotesAssembler.swift in Sources */,
@@ -753,13 +727,11 @@
 				CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */,
 				CE00CCE42B9232C1001E1E8B /* ExerciseInfoViewModel.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
-				CEAC7E0B2B81F3FD00AF05CD /* ProgressRouter.swift in Sources */,
 				CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */,
 				CED9EB4D2B715A1A0065FE23 /* ExerciseScreenViewController.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
 				CE00CCED2B977C70001E1E8B /* TrainCollectionView.swift in Sources */,
-				CEAC7E092B81F3ED00AF05CD /* ProgressAssembler.swift in Sources */,
 				CE1A8BD22B87E60200ACB21C /* PhotoLabel.swift in Sources */,
 				CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */,
 				CE8D50F12B88E9EF00A14719 /* WeightTextField.swift in Sources */,

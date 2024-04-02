@@ -32,6 +32,12 @@ enum Resources {
         static let selectPhoto = "Select\nPhoto"
     }
     
+    enum NavigationBarHeaders {
+        static let exerciseScreen = "Handbook"
+        static let notesScreen = "My Notes"
+        static let profileScreen = "My Profile"
+    }
+    
     enum CommonColors {
         static let customCoral = UIColor(hexString: "#6ADADA")
         static let customDarkGrey = UIColor(hexString: "#393939")
@@ -76,7 +82,6 @@ enum Resources {
         static func icon(for tab: Tabs) -> UIImage? {
             switch tab {
             case .exercises: return UIImage(named: "ExercisesTabIcon")
-//            case .progress: return UIImage(named: "progressTabIcon")
             case .notes: return UIImage(named: "notesTabIcon")
             case .profile: return UIImage(named: "porfileTabIcon")
             }
@@ -85,7 +90,6 @@ enum Resources {
         static func title(for tab: Tabs) -> String {
             switch tab {
             case .exercises: return "Handbook"
-//            case .progress: return "Progress"
             case .notes: return "Notes"
             case .profile: return "Profile"
             }

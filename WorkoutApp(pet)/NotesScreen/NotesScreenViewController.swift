@@ -17,16 +17,12 @@ final class NotesScreenViewController: UIViewController {
         "2 DAY:": "Back and biceps",
         "3 DAY:": "Legs and shoulders",
         "Home:": "Yoga"].sorted(by: <)
-
-    private let femaleTrainNote = [
-        "3 DAY:": "Test",
-        "4 DAY:": "Test",
-        "5 DAY:": "Legs and shoulders"].sorted(by: <)
     
-    private let segmentedController = TrainSegmentedController(items: ["Male", "Female"])
+//    private let mockNote = []
     
     private let trainViewLabel = TrainViewLabel()
     private let trainCollectionView = TrainCollectionView()
+    private let addNoteButton = AddNoteButton()
     
     //MARK: - Lifecycle
     
@@ -49,7 +45,7 @@ extension NotesScreenViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
-        navigationItem.titleView = segmentedController
+        navigationController?.navigationBar.topItem?.title = Resources.NavigationBarHeaders.notesScreen
     }
     
     //MARK: - Set Delegates
@@ -65,19 +61,25 @@ extension NotesScreenViewController {
             patternImage: UIImage(named: "backGroundImage")!)
         
         view.setupView(trainCollectionView)
+        view.setupView(addNoteButton)
         trainCollectionView.setupView(trainViewLabel)
         
     }
     
     func setupLayout() {
         NSLayoutConstraint.activate([            
-            trainCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            trainCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
             trainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             trainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            trainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            trainCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             
             trainViewLabel.topAnchor.constraint(equalTo: trainCollectionView.topAnchor, constant: 15),
-            trainViewLabel.leadingAnchor.constraint(equalTo: trainCollectionView.leadingAnchor, constant: 20)
+            trainViewLabel.leadingAnchor.constraint(equalTo: trainCollectionView.leadingAnchor, constant: 20),
+            
+            addNoteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            addNoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            addNoteButton.heightAnchor.constraint(equalToConstant: 65),
+            addNoteButton.widthAnchor.constraint(equalToConstant: 65)
         ])
     }
 }
@@ -86,12 +88,7 @@ extension NotesScreenViewController {
 
 extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if segmentedController.selectedSegmentIndex == 0 {
-            return maleTrainNote.count
-            
-        } else {
-            return femaleTrainNote.count
-        }
+        return maleTrainNote.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -103,15 +100,10 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
         cell.layer.cornerRadius = 15
         cell.layer.masksToBounds = true
         
-        if segmentedController.selectedSegmentIndex == 0 {
-            let day = String(Array(maleTrainNote)[indexPath.row].key)
-            let name = String(Array(maleTrainNote)[indexPath.row].value)
-            cell.configure(with: day, and: name)
-        } else if segmentedController.selectedSegmentIndex == 1 {
-            let day = String(Array(femaleTrainNote)[indexPath.row].key)
-            let name = String(Array(femaleTrainNote)[indexPath.row].value)
-            cell.configure(with: day, and: name)
-        }
+        let day = String(Array(maleTrainNote)[indexPath.row].key)
+        let name = String(Array(maleTrainNote)[indexPath.row].value)
+        cell.configure(with: day, and: name)
+        
         cell.contentView.layer.cornerRadius = 15
         
         DispatchQueue.main.async {
@@ -133,7 +125,7 @@ extension NotesScreenViewController: UICollectionViewDelegateFlowLayout {
     //Setup size for cells
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let widthSize = (view.frame.width) - 40
-        let heightSize = (view.frame.height/6)
+        let heightSize = (view.frame.height / 8)
         
         return CGSize(width: widthSize, height: heightSize)
     }

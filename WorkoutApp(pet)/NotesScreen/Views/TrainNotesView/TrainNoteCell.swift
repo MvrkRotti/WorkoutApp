@@ -20,7 +20,7 @@ final class TrainNoteCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .left
-        label.font = .systemFont(ofSize: 25)
+        label.font = .systemFont(ofSize: 22)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -29,7 +29,7 @@ final class TrainNoteCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         label.textAlignment = .center
-        label.font = .systemFont(ofSize: 30, weight: .bold)
+        label.font = .systemFont(ofSize: 26, weight: .bold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -75,11 +75,11 @@ private extension TrainNoteCell {
         addSubview(nameOfTrainLabel)
         
         NSLayoutConstraint.activate([
-            trainDayLabel.topAnchor.constraint(equalTo: topAnchor, constant: 28),
+            trainDayLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
             trainDayLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 21),
             
-            nameOfTrainLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            nameOfTrainLabel.centerXAnchor.constraint(equalTo: centerXAnchor)
+            nameOfTrainLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 21),
+            nameOfTrainLabel.topAnchor.constraint(equalTo: trainDayLabel.bottomAnchor, constant: 5)
         ])
     }
     

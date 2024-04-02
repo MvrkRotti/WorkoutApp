@@ -11,7 +11,6 @@ import UIKit
 
 enum Tabs: Int, CaseIterable {
     case exercises
-//    case progress
     case notes
     case profile
 }
@@ -61,7 +60,6 @@ final class TabController: UITabBarController {
     private func getController(for tab: Tabs) -> UIViewController {
         switch tab {
         case .exercises: return ExerciseScreenViewController()
-//        case .progress: return ProgressScreenViewController()
         case .notes: return NotesScreenViewController()
         case .profile: return ProfileScreenViewController()
         }
