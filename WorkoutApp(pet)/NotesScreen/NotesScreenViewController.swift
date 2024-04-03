@@ -11,14 +11,13 @@ final class NotesScreenViewController: UIViewController {
     //MARK: - Variables
     
     let networkService = NetworkService()
+    var router: NotesRouter!
     
     private let maleTrainNote = [
         "1 DAY:": "Chest and triceps",
         "2 DAY:": "Back and biceps",
         "3 DAY:": "Legs and shoulders",
         "Home:": "Yoga"].sorted(by: <)
-    
-//    private let mockNote = []
     
     private let trainViewLabel = TrainViewLabel()
     private let trainCollectionView = TrainCollectionView()
@@ -28,18 +27,16 @@ final class NotesScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBarAppearence()
         setupUI()
         setupLayout()
         setDelegates()
+        setupAction()
+        navigationBarAppearence()
     }
-    
-    
 }
 //MARK: - NavBar appearence
 
 extension NotesScreenViewController {
-    
     
     func navigationBarAppearence() {
         navigationController?.isNavigationBarHidden = false
@@ -67,7 +64,7 @@ extension NotesScreenViewController {
     }
     
     func setupLayout() {
-        NSLayoutConstraint.activate([            
+        NSLayoutConstraint.activate([
             trainCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
             trainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             trainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -82,6 +79,14 @@ extension NotesScreenViewController {
             addNoteButton.widthAnchor.constraint(equalToConstant: 65)
         ])
     }
+    
+    func setupAction() {
+        addNoteButton.addButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.router?.pushNextScreen()
+        }
+    }
+    
 }
 
 //MARK: - UICollectionView Delegate and Data Source

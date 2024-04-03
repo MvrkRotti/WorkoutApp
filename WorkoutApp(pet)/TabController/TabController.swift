@@ -59,9 +59,9 @@ final class TabController: UITabBarController {
 
     private func getController(for tab: Tabs) -> UIViewController {
         switch tab {
-        case .exercises: return ExerciseScreenViewController()
-        case .notes: return NotesScreenViewController()
-        case .profile: return ProfileScreenViewController()
+        case .exercises: return HomeAssembler.buildModule()
+        case .notes: return NotesAssembler.buildModule()
+        case .profile: return ProfileAssembler.buildModule()
         }
     }
 }

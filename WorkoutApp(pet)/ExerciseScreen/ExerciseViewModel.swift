@@ -8,12 +8,6 @@
 import UIKit
 import Foundation
 
-enum ParseError: Error {
-    case invalidData
-    case networkError
-    case decodingError
-}
-
 class ExerciseViewModel {
     
     let networkService = NetworkService()

@@ -10,12 +10,12 @@ import UIKit
 final class AddNoteButton: UIButton {
     
     var addButtonTapped: (() -> Void)?
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAppearence()
-        setupAction()
         makeSystem(self)
+        setupAction()
     }
     
     @available(*, unavailable)
@@ -36,11 +36,13 @@ private extension AddNoteButton {
         layer.cornerRadius = frame.width / 2
     }
     
-    @objc func addNoteButtonDidTapped() {
+    @objc
+    func AddButtonDidTapped() {
         addButtonTapped?()
+        
     }
     
     func setupAction() {
-        addTarget(self, action: #selector(addNoteButtonDidTapped), for: .touchUpInside)
+        addTarget(self, action: #selector(AddButtonDidTapped), for: .touchUpInside)
     }
 }

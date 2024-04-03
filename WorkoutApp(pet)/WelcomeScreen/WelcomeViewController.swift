@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
     private let mainLogo = MainLogo(frame: CGRect())
     private let signInLabel = SignInLabel()
     
-    var router: WelcomeRouter
+    var router: WelcomeRouter!
     
     
     
@@ -32,15 +32,6 @@ class WelcomeViewController: UIViewController {
     
     
     //MARK: - Lifecycle
-    
-    init(_ router: WelcomeRouter) {
-        self.router = router
-        super.init(nibName: nil, bundle: nil)
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
