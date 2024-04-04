@@ -16,6 +16,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = UINavigationController(rootViewController: AddNoteAssembler.buildModule())
+//        window.rootViewController = UINavigationController(rootViewController: TabAssembler.buildModule())
+
 //        window.rootViewController = TabAssembler.buildModule()
         self.window = window
         self.window?.makeKeyAndVisible()

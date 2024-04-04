@@ -20,6 +20,12 @@ enum Resources {
             static let age = "Your Age"
             static let weight = "Your Weight"
             static let height = "Your Height"
+            static let trainingName = "Training Name"
+            static let muscle = "Muscle"
+            static let exerciseName = "Exercise Name"
+            static let numberOfSets = "Number of sets"
+            static let numberOfReps = "Number of reps"
+            static let restTime = "Rest time"
         }
         
         enum Images {
@@ -30,6 +36,11 @@ enum Resources {
     
     enum CommonStrings {
         static let selectPhoto = "Select\nPhoto"
+        static let sets = "Sets"
+        static let reps = "Reps"
+        static let min = "Min"
+        static let save = "SAVE"
+        static let cancel = "CANCEL"
     }
     
     enum NavigationBarHeaders {
@@ -56,6 +67,7 @@ enum Resources {
         static let cellNameLabelFont = UIFont.systemFont(ofSize: 20, weight: .semibold)
         static let profileLabelFont = UIFont.systemFont(ofSize: 22)
         static let bmiDescriptionFont = UIFont.systemFont(ofSize: 12)
+        static let addExerciseLabelFont = UIFont.systemFont(ofSize: 18)
     }
     
     enum CommonImages {

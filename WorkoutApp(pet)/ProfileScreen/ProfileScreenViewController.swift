@@ -53,7 +53,6 @@ private extension ProfileScreenViewController {
     func navigationBarAppearence() {
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonDidTapped))
 
-        
         navigationItem.title = "My Profile"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey

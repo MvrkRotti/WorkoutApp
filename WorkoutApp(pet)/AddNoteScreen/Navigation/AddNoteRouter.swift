@@ -11,7 +11,7 @@ final class AddNoteRouter {
     
     weak var addNoteViewController: AddNoteViewController?
 
-    func pushHomeScreen() {
-//        addNoteViewController?.navigationController?.pushViewController(TabAssembler.buildModule(), animated: true)
+    func pushNextScreen() {
+        addNoteViewController?.navigationController?.present(AddExerciseAssembler.buildModule(), animated: true)
     }
 }

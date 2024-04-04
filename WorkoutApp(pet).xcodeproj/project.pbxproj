@@ -90,6 +90,15 @@
 		CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB622B7258DD0065FE23 /* TabController.swift */; };
 		CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */; };
 		CEF2AB522BBD769100205B60 /* NotesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB512BBD769100205B60 /* NotesAssembler.swift */; };
+		CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */; };
+		CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */; };
+		CEF2AB5C2BBED69D00205B60 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB5B2BBED69D00205B60 /* RouterProtocol.swift */; };
+		CEF2AB5F2BBF092600205B60 /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */; };
+		CEF2AB622BBF09F700205B60 /* AddExerciseAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB612BBF09F700205B60 /* AddExerciseAssembler.swift */; };
+		CEF2AB642BBF0A0000205B60 /* AddExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB632BBF0A0000205B60 /* AddExerciseRouter.swift */; };
+		CEF2AB672BBF0D3B00205B60 /* AddExerciseCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB662BBF0D3B00205B60 /* AddExerciseCustomTextField.swift */; };
+		CEF2AB692BBF105600205B60 /* AddExerciseCustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB682BBF105600205B60 /* AddExerciseCustomLabel.swift */; };
+		CEF2AB6B2BBF143900205B60 /* AddExerciseCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB6A2BBF143900205B60 /* AddExerciseCustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -172,6 +181,15 @@
 		CED9EB622B7258DD0065FE23 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreenViewController.swift; sourceTree = "<group>"; };
 		CEF2AB512BBD769100205B60 /* NotesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAssembler.swift; sourceTree = "<group>"; };
+		CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCustomTextField.swift; sourceTree = "<group>"; };
+		CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseButton.swift; sourceTree = "<group>"; };
+		CEF2AB5B2BBED69D00205B60 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
+		CEF2AB612BBF09F700205B60 /* AddExerciseAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseAssembler.swift; sourceTree = "<group>"; };
+		CEF2AB632BBF0A0000205B60 /* AddExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseRouter.swift; sourceTree = "<group>"; };
+		CEF2AB662BBF0D3B00205B60 /* AddExerciseCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCustomTextField.swift; sourceTree = "<group>"; };
+		CEF2AB682BBF105600205B60 /* AddExerciseCustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCustomLabel.swift; sourceTree = "<group>"; };
+		CEF2AB6A2BBF143900205B60 /* AddExerciseCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +345,7 @@
 		CE3C13342BBD5143003F3561 /* AddNoteScreen */ = {
 			isa = PBXGroup;
 			children = (
+				CEF2AB532BBDA8C100205B60 /* Views */,
 				CE3C133B2BBD517A003F3561 /* Navigation */,
 				CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */,
 			);
@@ -447,9 +466,11 @@
 		CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */ = {
 			isa = PBXGroup;
 			children = (
-				CE1A8BBA2B822EDB00ACB21C /* NetworkService */,
-				CED9EB142B6E4CE70065FE23 /* Resources */,
+				CEF2AB5A2BBED69100205B60 /* Router */,
 				CED9EB1A2B6E4D6F0065FE23 /* Application */,
+				CE1A8BBA2B822EDB00ACB21C /* NetworkService */,
+				CE1A8BBD2B822F1E00ACB21C /* Model */,
+				CED9EB142B6E4CE70065FE23 /* Resources */,
 				CED9EB1B2B6E4DCA0065FE23 /* WelcomeScreen */,
 				CED9EB202B6E4E480065FE23 /* RegistrationScreen */,
 				CED9EB3E2B70112E0065FE23 /* AuthorisationScreen */,
@@ -458,10 +479,10 @@
 				CEAA4EC62B8CFBCD0004F369 /* ExerciseInfoScreen */,
 				CED9EB652B7259560065FE23 /* NotesScreen */,
 				CE3C13342BBD5143003F3561 /* AddNoteScreen */,
+				CEF2AB5D2BBED6F000205B60 /* AddExerciseScreen */,
 				CE00CCF42B9AF745001E1E8B /* NotesInfoScreen */,
 				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
 				CE8D50E22B88939000A14719 /* EditProfileScreen */,
-				CE1A8BBD2B822F1E00ACB21C /* Model */,
 				CED9EB0B2B6E4BBB0065FE23 /* Info.plist */,
 				CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */,
 			);
@@ -620,6 +641,52 @@
 			path = NotesScreen;
 			sourceTree = "<group>";
 		};
+		CEF2AB532BBDA8C100205B60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */,
+				CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CEF2AB5A2BBED69100205B60 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2AB5B2BBED69D00205B60 /* RouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CEF2AB5D2BBED6F000205B60 /* AddExerciseScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2AB652BBF0C3300205B60 /* Views */,
+				CEF2AB602BBF09E800205B60 /* Navigation */,
+				CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */,
+			);
+			path = AddExerciseScreen;
+			sourceTree = "<group>";
+		};
+		CEF2AB602BBF09E800205B60 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2AB612BBF09F700205B60 /* AddExerciseAssembler.swift */,
+				CEF2AB632BBF0A0000205B60 /* AddExerciseRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CEF2AB652BBF0C3300205B60 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEF2AB662BBF0D3B00205B60 /* AddExerciseCustomTextField.swift */,
+				CEF2AB682BBF105600205B60 /* AddExerciseCustomLabel.swift */,
+				CEF2AB6A2BBF143900205B60 /* AddExerciseCustomButton.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -714,6 +781,7 @@
 				CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */,
 				CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */,
 				CEAC7E172B81F47100AF05CD /* AutoristaionRouter.swift in Sources */,
+				CEF2AB622BBF09F700205B60 /* AddExerciseAssembler.swift in Sources */,
 				CEAC7E152B81F46500AF05CD /* AuthorisationAssembler.swift in Sources */,
 				CEF2AB522BBD769100205B60 /* NotesAssembler.swift in Sources */,
 				CE3C133A2BBD5173003F3561 /* AddNoteRouter.swift in Sources */,
@@ -725,6 +793,8 @@
 				CE1A8BD72B87E63000ACB21C /* GenderLabel.swift in Sources */,
 				CED9EB272B6E72C80065FE23 /* WelcomeAssembler.swift in Sources */,
 				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
+				CEF2AB5F2BBF092600205B60 /* AddExerciseViewController.swift in Sources */,
+				CEF2AB672BBF0D3B00205B60 /* AddExerciseCustomTextField.swift in Sources */,
 				CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
@@ -744,9 +814,13 @@
 				CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */,
 				CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */,
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
+				CEF2AB5C2BBED69D00205B60 /* RouterProtocol.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
 				CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */,
+				CEF2AB692BBF105600205B60 /* AddExerciseCustomLabel.swift in Sources */,
+				CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */,
 				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
+				CEF2AB6B2BBF143900205B60 /* AddExerciseCustomButton.swift in Sources */,
 				CE1A8BC52B82644D00ACB21C /* ExerciseViewModel.swift in Sources */,
 				CE1A8BDB2B87E64500ACB21C /* WeightLabel.swift in Sources */,
 				CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */,
@@ -765,8 +839,10 @@
 				CE00CCDA2B922DAB001E1E8B /* ExerciseNameLabel.swift in Sources */,
 				CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */,
 				CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */,
+				CEF2AB642BBF0A0000205B60 /* AddExerciseRouter.swift in Sources */,
 				CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */,
 				CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */,
+				CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */,
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
 				CEAC7E0F2B81F41600AF05CD /* NotesRouter.swift in Sources */,
 				CE00CCDE2B922DC8001E1E8B /* EquipmentLabel.swift in Sources */,
