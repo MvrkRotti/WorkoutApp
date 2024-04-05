@@ -34,9 +34,10 @@ final class ExerciseScreenViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-            tabBarController?.tabBar.isHidden = false
-        }
-    
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+        tabBarController?.tabBar.isHidden = false
+    }
 }
 
 private extension ExerciseScreenViewController {

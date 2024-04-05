@@ -44,6 +44,8 @@ final class ProfileScreenViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
     }
 }

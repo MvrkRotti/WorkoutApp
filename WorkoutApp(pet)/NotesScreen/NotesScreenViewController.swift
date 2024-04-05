@@ -33,13 +33,19 @@ final class NotesScreenViewController: UIViewController {
         setupAction()
         navigationBarAppearence()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+        tabBarController?.tabBar.isHidden = false
+    }
 }
 //MARK: - NavBar appearence
 
 extension NotesScreenViewController {
     
     func navigationBarAppearence() {
-        navigationController?.isNavigationBarHidden = false
+        //        navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationController?.navigationBar.topItem?.title = Resources.NavigationBarHeaders.notesScreen

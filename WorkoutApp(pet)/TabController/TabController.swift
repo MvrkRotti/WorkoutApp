@@ -27,7 +27,9 @@ final class TabController: UITabBarController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = false
     }
 
     required init?(coder: NSCoder) {
