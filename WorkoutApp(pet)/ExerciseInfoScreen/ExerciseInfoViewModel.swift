@@ -10,10 +10,10 @@ import Foundation
 
 final class ExerciseInfoViewModel {
     //MARK: - Variables
-    let exercise: Exercise
+    let exercise: HandbookExercise
     
     //MARK: - Lifecycle
-    init(_ exercise: Exercise) {
+    init(_ exercise: HandbookExercise) {
            self.exercise = exercise
        }
 

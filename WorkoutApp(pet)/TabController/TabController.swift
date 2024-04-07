@@ -61,7 +61,7 @@ final class TabController: UITabBarController {
 
     private func getController(for tab: Tabs) -> UIViewController {
         switch tab {
-        case .exercises: return HomeAssembler.buildModule()
+        case .exercises: return HandbookAssembler.buildModule()
         case .notes: return NotesAssembler.buildModule()
         case .profile: return ProfileAssembler.buildModule()
         }

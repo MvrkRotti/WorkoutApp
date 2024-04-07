@@ -13,6 +13,8 @@ final class AddExerciseViewController: UIViewController {
         
     var router: AddExerciseRouter!
     
+    private let viewModel: ExerciseViewModel
+        
     private let exerciseNameTextField = AddNoteCustomTextField(fieldType: .exerciseName)
     private let numberOfSetsTextField = AddExerciseCustomTextField(fieldType: .numberOfSets)
     private let numberOfRepsTextField = AddExerciseCustomTextField(fieldType: .numberOfReps)
@@ -54,6 +56,16 @@ final class AddExerciseViewController: UIViewController {
     }()
     
     //MARK: - Lifecycle
+    
+    init(_ viewModel: ExerciseViewModel = ExerciseViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -100,8 +112,16 @@ private extension AddExerciseViewController {
             self.dismiss(animated: true, completion: nil)
         }
         
-        saveButton.saveButtonTapped = {
-            print("Save tapped")
+        saveButton.saveButtonTapped = { [weak self] in
+            guard let exerciseName = self?.exerciseNameTextField.text, !exerciseName.isEmpty,
+                  let numberOfSets = self?.numberOfSetsTextField.text, !numberOfSets.isEmpty,
+                  let numberOfReps = self?.numberOfRepsTextField.text, !numberOfReps.isEmpty,
+                  let restTime = self?.restTimeTextField.text, !restTime.isEmpty else { return }
+
+            let newExercise = Exercise(exerciseName: exerciseName, numberOfSets: numberOfSets, numberOfReps: numberOfReps, restTime: restTime)
+            
+            self?.viewModel.addExercise(exercise: newExercise)
+            self?.dismiss(animated: true, completion: nil)
+            }
         }
     }
-}

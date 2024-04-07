@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class ExerciseCell: UITableViewCell {
+final class HandbookCell: UITableViewCell {
     
     static let identifier = "ExerciseCell"
     
     //MARK: - Variables
     
-    private(set) var exercise: Exercise!
+    private(set) var exercise: HandbookExercise!
     
     //MARK: - UI Components
     
@@ -50,7 +50,7 @@ final class ExerciseCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func configure(with exercise: Exercise) {
+    public func configure(with exercise: HandbookExercise) {
         self.exercise = exercise
         
         self.cellNameLabel.text = exercise.muscle.uppercased()

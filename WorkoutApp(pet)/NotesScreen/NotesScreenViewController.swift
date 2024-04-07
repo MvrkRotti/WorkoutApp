@@ -45,7 +45,6 @@ final class NotesScreenViewController: UIViewController {
 extension NotesScreenViewController {
     
     func navigationBarAppearence() {
-        //        navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationController?.navigationBar.topItem?.title = Resources.NavigationBarHeaders.notesScreen

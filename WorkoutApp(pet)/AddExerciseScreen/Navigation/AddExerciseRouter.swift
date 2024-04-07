@@ -11,7 +11,8 @@ final class AddExerciseRouter {
     
     weak var addExerciseViewController: AddExerciseViewController?
 
-    func pushNextScreen() {
-        addExerciseViewController?.navigationController?.pushViewController(TabAssembler.buildModule(), animated: true)
+    func popViewController() {
+        addExerciseViewController?.navigationController?.popViewController(animated: true)
     }
+    
 }

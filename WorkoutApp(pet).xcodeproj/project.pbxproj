@@ -18,10 +18,10 @@
 		CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */; };
 		CE00CCF22B98E0A4001E1E8B /* TrainViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */; };
 		CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */; };
-		CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */; };
+		CE1A8BBF2B822F2D00ACB21C /* HandbookExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */; };
 		CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC22B8256C000ACB21C /* NetworkService.swift */; };
-		CE1A8BC52B82644D00ACB21C /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */; };
-		CE1A8BC72B826BC800ACB21C /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC62B826BC800ACB21C /* ExerciseCell.swift */; };
+		CE1A8BC52B82644D00ACB21C /* HandbookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* HandbookViewModel.swift */; };
+		CE1A8BC72B826BC800ACB21C /* HandbookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC62B826BC800ACB21C /* HandbookCell.swift */; };
 		CE1A8BD02B87DC7700ACB21C /* ProfilePhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BCF2B87DC7700ACB21C /* ProfilePhotoView.swift */; };
 		CE1A8BD22B87E60200ACB21C /* PhotoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BD12B87E60200ACB21C /* PhotoLabel.swift */; };
 		CE1A8BD52B87E62500ACB21C /* NameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BD42B87E62500ACB21C /* NameLabel.swift */; };
@@ -31,6 +31,8 @@
 		CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BDC2B87E64E00ACB21C /* HeightLabel.swift */; };
 		CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */; };
 		CE1A8BE12B87E67900ACB21C /* BMIDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */; };
+		CE25756F2BC2D8D3005708F2 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */; };
+		CE2575712BC2D9A2005708F2 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2575702BC2D9A2005708F2 /* ExerciseViewModel.swift */; };
 		CE3C12F02BAC8180003F3561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */; };
 		CE3C12F32BB2EC93003F3561 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12F22BB2EC93003F3561 /* FirebaseAuth */; };
 		CE3C12F52BB2EC93003F3561 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12F42BB2EC93003F3561 /* FirebaseAnalytics */; };
@@ -40,7 +42,7 @@
 		CE3C12FD2BB2EC94003F3561 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12FC2BB2EC94003F3561 /* FirebaseDatabase */; };
 		CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C12FE2BB32086003F3561 /* CustomTextField.swift */; };
 		CE3C13032BB5D606003F3561 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */; };
-		CE3C13052BB9724C003F3561 /* NoteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13042BB9724C003F3561 /* NoteModel.swift */; };
+		CE3C13052BB9724C003F3561 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13042BB9724C003F3561 /* Note.swift */; };
 		CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13062BBB25D4003F3561 /* AddNoteButton.swift */; };
 		CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */; };
 		CE3C13382BBD5169003F3561 /* AddNoteAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */; };
@@ -55,8 +57,8 @@
 		CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F62B8A40BD00A14719 /* SelectPhotoButton.swift */; };
 		CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA4EC72B8D09C70004F369 /* ExerciseInfoController.swift */; };
 		CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */; };
-		CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */; };
-		CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */; };
+		CEAC7E052B81F3C800AF05CD /* HandbookAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E042B81F3C800AF05CD /* HandbookAssembler.swift */; };
+		CEAC7E072B81F3D300AF05CD /* HandbookRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E062B81F3D300AF05CD /* HandbookRouter.swift */; };
 		CEAC7E0F2B81F41600AF05CD /* NotesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E0E2B81F41600AF05CD /* NotesRouter.swift */; };
 		CEAC7E112B81F42900AF05CD /* ProfileAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E102B81F42900AF05CD /* ProfileAssembler.swift */; };
 		CEAC7E132B81F43700AF05CD /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E122B81F43700AF05CD /* ProfileRouter.swift */; };
@@ -83,7 +85,7 @@
 		CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */; };
 		CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */; };
 		CED9EB492B7146760065FE23 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB482B7146760065FE23 /* UIView.swift */; };
-		CED9EB4D2B715A1A0065FE23 /* ExerciseScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4C2B715A1A0065FE23 /* ExerciseScreenViewController.swift */; };
+		CED9EB4D2B715A1A0065FE23 /* HandbookScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4C2B715A1A0065FE23 /* HandbookScreenViewController.swift */; };
 		CED9EB4F2B715A520065FE23 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4E2B715A520065FE23 /* RegistrationRouter.swift */; };
 		CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB512B715A870065FE23 /* RegistrationAssembler.swift */; };
 		CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */; };
@@ -113,10 +115,10 @@
 		CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNoteCell.swift; sourceTree = "<group>"; };
 		CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewLabel.swift; sourceTree = "<group>"; };
 		CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesInfoViewController.swift; sourceTree = "<group>"; };
-		CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookExercise.swift; sourceTree = "<group>"; };
 		CE1A8BC22B8256C000ACB21C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewModel.swift; sourceTree = "<group>"; };
-		CE1A8BC62B826BC800ACB21C /* ExerciseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseCell.swift; sourceTree = "<group>"; };
+		CE1A8BC42B82644D00ACB21C /* HandbookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookViewModel.swift; sourceTree = "<group>"; };
+		CE1A8BC62B826BC800ACB21C /* HandbookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookCell.swift; sourceTree = "<group>"; };
 		CE1A8BCF2B87DC7700ACB21C /* ProfilePhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePhotoView.swift; sourceTree = "<group>"; };
 		CE1A8BD12B87E60200ACB21C /* PhotoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoLabel.swift; sourceTree = "<group>"; };
 		CE1A8BD42B87E62500ACB21C /* NameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameLabel.swift; sourceTree = "<group>"; };
@@ -126,10 +128,12 @@
 		CE1A8BDC2B87E64E00ACB21C /* HeightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightLabel.swift; sourceTree = "<group>"; };
 		CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILabel.swift; sourceTree = "<group>"; };
 		CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIDescriptionLabel.swift; sourceTree = "<group>"; };
+		CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
+		CE2575702BC2D9A2005708F2 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseViewModel.swift; path = ../AddNoteScreen/ExerciseViewModel.swift; sourceTree = "<group>"; };
 		CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE3C12FE2BB32086003F3561 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
-		CE3C13042BB9724C003F3561 /* NoteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteModel.swift; sourceTree = "<group>"; };
+		CE3C13042BB9724C003F3561 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		CE3C13062BBB25D4003F3561 /* AddNoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteButton.swift; sourceTree = "<group>"; };
 		CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteAssembler.swift; sourceTree = "<group>"; };
@@ -144,8 +148,8 @@
 		CE8D50F62B8A40BD00A14719 /* SelectPhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
 		CEAA4EC72B8D09C70004F369 /* ExerciseInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoController.swift; sourceTree = "<group>"; };
 		CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
-		CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAssembler.swift; sourceTree = "<group>"; };
-		CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		CEAC7E042B81F3C800AF05CD /* HandbookAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookAssembler.swift; sourceTree = "<group>"; };
+		CEAC7E062B81F3D300AF05CD /* HandbookRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookRouter.swift; sourceTree = "<group>"; };
 		CEAC7E0E2B81F41600AF05CD /* NotesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesRouter.swift; sourceTree = "<group>"; };
 		CEAC7E102B81F42900AF05CD /* ProfileAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileAssembler.swift; sourceTree = "<group>"; };
 		CEAC7E122B81F43700AF05CD /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
@@ -174,7 +178,7 @@
 		CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInEmailTextField.swift; sourceTree = "<group>"; };
 		CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPasswordTextField.swift; sourceTree = "<group>"; };
 		CED9EB482B7146760065FE23 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		CED9EB4C2B715A1A0065FE23 /* ExerciseScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseScreenViewController.swift; sourceTree = "<group>"; };
+		CED9EB4C2B715A1A0065FE23 /* HandbookScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookScreenViewController.swift; sourceTree = "<group>"; };
 		CED9EB4E2B715A520065FE23 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		CED9EB512B715A870065FE23 /* RegistrationAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationAssembler.swift; sourceTree = "<group>"; };
 		CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInButton.swift; sourceTree = "<group>"; };
@@ -260,8 +264,9 @@
 		CE1A8BBD2B822F1E00ACB21C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE1A8BBE2B822F2D00ACB21C /* Exercise.swift */,
-				CE3C13042BB9724C003F3561 /* NoteModel.swift */,
+				CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */,
+				CE3C13042BB9724C003F3561 /* Note.swift */,
+				CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -423,8 +428,8 @@
 		CEAC7E1C2B82253C00AF05CD /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				CEAC7E042B81F3C800AF05CD /* HomeAssembler.swift */,
-				CEAC7E062B81F3D300AF05CD /* HomeRouter.swift */,
+				CEAC7E042B81F3C800AF05CD /* HandbookAssembler.swift */,
+				CEAC7E062B81F3D300AF05CD /* HandbookRouter.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -475,7 +480,7 @@
 				CED9EB202B6E4E480065FE23 /* RegistrationScreen */,
 				CED9EB3E2B70112E0065FE23 /* AuthorisationScreen */,
 				CED9EB612B7258B50065FE23 /* TabController */,
-				CED9EB4B2B7159EC0065FE23 /* ExerciseScreen */,
+				CED9EB4B2B7159EC0065FE23 /* HandbookScreen */,
 				CEAA4EC62B8CFBCD0004F369 /* ExerciseInfoScreen */,
 				CED9EB652B7259560065FE23 /* NotesScreen */,
 				CE3C13342BBD5143003F3561 /* AddNoteScreen */,
@@ -601,16 +606,16 @@
 			path = Buttons;
 			sourceTree = "<group>";
 		};
-		CED9EB4B2B7159EC0065FE23 /* ExerciseScreen */ = {
+		CED9EB4B2B7159EC0065FE23 /* HandbookScreen */ = {
 			isa = PBXGroup;
 			children = (
 				CE3C13012BB5D5F8003F3561 /* Views */,
 				CEAC7E1C2B82253C00AF05CD /* Navigation */,
-				CED9EB4C2B715A1A0065FE23 /* ExerciseScreenViewController.swift */,
-				CE1A8BC42B82644D00ACB21C /* ExerciseViewModel.swift */,
-				CE1A8BC62B826BC800ACB21C /* ExerciseCell.swift */,
+				CED9EB4C2B715A1A0065FE23 /* HandbookScreenViewController.swift */,
+				CE1A8BC42B82644D00ACB21C /* HandbookViewModel.swift */,
+				CE1A8BC62B826BC800ACB21C /* HandbookCell.swift */,
 			);
-			path = ExerciseScreen;
+			path = HandbookScreen;
 			sourceTree = "<group>";
 		};
 		CED9EB532B715A9D0065FE23 /* Navigation */ = {
@@ -664,6 +669,7 @@
 				CEF2AB652BBF0C3300205B60 /* Views */,
 				CEF2AB602BBF09E800205B60 /* Navigation */,
 				CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */,
+				CE2575702BC2D9A2005708F2 /* ExerciseViewModel.swift */,
 			);
 			path = AddExerciseScreen;
 			sourceTree = "<group>";
@@ -773,7 +779,7 @@
 				CE00CCE22B922DE6001E1E8B /* InstructionsLabel.swift in Sources */,
 				CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */,
 				CEAC7E132B81F43700AF05CD /* ProfileRouter.swift in Sources */,
-				CE1A8BC72B826BC800ACB21C /* ExerciseCell.swift in Sources */,
+				CE1A8BC72B826BC800ACB21C /* HandbookCell.swift in Sources */,
 				CE1A8BE12B87E67900ACB21C /* BMIDescriptionLabel.swift in Sources */,
 				CEAC7E192B81F6CE00AF05CD /* TabAssembler.swift in Sources */,
 				CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */,
@@ -800,7 +806,7 @@
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
 				CE00CCE02B922DDA001E1E8B /* DifficultyLabel.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
-				CE1A8BBF2B822F2D00ACB21C /* Exercise.swift in Sources */,
+				CE1A8BBF2B822F2D00ACB21C /* HandbookExercise.swift in Sources */,
 				CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */,
 				CED9EB4F2B715A520065FE23 /* RegistrationRouter.swift in Sources */,
 				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
@@ -809,10 +815,10 @@
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
 				CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */,
 				CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */,
-				CE3C13052BB9724C003F3561 /* NoteModel.swift in Sources */,
+				CE3C13052BB9724C003F3561 /* Note.swift in Sources */,
 				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
 				CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */,
-				CEAC7E052B81F3C800AF05CD /* HomeAssembler.swift in Sources */,
+				CEAC7E052B81F3C800AF05CD /* HandbookAssembler.swift in Sources */,
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
 				CEF2AB5C2BBED69D00205B60 /* RouterProtocol.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
@@ -821,20 +827,21 @@
 				CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */,
 				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
 				CEF2AB6B2BBF143900205B60 /* AddExerciseCustomButton.swift in Sources */,
-				CE1A8BC52B82644D00ACB21C /* ExerciseViewModel.swift in Sources */,
+				CE1A8BC52B82644D00ACB21C /* HandbookViewModel.swift in Sources */,
 				CE1A8BDB2B87E64500ACB21C /* WeightLabel.swift in Sources */,
 				CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */,
 				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
-				CEAC7E072B81F3D300AF05CD /* HomeRouter.swift in Sources */,
+				CEAC7E072B81F3D300AF05CD /* HandbookRouter.swift in Sources */,
 				CE00CCE42B9232C1001E1E8B /* ExerciseInfoViewModel.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
 				CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */,
-				CED9EB4D2B715A1A0065FE23 /* ExerciseScreenViewController.swift in Sources */,
+				CED9EB4D2B715A1A0065FE23 /* HandbookScreenViewController.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
 				CE00CCED2B977C70001E1E8B /* TrainCollectionView.swift in Sources */,
 				CE1A8BD22B87E60200ACB21C /* PhotoLabel.swift in Sources */,
 				CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */,
+				CE25756F2BC2D8D3005708F2 /* ExerciseModel.swift in Sources */,
 				CE8D50F12B88E9EF00A14719 /* WeightTextField.swift in Sources */,
 				CE00CCDA2B922DAB001E1E8B /* ExerciseNameLabel.swift in Sources */,
 				CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */,
@@ -848,6 +855,7 @@
 				CE00CCDE2B922DC8001E1E8B /* EquipmentLabel.swift in Sources */,
 				CE1A8BD52B87E62500ACB21C /* NameLabel.swift in Sources */,
 				CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */,
+				CE2575712BC2D9A2005708F2 /* ExerciseViewModel.swift in Sources */,
 				CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */,
 				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,
 				CE1A8BD02B87DC7700ACB21C /* ProfilePhotoView.swift in Sources */,

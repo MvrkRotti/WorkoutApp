@@ -8,14 +8,14 @@
 import UIKit
 import Foundation
 
-class ExerciseViewModel {
+class HandbookViewModel {
     
     let networkService = NetworkService()
-    var exerciseUpdated: (()->Void)?
+    var handbookExerciseUpdated: (()->Void)?
     
-    private(set) var allExercises: [Exercise] = [] {
+    private(set) var allExercises: [HandbookExercise] = [] {
         didSet {
-            self.exerciseUpdated?()
+            self.handbookExerciseUpdated?()
         }
     }
     
@@ -37,7 +37,7 @@ class ExerciseViewModel {
         urlRequest.httpMethod = "GET"
         
         //Используем NetworkService для получения данных
-        networkService.fetchData(request: urlRequest) { (result: Result<[Exercise], Error>) in
+        networkService.fetchData(request: urlRequest) { (result: Result<[HandbookExercise], Error>) in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {

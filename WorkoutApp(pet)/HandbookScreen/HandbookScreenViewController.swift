@@ -7,15 +7,15 @@
 
 import UIKit
 
-final class ExerciseScreenViewController: UIViewController {
+final class HandbookScreenViewController: UIViewController {
     //MARK: - Variables
-    private let viewModel: ExerciseViewModel
-    var router: HomeRouter!
+    private let viewModel: HandbookViewModel
+//    var router: HomeRouter!
     private let tableView = UITableView()
     private let activityIndicator = CustomActivityIndicator(frame: CGRect(), text: "Loading")
     
     //MARK: - Lifecycle
-    init(_ viewModel: ExerciseViewModel = ExerciseViewModel()) {
+    init(_ viewModel: HandbookViewModel = HandbookViewModel()) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -40,7 +40,7 @@ final class ExerciseScreenViewController: UIViewController {
     }
 }
 
-private extension ExerciseScreenViewController {
+private extension HandbookScreenViewController {
     
     func setupUI() {
         view.setupView(tableView)
@@ -69,9 +69,9 @@ private extension ExerciseScreenViewController {
     func tableViewSettings() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ExerciseCell.self, forCellReuseIdentifier: ExerciseCell.identifier)
+        tableView.register(HandbookCell.self, forCellReuseIdentifier: HandbookCell.identifier)
 
-        viewModel.exerciseUpdated = { [weak self] in
+        viewModel.handbookExerciseUpdated = { [weak self] in
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }
@@ -80,14 +80,14 @@ private extension ExerciseScreenViewController {
 }
 
 
-extension ExerciseScreenViewController: UITableViewDataSource, UITableViewDelegate {
+extension HandbookScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.allExercises.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: ExerciseCell.identifier, for: indexPath) as? ExerciseCell else { fatalError("Unable to dequeue CoinCell in HomeController") }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: HandbookCell.identifier, for: indexPath) as? HandbookCell else { fatalError("Unable to dequeue CoinCell in HomeController") }
         let exercise = viewModel.allExercises[indexPath.row]
         cell.configure(with: exercise)
         activityIndicator.stopAnimating()
@@ -105,7 +105,6 @@ extension ExerciseScreenViewController: UITableViewDataSource, UITableViewDelega
         
         let viewModel = ExerciseInfoViewModel(exercise)
         let viewController = ExerciseInfoController(viewModel)
-//        self.navigationController?.pushViewController(vc, animated: true)
         present(viewController, animated: true, completion: nil)
     }
     

@@ -9,10 +9,10 @@ import Foundation
 
 
 struct ExerciseArray: Decodable {
-    let data: [Exercise]
+    let data: [HandbookExercise]
 }
 
-struct Exercise: Decodable {
+struct HandbookExercise: Decodable {
     let name: String
     let type: String
     let muscle: String

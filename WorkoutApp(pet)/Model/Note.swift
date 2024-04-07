@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct NoteModel {
+struct Note {
     let nameOfDay: String
     let nameOfNote: String
     let exerciseName: String
