@@ -12,6 +12,6 @@ final class NotesRouter {
    weak var notesViewController: NotesScreenViewController?
 
     func pushNextScreen() {
-        notesViewController?.navigationController?.pushViewController(AddNoteAssembler.buildModule(), animated: true)
+        notesViewController?.navigationController?.pushViewController(AddNoteAssembler().buildModule(), animated: true)
     }
 }

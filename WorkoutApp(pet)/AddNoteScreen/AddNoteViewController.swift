@@ -11,14 +11,15 @@ final class AddNoteViewController: UIViewController {
     
     //MARK: - Variables
     
-    private let viewModel: ExerciseViewModel
+    let viewModel: AddNoteViewModel
+    let router: RouterProtocol
     
     private let trainingNameTextField = AddNoteCustomTextField(fieldType: .trainingName)
     private let muscleTextField = AddNoteCustomTextField(fieldType: .kindOfMuscle)
-    let tableView = UITableView(frame: .zero)
+    private let tableView = UITableView(frame: .zero)
     private let addExerciseButton = AddExerciseButton()
     
-    var router: AddNoteRouter!
+//    var router: AddNoteRouter
     
     //MARK: - UI Components
     
@@ -32,8 +33,9 @@ final class AddNoteViewController: UIViewController {
     
     //MARK: - Lifecycle
     
-    init(_ viewModel: ExerciseViewModel = ExerciseViewModel()) {
+    init(_ viewModel: AddNoteViewModel, router: RouterProtocol) {
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -42,9 +44,9 @@ final class AddNoteViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewSettings()
         navigationBarAppearence()
         setupUI()
+        tableViewSettings()
         setupLayout()
         setupAction()
     }
@@ -95,31 +97,37 @@ private extension AddNoteViewController {
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         
-        viewModel.exerciseUpdated = { [weak self] in
-            DispatchQueue.main.async {
-                self?.tableView.reloadData()
-            }
-        }
     }
     
     //MARK: - Setup Action
     func setupAction() {
         addExerciseButton.addExerciseButtonTapped = { [weak self] in
             guard let self = self else { return }
-            self.router?.pushNextScreen()
+            self.router.presentNextScreen(on: self, delegate: self)
         }
     }
 }
 
 extension AddNoteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.allExercises.count
+        return viewModel.exercises.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = viewModel.allExercises[indexPath.row].exerciseName
+        cell.textLabel?.text = viewModel.exercises[indexPath.row].exerciseName
         cell.backgroundColor = Resources.CommonColors.customDarkGrey
         return cell
     }
 }
+
+
+extension AddNoteViewController: AddExerciseDelegate {
+    func didAddExercise(exerciseName: String, numberOfSets: String, numberOfReps: String, restTime: String) {
+        viewModel.addExercise(exerciseName: exerciseName, numberOfSets: numberOfSets, numberOfReps: numberOfReps, restTime: restTime)
+        tableView.reloadData()
+    }
+    
+    
+}
+

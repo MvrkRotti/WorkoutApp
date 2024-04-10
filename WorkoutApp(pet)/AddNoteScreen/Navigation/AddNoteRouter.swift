@@ -7,11 +7,15 @@
 
 import UIKit
 
-final class AddNoteRouter {
-    
-    weak var addNoteViewController: AddNoteViewController?
+protocol RouterProtocol {
+    func presentNextScreen(on viewContoller: UIViewController, delegate: AddExerciseDelegate)
+}
 
-    func pushNextScreen() {
-        addNoteViewController?.navigationController?.present(AddExerciseAssembler.buildModule(), animated: true)
+final class AddNoteRouter: RouterProtocol {
+    func presentNextScreen(on viewContoller: UIViewController, delegate: AddExerciseDelegate) {
+        let addExerciseViewController = AddExerciseViewController()
+        addExerciseViewController.delegate = delegate
+        viewContoller.present(addExerciseViewController, animated: true, completion: nil)
     }
+
 }

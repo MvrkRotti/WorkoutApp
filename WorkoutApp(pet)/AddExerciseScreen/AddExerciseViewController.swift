@@ -7,13 +7,17 @@
 
 import UIKit
 
+protocol AddExerciseDelegate: AnyObject {
+    func didAddExercise(exerciseName: String, numberOfSets: String, numberOfReps: String, restTime: String)
+}
+
 final class AddExerciseViewController: UIViewController {
     
     //MARK: - Variables
-        
-    var router: AddExerciseRouter!
     
-    private let viewModel: ExerciseViewModel
+    var router: AddExerciseRouter
+    
+    weak var delegate: AddExerciseDelegate?
         
     private let exerciseNameTextField = AddNoteCustomTextField(fieldType: .exerciseName)
     private let numberOfSetsTextField = AddExerciseCustomTextField(fieldType: .numberOfSets)
@@ -57,8 +61,8 @@ final class AddExerciseViewController: UIViewController {
     
     //MARK: - Lifecycle
     
-    init(_ viewModel: ExerciseViewModel = ExerciseViewModel()) {
-        self.viewModel = viewModel
+    init(router: AddExerciseRouter = AddExerciseRouter()) {
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -112,16 +116,15 @@ private extension AddExerciseViewController {
             self.dismiss(animated: true, completion: nil)
         }
         
-        saveButton.saveButtonTapped = { [weak self] in
-            guard let exerciseName = self?.exerciseNameTextField.text, !exerciseName.isEmpty,
-                  let numberOfSets = self?.numberOfSetsTextField.text, !numberOfSets.isEmpty,
-                  let numberOfReps = self?.numberOfRepsTextField.text, !numberOfReps.isEmpty,
-                  let restTime = self?.restTimeTextField.text, !restTime.isEmpty else { return }
-
-            let newExercise = Exercise(exerciseName: exerciseName, numberOfSets: numberOfSets, numberOfReps: numberOfReps, restTime: restTime)
+        saveButton.saveButtonTapped = {
+            guard let exerciseName = self.exerciseNameTextField.text, !exerciseName.isEmpty,
+                  let numberOfSets = self.numberOfSetsTextField.text, !numberOfSets.isEmpty,
+                  let numberOfReps = self.numberOfRepsTextField.text, !numberOfReps.isEmpty,
+                  let restTime = self.restTimeTextField.text, !restTime.isEmpty else { return }
             
-            self?.viewModel.addExercise(exercise: newExercise)
-            self?.dismiss(animated: true, completion: nil)
-            }
+            self.delegate?.didAddExercise(exerciseName: exerciseName, numberOfSets: numberOfSets, numberOfReps: numberOfReps, restTime: restTime)
+            self.dismiss(animated: true, completion: nil)
         }
     }
+}
+

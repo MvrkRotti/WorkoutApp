@@ -32,7 +32,7 @@
 		CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */; };
 		CE1A8BE12B87E67900ACB21C /* BMIDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */; };
 		CE25756F2BC2D8D3005708F2 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */; };
-		CE2575712BC2D9A2005708F2 /* ExerciseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2575702BC2D9A2005708F2 /* ExerciseViewModel.swift */; };
+		CE3746AD2BC59EE500D2D10A /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3746AC2BC59EE500D2D10A /* AddNoteViewModel.swift */; };
 		CE3C12F02BAC8180003F3561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */; };
 		CE3C12F32BB2EC93003F3561 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12F22BB2EC93003F3561 /* FirebaseAuth */; };
 		CE3C12F52BB2EC93003F3561 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12F42BB2EC93003F3561 /* FirebaseAnalytics */; };
@@ -129,7 +129,7 @@
 		CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILabel.swift; sourceTree = "<group>"; };
 		CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIDescriptionLabel.swift; sourceTree = "<group>"; };
 		CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
-		CE2575702BC2D9A2005708F2 /* ExerciseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExerciseViewModel.swift; path = ../AddNoteScreen/ExerciseViewModel.swift; sourceTree = "<group>"; };
+		CE3746AC2BC59EE500D2D10A /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE3C12FE2BB32086003F3561 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
@@ -353,6 +353,7 @@
 				CEF2AB532BBDA8C100205B60 /* Views */,
 				CE3C133B2BBD517A003F3561 /* Navigation */,
 				CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */,
+				CE3746AC2BC59EE500D2D10A /* AddNoteViewModel.swift */,
 			);
 			path = AddNoteScreen;
 			sourceTree = "<group>";
@@ -669,7 +670,6 @@
 				CEF2AB652BBF0C3300205B60 /* Views */,
 				CEF2AB602BBF09E800205B60 /* Navigation */,
 				CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */,
-				CE2575702BC2D9A2005708F2 /* ExerciseViewModel.swift */,
 			);
 			path = AddExerciseScreen;
 			sourceTree = "<group>";
@@ -814,6 +814,7 @@
 				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
 				CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */,
+				CE3746AD2BC59EE500D2D10A /* AddNoteViewModel.swift in Sources */,
 				CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */,
 				CE3C13052BB9724C003F3561 /* Note.swift in Sources */,
 				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
@@ -855,7 +856,6 @@
 				CE00CCDE2B922DC8001E1E8B /* EquipmentLabel.swift in Sources */,
 				CE1A8BD52B87E62500ACB21C /* NameLabel.swift in Sources */,
 				CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */,
-				CE2575712BC2D9A2005708F2 /* ExerciseViewModel.swift in Sources */,
 				CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */,
 				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,
 				CE1A8BD02B87DC7700ACB21C /* ProfilePhotoView.swift in Sources */,

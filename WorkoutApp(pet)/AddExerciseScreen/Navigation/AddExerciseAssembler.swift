@@ -7,13 +7,15 @@
 
 import UIKit
 
+
+
 struct AddExerciseAssembler {
     
     static func buildModule() -> UIViewController {
         
-        let viewController = AddExerciseViewController()
         let router = AddExerciseRouter()
-        
+        let viewController = AddExerciseViewController()
+
         viewController.router = router
         router.addExerciseViewController = viewController
         

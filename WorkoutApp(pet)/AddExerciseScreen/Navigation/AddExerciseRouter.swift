@@ -14,5 +14,4 @@ final class AddExerciseRouter {
     func popViewController() {
         addExerciseViewController?.navigationController?.popViewController(animated: true)
     }
-    
 }

@@ -7,15 +7,17 @@
 
 import UIKit
 
-struct AddNoteAssembler {
+protocol AssemblerProtocol {
+    func buildModule() -> UIViewController
+}
+
+struct AddNoteAssembler: AssemblerProtocol {
     
-    static func buildModule() -> UIViewController {
+    func buildModule() -> UIViewController {
         
-        let viewController = AddNoteViewController()
-        let router = AddNoteRouter()
-        
-        viewController.router = router
-        router.addNoteViewController = viewController
+        let viewModel = AddNoteViewModel()
+        let viewController = AddNoteViewController(viewModel, router: AddNoteRouter())
+
         
         return viewController
     }
