@@ -33,7 +33,6 @@
 		CE1A8BE12B87E67900ACB21C /* BMIDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */; };
 		CE25756F2BC2D8D3005708F2 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */; };
 		CE3746AD2BC59EE500D2D10A /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3746AC2BC59EE500D2D10A /* AddNoteViewModel.swift */; };
-		CE3C12F02BAC8180003F3561 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */; };
 		CE3C12F32BB2EC93003F3561 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12F22BB2EC93003F3561 /* FirebaseAuth */; };
 		CE3C12F52BB2EC93003F3561 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12F42BB2EC93003F3561 /* FirebaseAnalytics */; };
 		CE3C12F72BB2EC93003F3561 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = CE3C12F62BB2EC93003F3561 /* FirebaseStorage */; };
@@ -47,6 +46,8 @@
 		CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */; };
 		CE3C13382BBD5169003F3561 /* AddNoteAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */; };
 		CE3C133A2BBD5173003F3561 /* AddNoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */; };
+		CE5CD4412BC70E090065991D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4402BC70E090065991D /* FirebaseManager.swift */; };
+		CE6869BB2BC7021300DB2170 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6869BA2BC7021300DB2170 /* GoogleService-Info.plist */; };
 		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
 		CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */; };
 		CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */; };
@@ -130,7 +131,6 @@
 		CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIDescriptionLabel.swift; sourceTree = "<group>"; };
 		CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
 		CE3746AC2BC59EE500D2D10A /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
-		CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE3C12FE2BB32086003F3561 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE3C13042BB9724C003F3561 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
@@ -138,6 +138,8 @@
 		CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteAssembler.swift; sourceTree = "<group>"; };
 		CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRouter.swift; sourceTree = "<group>"; };
+		CE5CD4402BC70E090065991D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		CE6869BA2BC7021300DB2170 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenRouter.swift; sourceTree = "<group>"; };
 		CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenAssembler.swift; sourceTree = "<group>"; };
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				CE1A8BC22B8256C000ACB21C /* NetworkService.swift */,
+				CE5CD4402BC70E090065991D /* FirebaseManager.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -490,7 +493,7 @@
 				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
 				CE8D50E22B88939000A14719 /* EditProfileScreen */,
 				CED9EB0B2B6E4BBB0065FE23 /* Info.plist */,
-				CE3C12EF2BAC8180003F3561 /* GoogleService-Info.plist */,
+				CE6869BA2BC7021300DB2170 /* GoogleService-Info.plist */,
 			);
 			path = "WorkoutApp(pet)";
 			sourceTree = "<group>";
@@ -763,7 +766,7 @@
 			files = (
 				CED9EB0A2B6E4BBB0065FE23 /* LaunchScreen.storyboard in Resources */,
 				CED9EB072B6E4BBB0065FE23 /* Assets.xcassets in Resources */,
-				CE3C12F02BAC8180003F3561 /* GoogleService-Info.plist in Resources */,
+				CE6869BB2BC7021300DB2170 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -822,6 +825,7 @@
 				CEAC7E052B81F3C800AF05CD /* HandbookAssembler.swift in Sources */,
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
 				CEF2AB5C2BBED69D00205B60 /* RouterProtocol.swift in Sources */,
+				CE5CD4412BC70E090065991D /* FirebaseManager.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
 				CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */,
 				CEF2AB692BBF105600205B60 /* AddExerciseCustomLabel.swift in Sources */,

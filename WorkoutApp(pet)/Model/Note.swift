@@ -7,8 +7,8 @@
 
 import Foundation
 
-struct Note {
-    let nameOfDay: String
-    let nameOfNote: String
-    let exerciseName: String
+struct ExerciseNote {
+    let trainName: String
+    let kindOfMuscle: String
+    let exercise: [Exercise]
 }
