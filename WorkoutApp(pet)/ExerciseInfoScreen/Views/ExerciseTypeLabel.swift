@@ -23,9 +23,9 @@ final class ExerciseTypeLabel: UILabel {
 
 private extension ExerciseTypeLabel {
     func setupAppearence() {
-        textColor = Resources.CommonColors.white
+        textColor = ColorResources.white
         textAlignment = .left
-        font = Resources.CommonFonts.cellNameLabelFont
+        font = FontResources.cellNameLabelFont
         text = "Error"
     }
 }

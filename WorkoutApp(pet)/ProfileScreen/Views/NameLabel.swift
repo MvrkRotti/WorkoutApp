@@ -23,8 +23,8 @@ final class NameLabel: UILabel {
 
 private extension NameLabel {
     func setupAppearence() {
-        textColor = Resources.CommonColors.black
-        font = Resources.CommonFonts.profileLabelFont
+        textColor = ColorResources.black
+        font = FontResources.profileLabelFont
         text = "Name: "
     }
 }

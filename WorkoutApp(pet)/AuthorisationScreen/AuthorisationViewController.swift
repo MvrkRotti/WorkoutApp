@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class AuthorisationViewController: UIViewController {
     
@@ -13,11 +14,13 @@ final class AuthorisationViewController: UIViewController {
     
     var router: AutoristaionRouter!
     
+    var viewModel = AuthorisationViewModel()
+    
     let emailTextField = LogInEmailTextField()
     let passwordTextField = LogInPasswordTextField()
     let authSignInButton = AuthSignInButton()
     
-
+    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -34,15 +37,15 @@ private extension AuthorisationViewController {
     func navigationBarAppearence() {
         navigationController?.isNavigationBarHidden = false
         title = "Log In"
-        navigationController?.navigationBar.barTintColor = Resources.CommonColors.black
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Resources.CommonColors.white]
+        navigationController?.navigationBar.barTintColor = ColorResources.black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
     }
     
     func setupUI() {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
-
+        
         let emailTextFieldImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20.0, height: 20.0))
-        let image = Resources.TextField.Images.userLogo
+        let image = TextFieldResources.Images.userLogo
         emailTextFieldImageView.image = image
         emailTextFieldImageView.contentMode = .right
         emailTextField.addSubview(emailTextFieldImageView)
@@ -51,24 +54,34 @@ private extension AuthorisationViewController {
         emailTextField.delegate = self
         
         let passwordTextFieldImageView = UIImageView(frame: CGRect(x: 8.0, y: 12.0, width: 20.0, height: 20.0))
-        let passImage = Resources.TextField.Images.passLogo
+        let passImage = TextFieldResources.Images.passLogo
         passwordTextFieldImageView.image = passImage
         passwordTextFieldImageView.contentMode = .scaleAspectFit
         passwordTextField.addSubview(passwordTextFieldImageView)
         passwordTextField.leftViewMode = .always
         passwordTextField.leftView = passwordTextFieldImageView
         passwordTextField.delegate = self
-    
+        
         view.setupView(emailTextField)
         view.setupView(passwordTextField)
         view.setupView(authSignInButton)
-
+        
     }
     
     func setupActions() {
-        authSignInButton.signInTapped = { [weak self] in
-            guard let self = self else { return }
-            self.router?.pushHomeScreen()
+        authSignInButton.signInTapped = {
+            guard let email = self.emailTextField.text, !email.isEmpty,
+                  let password = self.passwordTextField.text, !password.isEmpty else {
+                self.showAlert(message: StringResources.AlertResources.emptyField)
+                return
+            }
+            self.viewModel.authorisation(email: email, password: password) { [weak self] success, error in
+                if error != nil {
+                    self?.showAlert(message: StringResources.AlertResources.incorrectFilling)
+                } else {
+                    self?.router?.pushHomeScreen()
+                }
+            }
         }
     }
     
@@ -92,6 +105,14 @@ private extension AuthorisationViewController {
             authSignInButton.widthAnchor.constraint(equalToConstant: 335),
             authSignInButton.heightAnchor.constraint(equalToConstant: 50),
         ])
+    }
+}
+
+private extension AuthorisationViewController {
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: StringResources.AlertResources.alertTitle, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 

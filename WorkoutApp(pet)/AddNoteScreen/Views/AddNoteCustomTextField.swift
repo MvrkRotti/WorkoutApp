@@ -26,11 +26,11 @@ final class AddNoteCustomTextField: UITextField {
         
         switch fieldType {
         case .trainingName:
-            placeholder = Resources.TextField.PlaceholderString.trainingName
+            placeholder = TextFieldResources.PlaceholderString.trainingName
         case .kindOfMuscle:
-            placeholder = Resources.TextField.PlaceholderString.muscle
+            placeholder = TextFieldResources.PlaceholderString.muscle
         case .exerciseName:
-            placeholder = Resources.TextField.PlaceholderString.exerciseName
+            placeholder = TextFieldResources.PlaceholderString.exerciseName
 
         }
     }
@@ -42,9 +42,9 @@ final class AddNoteCustomTextField: UITextField {
 
 private extension AddNoteCustomTextField {
     func setupAppearence() {
-        backgroundColor = Resources.CommonColors.black
+        backgroundColor = ColorResources.black
         layer.cornerRadius = 15
-        textColor = Resources.CommonColors.white
+        textColor = ColorResources.white
         alpha = 0.95
         
         returnKeyType = .done

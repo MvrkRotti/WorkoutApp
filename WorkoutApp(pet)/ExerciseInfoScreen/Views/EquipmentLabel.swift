@@ -23,9 +23,9 @@ final class EquipmentLabel: UILabel {
 
 private extension EquipmentLabel {
     func setupAppearence() {
-        textColor = Resources.CommonColors.white
+        textColor = ColorResources.white
         textAlignment = .left
-        font = Resources.CommonFonts.cellNameLabelFont
+        font = FontResources.cellNameLabelFont
         text = "Error"
     }
 }

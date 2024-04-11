@@ -23,9 +23,9 @@ final class MuscleLabel: UILabel {
 
 private extension MuscleLabel {
     func setupAppearence() {
-        textColor = Resources.CommonColors.white
+        textColor = ColorResources.white
         textAlignment = .left
-        font = Resources.CommonFonts.cellNameLabelFont
+        font = FontResources.cellNameLabelFont
         text = "Error"
     }
 }

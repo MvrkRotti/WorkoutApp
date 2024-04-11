@@ -28,20 +28,20 @@ final class CustomTextField: UITextField {
         
         switch fieldType {
         case .name:
-            placeholder = Resources.TextField.PlaceholderString.firstName
+            placeholder = TextFieldResources.PlaceholderString.firstName
         case .lastName:
-            placeholder = Resources.TextField.PlaceholderString.lastName
+            placeholder = TextFieldResources.PlaceholderString.lastName
         case .email:
-            placeholder = Resources.TextField.PlaceholderString.email
+            placeholder = TextFieldResources.PlaceholderString.email
             keyboardType = .emailAddress
             textContentType = .emailAddress
         case .password:
-            placeholder = Resources.TextField.PlaceholderString.password
-            textContentType = .oneTimeCode
+            placeholder = TextFieldResources.PlaceholderString.password
+            textContentType = .newPassword
             isSecureTextEntry = true
         case .confirmPassword:
-            placeholder = Resources.TextField.PlaceholderString.confirmPassword
-            textContentType = .oneTimeCode
+            placeholder = TextFieldResources.PlaceholderString.confirmPassword
+            textContentType = .newPassword
             isSecureTextEntry = true
         }
     }
@@ -53,9 +53,9 @@ final class CustomTextField: UITextField {
 
 private extension CustomTextField {
     func setupAppearence() {
-        backgroundColor = Resources.CommonColors.customDarkGrey
+        backgroundColor = ColorResources.customDarkGrey
         layer.cornerRadius = 15
-        textColor = Resources.CommonColors.white
+        textColor = ColorResources.white
         alpha = 0.95
         
         returnKeyType = .done

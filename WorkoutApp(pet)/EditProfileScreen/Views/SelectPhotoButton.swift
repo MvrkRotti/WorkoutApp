@@ -25,14 +25,14 @@ final class SelectPhotoButton: UIButton {
 
 private extension SelectPhotoButton {
     func setupAppearence() {
-        setTitle(Resources.CommonStrings.selectPhoto, for: .normal)
-        setTitleColor(Resources.CommonColors.black, for: .normal)
+        setTitle(StringResources.CommonStrings.selectPhoto, for: .normal)
+        setTitleColor(ColorResources.black, for: .normal)
         setTitleColor(.systemBlue, for: .normal)
         titleLabel?.textAlignment = .center
-        titleLabel?.font = Resources.CommonFonts.autLabelFont
+        titleLabel?.font = FontResources.autLabelFont
         sizeToFit()
         
-        let buttonTitleStr = NSMutableAttributedString(string: Resources.CommonStrings.selectPhoto)
+        let buttonTitleStr = NSMutableAttributedString(string: StringResources.CommonStrings.selectPhoto)
         buttonTitleStr.addAttribute(
             NSAttributedString.Key.underlineStyle,
             value: NSUnderlineStyle.single.rawValue,

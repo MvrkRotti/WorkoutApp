@@ -20,14 +20,14 @@ final class HandbookCell: UITableViewCell {
     private let cellView: UIView = {
        let view = UIView()
         view.layer.cornerRadius = 15
-        view.backgroundColor = Resources.CommonColors.customCoral
+        view.backgroundColor = ColorResources.customCoral
         return view
     }()
     private let cellNameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = Resources.CommonColors.customDarkGrey
+        label.textColor = ColorResources.customDarkGrey
         label.textAlignment = .left
-        label.font = Resources.CommonFonts.cellNameLabelFont
+        label.font = FontResources.cellNameLabelFont
         label.text = "Error"
         return label
     }()
@@ -35,7 +35,7 @@ final class HandbookCell: UITableViewCell {
     private let arrowImage: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
-        iv.image = Resources.CommonImages.cellArrow
+        iv.image = ImageResources.cellArrow
         return iv
     }()
     

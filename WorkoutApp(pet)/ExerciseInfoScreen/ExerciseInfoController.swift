@@ -54,7 +54,7 @@ final class ExerciseInfoController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Resources.CommonColors.black
+        view.backgroundColor = ColorResources.black
         setupUI()
         setupLayout()
         

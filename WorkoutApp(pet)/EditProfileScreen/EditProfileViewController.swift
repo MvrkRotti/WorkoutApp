@@ -33,7 +33,7 @@ final class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Resources.CommonColors.customDarkGrey
+        view.backgroundColor = ColorResources.customDarkGrey
         navigationBarAppearence()
         setupUI()
         setupLayout()
@@ -52,7 +52,7 @@ private extension EditProfileViewController {
 
         navigationItem.title = "Edit profile"
         navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey
+        navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationItem.rightBarButtonItem = editButton
     }

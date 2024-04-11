@@ -23,7 +23,7 @@ final class TrainViewLabel: UILabel {
 private extension TrainViewLabel {
     func setupAppearence() {
         text = "Training Notes"
-        font = Resources.CommonFonts.cellNameLabelFont
+        font = FontResources.cellNameLabelFont
         textAlignment = .left
     }
 }

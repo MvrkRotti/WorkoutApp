@@ -49,6 +49,12 @@
 		CE5CD44A2BC83B0B0065991D /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */; };
 		CE5CD44C2BC83C320065991D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD44B2BC83C320065991D /* User.swift */; };
 		CE5CD4512BC843170065991D /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4502BC843170065991D /* AuthorizationViewModel.swift */; };
+		CE5CD4532BC86EAC0065991D /* TextFieldResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4522BC86EAC0065991D /* TextFieldResources.swift */; };
+		CE5CD4552BC86EB90065991D /* StringResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4542BC86EB90065991D /* StringResources.swift */; };
+		CE5CD4572BC86EC90065991D /* ColorResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4562BC86EC90065991D /* ColorResources.swift */; };
+		CE5CD4592BC86EE70065991D /* ImageResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4582BC86EE70065991D /* ImageResources.swift */; };
+		CE5CD45B2BC86EF40065991D /* FontResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD45A2BC86EF40065991D /* FontResources.swift */; };
+		CE5CD45D2BC873910065991D /* TabBarResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD45C2BC873910065991D /* TabBarResources.swift */; };
 		CE6869BB2BC7021300DB2170 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6869BA2BC7021300DB2170 /* GoogleService-Info.plist */; };
 		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
 		CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */; };
@@ -76,7 +82,6 @@
 		CED9EB0A2B6E4BBB0065FE23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED9EB082B6E4BBB0065FE23 /* LaunchScreen.storyboard */; };
 		CED9EB132B6E4CAD0065FE23 /* WelcomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB122B6E4CAD0065FE23 /* WelcomeRouter.swift */; };
 		CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB162B6E4D240065FE23 /* UIColor.swift */; };
-		CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB182B6E4D5C0065FE23 /* Resources.swift */; };
 		CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB1E2B6E4E1A0065FE23 /* SignUpButton.swift */; };
 		CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB212B6E4E680065FE23 /* RegistrationViewController.swift */; };
 		CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB242B6E70430065FE23 /* SignInButton.swift */; };
@@ -143,6 +148,12 @@
 		CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		CE5CD44B2BC83C320065991D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE5CD4502BC843170065991D /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
+		CE5CD4522BC86EAC0065991D /* TextFieldResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldResources.swift; sourceTree = "<group>"; };
+		CE5CD4542BC86EB90065991D /* StringResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringResources.swift; sourceTree = "<group>"; };
+		CE5CD4562BC86EC90065991D /* ColorResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorResources.swift; sourceTree = "<group>"; };
+		CE5CD4582BC86EE70065991D /* ImageResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageResources.swift; sourceTree = "<group>"; };
+		CE5CD45A2BC86EF40065991D /* FontResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontResources.swift; sourceTree = "<group>"; };
+		CE5CD45C2BC873910065991D /* TabBarResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarResources.swift; sourceTree = "<group>"; };
 		CE6869BA2BC7021300DB2170 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenRouter.swift; sourceTree = "<group>"; };
@@ -172,7 +183,6 @@
 		CED9EB0B2B6E4BBB0065FE23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CED9EB122B6E4CAD0065FE23 /* WelcomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeRouter.swift; sourceTree = "<group>"; };
 		CED9EB162B6E4D240065FE23 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		CED9EB182B6E4D5C0065FE23 /* Resources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resources.swift; sourceTree = "<group>"; };
 		CED9EB1E2B6E4E1A0065FE23 /* SignUpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpButton.swift; sourceTree = "<group>"; };
 		CED9EB212B6E4E680065FE23 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		CED9EB242B6E70430065FE23 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
@@ -514,7 +524,12 @@
 			isa = PBXGroup;
 			children = (
 				CED9EB152B6E4D060065FE23 /* Extensions */,
-				CED9EB182B6E4D5C0065FE23 /* Resources.swift */,
+				CE5CD4522BC86EAC0065991D /* TextFieldResources.swift */,
+				CE5CD4542BC86EB90065991D /* StringResources.swift */,
+				CE5CD4562BC86EC90065991D /* ColorResources.swift */,
+				CE5CD4582BC86EE70065991D /* ImageResources.swift */,
+				CE5CD45A2BC86EF40065991D /* FontResources.swift */,
+				CE5CD45C2BC873910065991D /* TabBarResources.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -809,8 +824,10 @@
 				CEAC7E152B81F46500AF05CD /* AuthorisationAssembler.swift in Sources */,
 				CEF2AB522BBD769100205B60 /* NotesAssembler.swift in Sources */,
 				CE3C133A2BBD5173003F3561 /* AddNoteRouter.swift in Sources */,
+				CE5CD4552BC86EB90065991D /* StringResources.swift in Sources */,
 				CE3C13382BBD5169003F3561 /* AddNoteAssembler.swift in Sources */,
 				CE00CCDC2B922DB7001E1E8B /* ExerciseTypeLabel.swift in Sources */,
+				CE5CD45D2BC873910065991D /* TabBarResources.swift in Sources */,
 				CED9EB132B6E4CAD0065FE23 /* WelcomeRouter.swift in Sources */,
 				CEAC7E112B81F42900AF05CD /* ProfileAssembler.swift in Sources */,
 				CE8D50EF2B88E53400A14719 /* AgeTextField.swift in Sources */,
@@ -835,6 +852,7 @@
 				CE3746AD2BC59EE500D2D10A /* AddNoteViewModel.swift in Sources */,
 				CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */,
 				CE3C13052BB9724C003F3561 /* Note.swift in Sources */,
+				CE5CD4532BC86EAC0065991D /* TextFieldResources.swift in Sources */,
 				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
 				CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */,
 				CEAC7E052B81F3C800AF05CD /* HandbookAssembler.swift in Sources */,
@@ -844,12 +862,13 @@
 				CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */,
 				CEF2AB692BBF105600205B60 /* AddExerciseCustomLabel.swift in Sources */,
 				CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */,
+				CE5CD45B2BC86EF40065991D /* FontResources.swift in Sources */,
 				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
 				CEF2AB6B2BBF143900205B60 /* AddExerciseCustomButton.swift in Sources */,
 				CE1A8BC52B82644D00ACB21C /* HandbookViewModel.swift in Sources */,
 				CE1A8BDB2B87E64500ACB21C /* WeightLabel.swift in Sources */,
 				CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */,
-				CED9EB192B6E4D5C0065FE23 /* Resources.swift in Sources */,
+				CE5CD4592BC86EE70065991D /* ImageResources.swift in Sources */,
 				CEAC7E072B81F3D300AF05CD /* HandbookRouter.swift in Sources */,
 				CE00CCE42B9232C1001E1E8B /* ExerciseInfoViewModel.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
@@ -862,6 +881,7 @@
 				CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */,
 				CE25756F2BC2D8D3005708F2 /* ExerciseModel.swift in Sources */,
 				CE8D50F12B88E9EF00A14719 /* WeightTextField.swift in Sources */,
+				CE5CD4572BC86EC90065991D /* ColorResources.swift in Sources */,
 				CE00CCDA2B922DAB001E1E8B /* ExerciseNameLabel.swift in Sources */,
 				CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */,
 				CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */,

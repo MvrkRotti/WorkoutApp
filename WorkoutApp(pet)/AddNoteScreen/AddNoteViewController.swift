@@ -66,7 +66,7 @@ private extension AddNoteViewController {
     }
 
     func setupUI() {
-        view.backgroundColor = Resources.CommonColors.customDarkGrey
+        view.backgroundColor = ColorResources.customDarkGrey
 
         view.setupView(textFieldStack)
         view.setupView(tableView)
@@ -92,7 +92,7 @@ private extension AddNoteViewController {
     
     //MARK: - TableView ssettings
     func tableViewSettings() {
-        tableView.backgroundColor = Resources.CommonColors.customDarkGrey
+        tableView.backgroundColor = ColorResources.customDarkGrey
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -116,7 +116,7 @@ extension AddNoteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.text = viewModel.exercises[indexPath.row].exerciseName
-        cell.backgroundColor = Resources.CommonColors.customDarkGrey
+        cell.backgroundColor = ColorResources.customDarkGrey
         return cell
     }
 }

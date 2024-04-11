@@ -84,9 +84,9 @@ private extension TrainNoteCell {
     }
     
     func setGradientBackground() {
-        let firstColor = Resources.CommonColors.customCoral.cgColor
+        let firstColor = ColorResources.customCoral.cgColor
         
-        let secondColor = Resources.CommonColors.white.withAlphaComponent(0.7).cgColor
+        let secondColor = ColorResources.white.withAlphaComponent(0.7).cgColor
         
         gradientLayer.colors = [firstColor, secondColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.5)

@@ -23,9 +23,9 @@ final class InstructionsLabel: UILabel {
 
 private extension InstructionsLabel {
     func setupAppearence() {
-        textColor = Resources.CommonColors.white
+        textColor = ColorResources.white
         textAlignment = .left
-        font = Resources.CommonFonts.cellNameLabelFont
+        font = FontResources.cellNameLabelFont
         text = "Error"
         contentMode = .scaleAspectFit
         numberOfLines = 0

@@ -27,9 +27,9 @@ final class SignInButton: UIButton {
 private extension SignInButton {
     func setupAppearence() {
         
-        setTitle(Resources.AutorizedScreenStrings.signIn, for: .normal)
-        setTitleColor(Resources.CommonColors.customCoral, for: .normal)
-        let buttonTitleStr = NSMutableAttributedString(string: Resources.AutorizedScreenStrings.signIn)
+        setTitle(StringResources.AutorizedScreenStrings.signIn, for: .normal)
+        setTitleColor(ColorResources.customCoral, for: .normal)
+        let buttonTitleStr = NSMutableAttributedString(string: StringResources.AutorizedScreenStrings.signIn)
         buttonTitleStr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, buttonTitleStr.length))
         setAttributedTitle(buttonTitleStr, for: .normal)
 

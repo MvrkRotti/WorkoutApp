@@ -42,16 +42,16 @@ final class TabController: UITabBarController {
     }
 
     private func configureAppearance() {
-        tabBar.tintColor = Resources.CommonColors.customCoral
-        tabBar.unselectedItemTintColor = Resources.CommonColors.white
-        tabBar.barTintColor = Resources.CommonColors.customDarkGrey
+        tabBar.tintColor = ColorResources.customCoral
+        tabBar.unselectedItemTintColor = ColorResources.white
+        tabBar.barTintColor = ColorResources.customDarkGrey
         tabBar.layer.masksToBounds = true
         tabBar.alpha = 0.9
         
         let controllers: [UIViewController] = Tabs.allCases.map { tab in
             let controller = UINavigationController(rootViewController: getController(for: tab))
-            controller.tabBarItem = UITabBarItem(title: Resources.TabBar.title(for: tab),
-                                                 image: Resources.TabBar.icon(for: tab),
+            controller.tabBarItem = UITabBarItem(title: TabBarResources.title(for: tab),
+                                                 image: TabBarResources.icon(for: tab),
                                                  tag: tab.rawValue)
             return controller
         }

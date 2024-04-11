@@ -23,8 +23,8 @@ final class BMILabel: UILabel {
 
 private extension BMILabel {
     func setupAppearence() {
-        textColor = Resources.CommonColors.black
-        font = Resources.CommonFonts.profileLabelFont
+        textColor = ColorResources.black
+        font = FontResources.profileLabelFont
         text = "BMI: "
     }
 }

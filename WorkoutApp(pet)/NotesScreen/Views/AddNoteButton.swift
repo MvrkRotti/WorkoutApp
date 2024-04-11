@@ -29,10 +29,10 @@ private extension AddNoteButton {
         frame = CGRect(x: 0, y: 0, width: 65, height: 65)
         
         setTitle("+", for: .normal)
-        titleLabel?.font = Resources.CommonFonts.registrationLabelFont
-        setTitleColor(Resources.CommonColors.black, for: .normal)
+        titleLabel?.font = FontResources.registrationLabelFont
+        setTitleColor(ColorResources.black, for: .normal)
         
-        backgroundColor = Resources.CommonColors.customCoral
+        backgroundColor = ColorResources.customCoral
         layer.cornerRadius = frame.width / 2
     }
     

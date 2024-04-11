@@ -59,8 +59,8 @@ private extension RegistrationViewController {
     
     func navigationBarAppearence() {
         title = "Registration"
-        navigationController?.navigationBar.barTintColor = Resources.CommonColors.black
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : Resources.CommonColors.white]
+        navigationController?.navigationBar.barTintColor = ColorResources.black
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
     }
     
     
@@ -89,7 +89,7 @@ private extension RegistrationViewController {
                   let email = self.emailField.text, !email.isEmpty,
                   let password = self.passwordField.text, !password.isEmpty,
                   let confirmPassword = self.confirmPasswordField.text, !confirmPassword.isEmpty else {
-                self.showAlert(message: "Please, fill in all fields")
+                self.showAlert(message: StringResources.AlertResources.fillAllFields)
                 return
             }
             self.viewModel.registerUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword) { [weak self] user, error in
@@ -145,8 +145,8 @@ extension RegistrationViewController: UITextFieldDelegate {
 //MARK: - Alert Controller
 private extension RegistrationViewController {
     func showAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: StringResources.AlertResources.alertTitle, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 }

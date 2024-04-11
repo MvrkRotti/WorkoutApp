@@ -23,8 +23,8 @@ final class HeightLabel: UILabel {
 
 private extension HeightLabel {
     func setupAppearence() {
-        textColor = Resources.CommonColors.black
-        font = Resources.CommonFonts.profileLabelFont
+        textColor = ColorResources.black
+        font = FontResources.profileLabelFont
         text = "Height: "
     }
 }

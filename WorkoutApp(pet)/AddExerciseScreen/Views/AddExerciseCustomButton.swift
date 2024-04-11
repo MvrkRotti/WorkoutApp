@@ -30,12 +30,12 @@ final class AddExerciseCustomButton: UIButton {
         switch buttonType {
         case .save:
             addTarget(self, action: #selector(saveDidTapped), for: .touchUpInside)
-            backgroundColor = Resources.CommonColors.customCoral
-            setTitle(Resources.CommonStrings.save, for: .normal)
+            backgroundColor = ColorResources.customCoral
+            setTitle(StringResources.CommonStrings.save, for: .normal)
         case .cancel:
             addTarget(self, action: #selector(cancelDidTapped), for: .touchUpInside)
-            backgroundColor = Resources.CommonColors.white
-            setTitle(Resources.CommonStrings.cancel, for: .normal)
+            backgroundColor = ColorResources.white
+            setTitle(StringResources.CommonStrings.cancel, for: .normal)
         }
     }
     
@@ -47,7 +47,7 @@ final class AddExerciseCustomButton: UIButton {
 extension AddExerciseCustomButton {
     func setupAppearence() {
         layer.cornerRadius = 15
-        setTitleColor(Resources.CommonColors.black, for: .normal)
+        setTitleColor(ColorResources.black, for: .normal)
         titleLabel?.textAlignment = .center
         makeSystem(self)
     }

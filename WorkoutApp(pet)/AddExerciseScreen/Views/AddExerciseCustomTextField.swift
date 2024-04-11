@@ -26,11 +26,11 @@ final class AddExerciseCustomTextField: UITextField {
         
         switch fieldType {
         case .numberOfSets:
-            placeholder = Resources.TextField.PlaceholderString.numberOfSets
+            placeholder = TextFieldResources.PlaceholderString.numberOfSets
         case .numberOfReps:
-            placeholder = Resources.TextField.PlaceholderString.numberOfReps
+            placeholder = TextFieldResources.PlaceholderString.numberOfReps
         case .restTime:
-            placeholder = Resources.TextField.PlaceholderString.restTime
+            placeholder = TextFieldResources.PlaceholderString.restTime
         }
     }
     
@@ -41,9 +41,9 @@ final class AddExerciseCustomTextField: UITextField {
 
 private extension AddExerciseCustomTextField {
     func setupAppearence() {
-        backgroundColor = Resources.CommonColors.black
+        backgroundColor = ColorResources.black
         layer.cornerRadius = 15
-        textColor = Resources.CommonColors.white
+        textColor = ColorResources.white
         alpha = 0.95
         
         returnKeyType = .done

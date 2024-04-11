@@ -22,9 +22,9 @@ final class GenderSegmentController: UISegmentedControl {
 private extension GenderSegmentController {
     func setupAppearence() {
         selectedSegmentIndex = 0
-        backgroundColor = Resources.CommonColors.black
-        selectedSegmentTintColor = Resources.CommonColors.white
-        setTitleTextAttributes([NSAttributedString.Key.foregroundColor: Resources.CommonColors.white], for: .normal)
-        setTitleTextAttributes([NSAttributedString.Key.foregroundColor: Resources.CommonColors.black], for: .selected)
+        backgroundColor = ColorResources.black
+        selectedSegmentTintColor = ColorResources.white
+        setTitleTextAttributes([NSAttributedString.Key.foregroundColor: ColorResources.white], for: .normal)
+        setTitleTextAttributes([NSAttributedString.Key.foregroundColor: ColorResources.black], for: .selected)
     }
 }

@@ -82,7 +82,7 @@ private extension AddExerciseViewController {
     
     func setupUI() {
         
-        view.backgroundColor = Resources.CommonColors.customDarkGrey
+        view.backgroundColor = ColorResources.customDarkGrey
         view.setupView(exerciseNameTextField)
         view.setupView(textFieldStack)
         view.setupView(labelStack)

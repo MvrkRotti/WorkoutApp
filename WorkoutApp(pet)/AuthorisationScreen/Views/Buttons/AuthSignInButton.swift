@@ -27,9 +27,9 @@ final class AuthSignInButton: UIButton {
 private extension AuthSignInButton {
     func setupAppearence() {
 
-        setTitle(Resources.AutorizedScreenStrings.signIn, for: .normal)
+        setTitle(StringResources.AutorizedScreenStrings.signIn, for: .normal)
         layer.cornerRadius = 15
-        backgroundColor = Resources.CommonColors.customCoral
+        backgroundColor = ColorResources.customCoral
     }
 
     @objc

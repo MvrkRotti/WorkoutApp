@@ -62,7 +62,7 @@ private extension HandbookScreenViewController {
     func navigationBarAppearence() {
         navigationItem.title = "Home"
         navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.barTintColor = Resources.CommonColors.customDarkGrey
+        navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
     }
     

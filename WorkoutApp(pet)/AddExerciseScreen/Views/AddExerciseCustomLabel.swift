@@ -25,11 +25,11 @@ final class AddExerciseCustomLabel: UILabel {
         
         switch labelType {
         case .sets:
-            text = Resources.CommonStrings.sets
+            text = StringResources.CommonStrings.sets
         case .reps:
-            text = Resources.CommonStrings.reps
+            text = StringResources.CommonStrings.reps
         case .min:
-            text = Resources.CommonStrings.min
+            text = StringResources.CommonStrings.min
         }
     }
     
@@ -40,8 +40,8 @@ final class AddExerciseCustomLabel: UILabel {
 
 private extension AddExerciseCustomLabel {
     func setupAppearence() {
-        font = Resources.CommonFonts.addExerciseLabelFont
+        font = FontResources.addExerciseLabelFont
         textAlignment = .left
-        tintColor = Resources.CommonColors.white
+        tintColor = ColorResources.white
     }
 }

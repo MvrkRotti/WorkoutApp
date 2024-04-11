@@ -27,10 +27,10 @@ final class AddExerciseButton: UIButton {
 private extension AddExerciseButton {
     func setupAppearence() {
         setTitle("Add new exercise", for: .normal)
-        setTitleColor(Resources.CommonColors.black, for: .normal)
+        setTitleColor(ColorResources.black, for: .normal)
         titleLabel?.textAlignment = .center
         layer.cornerRadius = 15
-        backgroundColor = Resources.CommonColors.customCoral
+        backgroundColor = ColorResources.customCoral
     }
     
     func setupLayout() {
