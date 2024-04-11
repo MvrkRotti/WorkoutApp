@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class RegistrationViewController: UIViewController {
     
     //MARK: - Variables
     
     var router: RegistrationRouter!
+    var viewModel = RegistrationViewModel()
     
     private let registrationLabel = RegistrationLabel()
     private let nameField = CustomTextField(fieldType: .name)
@@ -81,9 +83,23 @@ private extension RegistrationViewController {
     }
     
     func setupActions() {
-        regSighUpButton.signUpTapped = { [weak self] in
-            guard let self = self else { return }
-            self.router?.pushHomeScreen()
+        regSighUpButton.signUpTapped = {
+            guard let firstName = self.nameField.text, !firstName.isEmpty ,
+                  let lastName = self.lastNameField.text, !lastName.isEmpty,
+                  let email = self.emailField.text, !email.isEmpty,
+                  let password = self.passwordField.text, !password.isEmpty,
+                  let confirmPassword = self.confirmPasswordField.text, !confirmPassword.isEmpty else {
+                self.showAlert(message: "Please, fill in all fields")
+                return
+            }
+            self.viewModel.registerUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword) { [weak self] user, error in
+                guard let self = self else { return }
+                if let error = error {
+                    self.showAlert(message: error)
+                } else if user != nil {
+                    self.router?.pushHomeScreen()
+                }
+            }
         }
     }
     
@@ -105,7 +121,7 @@ private extension RegistrationViewController {
     }
 }
 
-
+//MARK: - Close keyboard after filling all text fields
 extension RegistrationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -123,6 +139,15 @@ extension RegistrationViewController: UITextFieldDelegate {
             break
         }
         return true
+    }
+}
+
+//MARK: - Alert Controller
+private extension RegistrationViewController {
+    func showAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 

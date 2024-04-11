@@ -14,4 +14,5 @@ class AddNoteViewModel {
         let newExercise = Exercise(exerciseName: exerciseName, numberOfSets: numberOfSets, numberOfReps: numberOfReps, restTime: restTime)
         exercises.append(newExercise)
     }
+    
 }

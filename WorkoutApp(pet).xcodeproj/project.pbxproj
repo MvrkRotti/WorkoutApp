@@ -46,7 +46,9 @@
 		CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */; };
 		CE3C13382BBD5169003F3561 /* AddNoteAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */; };
 		CE3C133A2BBD5173003F3561 /* AddNoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */; };
-		CE5CD4412BC70E090065991D /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4402BC70E090065991D /* FirebaseManager.swift */; };
+		CE5CD44A2BC83B0B0065991D /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */; };
+		CE5CD44C2BC83C320065991D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD44B2BC83C320065991D /* User.swift */; };
+		CE5CD4512BC843170065991D /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4502BC843170065991D /* AuthorizationViewModel.swift */; };
 		CE6869BB2BC7021300DB2170 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6869BA2BC7021300DB2170 /* GoogleService-Info.plist */; };
 		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
 		CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */; };
@@ -138,7 +140,9 @@
 		CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteAssembler.swift; sourceTree = "<group>"; };
 		CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRouter.swift; sourceTree = "<group>"; };
-		CE5CD4402BC70E090065991D /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		CE5CD44B2BC83C320065991D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE5CD4502BC843170065991D /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		CE6869BA2BC7021300DB2170 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenRouter.swift; sourceTree = "<group>"; };
@@ -259,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				CE1A8BC22B8256C000ACB21C /* NetworkService.swift */,
-				CE5CD4402BC70E090065991D /* FirebaseManager.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */,
 				CE3C13042BB9724C003F3561 /* Note.swift */,
 				CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */,
+				CE5CD44B2BC83C320065991D /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -368,6 +372,13 @@
 				CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CE5CD44D2BC83CFC0065991D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		CE8D50E22B88939000A14719 /* EditProfileScreen */ = {
@@ -475,6 +486,7 @@
 		CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */ = {
 			isa = PBXGroup;
 			children = (
+				CE5CD44D2BC83CFC0065991D /* Helpers */,
 				CEF2AB5A2BBED69100205B60 /* Router */,
 				CED9EB1A2B6E4D6F0065FE23 /* Application */,
 				CE1A8BBA2B822EDB00ACB21C /* NetworkService */,
@@ -553,6 +565,7 @@
 				CED9EB532B715A9D0065FE23 /* Navigation */,
 				CED9EB2E2B6E7F890065FE23 /* Views */,
 				CED9EB212B6E4E680065FE23 /* RegistrationViewController.swift */,
+				CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */,
 			);
 			path = RegistrationScreen;
 			sourceTree = "<group>";
@@ -589,6 +602,7 @@
 				CE1A8BCC2B87DC0900ACB21C /* Navigation */,
 				CE1A8BCB2B87DBFD00ACB21C /* Views */,
 				CED9EB3F2B7011970065FE23 /* AuthorisationViewController.swift */,
+				CE5CD4502BC843170065991D /* AuthorizationViewModel.swift */,
 			);
 			path = AuthorisationScreen;
 			sourceTree = "<group>";
@@ -785,6 +799,7 @@
 				CE1A8BC72B826BC800ACB21C /* HandbookCell.swift in Sources */,
 				CE1A8BE12B87E67900ACB21C /* BMIDescriptionLabel.swift in Sources */,
 				CEAC7E192B81F6CE00AF05CD /* TabAssembler.swift in Sources */,
+				CE5CD44C2BC83C320065991D /* User.swift in Sources */,
 				CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */,
 				CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */,
 				CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */,
@@ -825,7 +840,6 @@
 				CEAC7E052B81F3C800AF05CD /* HandbookAssembler.swift in Sources */,
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
 				CEF2AB5C2BBED69D00205B60 /* RouterProtocol.swift in Sources */,
-				CE5CD4412BC70E090065991D /* FirebaseManager.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
 				CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */,
 				CEF2AB692BBF105600205B60 /* AddExerciseCustomLabel.swift in Sources */,
@@ -853,6 +867,7 @@
 				CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */,
 				CEF2AB642BBF0A0000205B60 /* AddExerciseRouter.swift in Sources */,
 				CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */,
+				CE5CD4512BC843170065991D /* AuthorizationViewModel.swift in Sources */,
 				CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */,
 				CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */,
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
@@ -863,6 +878,7 @@
 				CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */,
 				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,
 				CE1A8BD02B87DC7700ACB21C /* ProfilePhotoView.swift in Sources */,
+				CE5CD44A2BC83B0B0065991D /* RegistrationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

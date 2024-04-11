@@ -32,8 +32,7 @@ private extension SignUpButton {
         backgroundColor = Resources.CommonColors.customCoral
     }
     
-    @objc
-    func signUpDidTapped() {
+    @objc func signUpDidTapped() {
         signUpTapped?()
     }
     
