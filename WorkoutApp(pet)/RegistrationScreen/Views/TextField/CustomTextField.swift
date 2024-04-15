@@ -39,10 +39,13 @@ final class CustomTextField: UITextField {
             placeholder = TextFieldResources.PlaceholderString.password
             textContentType = .newPassword
             isSecureTextEntry = true
+            addPasswordVisibilityButton()
         case .confirmPassword:
             placeholder = TextFieldResources.PlaceholderString.confirmPassword
             textContentType = .newPassword
             isSecureTextEntry = true
+            addPasswordVisibilityButton()
+
         }
     }
     
@@ -62,8 +65,11 @@ private extension CustomTextField {
         autocorrectionType = .no
         autocapitalizationType = .none
         
+        clearButtonMode = .whileEditing
+        
         leftViewMode = .always
         leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.size.height))
+        
     }
     
     func setupLayout() {

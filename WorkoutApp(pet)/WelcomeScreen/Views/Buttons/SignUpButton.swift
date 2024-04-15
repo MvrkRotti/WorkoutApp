@@ -28,6 +28,7 @@ private extension SignUpButton {
     func setupAppearence() {
         
         setTitle(StringResources.AutorizedScreenStrings.signUp, for: .normal)
+        setTitleColor(ColorResources.black, for: .normal)
         layer.cornerRadius = 15
         backgroundColor = ColorResources.customCoral
     }

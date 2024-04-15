@@ -18,23 +18,19 @@ final class LogInEmailTextField: UITextField {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func clearButtonRect(forBounds bounds: CGRect) -> CGRect {
-        return CGRect(x: 330, y: 15, width: 20, height: 20)
-    }
 }
 
 private extension LogInEmailTextField {
     
     func setupAppearence() {
         layer.cornerRadius = 15
-        layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         textContentType = .emailAddress
         placeholder = TextFieldResources.PlaceholderString.email
         textColor = ColorResources.white
         autocorrectionType = .no
         backgroundColor = ColorResources.customDarkGrey
         clearButtonMode = .whileEditing
+        addSystemIconToLeft(systemName: "person.circle")
     }
 }
 

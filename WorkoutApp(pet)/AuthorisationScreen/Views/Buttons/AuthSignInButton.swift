@@ -28,6 +28,7 @@ private extension AuthSignInButton {
     func setupAppearence() {
 
         setTitle(StringResources.AutorizedScreenStrings.signIn, for: .normal)
+        setTitleColor(ColorResources.black, for: .normal)
         layer.cornerRadius = 15
         backgroundColor = ColorResources.customCoral
     }

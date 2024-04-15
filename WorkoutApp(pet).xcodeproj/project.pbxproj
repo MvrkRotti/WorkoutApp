@@ -56,6 +56,7 @@
 		CE5CD45B2BC86EF40065991D /* FontResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD45A2BC86EF40065991D /* FontResources.swift */; };
 		CE5CD45D2BC873910065991D /* TabBarResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD45C2BC873910065991D /* TabBarResources.swift */; };
 		CE6869BB2BC7021300DB2170 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE6869BA2BC7021300DB2170 /* GoogleService-Info.plist */; };
+		CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8214972BCDAADC001D32AB /* UITextField.swift */; };
 		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
 		CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */; };
 		CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */; };
@@ -155,6 +156,7 @@
 		CE5CD45A2BC86EF40065991D /* FontResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontResources.swift; sourceTree = "<group>"; };
 		CE5CD45C2BC873910065991D /* TabBarResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarResources.swift; sourceTree = "<group>"; };
 		CE6869BA2BC7021300DB2170 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		CE8214972BCDAADC001D32AB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenRouter.swift; sourceTree = "<group>"; };
 		CE8D50E82B88986800A14719 /* EditProfileScreenAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenAssembler.swift; sourceTree = "<group>"; };
@@ -539,6 +541,7 @@
 			children = (
 				CED9EB162B6E4D240065FE23 /* UIColor.swift */,
 				CED9EB482B7146760065FE23 /* UIView.swift */,
+				CE8214972BCDAADC001D32AB /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -817,6 +820,7 @@
 				CE5CD44C2BC83C320065991D /* User.swift in Sources */,
 				CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */,
 				CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */,
+				CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */,
 				CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */,
 				CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */,
 				CEAC7E172B81F47100AF05CD /* AutoristaionRouter.swift in Sources */,

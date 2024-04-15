@@ -20,7 +20,6 @@ final class AuthorisationViewController: UIViewController {
     let passwordTextField = LogInPasswordTextField()
     let authSignInButton = AuthSignInButton()
     
-    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -43,29 +42,10 @@ private extension AuthorisationViewController {
     
     func setupUI() {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
-        
-        let emailTextFieldImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 20.0, height: 20.0))
-        let image = TextFieldResources.Images.userLogo
-        emailTextFieldImageView.image = image
-        emailTextFieldImageView.contentMode = .right
-        emailTextField.addSubview(emailTextFieldImageView)
-        emailTextField.leftViewMode = .always
-        emailTextField.leftView = emailTextFieldImageView
-        emailTextField.delegate = self
-        
-        let passwordTextFieldImageView = UIImageView(frame: CGRect(x: 8.0, y: 12.0, width: 20.0, height: 20.0))
-        let passImage = TextFieldResources.Images.passLogo
-        passwordTextFieldImageView.image = passImage
-        passwordTextFieldImageView.contentMode = .scaleAspectFit
-        passwordTextField.addSubview(passwordTextFieldImageView)
-        passwordTextField.leftViewMode = .always
-        passwordTextField.leftView = passwordTextFieldImageView
-        passwordTextField.delegate = self
-        
+                
         view.setupView(emailTextField)
         view.setupView(passwordTextField)
-        view.setupView(authSignInButton)
-        
+        view.setupView(authSignInButton)        
     }
     
     func setupActions() {
@@ -115,4 +95,5 @@ private extension AuthorisationViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
 
