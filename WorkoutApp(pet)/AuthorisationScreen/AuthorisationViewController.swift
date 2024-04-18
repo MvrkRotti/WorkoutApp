@@ -19,21 +19,26 @@ final class AuthorisationViewController: UIViewController {
     let emailTextField = LogInEmailTextField()
     let passwordTextField = LogInPasswordTextField()
     let authSignInButton = AuthSignInButton()
+    private let resetPasswordButton = AuthResetPasswordButton()
+    
+    private var textFieldArray = [UITextField] ()
+    
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBarAppearence()
+        navigationBarAppearance()
         setupUI()
         setupLayout()
         setupActions()
+        createTextFieldArray()
     }
 }
 
 private extension AuthorisationViewController {
     
-    func navigationBarAppearence() {
+    func navigationBarAppearance() {
         navigationController?.isNavigationBarHidden = false
         title = "Log In"
         navigationController?.navigationBar.barTintColor = ColorResources.black
@@ -42,10 +47,11 @@ private extension AuthorisationViewController {
     
     func setupUI() {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
-                
+        
         view.setupView(emailTextField)
         view.setupView(passwordTextField)
-        view.setupView(authSignInButton)        
+        view.setupView(authSignInButton)
+        view.setupView(resetPasswordButton)
     }
     
     func setupActions() {
@@ -62,6 +68,11 @@ private extension AuthorisationViewController {
                     self?.router?.pushHomeScreen()
                 }
             }
+        }
+        
+        resetPasswordButton.resetTapped = { [weak self ] in
+            guard let self = self else { return }
+            self.router.pushResetPasswordScreen()
         }
     }
     
@@ -80,11 +91,19 @@ private extension AuthorisationViewController {
             passwordTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             passwordTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            authSignInButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),
+            authSignInButton.bottomAnchor.constraint(equalTo: resetPasswordButton.topAnchor, constant: -10),
             authSignInButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             authSignInButton.widthAnchor.constraint(equalToConstant: 335),
             authSignInButton.heightAnchor.constraint(equalToConstant: 50),
+            
+            resetPasswordButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
+            resetPasswordButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
+    }
+    
+    func createTextFieldArray() {
+        textFieldArray.append(emailTextField)
+        textFieldArray.append(passwordTextField)
     }
 }
 
@@ -93,6 +112,32 @@ private extension AuthorisationViewController {
         let alert = UIAlertController(title: StringResources.AlertResources.alertTitle, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+}
+
+extension AuthorisationViewController: UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case emailTextField:
+            passwordTextField.becomeFirstResponder()
+        case passwordTextField:
+            view.endEditing(true)
+        default:
+            break
+        }
+        return true
+    }
+
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        for textField in textFieldArray {
+            if textField.text?.isEmpty ?? true {
+                textField.layer.borderWidth = 1.0
+                textField.layer.borderColor = ColorResources.emptyTextFieldBorderColor.cgColor
+            } else {
+                textField.layer.borderWidth = 0.0
+            }
+        }
     }
 }
 

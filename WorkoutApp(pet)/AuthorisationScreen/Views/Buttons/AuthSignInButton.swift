@@ -13,7 +13,7 @@ final class AuthSignInButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         setupAction()
         makeSystem(self)
     }
@@ -25,7 +25,7 @@ final class AuthSignInButton: UIButton {
 }
 
 private extension AuthSignInButton {
-    func setupAppearence() {
+    func setupAppearance() {
 
         setTitle(StringResources.AutorizedScreenStrings.signIn, for: .normal)
         setTitleColor(ColorResources.black, for: .normal)

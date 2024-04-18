@@ -22,7 +22,7 @@ final class AddExerciseCustomTextField: UITextField {
         super.init(frame: .zero)
         
         setupLayout()
-        setupAppearence()
+        setupAppearance()
         
         switch fieldType {
         case .numberOfSets:
@@ -40,7 +40,7 @@ final class AddExerciseCustomTextField: UITextField {
 }
 
 private extension AddExerciseCustomTextField {
-    func setupAppearence() {
+    func setupAppearance() {
         backgroundColor = ColorResources.black
         layer.cornerRadius = 15
         textColor = ColorResources.white

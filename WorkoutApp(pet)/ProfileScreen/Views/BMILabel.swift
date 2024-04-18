@@ -11,7 +11,7 @@ final class BMILabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class BMILabel: UILabel {
 }
 
 private extension BMILabel {
-    func setupAppearence() {
+    func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.profileLabelFont
         text = "BMI: "

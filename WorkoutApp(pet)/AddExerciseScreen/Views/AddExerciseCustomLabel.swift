@@ -21,7 +21,7 @@ final class AddExerciseCustomLabel: UILabel {
         self.AddExerciseLabelType = labelType
         super.init(frame: .zero)
         
-        setupAppearence()
+        setupAppearance()
         
         switch labelType {
         case .sets:
@@ -39,7 +39,7 @@ final class AddExerciseCustomLabel: UILabel {
 }
 
 private extension AddExerciseCustomLabel {
-    func setupAppearence() {
+    func setupAppearance() {
         font = FontResources.addExerciseLabelFont
         textAlignment = .left
         tintColor = ColorResources.white

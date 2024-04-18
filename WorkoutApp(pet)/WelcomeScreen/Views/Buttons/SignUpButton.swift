@@ -13,7 +13,7 @@ final class SignUpButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         setupAction()
         makeSystem(self)
     }
@@ -25,7 +25,7 @@ final class SignUpButton: UIButton {
 }
 
 private extension SignUpButton {
-    func setupAppearence() {
+    func setupAppearance() {
         
         setTitle(StringResources.AutorizedScreenStrings.signUp, for: .normal)
         setTitleColor(ColorResources.black, for: .normal)

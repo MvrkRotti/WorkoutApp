@@ -24,7 +24,7 @@ final class AddExerciseCustomButton: UIButton {
         self.addExerciseButtonType = buttonType
         super.init(frame: .zero)
         
-        setupAppearence()
+        setupAppearance()
         setupLayout()
         
         switch buttonType {
@@ -45,7 +45,7 @@ final class AddExerciseCustomButton: UIButton {
 }
 
 extension AddExerciseCustomButton {
-    func setupAppearence() {
+    func setupAppearance() {
         layer.cornerRadius = 15
         setTitleColor(ColorResources.black, for: .normal)
         titleLabel?.textAlignment = .center

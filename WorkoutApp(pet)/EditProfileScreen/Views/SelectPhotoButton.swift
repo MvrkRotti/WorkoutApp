@@ -13,7 +13,7 @@ final class SelectPhotoButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         setupAction()
         makeSystem(self)
     }
@@ -24,7 +24,7 @@ final class SelectPhotoButton: UIButton {
 }
 
 private extension SelectPhotoButton {
-    func setupAppearence() {
+    func setupAppearance() {
         setTitle(StringResources.CommonStrings.selectPhoto, for: .normal)
         setTitleColor(ColorResources.black, for: .normal)
         setTitleColor(.systemBlue, for: .normal)

@@ -11,7 +11,7 @@ class LogInPasswordTextField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
     }
     
     @available(*, unavailable)
@@ -22,7 +22,7 @@ class LogInPasswordTextField: UITextField {
 
 private extension LogInPasswordTextField {
     
-    func setupAppearence() {
+    func setupAppearance() {
         
         layer.cornerRadius = 15
         textContentType = .password
@@ -33,19 +33,5 @@ private extension LogInPasswordTextField {
         isSecureTextEntry = true
         addPasswordVisibilityButton()
         addSystemIconToLeft(systemName: "lock.circle")
-    }
-}
-
-extension AuthorisationViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case emailTextField:
-            passwordTextField.becomeFirstResponder()
-        case passwordTextField:
-            view.endEditing(true)
-        default:
-            break
-        }
-        return true
     }
 }

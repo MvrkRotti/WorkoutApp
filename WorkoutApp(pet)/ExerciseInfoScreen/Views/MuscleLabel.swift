@@ -11,7 +11,7 @@ final class MuscleLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class MuscleLabel: UILabel {
 }
 
 private extension MuscleLabel {
-    func setupAppearence() {
+    func setupAppearance() {
         textColor = ColorResources.white
         textAlignment = .left
         font = FontResources.cellNameLabelFont

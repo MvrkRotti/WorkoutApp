@@ -11,7 +11,7 @@ final class GenderSegmentController: UISegmentedControl {
     
     override init(items: [Any]?) {
         super.init(items: items)
-        setupAppearence()
+        setupAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -20,7 +20,7 @@ final class GenderSegmentController: UISegmentedControl {
 }
 
 private extension GenderSegmentController {
-    func setupAppearence() {
+    func setupAppearance() {
         selectedSegmentIndex = 0
         backgroundColor = ColorResources.black
         selectedSegmentTintColor = ColorResources.white

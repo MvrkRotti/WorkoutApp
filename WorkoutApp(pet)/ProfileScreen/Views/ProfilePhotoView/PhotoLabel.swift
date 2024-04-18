@@ -11,7 +11,7 @@ final class PhotoLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class PhotoLabel: UILabel {
 }
 
 private extension PhotoLabel {
-    func setupAppearence() {
+    func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.autLabelFont
         numberOfLines = 0

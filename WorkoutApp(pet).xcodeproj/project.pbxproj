@@ -100,6 +100,14 @@
 		CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */; };
 		CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB622B7258DD0065FE23 /* TabController.swift */; };
 		CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */; };
+		CEDC921A2BD14B2800902268 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92192BD14B2800902268 /* ResetPasswordViewController.swift */; };
+		CEDC921C2BD14B3400902268 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC921B2BD14B3400902268 /* ResetPasswordViewModel.swift */; };
+		CEDC921E2BD14B5B00902268 /* ResetPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC921D2BD14B5B00902268 /* ResetPasswordRouter.swift */; };
+		CEDC92202BD14B6B00902268 /* ResetPasswordAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC921F2BD14B6B00902268 /* ResetPasswordAssembler.swift */; };
+		CEDC92222BD14F6C00902268 /* ResetEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92212BD14F6C00902268 /* ResetEmailTextField.swift */; };
+		CEDC92242BD14FA400902268 /* ResetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92232BD14FA400902268 /* ResetLabel.swift */; };
+		CEDC92262BD14FB400902268 /* ResetPasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */; };
+		CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */; };
 		CEF2AB522BBD769100205B60 /* NotesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB512BBD769100205B60 /* NotesAssembler.swift */; };
 		CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */; };
 		CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */; };
@@ -202,6 +210,14 @@
 		CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInButton.swift; sourceTree = "<group>"; };
 		CED9EB622B7258DD0065FE23 /* TabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesScreenViewController.swift; sourceTree = "<group>"; };
+		CEDC92192BD14B2800902268 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		CEDC921B2BD14B3400902268 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		CEDC921D2BD14B5B00902268 /* ResetPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordRouter.swift; sourceTree = "<group>"; };
+		CEDC921F2BD14B6B00902268 /* ResetPasswordAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordAssembler.swift; sourceTree = "<group>"; };
+		CEDC92212BD14F6C00902268 /* ResetEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetEmailTextField.swift; sourceTree = "<group>"; };
+		CEDC92232BD14FA400902268 /* ResetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetLabel.swift; sourceTree = "<group>"; };
+		CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordButton.swift; sourceTree = "<group>"; };
+		CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResetPasswordButton.swift; sourceTree = "<group>"; };
 		CEF2AB512BBD769100205B60 /* NotesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAssembler.swift; sourceTree = "<group>"; };
 		CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCustomTextField.swift; sourceTree = "<group>"; };
 		CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseButton.swift; sourceTree = "<group>"; };
@@ -386,13 +402,6 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		CE5CD44D2BC83CFC0065991D /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		CE8D50E22B88939000A14719 /* EditProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,7 +507,6 @@
 		CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */ = {
 			isa = PBXGroup;
 			children = (
-				CE5CD44D2BC83CFC0065991D /* Helpers */,
 				CEF2AB5A2BBED69100205B60 /* Router */,
 				CED9EB1A2B6E4D6F0065FE23 /* Application */,
 				CE1A8BBA2B822EDB00ACB21C /* NetworkService */,
@@ -507,6 +515,7 @@
 				CED9EB1B2B6E4DCA0065FE23 /* WelcomeScreen */,
 				CED9EB202B6E4E480065FE23 /* RegistrationScreen */,
 				CED9EB3E2B70112E0065FE23 /* AuthorisationScreen */,
+				CEDC92142BD14AAA00902268 /* ResetPasswordScreen */,
 				CED9EB612B7258B50065FE23 /* TabController */,
 				CED9EB4B2B7159EC0065FE23 /* HandbookScreen */,
 				CEAA4EC62B8CFBCD0004F369 /* ExerciseInfoScreen */,
@@ -638,6 +647,7 @@
 			isa = PBXGroup;
 			children = (
 				CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */,
+				CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -680,6 +690,36 @@
 				CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */,
 			);
 			path = NotesScreen;
+			sourceTree = "<group>";
+		};
+		CEDC92142BD14AAA00902268 /* ResetPasswordScreen */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC92172BD14B1000902268 /* Views */,
+				CEDC92152BD14AF800902268 /* Navigation */,
+				CEDC92192BD14B2800902268 /* ResetPasswordViewController.swift */,
+				CEDC921B2BD14B3400902268 /* ResetPasswordViewModel.swift */,
+			);
+			path = ResetPasswordScreen;
+			sourceTree = "<group>";
+		};
+		CEDC92152BD14AF800902268 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC921F2BD14B6B00902268 /* ResetPasswordAssembler.swift */,
+				CEDC921D2BD14B5B00902268 /* ResetPasswordRouter.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		CEDC92172BD14B1000902268 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CEDC92212BD14F6C00902268 /* ResetEmailTextField.swift */,
+				CEDC92232BD14FA400902268 /* ResetLabel.swift */,
+				CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		CEF2AB532BBDA8C100205B60 /* Views */ = {
@@ -819,6 +859,7 @@
 				CEAC7E192B81F6CE00AF05CD /* TabAssembler.swift in Sources */,
 				CE5CD44C2BC83C320065991D /* User.swift in Sources */,
 				CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */,
+				CEDC92222BD14F6C00902268 /* ResetEmailTextField.swift in Sources */,
 				CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */,
 				CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */,
 				CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */,
@@ -826,6 +867,7 @@
 				CEAC7E172B81F47100AF05CD /* AutoristaionRouter.swift in Sources */,
 				CEF2AB622BBF09F700205B60 /* AddExerciseAssembler.swift in Sources */,
 				CEAC7E152B81F46500AF05CD /* AuthorisationAssembler.swift in Sources */,
+				CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */,
 				CEF2AB522BBD769100205B60 /* NotesAssembler.swift in Sources */,
 				CE3C133A2BBD5173003F3561 /* AddNoteRouter.swift in Sources */,
 				CE5CD4552BC86EB90065991D /* StringResources.swift in Sources */,
@@ -841,6 +883,7 @@
 				CEF2AB5F2BBF092600205B60 /* AddExerciseViewController.swift in Sources */,
 				CEF2AB672BBF0D3B00205B60 /* AddExerciseCustomTextField.swift in Sources */,
 				CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */,
+				CEDC921A2BD14B2800902268 /* ResetPasswordViewController.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
 				CE00CCE02B922DDA001E1E8B /* DifficultyLabel.swift in Sources */,
@@ -853,8 +896,10 @@
 				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
 				CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */,
+				CEDC92242BD14FA400902268 /* ResetLabel.swift in Sources */,
 				CE3746AD2BC59EE500D2D10A /* AddNoteViewModel.swift in Sources */,
 				CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */,
+				CEDC92202BD14B6B00902268 /* ResetPasswordAssembler.swift in Sources */,
 				CE3C13052BB9724C003F3561 /* Note.swift in Sources */,
 				CE5CD4532BC86EAC0065991D /* TextFieldResources.swift in Sources */,
 				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
@@ -870,11 +915,13 @@
 				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
 				CEF2AB6B2BBF143900205B60 /* AddExerciseCustomButton.swift in Sources */,
 				CE1A8BC52B82644D00ACB21C /* HandbookViewModel.swift in Sources */,
+				CEDC921E2BD14B5B00902268 /* ResetPasswordRouter.swift in Sources */,
 				CE1A8BDB2B87E64500ACB21C /* WeightLabel.swift in Sources */,
 				CEAC7E1B2B81F6D900AF05CD /* TabRouter.swift in Sources */,
 				CE5CD4592BC86EE70065991D /* ImageResources.swift in Sources */,
 				CEAC7E072B81F3D300AF05CD /* HandbookRouter.swift in Sources */,
 				CE00CCE42B9232C1001E1E8B /* ExerciseInfoViewModel.swift in Sources */,
+				CEDC92262BD14FB400902268 /* ResetPasswordButton.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
 				CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */,
 				CED9EB4D2B715A1A0065FE23 /* HandbookScreenViewController.swift in Sources */,
@@ -897,6 +944,7 @@
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
 				CEAC7E0F2B81F41600AF05CD /* NotesRouter.swift in Sources */,
 				CE00CCDE2B922DC8001E1E8B /* EquipmentLabel.swift in Sources */,
+				CEDC921C2BD14B3400902268 /* ResetPasswordViewModel.swift in Sources */,
 				CE1A8BD52B87E62500ACB21C /* NameLabel.swift in Sources */,
 				CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */,
 				CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */,

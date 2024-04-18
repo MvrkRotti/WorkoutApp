@@ -10,7 +10,7 @@ import UIKit
 final class TrainViewLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
     }
     
     required init?(coder: NSCoder) {
@@ -21,7 +21,7 @@ final class TrainViewLabel: UILabel {
 }
 
 private extension TrainViewLabel {
-    func setupAppearence() {
+    func setupAppearance() {
         text = "Training Notes"
         font = FontResources.cellNameLabelFont
         textAlignment = .left

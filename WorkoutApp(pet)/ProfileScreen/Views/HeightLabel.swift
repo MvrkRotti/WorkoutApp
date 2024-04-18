@@ -11,7 +11,7 @@ final class HeightLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class HeightLabel: UILabel {
 }
 
 private extension HeightLabel {
-    func setupAppearence() {
+    func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.profileLabelFont
         text = "Height: "

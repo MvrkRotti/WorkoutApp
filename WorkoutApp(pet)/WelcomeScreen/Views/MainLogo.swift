@@ -11,7 +11,7 @@ final class MainLogo: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class MainLogo: UIImageView {
 }
 
 private extension MainLogo {
-    func setupAppearence() {
+    func setupAppearance() {
         contentMode = .scaleAspectFit
         image = ImageResources.mainLogo
     }

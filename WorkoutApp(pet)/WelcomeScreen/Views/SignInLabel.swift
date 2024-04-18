@@ -11,7 +11,7 @@ final class SignInLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class SignInLabel: UILabel {
 }
 
 private extension SignInLabel {
-    func setupAppearence() {
+    func setupAppearance() {
         textColor = ColorResources.white
         textAlignment = .left
         font = FontResources.autLabelFont

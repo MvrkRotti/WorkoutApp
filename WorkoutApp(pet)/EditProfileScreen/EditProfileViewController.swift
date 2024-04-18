@@ -34,7 +34,7 @@ final class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = ColorResources.customDarkGrey
-        navigationBarAppearence()
+        navigationBarAppearance()
         setupUI()
         setupLayout()
     }
@@ -47,7 +47,7 @@ final class EditProfileViewController: UIViewController {
 //MARK: - UI Setup
 
 private extension EditProfileViewController {
-    func navigationBarAppearence() {
+    func navigationBarAppearance() {
         let editButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
 
         navigationItem.title = "Edit profile"

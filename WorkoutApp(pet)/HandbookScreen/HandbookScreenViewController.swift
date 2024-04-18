@@ -27,7 +27,7 @@ final class HandbookScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableViewSettings()
-        navigationBarAppearence()
+        navigationBarAppearance()
         setupUI()
         setupLayout()
         activityIndicator.startAnimating()
@@ -59,7 +59,7 @@ private extension HandbookScreenViewController {
         ])
     }
     
-    func navigationBarAppearence() {
+    func navigationBarAppearance() {
         navigationItem.title = "Home"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey

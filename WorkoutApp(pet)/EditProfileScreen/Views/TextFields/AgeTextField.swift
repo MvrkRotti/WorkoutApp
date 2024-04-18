@@ -10,7 +10,7 @@ import UIKit
 final class AgeTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
     }
     
     @available(*, unavailable)
@@ -20,7 +20,7 @@ final class AgeTextField: UITextField {
 }
 
 private extension AgeTextField {
-    func setupAppearence() {
+    func setupAppearance() {
         layer.cornerRadius = 10
         placeholder = TextFieldResources.PlaceholderString.age
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)

@@ -12,7 +12,7 @@ final class RegistrationLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setupAppearence()
+        setupAppearance()
     }
     
     @available(*, unavailable)
@@ -23,7 +23,7 @@ final class RegistrationLabel: UILabel {
 
 private extension RegistrationLabel {
     
-    func setupAppearence() {
+    func setupAppearance() {
         
         text = StringResources.RegistrationScreenStrings.registrationLabel
         font = FontResources.registrationLabelFont

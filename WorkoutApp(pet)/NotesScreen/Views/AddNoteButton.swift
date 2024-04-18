@@ -13,7 +13,7 @@ final class AddNoteButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         makeSystem(self)
         setupAction()
     }
@@ -25,7 +25,7 @@ final class AddNoteButton: UIButton {
 }
 
 private extension AddNoteButton {
-    func setupAppearence() {
+    func setupAppearance() {
         frame = CGRect(x: 0, y: 0, width: 65, height: 65)
         
         setTitle("+", for: .normal)

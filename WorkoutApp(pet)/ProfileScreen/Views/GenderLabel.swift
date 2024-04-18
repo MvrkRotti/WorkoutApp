@@ -11,7 +11,7 @@ final class GenderLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class GenderLabel: UILabel {
 }
 
 private extension GenderLabel {
-    func setupAppearence() {
+    func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.profileLabelFont
         text = "Gender: "

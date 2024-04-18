@@ -44,7 +44,7 @@ final class AddNoteViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBarAppearence()
+        navigationBarAppearance()
         setupUI()
         tableViewSettings()
         setupLayout()
@@ -58,7 +58,7 @@ final class AddNoteViewController: UIViewController {
     
     //MARK: - Setup UI
 private extension AddNoteViewController {
-    func navigationBarAppearence() {
+    func navigationBarAppearance() {
         let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
         
         navigationItem.title = "Add note"

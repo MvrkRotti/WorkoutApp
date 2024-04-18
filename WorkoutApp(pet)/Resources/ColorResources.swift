@@ -16,4 +16,5 @@ enum ColorResources {
     static let gradientTopColor = UIColor(hexString: "#007FFF")
     static let gradientMiddleColor = UIColor(hexString: "#65ACF4")
     static let gradientBottomColor = UIColor(hexString: "#82EED4")
+    static let emptyTextFieldBorderColor = UIColor(hexString: "#FF1F00")
 }

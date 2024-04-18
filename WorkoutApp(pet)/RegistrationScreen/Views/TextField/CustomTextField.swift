@@ -24,7 +24,7 @@ final class CustomTextField: UITextField {
         super.init(frame: .zero)
         
         setupLayout()
-        setupAppearence()
+        setupAppearance()
         
         switch fieldType {
         case .name:
@@ -55,7 +55,7 @@ final class CustomTextField: UITextField {
 }
 
 private extension CustomTextField {
-    func setupAppearence() {
+    func setupAppearance() {
         backgroundColor = ColorResources.customDarkGrey
         layer.cornerRadius = 15
         textColor = ColorResources.white

@@ -31,7 +31,7 @@ final class NotesScreenViewController: UIViewController {
         setupLayout()
         setDelegates()
         setupAction()
-        navigationBarAppearence()
+        navigationBarAppearance()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,11 +40,11 @@ final class NotesScreenViewController: UIViewController {
         tabBarController?.tabBar.isHidden = false
     }
 }
-//MARK: - NavBar appearence
+//MARK: - NavBar appearance
 
 extension NotesScreenViewController {
     
-    func navigationBarAppearence() {
+    func navigationBarAppearance() {
         navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationController?.navigationBar.topItem?.title = StringResources.NavigationBarHeaders.notesScreen

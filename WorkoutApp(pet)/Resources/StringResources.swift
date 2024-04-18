@@ -15,12 +15,14 @@ enum StringResources {
         static let min = "Min"
         static let save = "SAVE"
         static let cancel = "CANCEL"
+        static let resetPassLabelText = "This email address will used for reset your password."
     }
     
     enum NavigationBarHeaders {
         static let exerciseScreen = "Handbook"
         static let notesScreen = "My Notes"
         static let profileScreen = "My Profile"
+        static let resetPassword = "Reset Password"
     }
     
 
@@ -42,5 +44,7 @@ enum StringResources {
         static let incorrectFilling = "Email or password is empty"
         static let alertTitle = "Alert"
         static let cancelAction = "Try Again"
+        static let enterEmail = "Enter your Email"
+        static let resetPassInfo = "Password reset instructions sent to your email."
     }
 }

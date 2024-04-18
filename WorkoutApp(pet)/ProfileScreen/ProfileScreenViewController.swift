@@ -37,7 +37,7 @@ final class ProfileScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBarAppearence()
+        navigationBarAppearance()
         setupUI()
         setupLayout()
         setGradientBackground()
@@ -52,7 +52,7 @@ final class ProfileScreenViewController: UIViewController {
 
 private extension ProfileScreenViewController {
     
-    func navigationBarAppearence() {
+    func navigationBarAppearance() {
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonDidTapped))
 
         navigationItem.title = "My Profile"

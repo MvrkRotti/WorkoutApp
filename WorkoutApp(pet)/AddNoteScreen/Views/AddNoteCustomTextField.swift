@@ -22,7 +22,7 @@ final class AddNoteCustomTextField: UITextField {
         super.init(frame: .zero)
         
         setupLayout()
-        setupAppearence()
+        setupAppearance()
         
         switch fieldType {
         case .trainingName:
@@ -41,7 +41,7 @@ final class AddNoteCustomTextField: UITextField {
 }
 
 private extension AddNoteCustomTextField {
-    func setupAppearence() {
+    func setupAppearance() {
         backgroundColor = ColorResources.black
         layer.cornerRadius = 15
         textColor = ColorResources.white

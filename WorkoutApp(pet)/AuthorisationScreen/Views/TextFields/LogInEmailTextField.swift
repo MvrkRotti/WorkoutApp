@@ -11,7 +11,7 @@ final class LogInEmailTextField: UITextField {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
     }
     
     @available(*, unavailable)
@@ -22,7 +22,7 @@ final class LogInEmailTextField: UITextField {
 
 private extension LogInEmailTextField {
     
-    func setupAppearence() {
+    func setupAppearance() {
         layer.cornerRadius = 15
         textContentType = .emailAddress
         placeholder = TextFieldResources.PlaceholderString.email

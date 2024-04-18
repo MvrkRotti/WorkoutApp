@@ -11,7 +11,7 @@ final class ExerciseNameLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class ExerciseNameLabel: UILabel {
 }
 
 private extension ExerciseNameLabel {
-    func setupAppearence() {
+    func setupAppearance() {
         textColor = ColorResources.white
         textAlignment = .center
         font = FontResources.registrationLabelFont

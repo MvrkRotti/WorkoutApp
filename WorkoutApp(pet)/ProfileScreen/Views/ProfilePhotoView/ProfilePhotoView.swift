@@ -11,7 +11,7 @@ final class ProfilePhotoView: UIImageView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class ProfilePhotoView: UIImageView {
 }
 
 private extension ProfilePhotoView {
-    func setupAppearence() {
+    func setupAppearance() {
         contentMode = .scaleAspectFit
         backgroundColor = ColorResources.customGray
         layer.borderWidth = 1.5

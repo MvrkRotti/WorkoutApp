@@ -10,7 +10,7 @@ import UIKit
 final class WeightTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
     }
     
     @available(*, unavailable)
@@ -20,7 +20,7 @@ final class WeightTextField: UITextField {
 }
 
 private extension WeightTextField {
-    func setupAppearence() {
+    func setupAppearance() {
         layer.cornerRadius = 10
         placeholder = TextFieldResources.PlaceholderString.weight
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)

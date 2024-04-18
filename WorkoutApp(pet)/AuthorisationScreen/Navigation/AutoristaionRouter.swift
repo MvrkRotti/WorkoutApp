@@ -14,4 +14,8 @@ final class AutoristaionRouter {
     func pushHomeScreen() {
         authotisationViewController?.navigationController?.pushViewController(TabAssembler.buildModule(), animated: true)
     }
+    
+    func pushResetPasswordScreen() {
+        authotisationViewController?.navigationController?.pushViewController(ResetPasswordAssembler.buildModule(), animated: true)
+    }
 }

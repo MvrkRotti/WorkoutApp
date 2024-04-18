@@ -17,6 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        window.rootViewController = UINavigationController(rootViewController: AddNoteAssembler().buildModule())
 //        window.rootViewController = UINavigationController(rootViewController: TabAssembler.buildModule())
         window.rootViewController = UINavigationController(rootViewController: WelcomeAssembler.buildModule())
+//        window.rootViewController = UINavigationController(rootViewController: ResetPasswordAssembler.buildModule())
+
         self.window = window
         self.window?.makeKeyAndVisible()
         

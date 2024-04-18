@@ -11,7 +11,7 @@ final class DifficultyLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         
     }
     
@@ -22,7 +22,7 @@ final class DifficultyLabel: UILabel {
 }
 
 private extension DifficultyLabel {
-    func setupAppearence() {
+    func setupAppearance() {
         textColor = ColorResources.white
         textAlignment = .left
         font = FontResources.cellNameLabelFont

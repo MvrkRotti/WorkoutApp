@@ -10,7 +10,7 @@ import UIKit
 final class HeightTextField: UITextField {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
     }
     
     @available(*, unavailable)
@@ -20,7 +20,7 @@ final class HeightTextField: UITextField {
 }
 
 private extension HeightTextField {
-    func setupAppearence() {
+    func setupAppearance() {
         layer.cornerRadius = 10
         placeholder = TextFieldResources.PlaceholderString.height
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)

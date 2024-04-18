@@ -23,6 +23,8 @@ final class RegistrationViewController: UIViewController {
     private let confirmPasswordField = CustomTextField(fieldType: .confirmPassword)
     private let regSighUpButton = SignUpButton()
     
+    private var textFieldArray = [UITextField]()
+    
     //MARK: - UIComponents
     
     private lazy var textFieldStack: UIStackView = {
@@ -40,11 +42,12 @@ final class RegistrationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBarAppearence()
+        navigationBarAppearance()
         setupUI()
         setupTextFieldDelegate()
         setupActions()
         setupLayout()
+        createTextFieldArray()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +60,7 @@ final class RegistrationViewController: UIViewController {
 
 private extension RegistrationViewController {
     
-    func navigationBarAppearence() {
+    func navigationBarAppearance() {
         title = "Registration"
         navigationController?.navigationBar.barTintColor = ColorResources.black
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
@@ -119,9 +122,17 @@ private extension RegistrationViewController {
             regSighUpButton.heightAnchor.constraint(equalToConstant: 50)
         ])
     }
+    
+    func createTextFieldArray() {
+        textFieldArray.append(nameField)
+        textFieldArray.append(lastNameField)
+        textFieldArray.append(emailField)
+        textFieldArray.append(passwordField)
+        textFieldArray.append(confirmPasswordField)
+    }
 }
 
-//MARK: - Close keyboard after filling all text fields
+//MARK: - Closing keyboard after filling all textfields
 extension RegistrationViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         switch textField {
@@ -139,6 +150,18 @@ extension RegistrationViewController: UITextFieldDelegate {
             break
         }
         return true
+    }
+
+//MARK: - Backlight setting for missed textfields
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        for textField in textFieldArray {
+            if textField.text?.isEmpty ?? true {
+                textField.layer.borderWidth = 1.0
+                textField.layer.borderColor = ColorResources.emptyTextFieldBorderColor.cgColor
+            } else {
+                textField.layer.borderWidth = 0.0
+            }
+        }
     }
 }
 

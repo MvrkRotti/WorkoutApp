@@ -13,7 +13,7 @@ final class AddExerciseButton: UIButton {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupAppearence()
+        setupAppearance()
         setupLayout()
         setupAction()
         makeSystem(self)
@@ -25,7 +25,7 @@ final class AddExerciseButton: UIButton {
 }
 
 private extension AddExerciseButton {
-    func setupAppearence() {
+    func setupAppearance() {
         setTitle("Add new exercise", for: .normal)
         setTitleColor(ColorResources.black, for: .normal)
         titleLabel?.textAlignment = .center
