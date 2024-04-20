@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 struct ExerciseNote {
     let trainName: String
