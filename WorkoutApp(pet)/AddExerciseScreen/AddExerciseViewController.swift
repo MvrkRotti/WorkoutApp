@@ -8,7 +8,7 @@
 import UIKit
 
 protocol AddExerciseDelegate: AnyObject {
-    func didAddExercise(exerciseName: String, numberOfSets: String, numberOfReps: String, restTime: String)
+    func didAddExercise(_ exercise: Exercise)
 }
 
 final class AddExerciseViewController: UIViewController {
@@ -122,8 +122,8 @@ private extension AddExerciseViewController {
                   let numberOfReps = self.numberOfRepsTextField.text, !numberOfReps.isEmpty,
                   let restTime = self.restTimeTextField.text, !restTime.isEmpty else { return }
             
-            self.delegate?.didAddExercise(exerciseName: exerciseName, numberOfSets: numberOfSets, numberOfReps: numberOfReps, restTime: restTime)
-            self.dismiss(animated: true, completion: nil)
+            let exercise = Exercise(exerciseName: exerciseName, numberOfSets: numberOfSets, numberOfReps: numberOfReps, restTime: restTime)
+            self.delegate?.didAddExercise(exercise)
         }
     }
 }

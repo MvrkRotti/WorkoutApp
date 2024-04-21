@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 final class AddNoteViewController: UIViewController {
     
@@ -19,12 +20,12 @@ final class AddNoteViewController: UIViewController {
     private let tableView = UITableView(frame: .zero)
     private let addExerciseButton = AddExerciseButton()
     
-//    var router: AddNoteRouter
+    //    var router: AddNoteRouter
     
     //MARK: - UI Components
     
     private lazy var textFieldStack: UIStackView = {
-       let stack = UIStackView(arrangedSubviews: [trainingNameTextField, muscleTextField])
+        let stack = UIStackView(arrangedSubviews: [trainingNameTextField, muscleTextField])
         stack.alignment = .center
         stack.axis = .vertical
         stack.spacing = 20
@@ -49,14 +50,15 @@ final class AddNoteViewController: UIViewController {
         tableViewSettings()
         setupLayout()
         setupAction()
+        viewModel.loadExercises()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
     }
 }
-    
-    //MARK: - Setup UI
+
+//MARK: - Setup UI
 private extension AddNoteViewController {
     func navigationBarAppearance() {
         let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
@@ -64,10 +66,10 @@ private extension AddNoteViewController {
         navigationItem.title = "Add note"
         navigationItem.rightBarButtonItem = saveButton
     }
-
+    
     func setupUI() {
         view.backgroundColor = ColorResources.customDarkGrey
-
+        
         view.setupView(textFieldStack)
         view.setupView(tableView)
         view.setupView(addExerciseButton)
@@ -110,24 +112,29 @@ private extension AddNoteViewController {
 
 extension AddNoteViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.exercises.count
+        return viewModel.exercises?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = viewModel.exercises[indexPath.row].exerciseName
+        cell.textLabel?.text = viewModel.exercises?[indexPath.row].exerciseName
         cell.backgroundColor = ColorResources.customDarkGrey
         return cell
     }
 }
 
 
+//extension AddNoteViewController: AddNoteViewModelDelegate {
+//    func reloadTableView() {
+//        tableView.reloadData()
+//    }
+//}
+
 extension AddNoteViewController: AddExerciseDelegate {
-    func didAddExercise(exerciseName: String, numberOfSets: String, numberOfReps: String, restTime: String) {
-        viewModel.addExercise(exerciseName: exerciseName, numberOfSets: numberOfSets, numberOfReps: numberOfReps, restTime: restTime)
+    func didAddExercise(_ exercise: Exercise) {
+        viewModel.addExercise(exercise)
         tableView.reloadData()
+        dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 

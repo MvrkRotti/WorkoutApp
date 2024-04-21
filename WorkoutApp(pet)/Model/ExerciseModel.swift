@@ -6,10 +6,20 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct Exercise {
-    let exerciseName: String
-    let numberOfSets: String
-    let numberOfReps: String
-    let restTime: String
+class Exercise: Object {
+    @objc dynamic var exerciseName: String = ""
+    @objc dynamic var numberOfSets: String = ""
+    @objc dynamic var numberOfReps: String = ""
+    @objc dynamic var restTime: String = ""
+    
+    convenience init(exerciseName: String, numberOfSets: String, numberOfReps: String, restTime: String) {
+        self.init()
+        self.exerciseName = exerciseName
+        self.numberOfSets = numberOfSets
+        self.numberOfReps = numberOfReps
+        self.restTime = restTime
+    }
+    
 }

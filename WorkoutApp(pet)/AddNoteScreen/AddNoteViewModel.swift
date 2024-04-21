@@ -6,13 +6,30 @@
 //
 
 import Foundation
+import RealmSwift
+
+protocol AddNoteViewModelDelegate: AnyObject {
+    func reloadTableView()
+}
 
 class AddNoteViewModel {
-    var exercises: [Exercise] = []
-
-    func addExercise(exerciseName: String, numberOfSets: String, numberOfReps: String, restTime: String) {
-        let newExercise = Exercise(exerciseName: exerciseName, numberOfSets: numberOfSets, numberOfReps: numberOfReps, restTime: restTime)
-        exercises.append(newExercise)
+    weak var delegate: AddNoteViewModelDelegate?
+    var exercises: Results<Exercise>?
+    let realm = try! Realm()
+    
+    func loadExercises() {
+        exercises = realm.objects(Exercise.self)
+        delegate?.reloadTableView()
+    }
+    
+    func addExercise(_ exercise: Exercise) {
+        do {
+            try realm.write {
+                realm.add(exercise)
+            }
+        } catch {
+            print("Error saving exercise: \(error)")
+        }
     }
     
 }
