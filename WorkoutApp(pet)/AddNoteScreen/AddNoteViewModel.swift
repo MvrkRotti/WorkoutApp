@@ -32,4 +32,16 @@ class AddNoteViewModel {
         }
     }
     
+    func deleteExercise(at index: Int) {
+        if let exerciseToDelete = exercises?[index] {
+            do {
+                try realm.write {
+                    realm.delete(exerciseToDelete)
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
+    
 }

@@ -121,6 +121,13 @@ extension AddNoteViewController: UITableViewDelegate, UITableViewDataSource {
         cell.backgroundColor = ColorResources.customDarkGrey
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.deleteExercise(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }
 
 
