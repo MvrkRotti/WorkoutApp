@@ -17,5 +17,4 @@ final class AddNoteRouter: RouterProtocol {
         addExerciseViewController.delegate = delegate
         viewContoller.present(addExerciseViewController, animated: true, completion: nil)
     }
-
 }

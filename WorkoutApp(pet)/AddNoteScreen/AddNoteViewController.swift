@@ -8,12 +8,18 @@
 import UIKit
 import RealmSwift
 
+protocol AddNoteDelegate: AnyObject {
+    func didAddNote(_ note: ExerciseNote)
+}
+
 final class AddNoteViewController: UIViewController {
     
     //MARK: - Variables
     
-    let viewModel: AddNoteViewModel
-    let router: RouterProtocol
+    var viewModel: AddNoteViewModel
+    var router: AddNoteRouter
+    
+    weak var delegate: AddNoteDelegate?
     
     private let trainingNameTextField = AddNoteCustomTextField(fieldType: .trainingName)
     private let muscleTextField = AddNoteCustomTextField(fieldType: .kindOfMuscle)
@@ -34,7 +40,7 @@ final class AddNoteViewController: UIViewController {
     
     //MARK: - Lifecycle
     
-    init(_ viewModel: AddNoteViewModel, router: RouterProtocol) {
+    init(_ viewModel: AddNoteViewModel, router: AddNoteRouter) {
         self.viewModel = viewModel
         self.router = router
         super.init(nibName: nil, bundle: nil)
@@ -61,7 +67,8 @@ final class AddNoteViewController: UIViewController {
 //MARK: - Setup UI
 private extension AddNoteViewController {
     func navigationBarAppearance() {
-        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
+        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action:
+                                         #selector(saveDidTapped))
         
         navigationItem.title = "Add note"
         navigationItem.rightBarButtonItem = saveButton
@@ -90,6 +97,14 @@ private extension AddNoteViewController {
             addExerciseButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 92),
             addExerciseButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -92),
         ])
+    }
+    
+    @objc func saveDidTapped() {
+        guard let trainName = trainingNameTextField.text, !trainName.isEmpty,
+              let muscle = muscleTextField.text, !muscle.isEmpty else { return }
+        let note = ExerciseNote(trainName: trainName, kindOfMuscle: muscle)
+        delegate?.didAddNote(note)
+        navigationController?.popViewController(animated: true)
     }
     
     //MARK: - TableView ssettings
@@ -130,12 +145,6 @@ extension AddNoteViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
-//extension AddNoteViewController: AddNoteViewModelDelegate {
-//    func reloadTableView() {
-//        tableView.reloadData()
-//    }
-//}
 
 extension AddNoteViewController: AddExerciseDelegate {
     func didAddExercise(_ exercise: Exercise) {

@@ -11,13 +11,27 @@ struct NotesAssembler {
     
     static func buildModule() -> UIViewController {
         
-        let viewController = NotesScreenViewController()
-        let router = NotesRouter()
+        let viewModel = NotesViewModel()
+        let viewController = NotesScreenViewController(viewModel, router: NotesRouter())
         
-        viewController.router = router
-        router.notesViewController = viewController
+//        let viewController = NotesScreenViewController()
+//        let router = NotesRouter()
+//
+//        viewController.router = router
+//        router.notesViewController = viewController
         
         return viewController
     }
 }
 
+//struct NotesAssembler: AssemblerProtocol {
+//    
+//    func buildModule() -> UIViewController {
+//        
+//        let viewModel = AddNoteViewModel()
+//        let viewController = AddNoteViewController(viewModel, router: AddNoteRouter())
+//
+//        
+//        return viewController
+//    }
+//}

@@ -8,8 +8,13 @@
 import Foundation
 import RealmSwift
 
-struct ExerciseNote {
-    let trainName: String
-    let kindOfMuscle: String
-    let exercise: [Exercise]
+class ExerciseNote: Object {
+    @objc dynamic var trainName: String = ""
+    @objc dynamic var kindOfMuscle: String = ""
+    
+    convenience init(trainName: String, kindOfMuscle: String) {
+        self.init()
+        self.trainName = trainName
+        self.kindOfMuscle = kindOfMuscle
+    }
 }

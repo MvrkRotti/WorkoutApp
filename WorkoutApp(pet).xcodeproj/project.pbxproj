@@ -46,6 +46,7 @@
 		CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */; };
 		CE3C13382BBD5169003F3561 /* AddNoteAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */; };
 		CE3C133A2BBD5173003F3561 /* AddNoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */; };
+		CE486C6A2BD7BE91006B5E3D /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE486C692BD7BE91006B5E3D /* NotesViewModel.swift */; };
 		CE5CD44A2BC83B0B0065991D /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */; };
 		CE5CD44C2BC83C320065991D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD44B2BC83C320065991D /* User.swift */; };
 		CE5CD4512BC843170065991D /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4502BC843170065991D /* AuthorizationViewModel.swift */; };
@@ -156,6 +157,7 @@
 		CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteAssembler.swift; sourceTree = "<group>"; };
 		CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRouter.swift; sourceTree = "<group>"; };
+		CE486C692BD7BE91006B5E3D /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		CE5CD44B2BC83C320065991D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CE5CD4502BC843170065991D /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
@@ -692,6 +694,7 @@
 				CE00CCE72B974AAD001E1E8B /* Views */,
 				CEAC7E1E2B82255200AF05CD /* Navigation */,
 				CED9EB692B7259BB0065FE23 /* NotesScreenViewController.swift */,
+				CE486C692BD7BE91006B5E3D /* NotesViewModel.swift */,
 			);
 			path = NotesScreen;
 			sourceTree = "<group>";
@@ -894,6 +897,7 @@
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
 				CE00CCE02B922DDA001E1E8B /* DifficultyLabel.swift in Sources */,
+				CE486C6A2BD7BE91006B5E3D /* NotesViewModel.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
 				CE1A8BBF2B822F2D00ACB21C /* HandbookExercise.swift in Sources */,
 				CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */,

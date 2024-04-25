@@ -7,11 +7,15 @@
 
 import UIKit
 
-final class NotesRouter {
-    
-   weak var notesViewController: NotesScreenViewController?
+protocol NotesRouterProtocol {
+    func pushNextScreen(on viewContoller: UIViewController, delegate: AddNoteDelegate)
+}
 
-    func pushNextScreen() {
-        notesViewController?.navigationController?.pushViewController(AddNoteAssembler().buildModule(), animated: true)
+final class NotesRouter: NotesRouterProtocol {
+    func pushNextScreen(on viewContoller: UIViewController, delegate: AddNoteDelegate) {
+        let addNoteViewController = AddNoteViewController(AddNoteViewModel(), router: AddNoteRouter())
+        addNoteViewController.delegate = delegate
+        viewContoller.navigationController?.pushViewController(addNoteViewController, animated: true)
     }
 }
+
