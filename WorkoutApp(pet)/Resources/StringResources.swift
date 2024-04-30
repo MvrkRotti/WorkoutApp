@@ -41,7 +41,7 @@ enum StringResources {
     enum AlertResources {
         static let fillAllFields = "Please, fill in all fields"
         static let emptyField = "Email or password is empty"
-        static let incorrectFilling = "Email or password is empty"
+        static let incorrectFilling = "Check your email or password"
         static let alertTitle = "Alert"
         static let cancelAction = "Try Again"
         static let enterEmail = "Enter your Email"
