@@ -11,6 +11,7 @@ import RealmSwift
 class ExerciseNote: Object {
     @objc dynamic var trainName: String = ""
     @objc dynamic var kindOfMuscle: String = ""
+    let exercises = List<Exercise>()
     
     convenience init(trainName: String, kindOfMuscle: String) {
         self.init()

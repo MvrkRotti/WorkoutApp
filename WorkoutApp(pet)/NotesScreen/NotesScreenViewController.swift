@@ -161,7 +161,7 @@ extension NotesScreenViewController: UICollectionViewDelegateFlowLayout {
 
 extension NotesScreenViewController: AddNoteDelegate {
     func didAddNote(_ note: ExerciseNote) {
-        viewModel.addNote(note)
+        viewModel.addNote(note.trainName, note.kindOfMuscle)
         trainCollectionView.reloadData()
     }
     

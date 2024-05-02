@@ -14,7 +14,7 @@ protocol NotesViewModelDelegate: AnyObject {
 
 final class NotesViewModel {
     weak var delegate: NotesViewModelDelegate?
-    private let realm = try! Realm()
+    let realm = try! Realm()
 
 //    var notes: Results<ExerciseNote>?
     
@@ -22,14 +22,20 @@ final class NotesViewModel {
         return realm.objects(ExerciseNote.self)
     }
     
-    func addNote(_ note: ExerciseNote) {
-        do {
-            try realm.write {
-                realm.add(note)
+    func addNote(_ trainingName: String, _ muscle: String) {
+        if let exitingData = realm.objects(ExerciseNote.self).first {
+            try! realm.write {
+                exitingData.trainName = trainingName
+                exitingData.kindOfMuscle = muscle
             }
-            print("Saving done!!!!!!!!!!")
-        } catch {
-            print("Error saving note: \(error)")
+        } else {
+            let newNote = ExerciseNote()
+            newNote.trainName = trainingName
+            newNote.kindOfMuscle = muscle
+            
+            try! realm.write {
+                realm.add(newNote, update: .modified)
+            }
         }
     }
 }

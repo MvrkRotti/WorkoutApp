@@ -147,7 +147,7 @@ extension AddNoteViewController: UITableViewDelegate, UITableViewDataSource {
 
 
 extension AddNoteViewController: AddExerciseDelegate {
-    func didAddExercise(_ exercise: Exercise) {
+    func didAddExercise(_ exercise: [Exercise]) {
         viewModel.addExercise(exercise)
         tableView.reloadData()
         dismiss(animated: true, completion: nil)

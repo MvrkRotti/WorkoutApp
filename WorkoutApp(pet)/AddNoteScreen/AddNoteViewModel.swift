@@ -22,13 +22,17 @@ class AddNoteViewModel {
         delegate?.reloadTableView()
     }
     
-    func addExercise(_ exercise: Exercise) {
-        do {
-            try realm.write {
-                realm.add(exercise)
+    func addExercise(_ exercise: [Exercise]) {
+        if let existingNote = realm.objects(ExerciseNote.self).first {
+            try! realm.write{
+                existingNote.exercises.append(objectsIn: exercise)
             }
-        } catch {
-            print("Error saving exercise: \(error)")
+        } else {
+            let newNote = ExerciseNote()
+            newNote.exercises.append(objectsIn: exercise)
+            try! realm.write {
+                realm.add(newNote, update: .modified)
+            }
         }
     }
     
