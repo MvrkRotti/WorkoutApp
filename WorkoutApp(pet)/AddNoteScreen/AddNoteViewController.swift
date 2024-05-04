@@ -18,6 +18,7 @@ final class AddNoteViewController: UIViewController {
     
     var viewModel: AddNoteViewModel
     var router: AddNoteRouter
+    var array: [ExerciseNote] = []
     
     weak var delegate: AddNoteDelegate?
     
@@ -104,6 +105,7 @@ private extension AddNoteViewController {
               let muscle = muscleTextField.text, !muscle.isEmpty else { return }
         let note = ExerciseNote(trainName: trainName, kindOfMuscle: muscle)
         delegate?.didAddNote(note)
+        
         navigationController?.popViewController(animated: true)
     }
     

@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import SwipeCellKit
 
-final class TrainNoteCell: UICollectionViewCell {
+final class TrainNoteCell: SwipeCollectionViewCell {
     
     //MARK: - Variables
     
+    var onDelete: (() -> Void)?
     static let identifier = "CustomCollectionViewCell"
-    let gradientLayer = CAGradientLayer()
+    private let gradientLayer = CAGradientLayer()
     
     //MARK: - UI Components
     
@@ -34,11 +36,18 @@ final class TrainNoteCell: UICollectionViewCell {
         return label
     }()
     
+    private let cellContentView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     //MARK: - Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         setGradientBackground()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -55,7 +64,7 @@ final class TrainNoteCell: UICollectionViewCell {
     public func configure(with dayText: String, and nameText: String) {
         self.trainDayLabel.text = dayText
         self.nameOfTrainLabel.text = nameText
-        self.setupUI()
+//        self.setupUI()
     }
     
     
@@ -71,14 +80,24 @@ final class TrainNoteCell: UICollectionViewCell {
 private extension TrainNoteCell {
     
     func setupUI() {
-        addSubview(trainDayLabel)
-        addSubview(nameOfTrainLabel)
+        
+        addSubview(contentView)
+        
+        contentView.addSubview(trainDayLabel)
+        contentView.addSubview(nameOfTrainLabel)
         
         NSLayoutConstraint.activate([
-            trainDayLabel.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            trainDayLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 21),
+            contentView.topAnchor.constraint(equalTo: topAnchor),
+            contentView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            contentView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            contentView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+        
+        NSLayoutConstraint.activate([
+            trainDayLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
+            trainDayLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 21),
             
-            nameOfTrainLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 21),
+            nameOfTrainLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 21),
             nameOfTrainLabel.topAnchor.constraint(equalTo: trainDayLabel.bottomAnchor, constant: 5)
         ])
     }

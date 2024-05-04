@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import SwipeCellKit
 
 final class NotesScreenViewController: UIViewController {
     
@@ -39,6 +39,11 @@ final class NotesScreenViewController: UIViewController {
         setDelegates()
         setupAction()
         navigationBarAppearance()
+        loadNotes()
+        
+        viewModel.onDeleteNote = { [weak self] indexPath in
+            self?.trainCollectionView.deleteItems(at: [indexPath])
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,6 +64,10 @@ extension NotesScreenViewController {
     }
     
     //MARK: - Set Delegates
+    
+    private func loadNotes() {
+        viewModel.getAllNotes()
+    }
     
     private func setDelegates() {
         trainCollectionView.delegate = self
@@ -105,8 +114,10 @@ extension NotesScreenViewController {
 //MARK: - UICollectionView Delegate and Data Source
 
 extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.getAllNotes().count
+        //        return viewModel.getAllNotes().count
+        return viewModel.notes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -115,11 +126,15 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
                 for: indexPath) as? TrainNoteCell
         else { fatalError("Failed to dequeue CustomCollectionViewCell in viewController")
         }
+        cell.delegate = self
         cell.layer.cornerRadius = 15
         cell.layer.masksToBounds = true
         
-        let day = viewModel.getAllNotes()[indexPath.row].trainName
-        let name = viewModel.getAllNotes()[indexPath.row].kindOfMuscle
+        //        let day = viewModel.getAllNotes()[indexPath.row].trainName
+        //        let name = viewModel.getAllNotes()[indexPath.row].kindOfMuscle
+        
+        let day = viewModel.notes[indexPath.row].trainName
+        let name = viewModel.notes[indexPath.row].kindOfMuscle
         cell.configure(with: day, and: name)
         
         cell.contentView.layer.cornerRadius = 15
@@ -131,13 +146,14 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = TrainNotesInfoViewController()
         present(vc, animated: true, completion: nil)
     }
+    
 }
 
+//MARK: - Collection view appearence settings
 extension NotesScreenViewController: UICollectionViewDelegateFlowLayout {
     
     //Setup size for cells
@@ -157,6 +173,33 @@ extension NotesScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.view.frame.width, height: 50)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, canEditItemAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+}
+
+extension NotesScreenViewController: SwipeCollectionViewCellDelegate {
+    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
+        guard orientation == .right else { return nil }
+        
+        let deleteAction = SwipeAction(style: .destructive, title: "Remove") { action, indexPath in
+            self.viewModel.deleteNote(at: indexPath)
+        }
+        
+        deleteAction.backgroundColor = .red
+        deleteAction.textColor = .black
+        deleteAction.image = UIImage(systemName: "trash")
+        
+        return [deleteAction]
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+        var options = SwipeOptions()
+        options.expansionStyle = .destructive
+        options.transitionStyle = .drag
+        return options
+    }
 }
 
 extension NotesScreenViewController: AddNoteDelegate {
@@ -164,7 +207,5 @@ extension NotesScreenViewController: AddNoteDelegate {
         viewModel.addNote(note.trainName, note.kindOfMuscle)
         trainCollectionView.reloadData()
     }
-    
-    
 }
 

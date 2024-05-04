@@ -23,17 +23,11 @@ class AddNoteViewModel {
     }
     
     func addExercise(_ exercise: [Exercise]) {
-        if let existingNote = realm.objects(ExerciseNote.self).first {
-            try! realm.write{
-                existingNote.exercises.append(objectsIn: exercise)
-            }
-        } else {
             let newNote = ExerciseNote()
             newNote.exercises.append(objectsIn: exercise)
             try! realm.write {
-                realm.add(newNote, update: .modified)
+                realm.add(newNote)
             }
-        }
     }
     
     func deleteExercise(at index: Int) {

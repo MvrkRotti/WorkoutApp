@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import SwipeCellKit
 
 protocol NotesViewModelDelegate: AnyObject {
     func reloadCollectionView()
@@ -15,27 +16,35 @@ protocol NotesViewModelDelegate: AnyObject {
 final class NotesViewModel {
     weak var delegate: NotesViewModelDelegate?
     let realm = try! Realm()
-
-//    var notes: Results<ExerciseNote>?
+    var notes: Results<ExerciseNote>!
+    var onDeleteNote: ((IndexPath) -> Void)?
     
-    func getAllNotes() -> Results<ExerciseNote> {
-        return realm.objects(ExerciseNote.self)
+//    func getAllNotes() -> Results<ExerciseNote> {
+//        return realm.objects(ExerciseNote.self)
+//    }
+    
+    func getAllNotes() {
+        notes = realm.objects(ExerciseNote.self)
     }
     
     func addNote(_ trainingName: String, _ muscle: String) {
-        if let exitingData = realm.objects(ExerciseNote.self).first {
-            try! realm.write {
-                exitingData.trainName = trainingName
-                exitingData.kindOfMuscle = muscle
-            }
-        } else {
             let newNote = ExerciseNote()
             newNote.trainName = trainingName
             newNote.kindOfMuscle = muscle
             
             try! realm.write {
-                realm.add(newNote, update: .modified)
+                realm.add(newNote)
             }
+    }
+    
+    func deleteNote(at indexPath: IndexPath) {
+        do {
+            try realm.write {
+                realm.delete(notes[indexPath.item])
+            }
+            onDeleteNote?(indexPath)
+        } catch {
+            print("Error deleting note: \(error)")
         }
     }
 }
