@@ -7,6 +7,7 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabase
 
 final class RegistrationViewModel {
     func registerUser(firstName: String, lastName: String, email: String,
@@ -23,6 +24,7 @@ final class RegistrationViewModel {
                 completion(nil, "Registration failed: \(error.localizedDescription)")
             } else if authResult != nil {
                 let user = User(firstName: firstName, lastName: lastName, email: email, password: password)
+                
                 completion(user, nil)
             }
         }

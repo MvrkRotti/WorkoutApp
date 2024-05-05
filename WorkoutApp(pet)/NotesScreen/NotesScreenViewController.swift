@@ -80,7 +80,7 @@ extension NotesScreenViewController {
             patternImage: UIImage(named: "backGroundImage")!)
         
         view.setupView(trainCollectionView)
-        view.setupView(addNoteButton)
+//        view.setupView(addNoteButton)
         trainCollectionView.setupView(trainViewLabel)
         
     }
@@ -95,10 +95,10 @@ extension NotesScreenViewController {
             trainViewLabel.topAnchor.constraint(equalTo: trainCollectionView.topAnchor, constant: 15),
             trainViewLabel.leadingAnchor.constraint(equalTo: trainCollectionView.leadingAnchor, constant: 20),
             
-            addNoteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            addNoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-            addNoteButton.heightAnchor.constraint(equalToConstant: 65),
-            addNoteButton.widthAnchor.constraint(equalToConstant: 65)
+//            addNoteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+//            addNoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+//            addNoteButton.heightAnchor.constraint(equalToConstant: 65),
+//            addNoteButton.widthAnchor.constraint(equalToConstant: 65)
         ])
     }
     

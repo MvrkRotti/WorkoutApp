@@ -6,12 +6,15 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 final class ProfileScreenViewController: UIViewController {
     
     //MARK: - Variables
     
     var router: ProfileRouter!
+    var user: User!
     
     private let photoView = ProfilePhotoView(frame: CGRect())
     private let photoLabel = PhotoLabel()
