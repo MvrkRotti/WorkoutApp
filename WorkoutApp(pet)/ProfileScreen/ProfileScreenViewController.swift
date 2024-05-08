@@ -13,8 +13,9 @@ final class ProfileScreenViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: ProfileRouter!
-    var user: User!
+    var router: ProfileRouter?
+    //    var user: User?
+    var viewModel: ProfileViewModel
     
     private let photoView = ProfilePhotoView(frame: CGRect())
     private let photoLabel = PhotoLabel()
@@ -30,13 +31,22 @@ final class ProfileScreenViewController: UIViewController {
     
     private lazy var profileStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [nameLabel, genderLabel, ageLabel,
-                            weightLabel, heightLabel, bmiLabel, bmiDescriptionLabel])
+                                                   weightLabel, heightLabel, bmiLabel, bmiDescriptionLabel])
         stack.axis = .vertical
         stack.spacing = 15
         stack.alignment = .leading
         return stack
     }()
-    //MARK: - Lifecycle
+    //    MARK: - Lifecycle
+    
+    init(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,12 +54,16 @@ final class ProfileScreenViewController: UIViewController {
         setupUI()
         setupLayout()
         setGradientBackground()
+        viewModel.delegate = self
+        viewModel.loadUserProfileData()
+        fillName()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
+        viewModel.loadUserProfileData()
     }
 }
 
@@ -57,7 +71,7 @@ private extension ProfileScreenViewController {
     
     func navigationBarAppearance() {
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonDidTapped))
-
+        
         navigationItem.title = "My Profile"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
@@ -66,7 +80,8 @@ private extension ProfileScreenViewController {
     }
     
     @objc func editButtonDidTapped() {
-        navigationController?.pushViewController(EditProfileViewController(), animated: true)
+        router?.pushEditScreen()
+        
     }
     
     
@@ -76,6 +91,7 @@ private extension ProfileScreenViewController {
         view.setupView(photoLabel)
         view.setupView(profileStackView)
     }
+    
     
     func setupLayout() {
         NSLayoutConstraint.activate([
@@ -96,6 +112,12 @@ private extension ProfileScreenViewController {
 //MARK: - Gradient
 
 extension ProfileScreenViewController {
+    
+    func fillName() {
+        if let name = UserDefaults.standard.string(forKey: "name") {
+            nameLabel.text = "Name: \(name)"
+        }
+    }
     func setGradientBackground() {
         let topColor = ColorResources.gradientTopColor.cgColor
         
@@ -109,6 +131,17 @@ extension ProfileScreenViewController {
         gradientLayer.frame = self.view.bounds
         
         self.view.layer.insertSublayer(gradientLayer, at:0)
+    }
+}
+
+extension ProfileScreenViewController: ProfileViewModelDelegate {
+    func didLoadUser(user: User) {
+//        nameLabel.text = "Name: \(user.firstName!)"
+        genderLabel.text = "Gender: \(user.gender!)"
+        ageLabel.text = "Age: \(user.age!)"
+        weightLabel.text = "Weight: \(user.weight!)"
+        heightLabel.text = "Height: \(user.height!)"
+        bmiLabel.text = "BMI: \(user.bmi!)"
     }
     
     

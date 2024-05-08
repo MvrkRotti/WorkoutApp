@@ -16,6 +16,7 @@ final class TrainCollectionView: UICollectionView {
         
         register(TrainNoteCell.self, forCellWithReuseIdentifier: TrainNoteCell.identifier)
         backgroundColor = .none
+        backgroundView = UIImageView(image: ImageResources.backgroundImage)
     }
     
     required init?(coder: NSCoder) {

@@ -11,12 +11,15 @@ struct EditProfileScreenAssembler {
     
     static func buildModule() -> UIViewController {
         
-        let viewController = EditProfileViewController()
-        let router = EditProfileScreenRouter()
+        let user = User()
+        let viewModel = EditProfileViewModel(user: user)
+        let viewController = EditProfileViewController(viewModel: viewModel)
+        let router = EditProfileScreenRouter(viewController: viewController)
         
         viewController.router = router
-        router.editProfileViewController = viewController
+        viewController.viewModel = viewModel
         
         return viewController
     }
 }
+

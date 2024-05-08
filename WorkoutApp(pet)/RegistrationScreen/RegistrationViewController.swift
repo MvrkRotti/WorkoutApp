@@ -95,6 +95,7 @@ private extension RegistrationViewController {
                 self.showAlert(message: StringResources.AlertResources.fillAllFields)
                 return
             }
+                        
             self.viewModel.registerUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword) { [weak self] user, error in
                 guard let self = self else { return }
                 if let error = error {

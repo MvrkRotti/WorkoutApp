@@ -11,12 +11,28 @@ struct ProfileAssembler {
     
     static func buildModule() -> UIViewController {
         
-        let viewController = ProfileScreenViewController()
-        let router = ProfileRouter()
+        let viewModel = ProfileViewModel()
+        let viewController = ProfileScreenViewController(viewModel: viewModel)
+        let router = ProfileRouter(viewController: viewController)
         
         viewController.router = router
-        router.profileController = viewController
+        viewController.viewModel = viewModel
         
         return viewController
     }
 }
+
+//struct EditProfileScreenAssembler {
+//
+//    static func buildModule() -> UIViewController {
+//
+//        let viewModel = EditProfileViewModel()
+//        let viewController = EditProfileViewController(viewModel: viewModel)
+//        let router = EditProfileScreenRouter(viewController: viewController)
+//
+//        viewController.router = router
+//        viewModel.router = router
+//
+//        return viewController
+//    }
+//}

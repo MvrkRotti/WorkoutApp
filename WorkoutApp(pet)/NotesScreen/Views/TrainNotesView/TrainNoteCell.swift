@@ -50,7 +50,7 @@ final class TrainNoteCell: SwipeCollectionViewCell {
         setupUI()
     }
     
-    required init?(coder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -64,7 +64,7 @@ final class TrainNoteCell: SwipeCollectionViewCell {
     public func configure(with dayText: String, and nameText: String) {
         self.trainDayLabel.text = dayText
         self.nameOfTrainLabel.text = nameText
-//        self.setupUI()
+        self.setupUI()
     }
     
     
@@ -80,7 +80,7 @@ final class TrainNoteCell: SwipeCollectionViewCell {
 private extension TrainNoteCell {
     
     func setupUI() {
-        
+                
         addSubview(contentView)
         
         contentView.addSubview(trainDayLabel)
@@ -96,7 +96,7 @@ private extension TrainNoteCell {
         NSLayoutConstraint.activate([
             trainDayLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 16),
             trainDayLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 21),
-            
+
             nameOfTrainLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 21),
             nameOfTrainLabel.topAnchor.constraint(equalTo: trainDayLabel.bottomAnchor, constant: 5)
         ])

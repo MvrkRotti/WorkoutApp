@@ -10,8 +10,10 @@ import UIKit
 final class EditProfileViewController: UIViewController {
     
     //MARK: - Variables
-    var router: EditProfileScreenRouter!
-        
+    var router: EditProfileScreenRouter?
+    
+    var viewModel: EditProfileViewModel
+    
     private let profilePhoto = ProfilePhotoView(frame: CGRect())
     private let ageTextField = AgeTextField()
     private let weightTextField = WeightTextField()
@@ -19,7 +21,7 @@ final class EditProfileViewController: UIViewController {
     private let genderSelector = GenderSegmentController(items: ["Female", "Male"])
     private let selectPhotoButton = SelectPhotoButton()
     
-        //MARK: - UI Components
+    //MARK: - UI Components
     
     private lazy var profileStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [ageTextField,weightTextField, heightTextField])
@@ -31,6 +33,15 @@ final class EditProfileViewController: UIViewController {
     
     //MARK: - Lifecycle
     
+    init(viewModel: EditProfileViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = ColorResources.customDarkGrey
@@ -40,21 +51,21 @@ final class EditProfileViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-            tabBarController?.tabBar.isHidden = true
-        }
+        tabBarController?.tabBar.isHidden = true
+    }
 }
 
 //MARK: - UI Setup
 
 private extension EditProfileViewController {
     func navigationBarAppearance() {
-        let editButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: nil)
-
+        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveDidTapped))
+        
         navigationItem.title = "Edit profile"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
-        navigationItem.rightBarButtonItem = editButton
+        navigationItem.rightBarButtonItem = saveButton
     }
     
     func setupUI() {
@@ -91,5 +102,25 @@ private extension EditProfileViewController {
             selectPhotoButton.centerXAnchor.constraint(equalTo: profilePhoto.centerXAnchor),
             selectPhotoButton.centerYAnchor.constraint(equalTo: profilePhoto.centerYAnchor),
         ])
+    }
+    
+    @objc func saveDidTapped(_ sender: UIButton) {
+        guard let age = ageTextField.text,
+              let weight = weightTextField.text,
+              let height = heightTextField.text else { return }
+        
+        let genderIndex = genderSelector.selectedSegmentIndex
+        let gender = genderIndex == 0 ? "Female" : "Male"
+        
+        let bmi = calculateBMI(weight: Double(weight) ?? 0, height: Double(height) ?? 0)
+        
+        let user = User(age: age, gender: gender, weight: weight, height: height, bmi: String(format: "%.1f", bmi))
+        viewModel.saveUserProfileData(user: user)
+        router?.navigateBack()
+    }
+    
+    func calculateBMI(weight: Double, height: Double) -> Double {
+        let heightInMeter = height / 100
+        return weight / (heightInMeter * heightInMeter)
     }
 }

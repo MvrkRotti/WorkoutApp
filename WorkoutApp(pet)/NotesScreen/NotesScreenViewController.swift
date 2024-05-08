@@ -17,7 +17,7 @@ final class NotesScreenViewController: UIViewController {
     private var viewModel: NotesViewModel
     
     private let trainViewLabel = TrainViewLabel()
-    private let trainCollectionView = TrainCollectionView()
+    private let trainCollectionView = TrainCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
     private let addNoteButton = AddNoteButton()
     
     //MARK: - Lifecycle
@@ -40,6 +40,7 @@ final class NotesScreenViewController: UIViewController {
         setupAction()
         navigationBarAppearance()
         loadNotes()
+    
         
         viewModel.onDeleteNote = { [weak self] indexPath in
             self?.trainCollectionView.deleteItems(at: [indexPath])
@@ -76,29 +77,27 @@ extension NotesScreenViewController {
     //MARK: - UI Setup
     
     func setupUI() {
-        view.backgroundColor = UIColor(
-            patternImage: UIImage(named: "backGroundImage")!)
         
         view.setupView(trainCollectionView)
-//        view.setupView(addNoteButton)
+        view.setupView(addNoteButton)
         trainCollectionView.setupView(trainViewLabel)
         
     }
     
     func setupLayout() {
         NSLayoutConstraint.activate([
-            trainCollectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            trainCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             trainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             trainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            trainCollectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            trainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             
             trainViewLabel.topAnchor.constraint(equalTo: trainCollectionView.topAnchor, constant: 15),
             trainViewLabel.leadingAnchor.constraint(equalTo: trainCollectionView.leadingAnchor, constant: 20),
-            
-//            addNoteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-//            addNoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-//            addNoteButton.heightAnchor.constraint(equalToConstant: 65),
-//            addNoteButton.widthAnchor.constraint(equalToConstant: 65)
+
+            addNoteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            addNoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
+            addNoteButton.heightAnchor.constraint(equalToConstant: 65),
+            addNoteButton.widthAnchor.constraint(equalToConstant: 65)
         ])
     }
     
@@ -174,9 +173,9 @@ extension NotesScreenViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: self.view.frame.width, height: 50)
     }
     
-    func collectionView(_ collectionView: UICollectionView, canEditItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
+//    func collectionView(_ collectionView: UICollectionView, canEditItemAt indexPath: IndexPath) -> Bool {
+//        return true
+//    }
 }
 
 extension NotesScreenViewController: SwipeCollectionViewCellDelegate {
@@ -193,13 +192,13 @@ extension NotesScreenViewController: SwipeCollectionViewCellDelegate {
         
         return [deleteAction]
     }
-    
-    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
-        var options = SwipeOptions()
-        options.expansionStyle = .destructive
-        options.transitionStyle = .drag
-        return options
-    }
+//
+//    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
+//        var options = SwipeOptions()
+//        options.expansionStyle = .destructive
+//        options.transitionStyle = .drag
+//        return options
+//    }
 }
 
 extension NotesScreenViewController: AddNoteDelegate {

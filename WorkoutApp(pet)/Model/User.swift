@@ -6,10 +6,21 @@
 //
 
 import Foundation
+import UIKit
 
-struct User {
-    let firstName: String
-    let lastName: String
-    let email: String
-    let password: String
+struct User: Codable {
+    var firstName: String?
+    var lastName: String?
+    var email: String?
+    var password: String?
+    var age: String?
+    var gender: String?
+    var weight: String?
+    var height: String?
+    var bmi: String?
+}
+
+enum Gender: String, Codable {
+    case male = "Male"
+    case female = "Female"
 }

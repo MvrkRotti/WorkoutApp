@@ -60,6 +60,7 @@
 		CE6A898C2BD28D5C000CFEC7 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CE6A898B2BD28D5C000CFEC7 /* RealmSwift */; };
 		CE7294032BE5146E009C867F /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE7294022BE5146E009C867F /* SwipeCellKit */; };
 		CE7294062BE7E043009C867F /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7294052BE7E043009C867F /* ProfileScreenViewModel.swift */; };
+		CE72940A2BE91BBD009C867F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7294092BE91BBD009C867F /* EditProfileViewModel.swift */; };
 		CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8214972BCDAADC001D32AB /* UITextField.swift */; };
 		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
 		CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */; };
@@ -170,6 +171,7 @@
 		CE5CD45A2BC86EF40065991D /* FontResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontResources.swift; sourceTree = "<group>"; };
 		CE5CD45C2BC873910065991D /* TabBarResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarResources.swift; sourceTree = "<group>"; };
 		CE7294052BE7E043009C867F /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
+		CE7294092BE91BBD009C867F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		CE8214972BCDAADC001D32AB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenRouter.swift; sourceTree = "<group>"; };
@@ -225,7 +227,6 @@
 		CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordButton.swift; sourceTree = "<group>"; };
 		CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResetPasswordButton.swift; sourceTree = "<group>"; };
 		CEEAECF62BE133D700721D33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		CEEAECF82BE133DA00721D33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEF2AB512BBD769100205B60 /* NotesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAssembler.swift; sourceTree = "<group>"; };
 		CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCustomTextField.swift; sourceTree = "<group>"; };
 		CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseButton.swift; sourceTree = "<group>"; };
@@ -419,6 +420,7 @@
 				CE8D50EA2B88A0B600A14719 /* Views */,
 				CE8D50E52B88984B00A14719 /* Navigation */,
 				CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */,
+				CE7294092BE91BBD009C867F /* EditProfileViewModel.swift */,
 			);
 			path = EditProfileScreen;
 			sourceTree = "<group>";
@@ -503,7 +505,6 @@
 		CED9EAF12B6E4BB80065FE23 = {
 			isa = PBXGroup;
 			children = (
-				CEEAECF82BE133DA00721D33 /* GoogleService-Info.plist */,
 				CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */,
 				CED9EAFB2B6E4BB80065FE23 /* Products */,
 			);
@@ -970,6 +971,7 @@
 				CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */,
 				CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */,
 				CED9EB1F2B6E4E1A0065FE23 /* SignUpButton.swift in Sources */,
+				CE72940A2BE91BBD009C867F /* EditProfileViewModel.swift in Sources */,
 				CE1A8BD02B87DC7700ACB21C /* ProfilePhotoView.swift in Sources */,
 				CE5CD44A2BC83B0B0065991D /* RegistrationViewModel.swift in Sources */,
 			);
