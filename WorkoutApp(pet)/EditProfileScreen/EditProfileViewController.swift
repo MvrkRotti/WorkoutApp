@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class EditProfileViewController: UIViewController {
     
@@ -105,22 +106,19 @@ private extension EditProfileViewController {
     }
     
     @objc func saveDidTapped(_ sender: UIButton) {
-        guard let age = ageTextField.text,
-              let weight = weightTextField.text,
-              let height = heightTextField.text else { return }
+        guard let ageText = ageTextField.text, let age = Int(ageText),
+              let weightText = weightTextField.text, let weight = Double(weightText),
+              let heightText = heightTextField.text, let height = Double(heightText) else { return }
         
         let genderIndex = genderSelector.selectedSegmentIndex
         let gender = genderIndex == 0 ? "Female" : "Male"
+                
+        guard let userID = Auth.auth().currentUser?.uid else {
+            return
+        }
         
-        let bmi = calculateBMI(weight: Double(weight) ?? 0, height: Double(height) ?? 0)
+        viewModel.saveUserData(age: age, weight: weight, height: height, gender: gender, userID: userID)
         
-        let user = User(age: age, gender: gender, weight: weight, height: height, bmi: String(format: "%.1f", bmi))
-        viewModel.saveUserProfileData(user: user)
         router?.navigateBack()
-    }
-    
-    func calculateBMI(weight: Double, height: Double) -> Double {
-        let heightInMeter = height / 100
-        return weight / (heightInMeter * heightInMeter)
     }
 }

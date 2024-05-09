@@ -6,27 +6,36 @@
 //
 
 import Foundation
-import UIKit
-
-protocol ProfileViewModelDelegate: AnyObject {
-    func didLoadUser(user: User)
-}
+import FirebaseAuth
 
 final class ProfileViewModel {
+    var userID: String? {
+        return Auth.auth().currentUser?.uid
+    }
     
-    weak var delegate: ProfileViewModelDelegate?
-    var user: User!
-
-    func loadUserProfileData() {
-        let defaults = UserDefaults.standard
-        let name = defaults.string(forKey: "name") ?? ""
-        let gender = defaults.string(forKey: "gender") ?? ""
-        let age = defaults.string(forKey: "age") ?? ""
-        let weight = defaults.string(forKey: "weight") ?? ""
-        let height = defaults.string(forKey: "height") ?? ""
-        let bmi = defaults.string(forKey: "bmi") ?? ""
-        
-        user = User(firstName: name, age: age, gender: gender, weight: weight, height: height, bmi: bmi)
-        delegate?.didLoadUser(user: user)
+    var age: Int? {
+        guard let userID = userID else { return nil }
+        return UserDefaults.standard.integer(forKey: "age_\(userID)")
+    }
+    
+    var weight: Double? {
+        guard let userID = userID else { return nil }
+        return UserDefaults.standard.double(forKey: "weight_\(userID)")
+    }
+    
+    var height: Double? {
+        guard let userID = userID else { return nil }
+        return UserDefaults.standard.double(forKey: "height_\(userID)")
+    }
+    
+    var gender: String? {
+        guard let userID = userID else { return nil }
+        return UserDefaults.standard.string(forKey: "gender_\(userID)")
+    }
+    
+    var bmi: Double? {
+        guard let weight = weight, let height = height else { return nil }
+        let bmiValue = weight / ((height / 100) * (height / 100))
+        return bmiValue
     }
 }

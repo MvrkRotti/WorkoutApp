@@ -6,14 +6,14 @@
 //
 
 import UIKit
-import FirebaseAuth
-import FirebaseDatabase
+//import FirebaseAuth
+//import FirebaseDatabase
 
 final class ProfileScreenViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: ProfileRouter?
+    var router: ProfileRouterProtocol?
     //    var user: User?
     var viewModel: ProfileViewModel
     
@@ -55,6 +55,7 @@ final class ProfileScreenViewController: UIViewController {
         setupLayout()
         setGradientBackground()
         fillName()
+        fillProfile()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,23 +63,32 @@ final class ProfileScreenViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
         fillName()
+        fillProfile()
     }
 }
 
+//MARK: - NavBar Settings
 private extension ProfileScreenViewController {
     
     func navigationBarAppearance() {
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonDidTapped))
+        let logOutButton = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOutButtonDidTapped))
         
         navigationItem.title = "My Profile"
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationItem.rightBarButtonItem = editButton
+        navigationItem.leftBarButtonItem = logOutButton
+        navigationItem.leftBarButtonItem?.tintColor = .red
     }
     
     @objc func editButtonDidTapped() {
         router?.pushEditScreen()
+    }
+    
+    @objc func logOutButtonDidTapped() {
+        router?.popToRoot()
     }
     
     
@@ -105,8 +115,7 @@ private extension ProfileScreenViewController {
     }
 }
 
-//MARK: - Gradient
-
+//MARK: - Profile filling
 extension ProfileScreenViewController {
     
     func fillName() {
@@ -116,6 +125,29 @@ extension ProfileScreenViewController {
             }
         }
     }
+    
+    func fillProfile() {
+        if let age = viewModel.age {
+            ageLabel.text = "Age: \(age)"
+        }
+        if let weight = viewModel.weight {
+            weightLabel.text = "Weight: \(weight) kg"
+        }
+        if let height = viewModel.height {
+            heightLabel.text = "Height: \(height) cm"
+        }
+        if let gender = viewModel.gender {
+            genderLabel.text = "Gender: \(gender)"
+        }
+        
+        if let bmi = viewModel.bmi {
+            let roundedBMI = String(format: "%.2f", bmi)
+            bmiLabel.text = "BMI: \(roundedBMI)"
+        }
+    }
+    
+    //MARK: - Gradient
+
     func setGradientBackground() {
         let topColor = ColorResources.gradientTopColor.cgColor
         

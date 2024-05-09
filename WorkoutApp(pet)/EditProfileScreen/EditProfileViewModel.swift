@@ -9,20 +9,12 @@ import Foundation
 
 class EditProfileViewModel {
     
-    var user: User?
-
-    init(user: User) {
-        self.user = user
+    func saveUserData(age: Int, weight: Double, height: Double, gender: String, userID: String) {
+        UserDefaults.standard.set(age, forKey: "age_\(userID)")
+        UserDefaults.standard.set(weight, forKey: "weight_\(userID)")
+        UserDefaults.standard.set(height, forKey: "height_\(userID)")
+        UserDefaults.standard.set(gender, forKey: "gender_\(userID)")
     }
     
-    func saveUserProfileData(user: User) {
-            let defaults = UserDefaults.standard
-        defaults.set(user.gender, forKey: "gender \(user.)")
-            defaults.set(user.age, forKey: "age")
-            defaults.set(user.weight, forKey: "weight")
-            defaults.set(user.height, forKey: "height")
-            defaults.set(user.bmi, forKey: "bmi")
-        }
-
 }
 

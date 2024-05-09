@@ -6,14 +6,14 @@
 //
 
 import UIKit
+import FirebaseAuth
 
-final class ProfileRouter {
-    
-//    weak var profileController: ProfileScreenViewController?
-//
-//    func pushEditScreen() {
-//        profileController?.navigationController?.pushViewController(EditProfileScreenAssembler.buildModule(), animated: true)
-//    }
+protocol ProfileRouterProtocol: AnyObject {
+    func pushEditScreen()
+    func popToRoot()
+}
+
+final class ProfileRouter: ProfileRouterProtocol {
     
     weak var viewController: UIViewController?
     
@@ -24,5 +24,16 @@ final class ProfileRouter {
     func pushEditScreen() {
         let editScreen = EditProfileScreenAssembler.buildModule()
         viewController?.navigationController?.pushViewController(editScreen, animated: true)
+    }
+    
+    func popToRoot() {
+        do {
+            try Auth.auth().signOut()
+            if let navigationController = viewController?.navigationController {
+            navigationController.popToRootViewController(animated: true)
+            }
+        } catch let signOutError as NSError {
+            print("Error signing out: \(signOutError.localizedDescription)")
+        }
     }
 }

@@ -11,8 +11,7 @@ struct EditProfileScreenAssembler {
     
     static func buildModule() -> UIViewController {
         
-        let user = User()
-        let viewModel = EditProfileViewModel(user: user)
+        let viewModel = EditProfileViewModel()
         let viewController = EditProfileViewController(viewModel: viewModel)
         let router = EditProfileScreenRouter(viewController: viewController)
         
