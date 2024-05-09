@@ -54,8 +54,6 @@ final class ProfileScreenViewController: UIViewController {
         setupUI()
         setupLayout()
         setGradientBackground()
-        viewModel.delegate = self
-        viewModel.loadUserProfileData()
         fillName()
     }
     
@@ -63,7 +61,7 @@ final class ProfileScreenViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
-        viewModel.loadUserProfileData()
+        fillName()
     }
 }
 
@@ -81,12 +79,10 @@ private extension ProfileScreenViewController {
     
     @objc func editButtonDidTapped() {
         router?.pushEditScreen()
-        
     }
     
     
     func setupUI() {
-        
         view.setupView(photoView)
         view.setupView(photoLabel)
         view.setupView(profileStackView)
@@ -114,8 +110,10 @@ private extension ProfileScreenViewController {
 extension ProfileScreenViewController {
     
     func fillName() {
-        if let name = UserDefaults.standard.string(forKey: "name") {
-            nameLabel.text = "Name: \(name)"
+        if let userID = UserDefaults.standard.string(forKey: "UserID") {
+            if let userName = UserDefaults.standard.string(forKey: "UserName_ \(userID)") {
+                nameLabel.text = "Name: \(userName)"
+            }
         }
     }
     func setGradientBackground() {
@@ -132,17 +130,4 @@ extension ProfileScreenViewController {
         
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
-}
-
-extension ProfileScreenViewController: ProfileViewModelDelegate {
-    func didLoadUser(user: User) {
-//        nameLabel.text = "Name: \(user.firstName!)"
-        genderLabel.text = "Gender: \(user.gender!)"
-        ageLabel.text = "Age: \(user.age!)"
-        weightLabel.text = "Weight: \(user.weight!)"
-        heightLabel.text = "Height: \(user.height!)"
-        bmiLabel.text = "BMI: \(user.bmi!)"
-    }
-    
-    
 }

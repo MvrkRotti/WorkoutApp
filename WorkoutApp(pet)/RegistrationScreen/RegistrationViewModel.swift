@@ -20,20 +20,21 @@ final class RegistrationViewModel {
         }
                 
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
-            if let error = error {
-                completion(nil, "Registration failed: \(error.localizedDescription)")
-            } else if authResult != nil {
-                self.removeUserDefaults()
-                let user = User(firstName: firstName, lastName: lastName, email: email, password: password)
-                UserDefaults.standard.set(user.firstName, forKey: "name")
-                completion(user, nil)
+            guard let user = authResult?.user, error == nil else {
+                if let error = error {
+                    completion(nil, "Registration failed: \(error.localizedDescription)")
+                }
+                return
             }
+            let userData = User(firstName: firstName, lastName: lastName, email: email, password: password)
+            UserDefaults.standard.set(firstName, forKey: "UserName_ \(user.uid)")
+            UserDefaults.standard.set(user.uid, forKey: "UserID")
+            completion(userData, nil)
         }
     }
     
-    private func removeUserDefaults() {
-        UserDefaults.standard.removeObject(forKey: "user")
-        UserDefaults.standard.synchronize()
+    private func saveUser(_ User: User, forUserID userID: String) {
+        UserDefaults.standard.set(["name": User.firstName], forKey: "User_ \(userID)")
     }
 }
 
