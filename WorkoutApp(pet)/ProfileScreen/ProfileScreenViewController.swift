@@ -54,7 +54,7 @@ final class ProfileScreenViewController: UIViewController {
         setupUI()
         setupLayout()
         setGradientBackground()
-        fillName()
+//        fillName()
         fillProfile()
     }
     
@@ -62,7 +62,7 @@ final class ProfileScreenViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
-        fillName()
+//        fillName()
         fillProfile()
     }
 }
@@ -88,19 +88,6 @@ private extension ProfileScreenViewController {
     }
     
     @objc func logOutButtonDidTapped() {
-
-//        if let tabBarController = self.tabBarController,
-//           let navigationController = tabBarController.navigationController {
-//            // Находим первый экран приветствия (WelcomeViewController) в стеке контроллеров
-//            for viewController in navigationController.viewControllers {
-//                if viewController is WelcomeViewController {
-//                    // Выполняем возврат на первый экран приветствия
-//                    router?.popToRoot()
-//                    navigationController.popToViewController(viewController, animated: true)
-//                    break
-//                }
-//            }
-//        }
         router?.popToRoot(form: self)
     }
     
@@ -131,17 +118,21 @@ private extension ProfileScreenViewController {
 //MARK: - Profile filling
 extension ProfileScreenViewController {
     
-    func fillName() {
-        if let userID = UserDefaults.standard.string(forKey: "UserID") {
-            if let userName = UserDefaults.standard.string(forKey: "UserName_ \(userID)") {
-                nameLabel.text = "Name: \(userName)"
-            }
-        }
-    }
+//    func fillName() {
+//        if let userID = UserDefaults.standard.string(forKey: "UserID") {
+//            if let userName = UserDefaults.standard.string(forKey: "UserName_ \(userID)") {
+//                nameLabel.text = "Name: \(userName)"
+//            }
+//        }
+//    }
     
     func fillProfile() {
+        if let name = viewModel.name {
+            nameLabel.text = "Name: \(name)"
+        }
+        
         if let age = viewModel.age {
-            ageLabel.text = "Age: \(age)"
+            ageLabel.text = "Age: \(age) years"
         }
         if let weight = viewModel.weight {
             weightLabel.text = "Weight: \(weight) kg"

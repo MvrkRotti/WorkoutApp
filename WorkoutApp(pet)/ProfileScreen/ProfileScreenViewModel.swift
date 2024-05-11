@@ -13,6 +13,11 @@ final class ProfileViewModel {
         return Auth.auth().currentUser?.uid
     }
     
+    var name: String? {
+        guard let userID = userID else { return nil}
+        return UserDefaults.standard.string(forKey: "name_\(userID)")
+    }
+    
     var age: Int? {
         guard let userID = userID else { return nil }
         return UserDefaults.standard.integer(forKey: "age_\(userID)")

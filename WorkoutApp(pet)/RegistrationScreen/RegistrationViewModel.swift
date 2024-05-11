@@ -27,7 +27,7 @@ final class RegistrationViewModel {
                 return
             }
             let userData = User(firstName: firstName, lastName: lastName, email: email, password: password)
-            UserDefaults.standard.set(firstName, forKey: "UserName_ \(user.uid)")
+            UserDefaults.standard.set(firstName, forKey: "name_\(user.uid)")
             UserDefaults.standard.set(user.uid, forKey: "UserID")
             completion(userData, nil)
         }
