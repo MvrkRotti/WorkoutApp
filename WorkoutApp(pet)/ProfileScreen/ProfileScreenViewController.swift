@@ -72,7 +72,7 @@ private extension ProfileScreenViewController {
     
     func navigationBarAppearance() {
         let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonDidTapped))
-        let logOutButton = UIBarButtonItem(title: "Log Out", style: .done, target: self, action: #selector(logOutButtonDidTapped))
+        let logOutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonDidTapped))
         
         navigationItem.title = "My Profile"
         navigationController?.isNavigationBarHidden = false
@@ -88,7 +88,20 @@ private extension ProfileScreenViewController {
     }
     
     @objc func logOutButtonDidTapped() {
-        router?.popToRoot()
+
+//        if let tabBarController = self.tabBarController,
+//           let navigationController = tabBarController.navigationController {
+//            // Находим первый экран приветствия (WelcomeViewController) в стеке контроллеров
+//            for viewController in navigationController.viewControllers {
+//                if viewController is WelcomeViewController {
+//                    // Выполняем возврат на первый экран приветствия
+//                    router?.popToRoot()
+//                    navigationController.popToViewController(viewController, animated: true)
+//                    break
+//                }
+//            }
+//        }
+        router?.popToRoot(form: self)
     }
     
     
@@ -147,7 +160,7 @@ extension ProfileScreenViewController {
     }
     
     //MARK: - Gradient
-
+    
     func setGradientBackground() {
         let topColor = ColorResources.gradientTopColor.cgColor
         

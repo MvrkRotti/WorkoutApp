@@ -17,7 +17,7 @@ enum Tabs: Int, CaseIterable {
 
 final class TabController: UITabBarController {
 
-    var router: TabRouter!
+//    var router: TabRouter!
 
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

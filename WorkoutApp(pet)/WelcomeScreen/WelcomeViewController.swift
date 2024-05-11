@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
     private let mainLogo = MainLogo(frame: CGRect())
     private let signInLabel = SignInLabel()
     
-    var router: WelcomeRouter!
+    var router: WelcomeRouterProtocol?
     
     
     
@@ -59,12 +59,12 @@ private extension WelcomeViewController {
     func setupActions() {
         signUpButton.signUpTapped = { [weak self] in
             guard let self = self else { return }
-            self.router.pushRegistrationScreen()
+            self.router?.pushRegistrationScreen()
         }
         
         signInButton.signInTapped = { [weak self ] in
             guard let self = self else { return }
-            self.router.pushAutoristrationScreen()
+            self.router?.pushAutoristrationScreen()
         }
         
         

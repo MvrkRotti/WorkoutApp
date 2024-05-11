@@ -61,7 +61,6 @@
 		CE7294032BE5146E009C867F /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE7294022BE5146E009C867F /* SwipeCellKit */; };
 		CE7294062BE7E043009C867F /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7294052BE7E043009C867F /* ProfileScreenViewModel.swift */; };
 		CE72940A2BE91BBD009C867F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7294092BE91BBD009C867F /* EditProfileViewModel.swift */; };
-		CE72940D2BED393B009C867F /* UserDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72940C2BED393B009C867F /* UserDataProvider.swift */; };
 		CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8214972BCDAADC001D32AB /* UITextField.swift */; };
 		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
 		CE8D50E72B88985900A14719 /* EditProfileScreenRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */; };
@@ -118,7 +117,6 @@
 		CEF2AB522BBD769100205B60 /* NotesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB512BBD769100205B60 /* NotesAssembler.swift */; };
 		CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */; };
 		CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */; };
-		CEF2AB5C2BBED69D00205B60 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB5B2BBED69D00205B60 /* RouterProtocol.swift */; };
 		CEF2AB5F2BBF092600205B60 /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */; };
 		CEF2AB622BBF09F700205B60 /* AddExerciseAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB612BBF09F700205B60 /* AddExerciseAssembler.swift */; };
 		CEF2AB642BBF0A0000205B60 /* AddExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB632BBF0A0000205B60 /* AddExerciseRouter.swift */; };
@@ -173,7 +171,6 @@
 		CE5CD45C2BC873910065991D /* TabBarResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarResources.swift; sourceTree = "<group>"; };
 		CE7294052BE7E043009C867F /* ProfileScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewModel.swift; sourceTree = "<group>"; };
 		CE7294092BE91BBD009C867F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
-		CE72940C2BED393B009C867F /* UserDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataProvider.swift; sourceTree = "<group>"; };
 		CE8214972BCDAADC001D32AB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		CE8D50E62B88985900A14719 /* EditProfileScreenRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileScreenRouter.swift; sourceTree = "<group>"; };
@@ -232,7 +229,6 @@
 		CEF2AB512BBD769100205B60 /* NotesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAssembler.swift; sourceTree = "<group>"; };
 		CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCustomTextField.swift; sourceTree = "<group>"; };
 		CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseButton.swift; sourceTree = "<group>"; };
-		CEF2AB5B2BBED69D00205B60 /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
 		CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
 		CEF2AB612BBF09F700205B60 /* AddExerciseAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseAssembler.swift; sourceTree = "<group>"; };
 		CEF2AB632BBF0A0000205B60 /* AddExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseRouter.swift; sourceTree = "<group>"; };
@@ -416,14 +412,6 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
-		CE72940B2BED392B009C867F /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				CE72940C2BED393B009C867F /* UserDataProvider.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		CE8D50E22B88939000A14719 /* EditProfileScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,8 +519,6 @@
 		CED9EAFC2B6E4BB80065FE23 /* WorkoutApp(pet) */ = {
 			isa = PBXGroup;
 			children = (
-				CE72940B2BED392B009C867F /* Helpers */,
-				CEF2AB5A2BBED69100205B60 /* Router */,
 				CED9EB1A2B6E4D6F0065FE23 /* Application */,
 				CE1A8BBA2B822EDB00ACB21C /* NetworkService */,
 				CE1A8BBD2B822F1E00ACB21C /* Model */,
@@ -757,14 +743,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CEF2AB5A2BBED69100205B60 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				CEF2AB5B2BBED69D00205B60 /* RouterProtocol.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
 		CEF2AB5D2BBED6F000205B60 /* AddExerciseScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -938,7 +916,6 @@
 				CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */,
 				CEAC7E052B81F3C800AF05CD /* HandbookAssembler.swift in Sources */,
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
-				CEF2AB5C2BBED69D00205B60 /* RouterProtocol.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
 				CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */,
 				CEF2AB692BBF105600205B60 /* AddExerciseCustomLabel.swift in Sources */,
@@ -957,7 +934,6 @@
 				CEDC92262BD14FB400902268 /* ResetPasswordButton.swift in Sources */,
 				CED9EB252B6E70430065FE23 /* SignInButton.swift in Sources */,
 				CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */,
-				CE72940D2BED393B009C867F /* UserDataProvider.swift in Sources */,
 				CED9EB4D2B715A1A0065FE23 /* HandbookScreenViewController.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,

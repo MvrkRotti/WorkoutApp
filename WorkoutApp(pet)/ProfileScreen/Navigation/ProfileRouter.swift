@@ -10,7 +10,7 @@ import FirebaseAuth
 
 protocol ProfileRouterProtocol: AnyObject {
     func pushEditScreen()
-    func popToRoot()
+    func popToRoot(form viewController: UIViewController)
 }
 
 final class ProfileRouter: ProfileRouterProtocol {
@@ -26,14 +26,25 @@ final class ProfileRouter: ProfileRouterProtocol {
         viewController?.navigationController?.pushViewController(editScreen, animated: true)
     }
     
-    func popToRoot() {
+    func popToRoot(form viewController: UIViewController) {
+        
         do {
             try Auth.auth().signOut()
-            if let navigationController = viewController?.navigationController {
-            navigationController.popToRootViewController(animated: true)
-            }
         } catch let signOutError as NSError {
-            print("Error signing out: \(signOutError.localizedDescription)")
+            print("Ошибка выхода из Firebase: \(signOutError.localizedDescription)")
+            return
+        }
+        
+        if let tabBarController = viewController.tabBarController,
+           let navigationController = tabBarController.navigationController {
+            for viewController in navigationController.viewControllers {
+                if viewController is WelcomeViewController {
+                    navigationController.popToViewController(viewController, animated: true)
+                    return
+                }
+            }
         }
     }
 }
+
+

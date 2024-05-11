@@ -60,7 +60,7 @@ final class EditProfileViewController: UIViewController {
 
 private extension EditProfileViewController {
     func navigationBarAppearance() {
-        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(saveDidTapped))
+        let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveDidTapped))
         
         navigationItem.title = "Edit profile"
         navigationController?.isNavigationBarHidden = false
@@ -105,7 +105,7 @@ private extension EditProfileViewController {
         ])
     }
     
-    @objc func saveDidTapped(_ sender: UIButton) {
+    @objc func saveDidTapped() {
         guard let ageText = ageTextField.text, let age = Int(ageText),
               let weightText = weightTextField.text, let weight = Double(weightText),
               let heightText = heightTextField.text, let height = Double(heightText) else { return }
@@ -119,6 +119,6 @@ private extension EditProfileViewController {
         
         viewModel.saveUserData(age: age, weight: weight, height: height, gender: gender, userID: userID)
         
-        router?.navigateBack()
+        router?.navigateBack()        
     }
 }

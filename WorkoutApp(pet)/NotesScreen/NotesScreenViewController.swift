@@ -41,7 +41,6 @@ final class NotesScreenViewController: UIViewController {
         navigationBarAppearance()
         loadNotes()
     
-        
         viewModel.onDeleteNote = { [weak self] indexPath in
             self?.trainCollectionView.deleteItems(at: [indexPath])
         }
