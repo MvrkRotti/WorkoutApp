@@ -54,16 +54,14 @@ final class ProfileScreenViewController: UIViewController {
         setupUI()
         setupLayout()
         setGradientBackground()
-//        fillName()
-        fillProfile()
+        fillProfileData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
-//        fillName()
-        fillProfile()
+        fillProfileData()
     }
 }
 
@@ -118,19 +116,10 @@ private extension ProfileScreenViewController {
 //MARK: - Profile filling
 extension ProfileScreenViewController {
     
-//    func fillName() {
-//        if let userID = UserDefaults.standard.string(forKey: "UserID") {
-//            if let userName = UserDefaults.standard.string(forKey: "UserName_ \(userID)") {
-//                nameLabel.text = "Name: \(userName)"
-//            }
-//        }
-//    }
-    
-    func fillProfile() {
+    func fillProfileData() {
         if let name = viewModel.name {
             nameLabel.text = "Name: \(name)"
         }
-        
         if let age = viewModel.age {
             ageLabel.text = "Age: \(age) years"
         }

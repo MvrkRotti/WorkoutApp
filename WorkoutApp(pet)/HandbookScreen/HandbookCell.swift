@@ -53,7 +53,7 @@ final class HandbookCell: UITableViewCell {
     public func configure(with exercise: HandbookExercise) {
         self.exercise = exercise
         
-        self.cellNameLabel.text = exercise.muscle.uppercased()
+        self.cellNameLabel.text = exercise.muscle.uppercased().replacingOccurrences(of: "_", with: " ")
     }
     
     //MARK: - PrepareForReuse
