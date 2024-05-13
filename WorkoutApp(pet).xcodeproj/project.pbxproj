@@ -48,6 +48,7 @@
 		CE3C133A2BBD5173003F3561 /* AddNoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */; };
 		CE40637E2BF232D40088C135 /* ValidateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40637D2BF232D40088C135 /* ValidateField.swift */; };
 		CE4063812BF23EEA0088C135 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4063802BF23EEA0088C135 /* AlertController.swift */; };
+		CE4063862BF2A3F60088C135 /* ImageScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4063852BF2A3F60088C135 /* ImageScaler.swift */; };
 		CE486C6A2BD7BE91006B5E3D /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE486C692BD7BE91006B5E3D /* NotesViewModel.swift */; };
 		CE5CD44A2BC83B0B0065991D /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */; };
 		CE5CD44C2BC83C320065991D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD44B2BC83C320065991D /* User.swift */; };
@@ -163,6 +164,7 @@
 		CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRouter.swift; sourceTree = "<group>"; };
 		CE40637D2BF232D40088C135 /* ValidateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateField.swift; sourceTree = "<group>"; };
 		CE4063802BF23EEA0088C135 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
+		CE4063852BF2A3F60088C135 /* ImageScaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScaler.swift; sourceTree = "<group>"; };
 		CE486C692BD7BE91006B5E3D /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		CE5CD44B2BC83C320065991D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 			children = (
 				CE40637D2BF232D40088C135 /* ValidateField.swift */,
 				CE4063802BF23EEA0088C135 /* AlertController.swift */,
+				CE4063852BF2A3F60088C135 /* ImageScaler.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 				CEDC921A2BD14B2800902268 /* ResetPasswordViewController.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
+				CE4063862BF2A3F60088C135 /* ImageScaler.swift in Sources */,
 				CE00CCE02B922DDA001E1E8B /* DifficultyLabel.swift in Sources */,
 				CE486C6A2BD7BE91006B5E3D /* NotesViewModel.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,

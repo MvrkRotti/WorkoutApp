@@ -6,6 +6,7 @@
 //
 
 import UIKit
+//import SDWebImage
 
 final class ProfileScreenViewController: UIViewController {
     
@@ -13,11 +14,14 @@ final class ProfileScreenViewController: UIViewController {
     
     var router: ProfileRouterProtocol?
     var viewModel: ProfileViewModel
+    var isImageSelected = false
+    var imageURL: String?
     
-    private let photoView = ProfilePhotoView(frame: CGRect())
-    private let photoLabel = PhotoLabel()
+    private let photoView = ProfilePhotoView(frame: .zero)
+    //    private let photoLabel = PhotoLabel()
     private let imagePicker = UIImagePickerController()
     private let nameLabel = NameLabel()
+    private let photoLabel = SelectPhotoButton()
     private let genderLabel = GenderLabel()
     private let ageLabel = AgeLabel()
     private let weightLabel = WeightLabel()
@@ -54,6 +58,9 @@ final class ProfileScreenViewController: UIViewController {
         setupLayout()
         setGradientBackground()
         fillProfileData()
+        loadImage()
+        setupTarget()
+        
         imagePicker.delegate = self
     }
     
@@ -111,6 +118,10 @@ private extension ProfileScreenViewController {
             profileStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
     }
+    
+    func setupTarget() {
+        photoLabel.addTarget(self, action: #selector(addPhotoDidTapped), for: .touchUpInside)
+    }
 }
 
 //MARK: - Profile filling
@@ -134,7 +145,7 @@ extension ProfileScreenViewController {
         }
         
         if let bmi = viewModel.bmi {
-            let roundedBMI = String(format: "%.2f", bmi)
+            let roundedBMI = String(format: "%.2f", bmi) // Округляем до 2 знаков после запятой
             bmiLabel.text = "BMI: \(roundedBMI)"
         }
     }
@@ -156,3 +167,56 @@ extension ProfileScreenViewController {
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
 }
+
+extension ProfileScreenViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    @objc func addPhotoDidTapped() {
+        if !isImageSelected { // Проверяем, выбрано ли уже изображение
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            print("No image selected")
+            return
+        }
+        
+        // Загрузка изображения в Firebase Storage
+        viewModel.uploadImage(image: image) { [weak self] imageURL in
+            guard let imageURL = imageURL else { return }
+            self?.viewModel.saveImageURL(imageURL) // Сохранение URL загруженного изображения
+            self?.updateImageView(with: imageURL)
+        }
+    }
+    
+    func updateImageView(with imageURL: String) {
+        guard let url = URL(string: imageURL) else {
+            print("Invalid URL")
+            return
+        }
+        // Загрузка изображения из URL
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async { [weak self] in
+                    let scaledImage = ImageScaler.scaleImage(image, toFit: self?.photoView.bounds.size ?? CGSize.zero)
+                    self?.photoView.image = scaledImage
+                }
+            }
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func loadImage() {
+        if let savedImageURL = UserDefaults.standard.string(forKey: "imageURL") {
+            imageURL = savedImageURL
+            updateImageView(with: savedImageURL)
+        }
+    }
+}
+
