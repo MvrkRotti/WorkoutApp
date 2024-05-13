@@ -56,17 +56,20 @@ private extension AuthorisationViewController {
     
     func setupActions() {
         authSignInButton.signInTapped = {
-            guard let email = self.emailTextField.text, !email.isEmpty,
-                  let password = self.passwordTextField.text, !password.isEmpty else {
-                self.showAlert(message: StringResources.AlertResources.emptyField)
-                return
-            }
-            self.viewModel.authorisation(email: email, password: password) { [weak self] success, error in
-                if error != nil {
-                    self?.showAlert(message: StringResources.AlertResources.incorrectFilling)
-                } else {
-                    self?.router?.pushHomeScreen()
+            if ValidateField.voidValidateFields(textFields: self.textFieldArray) {
+                guard let email = self.emailTextField.text, !email.isEmpty,
+                      let password = self.passwordTextField.text, !password.isEmpty else {
+                    return
                 }
+                self.viewModel.authorisation(email: email, password: password) { [weak self] success, error in
+                    if error != nil {
+                        self?.showAlert(message: StringResources.AlertResources.incorrectFilling)
+                    } else {
+                        self?.router?.pushHomeScreen()
+                    }
+                }
+            } else {
+                self.showAlert(message: StringResources.AlertResources.emptyField)
             }
         }
         
@@ -128,7 +131,7 @@ extension AuthorisationViewController: UITextFieldDelegate {
         }
         return true
     }
-
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         for textField in textFieldArray {
             if textField.text?.isEmpty ?? true {

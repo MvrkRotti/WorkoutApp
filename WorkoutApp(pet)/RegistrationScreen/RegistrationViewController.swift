@@ -87,22 +87,25 @@ private extension RegistrationViewController {
     
     func setupActions() {
         regSighUpButton.signUpTapped = {
-            guard let firstName = self.nameField.text, !firstName.isEmpty ,
-                  let lastName = self.lastNameField.text, !lastName.isEmpty,
-                  let email = self.emailField.text, !email.isEmpty,
-                  let password = self.passwordField.text, !password.isEmpty,
-                  let confirmPassword = self.confirmPasswordField.text, !confirmPassword.isEmpty else {
-                self.showAlert(message: StringResources.AlertResources.fillAllFields)
-                return
-            }
-                        
-            self.viewModel.registerUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword) { [weak self] user, error in
-                guard let self = self else { return }
-                if let error = error {
-                    self.showAlert(message: error)
-                } else if user != nil {
-                    self.router?.pushHomeScreen()
+            if ValidateField.voidValidateFields(textFields: self.textFieldArray) {
+                guard let firstName = self.nameField.text, !firstName.isEmpty ,
+                      let lastName = self.lastNameField.text, !lastName.isEmpty,
+                      let email = self.emailField.text, !email.isEmpty,
+                      let password = self.passwordField.text, !password.isEmpty,
+                      let confirmPassword = self.confirmPasswordField.text, !confirmPassword.isEmpty else {
+                    return
                 }
+                
+                self.viewModel.registerUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword) { [weak self] user, error in
+                    guard let self = self else { return }
+                    if let error = error {
+                        self.showAlert(message: error)
+                    } else if user != nil {
+                        self.router?.pushHomeScreen()
+                    }
+                }
+            } else {
+                self.showAlert(message: StringResources.AlertResources.fillAllFields)
             }
         }
     }
@@ -152,18 +155,6 @@ extension RegistrationViewController: UITextFieldDelegate {
         }
         return true
     }
-
-//MARK: - Backlight setting for missed textfields
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        for textField in textFieldArray {
-            if textField.text?.isEmpty ?? true {
-                textField.layer.borderWidth = 1.0
-                textField.layer.borderColor = ColorResources.emptyTextFieldBorderColor.cgColor
-            } else {
-                textField.layer.borderWidth = 0.0
-            }
-        }
-    }
 }
 
 //MARK: - Alert Controller
@@ -174,4 +165,5 @@ private extension RegistrationViewController {
         present(alert, animated: true, completion: nil)
     }
 }
+
 

@@ -6,15 +6,12 @@
 //
 
 import UIKit
-//import FirebaseAuth
-//import FirebaseDatabase
 
 final class ProfileScreenViewController: UIViewController {
     
     //MARK: - Variables
     
     var router: ProfileRouterProtocol?
-    //    var user: User?
     var viewModel: ProfileViewModel
     
     private let photoView = ProfilePhotoView(frame: CGRect())
@@ -31,7 +28,8 @@ final class ProfileScreenViewController: UIViewController {
     
     private lazy var profileStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [nameLabel, genderLabel, ageLabel,
-                                                   weightLabel, heightLabel, bmiLabel, bmiDescriptionLabel])
+                                                   weightLabel, heightLabel,
+                                                   bmiLabel, bmiDescriptionLabel])
         stack.axis = .vertical
         stack.spacing = 15
         stack.alignment = .leading
