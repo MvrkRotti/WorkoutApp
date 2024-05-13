@@ -22,6 +22,9 @@ final class EditProfileViewController: UIViewController {
     private let genderSelector = GenderSegmentController(items: ["Female", "Male"])
     private let selectPhotoButton = SelectPhotoButton()
     
+    private var isImageSelected = false
+    private var imageURL: String?
+    private let imagePicker = UIImagePickerController()
     //MARK: - UI Components
     
     private lazy var profileStack: UIStackView = {
@@ -49,6 +52,9 @@ final class EditProfileViewController: UIViewController {
         navigationBarAppearance()
         setupUI()
         setupLayout()
+        loadImage()
+        imagePicker.delegate = self
+        selectPhotoButton.addTarget(self, action: #selector(addPhotoDidTapped), for: .touchUpInside)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -73,7 +79,7 @@ private extension EditProfileViewController {
         view.setupView(profilePhoto)
         view.setupView(profileStack)
         view.setupView(genderSelector)
-        profilePhoto.setupView(selectPhotoButton)
+        view.setupView(selectPhotoButton)
     }
     
     func setupLayout() {
@@ -92,7 +98,7 @@ private extension EditProfileViewController {
             heightTextField.heightAnchor.constraint(equalToConstant: 44),
             heightTextField.widthAnchor.constraint(equalToConstant: 334),
             
-            profileStack.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 35),
+            profileStack.topAnchor.constraint(equalTo: selectPhotoButton.bottomAnchor, constant: 15),
             profileStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
             genderSelector.topAnchor.constraint(equalTo: profileStack.bottomAnchor, constant: 15),
@@ -100,8 +106,8 @@ private extension EditProfileViewController {
             genderSelector.heightAnchor.constraint(equalToConstant: 44),
             genderSelector.centerXAnchor.constraint(equalTo: profileStack.centerXAnchor),
             
-            selectPhotoButton.centerXAnchor.constraint(equalTo: profilePhoto.centerXAnchor),
-            selectPhotoButton.centerYAnchor.constraint(equalTo: profilePhoto.centerYAnchor),
+            selectPhotoButton.topAnchor.constraint(equalTo: profilePhoto.bottomAnchor, constant: 5),
+            selectPhotoButton.centerXAnchor.constraint(equalTo: profilePhoto.centerXAnchor)
         ])
     }
     
@@ -120,5 +126,58 @@ private extension EditProfileViewController {
         viewModel.saveUserData(age: age, weight: weight, height: height, gender: gender, userID: userID)
         
         router?.navigateBack()        
+    }
+}
+
+
+extension EditProfileViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    @objc func addPhotoDidTapped() {
+        if !isImageSelected { // Проверяем, выбрано ли уже изображение
+            imagePicker.sourceType = .photoLibrary
+            present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
+            print("No image selected")
+            return
+        }
+        
+        // Загрузка изображения в Firebase Storage
+        viewModel.uploadImage(image: image) { [weak self] imageURL in
+            guard let imageURL = imageURL else { return }
+            self?.viewModel.saveImageURL(imageURL) // Сохранение URL загруженного изображения
+            self?.updateImageView(with: imageURL)
+        }
+    }
+    
+    func updateImageView(with imageURL: String) {
+        guard let url = URL(string: imageURL) else {
+            print("Invalid URL")
+            return
+        }
+        // Загрузка изображения из URL
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
+                DispatchQueue.main.async { [weak self] in
+                    let scaledImage = ImageScaler.scaleImage(image, toFit: self?.profilePhoto.bounds.size ?? CGSize.zero)
+                    self?.profilePhoto.image = scaledImage
+                }
+            }
+        }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+
+    func loadImage() {
+        if let savedImageURL = UserDefaults.standard.string(forKey: "imageURL") {
+            imageURL = savedImageURL
+            updateImageView(with: savedImageURL)
+        }
     }
 }

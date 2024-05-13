@@ -9,7 +9,7 @@ import UIKit
 
 enum StringResources {
     enum CommonStrings {
-        static let selectPhoto = "Select\nPhoto"
+        static let selectPhoto = "Select Photo"
         static let sets = "Sets"
         static let reps = "Reps"
         static let min = "Min"

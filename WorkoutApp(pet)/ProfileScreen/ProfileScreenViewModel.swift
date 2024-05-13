@@ -7,7 +7,6 @@
 
 import Foundation
 import FirebaseAuth
-import FirebaseStorage
 import UIKit
 
 final class ProfileViewModel {
@@ -46,38 +45,16 @@ final class ProfileViewModel {
         return bmiValue
     }
     
-    func uploadImage(image: UIImage, completion: @escaping (String?) -> Void) {
-        guard let uid = Auth.auth().currentUser?.uid else {
-            completion(nil)
-            return
-        }
-        
-        let storageRef = Storage.storage().reference().child("images/\(uid).jpg")
-        guard let imageData = image.jpegData(compressionQuality: 0.5) else {
-            completion(nil)
-            return
-        }
-        
-        // Загрузка изображения в Firebase Storage
-        let uploadTask = storageRef.putData(imageData, metadata: nil) { (metadata, error) in
-            if let error = error {
-                print("Error uploading image: \(error.localizedDescription)")
-                completion(nil)
-            } else {
-                storageRef.downloadURL { (url, error) in
-                    guard let downloadURL = url else {
-                        print("Error retrieving download URL: \(error?.localizedDescription ?? "Unknown error")")
-                        completion(nil)
-                        return
-                    }
-                    completion(downloadURL.absoluteString)
+    func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
+            let task = URLSession.shared.dataTask(with: url) { data, response, error in
+                guard let data = data, error == nil else {
+                    print("Failed to load image:", error?.localizedDescription ?? "")
+                    completion(nil)
+                    return
                 }
+                let image = UIImage(data: data)
+                completion(image)
             }
+            task.resume()
         }
-        uploadTask.resume()
-    }
-    
-    func saveImageURL(_ imageURL: String) {
-        UserDefaults.standard.set(imageURL, forKey: "imageURL")
-    }
 }

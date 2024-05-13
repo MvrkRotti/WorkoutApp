@@ -14,14 +14,9 @@ final class ProfileScreenViewController: UIViewController {
     
     var router: ProfileRouterProtocol?
     var viewModel: ProfileViewModel
-    var isImageSelected = false
-    var imageURL: String?
     
     private let photoView = ProfilePhotoView(frame: .zero)
-    //    private let photoLabel = PhotoLabel()
-    private let imagePicker = UIImagePickerController()
     private let nameLabel = NameLabel()
-    private let photoLabel = SelectPhotoButton()
     private let genderLabel = GenderLabel()
     private let ageLabel = AgeLabel()
     private let weightLabel = WeightLabel()
@@ -58,10 +53,7 @@ final class ProfileScreenViewController: UIViewController {
         setupLayout()
         setGradientBackground()
         fillProfileData()
-        loadImage()
-        setupTarget()
-        
-        imagePicker.delegate = self
+        loadProfilePhoto()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -69,6 +61,7 @@ final class ProfileScreenViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
         fillProfileData()
+        loadProfilePhoto()
     }
 }
 
@@ -99,7 +92,6 @@ private extension ProfileScreenViewController {
     
     func setupUI() {
         view.setupView(photoView)
-        view.setupView(photoLabel)
         view.setupView(profileStackView)
     }
     
@@ -111,16 +103,9 @@ private extension ProfileScreenViewController {
             photoView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
             photoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             
-            photoLabel.centerYAnchor.constraint(equalTo: photoView.centerYAnchor),
-            photoLabel.centerXAnchor.constraint(equalTo: photoView.centerXAnchor),
-            
             profileStackView.topAnchor.constraint(equalTo: photoView.bottomAnchor, constant: 20),
             profileStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
         ])
-    }
-    
-    func setupTarget() {
-        photoLabel.addTarget(self, action: #selector(addPhotoDidTapped), for: .touchUpInside)
     }
 }
 
@@ -150,6 +135,19 @@ extension ProfileScreenViewController {
         }
     }
     
+    func loadProfilePhoto() {
+        guard let urlString = UserDefaults.standard.string(forKey: "imageURL"),
+              let url = URL(string: urlString) else {
+            print("Photo URL is not available")
+            return
+        }
+        viewModel.loadImage(from: url) { [weak self] image in
+            DispatchQueue.main.async {
+                self?.photoView.image = image
+            }
+        }
+    }
+    
     //MARK: - Gradient
     
     func setGradientBackground() {
@@ -168,55 +166,4 @@ extension ProfileScreenViewController {
     }
 }
 
-extension ProfileScreenViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    @objc func addPhotoDidTapped() {
-        if !isImageSelected { // Проверяем, выбрано ли уже изображение
-            imagePicker.sourceType = .photoLibrary
-            present(imagePicker, animated: true, completion: nil)
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
-        
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else {
-            print("No image selected")
-            return
-        }
-        
-        // Загрузка изображения в Firebase Storage
-        viewModel.uploadImage(image: image) { [weak self] imageURL in
-            guard let imageURL = imageURL else { return }
-            self?.viewModel.saveImageURL(imageURL) // Сохранение URL загруженного изображения
-            self?.updateImageView(with: imageURL)
-        }
-    }
-    
-    func updateImageView(with imageURL: String) {
-        guard let url = URL(string: imageURL) else {
-            print("Invalid URL")
-            return
-        }
-        // Загрузка изображения из URL
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
-                DispatchQueue.main.async { [weak self] in
-                    let scaledImage = ImageScaler.scaleImage(image, toFit: self?.photoView.bounds.size ?? CGSize.zero)
-                    self?.photoView.image = scaledImage
-                }
-            }
-        }
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-
-    func loadImage() {
-        if let savedImageURL = UserDefaults.standard.string(forKey: "imageURL") {
-            imageURL = savedImageURL
-            updateImageView(with: savedImageURL)
-        }
-    }
-}
 
