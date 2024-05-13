@@ -24,7 +24,6 @@ final class RegistrationViewController: UIViewController {
     private let regSighUpButton = SignUpButton()
     
     private var textFieldArray = [UITextField]()
-    
     //MARK: - UIComponents
     
     private lazy var textFieldStack: UIStackView = {
@@ -36,8 +35,6 @@ final class RegistrationViewController: UIViewController {
         stack.alignment = .center
         return stack
     }()
-    
-    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -55,7 +52,6 @@ final class RegistrationViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
 }
-
 //MARK: - UI Setup
 
 private extension RegistrationViewController {
@@ -65,8 +61,6 @@ private extension RegistrationViewController {
         navigationController?.navigationBar.barTintColor = ColorResources.black
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
     }
-    
-    
     
     func setupUI() {
         view.backgroundColor = UIColor(
@@ -158,12 +152,12 @@ extension RegistrationViewController: UITextFieldDelegate {
 }
 
 //MARK: - Alert Controller
-private extension RegistrationViewController {
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: StringResources.AlertResources.alertTitle, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
-}
+//private extension RegistrationViewController {
+//    func showAlert(message: String) {
+//        let alert = UIAlertController(title: StringResources.AlertResources.alertTitle, message: message, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
+//        present(alert, animated: true, completion: nil)
+//    }
+//}
 
 

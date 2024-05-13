@@ -111,11 +111,11 @@ private extension AuthorisationViewController {
 }
 
 private extension AuthorisationViewController {
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: StringResources.AlertResources.alertTitle, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
+//    func showAlert(message: String) {
+//        let alert = UIAlertController(title: StringResources.AlertResources.alertTitle, message: message, preferredStyle: .alert)
+//        alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
+//        present(alert, animated: true, completion: nil)
+//    }
 }
 
 extension AuthorisationViewController: UITextFieldDelegate {

@@ -16,6 +16,7 @@ final class ProfileScreenViewController: UIViewController {
     
     private let photoView = ProfilePhotoView(frame: CGRect())
     private let photoLabel = PhotoLabel()
+    private let imagePicker = UIImagePickerController()
     private let nameLabel = NameLabel()
     private let genderLabel = GenderLabel()
     private let ageLabel = AgeLabel()
@@ -53,6 +54,7 @@ final class ProfileScreenViewController: UIViewController {
         setupLayout()
         setGradientBackground()
         fillProfileData()
+        imagePicker.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {

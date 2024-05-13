@@ -9,10 +9,9 @@ import UIKit
 
 final class HandbookCell: UITableViewCell {
     
-    static let identifier = "ExerciseCell"
-    
     //MARK: - Variables
     
+    static let identifier = "ExerciseCell"
     private(set) var exercise: HandbookExercise!
     
     //MARK: - UI Components

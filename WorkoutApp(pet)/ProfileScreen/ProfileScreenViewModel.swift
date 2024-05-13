@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseStorage
+import UIKit
 
 final class ProfileViewModel {
     var userID: String? {
@@ -42,5 +44,30 @@ final class ProfileViewModel {
         guard let weight = weight, let height = height else { return nil }
         let bmiValue = weight / ((height / 100) * (height / 100))
         return bmiValue
+    }
+    
+    func uploadImage(image: UIImage, completion: @escaping (String?) -> Void) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            completion(nil)
+            return
+        }
+        let storageRef = Storage.storage().reference().child("images/\(uid).jpg")
+        if let uploadData = image.jpegData(compressionQuality: 0.5) {
+            storageRef.putData(uploadData, metadata: nil) { (metadata, error) in
+                if let error = error {
+                    print("Error uploading image: \(error.localizedDescription)")
+                    completion(nil)
+                } else {
+                    storageRef.downloadURL { (url, error) in
+                        guard let downloadURL = url else {
+                            print("Error retrieving download URL: \(error?.localizedDescription ?? "Unknown error")")
+                            completion(nil)
+                            return
+                        }
+                        completion(downloadURL.absoluteString)
+                    }
+                }
+            }
+        }
     }
 }

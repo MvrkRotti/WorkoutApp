@@ -6,14 +6,15 @@
 //
 
 import UIKit
-
-final class AddNoteCustomTextField: UITextField {
-    
-    enum AddNoteTextFieldType {
+enum AddNoteTextFieldType {
         case trainingName
         case kindOfMuscle
         case exerciseName
     }
+
+final class AddNoteCustomTextField: UITextField {
+    
+    
     
     private let addNoteTextFieldType: AddNoteTextFieldType
     
@@ -31,7 +32,7 @@ final class AddNoteCustomTextField: UITextField {
             placeholder = TextFieldResources.PlaceholderString.muscle
         case .exerciseName:
             placeholder = TextFieldResources.PlaceholderString.exerciseName
-
+            
         }
     }
     

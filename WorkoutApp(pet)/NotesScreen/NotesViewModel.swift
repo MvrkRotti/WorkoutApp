@@ -19,22 +19,18 @@ final class NotesViewModel {
     var notes: Results<ExerciseNote>!
     var onDeleteNote: ((IndexPath) -> Void)?
     
-//    func getAllNotes() -> Results<ExerciseNote> {
-//        return realm.objects(ExerciseNote.self)
-//    }
-    
     func getAllNotes() {
         notes = realm.objects(ExerciseNote.self)
     }
     
     func addNote(_ trainingName: String, _ muscle: String) {
-            let newNote = ExerciseNote()
-            newNote.trainName = trainingName
-            newNote.kindOfMuscle = muscle
-            
-            try! realm.write {
-                realm.add(newNote)
-            }
+        let newNote = ExerciseNote()
+        newNote.trainName = trainingName
+        newNote.kindOfMuscle = muscle
+        
+        try! realm.write {
+            realm.add(newNote)
+        }
     }
     
     func deleteNote(at indexPath: IndexPath) {

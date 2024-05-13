@@ -114,7 +114,7 @@ private extension EditProfileViewController {
         let gender = genderIndex == 0 ? "Female" : "Male"
                 
         guard let userID = Auth.auth().currentUser?.uid else {
-            return
+            return showAlert(message: "You should be authorised user!")
         }
         
         viewModel.saveUserData(age: age, weight: weight, height: height, gender: gender, userID: userID)

@@ -57,13 +57,7 @@ final class ExerciseInfoController: UIViewController {
         view.backgroundColor = ColorResources.black
         setupUI()
         setupLayout()
-        
-        nameLabel.text = viewModel.nameLabel
-        typeLabel.text = viewModel.typeLabel
-        muscleLabe.text = viewModel.muscleLabel
-        equipmentLabel.text = viewModel.equipmentLabel
-        difficultyLabel.text = viewModel.difficultyLabel
-        instructionsLabel.text = viewModel.instructionLabel
+        fillExerciseInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -100,6 +94,15 @@ private extension ExerciseInfoController {
             exerciseInfoStack.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
             exerciseInfoStack.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor)
         ])
+    }
+    
+    func fillExerciseInfo() {
+        nameLabel.text = viewModel.nameLabel
+        typeLabel.text = viewModel.typeLabel
+        muscleLabe.text = viewModel.muscleLabel
+        equipmentLabel.text = viewModel.equipmentLabel
+        difficultyLabel.text = viewModel.difficultyLabel
+        instructionsLabel.text = viewModel.instructionLabel
     }
 }
 

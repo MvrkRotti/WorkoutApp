@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct User: Codable {
+    var profileImageURL: String?
     var firstName: String?
     var lastName: String?
     var email: String?
