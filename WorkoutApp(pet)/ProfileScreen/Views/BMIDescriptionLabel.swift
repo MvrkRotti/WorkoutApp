@@ -25,7 +25,9 @@ private extension BMIDescriptionLabel {
     func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.bmiDescriptionFont
-        text = "BMI Description "
+//        text = "BMI Description"
+        
+        numberOfLines = 0
     }
 }
 

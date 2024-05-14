@@ -40,21 +40,50 @@ final class ProfileViewModel {
     }
     
     var bmi: Double? {
-        guard let weight = weight, let height = height else { return nil }
+        guard let weight = weight, let height = height else { return 0 }
         let bmiValue = weight / ((height / 100) * (height / 100))
         return bmiValue
     }
     
-    func loadImage(from url: URL, completion: @escaping (UIImage?) -> Void) {
-            let task = URLSession.shared.dataTask(with: url) { data, response, error in
-                guard let data = data, error == nil else {
-                    print("Failed to load image:", error?.localizedDescription ?? "")
-                    completion(nil)
-                    return
-                }
-                let image = UIImage(data: data)
-                completion(image)
-            }
-            task.resume()
+    func getBMIDesctription(bmi: Double) -> String {
+        let underweightRange = 0.0..<18.5
+        let normalRange = 18.5..<24.9
+        let overweightRange = 24.9..<29.9
+        let veryOverweightRange = 30.0...
+        
+        if underweightRange.contains(bmi) {
+            return StringResources.BMIDescription.underweight
+        } else if normalRange.contains(bmi) {
+            return StringResources.BMIDescription.normal
+        } else if overweightRange.contains(bmi) {
+            return StringResources.BMIDescription.overweight
+        } else if veryOverweightRange.contains(bmi) {
+            return StringResources.BMIDescription.veryOverweight
+        } else {
+            return StringResources.BMIDescription.noData
         }
+    }
+    
+    var bmiDescription: String? {
+        guard let bmi = bmi else { return "No data" }
+        let bmiDescriprion = getBMIDesctription(bmi: bmi)
+        return bmiDescriprion
+    }
+    
+    var textColor: UIColor {
+        guard let bmi = bmi else { return .black }
+        
+        switch bmi {
+        case ..<18.5:
+            return ColorResources.customBlue
+        case 18.5..<24.9:
+            return ColorResources.customGreen
+        case 24.9..<30.0:
+            return ColorResources.customOrange
+        case 30.0...:
+            return ColorResources.customRed
+        default:
+            return ColorResources.black
+        }
+    }
 }

@@ -52,7 +52,7 @@ final class EditProfileViewController: UIViewController {
         navigationBarAppearance()
         setupUI()
         setupLayout()
-        loadImage()
+        fetchPhotoProfile()
         imagePicker.delegate = self
         selectPhotoButton.addTarget(self, action: #selector(addPhotoDidTapped), for: .touchUpInside)
     }
@@ -118,7 +118,7 @@ private extension EditProfileViewController {
         
         let genderIndex = genderSelector.selectedSegmentIndex
         let gender = genderIndex == 0 ? "Female" : "Male"
-                
+        
         guard let userID = Auth.auth().currentUser?.uid else {
             return showAlert(message: "You should be authorised user!")
         }
@@ -126,6 +126,19 @@ private extension EditProfileViewController {
         viewModel.saveUserData(age: age, weight: weight, height: height, gender: gender, userID: userID)
         
         router?.navigateBack()        
+    }
+    
+    func fetchPhotoProfile() {
+        FetchProfilePhoto.fetchProfileImage { [weak self] image in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                if let image = image {
+                    self.profilePhoto.image = image
+                } else {
+                    return
+                }
+            }
+        }
     }
 }
 
@@ -149,7 +162,6 @@ extension EditProfileViewController: UIImagePickerControllerDelegate & UINavigat
         // Загрузка изображения в Firebase Storage
         viewModel.uploadImage(image: image) { [weak self] imageURL in
             guard let imageURL = imageURL else { return }
-            self?.viewModel.saveImageURL(imageURL) // Сохранение URL загруженного изображения
             self?.updateImageView(with: imageURL)
         }
     }
@@ -172,12 +184,5 @@ extension EditProfileViewController: UIImagePickerControllerDelegate & UINavigat
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
-    }
-
-    func loadImage() {
-        if let savedImageURL = UserDefaults.standard.string(forKey: "imageURL") {
-            imageURL = savedImageURL
-            updateImageView(with: savedImageURL)
-        }
     }
 }

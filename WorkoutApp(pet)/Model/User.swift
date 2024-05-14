@@ -19,6 +19,7 @@ struct User: Codable {
     var weight: String?
     var height: String?
     var bmi: String?
+    var bmiDescription: String?
 }
 
 enum Gender: String, Codable {

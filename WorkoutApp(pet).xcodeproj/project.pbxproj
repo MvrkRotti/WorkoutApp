@@ -18,6 +18,7 @@
 		CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */; };
 		CE00CCF22B98E0A4001E1E8B /* TrainViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */; };
 		CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */; };
+		CE0CC2E92BF37C7300501CD9 /* FetchPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */; };
 		CE1A8BBF2B822F2D00ACB21C /* HandbookExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */; };
 		CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC22B8256C000ACB21C /* NetworkService.swift */; };
 		CE1A8BC52B82644D00ACB21C /* HandbookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* HandbookViewModel.swift */; };
@@ -140,6 +141,7 @@
 		CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNoteCell.swift; sourceTree = "<group>"; };
 		CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewLabel.swift; sourceTree = "<group>"; };
 		CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesInfoViewController.swift; sourceTree = "<group>"; };
+		CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoHelper.swift; sourceTree = "<group>"; };
 		CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookExercise.swift; sourceTree = "<group>"; };
 		CE1A8BC22B8256C000ACB21C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE1A8BC42B82644D00ACB21C /* HandbookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookViewModel.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				CE40637D2BF232D40088C135 /* ValidateField.swift */,
 				CE4063802BF23EEA0088C135 /* AlertController.swift */,
 				CE4063852BF2A3F60088C135 /* ImageScaler.swift */,
+				CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -912,6 +915,7 @@
 				CEDC921A2BD14B2800902268 /* ResetPasswordViewController.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
+				CE0CC2E92BF37C7300501CD9 /* FetchPhotoHelper.swift in Sources */,
 				CE4063862BF2A3F60088C135 /* ImageScaler.swift in Sources */,
 				CE00CCE02B922DDA001E1E8B /* DifficultyLabel.swift in Sources */,
 				CE486C6A2BD7BE91006B5E3D /* NotesViewModel.swift in Sources */,

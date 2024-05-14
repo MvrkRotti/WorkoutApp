@@ -151,13 +151,3 @@ extension RegistrationViewController: UITextFieldDelegate {
     }
 }
 
-//MARK: - Alert Controller
-//private extension RegistrationViewController {
-//    func showAlert(message: String) {
-//        let alert = UIAlertController(title: StringResources.AlertResources.alertTitle, message: message, preferredStyle: .alert)
-//        alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
-//        present(alert, animated: true, completion: nil)
-//    }
-//}
-
-

@@ -104,7 +104,8 @@ private extension ProfileScreenViewController {
             photoView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
             
             profileStackView.topAnchor.constraint(equalTo: photoView.bottomAnchor, constant: 20),
-            profileStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20)
+            profileStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            profileStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20)
         ])
     }
 }
@@ -133,17 +134,24 @@ extension ProfileScreenViewController {
             let roundedBMI = String(format: "%.2f", bmi) // Округляем до 2 знаков после запятой
             bmiLabel.text = "BMI: \(roundedBMI)"
         }
+        
+        if let bmiDescription = viewModel.bmiDescription {
+            bmiDescriptionLabel.text = "\(bmiDescription)"
+            bmiDescriptionLabel.textColor = viewModel.textColor
+        }
+        
+                
     }
     
     func loadProfilePhoto() {
-        guard let urlString = UserDefaults.standard.string(forKey: "imageURL"),
-              let url = URL(string: urlString) else {
-            print("Photo URL is not available")
-            return
-        }
-        viewModel.loadImage(from: url) { [weak self] image in
+        FetchProfilePhoto.fetchProfileImage { [weak self] image in
+            guard let self = self else { return }
             DispatchQueue.main.async {
-                self?.photoView.image = image
+                if let image = image {
+                    self.photoView.image = image
+                } else {
+                    return
+                }
             }
         }
     }
@@ -165,5 +173,3 @@ extension ProfileScreenViewController {
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
 }
-
-

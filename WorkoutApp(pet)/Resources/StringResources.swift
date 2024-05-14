@@ -25,8 +25,6 @@ enum StringResources {
         static let resetPassword = "Reset Password"
     }
     
-
-    
     enum AutorizedScreenStrings {
         static let signIn = "Sign In"
         static let signUp = "Sign Up"
@@ -46,5 +44,13 @@ enum StringResources {
         static let cancelAction = "Try Again"
         static let enterEmail = "Enter your Email"
         static let resetPassInfo = "Password reset instructions sent to your email."
+    }
+    
+    enum BMIDescription {
+        static let underweight = "Underweight. Possible nutritional deficiency and osteoporosis."
+        static let normal = "Normal value. Low healthy risk."
+        static let overweight = "Mild to moderate overweight. Moderate risk of developing heart disease, high blood pressure, stroke, diabetes mellitus."
+        static let veryOverweight = "Very overweight to obese. High risk of developing heart disease, high blood pressure, stroke, diabetes mellitus. Metabolic Syndrome."
+        static let noData = "Please enter your height and weight for getting result."
     }
 }

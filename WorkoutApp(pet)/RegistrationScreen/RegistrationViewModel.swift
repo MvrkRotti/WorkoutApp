@@ -29,12 +29,13 @@ final class RegistrationViewModel {
             let userData = User(firstName: firstName, lastName: lastName, email: email, password: password)
             UserDefaults.standard.set(firstName, forKey: "name_\(user.uid)")
             UserDefaults.standard.set(user.uid, forKey: "UserID")
+            self.saveUser(userData, forUserID: user.uid)
             completion(userData, nil)
         }
     }
     
-    private func saveUser(_ User: User, forUserID userID: String) {
-        UserDefaults.standard.set(["name": User.firstName], forKey: "User_ \(userID)")
+    private func saveUser(_ user: User, forUserID userID: String) {
+        UserDefaults.standard.set(["name": user.firstName], forKey: "User_ \(userID)")
     }
 }
 

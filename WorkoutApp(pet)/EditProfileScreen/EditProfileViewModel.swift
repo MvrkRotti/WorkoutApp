@@ -49,9 +49,5 @@ class EditProfileViewModel {
         }
         uploadTask.resume()
     }
-    
-    func saveImageURL(_ imageURL: String) {
-        UserDefaults.standard.set(imageURL, forKey: "imageURL")
-    }
 }
 
