@@ -23,6 +23,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         self.window?.makeKeyAndVisible()
         FirebaseApp.configure()
+        
+        if #available(iOS 13.0, *) {
+                    let statusBarHeight = UIApplication.shared.statusBarFrame.size.height
+                    let statusBarView = UIView()
+                    statusBarView.backgroundColor = ColorResources.customDarkGrey
+                    statusBarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: statusBarHeight)
+            window.rootViewController?.view.addSubview(statusBarView)
+                } else {
+                    if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+                        statusBar.backgroundColor = ColorResources.customDarkGrey
+                    }
+                }
     }
 }
 

@@ -33,6 +33,7 @@ final class AuthorisationViewController: UIViewController {
         setupLayout()
         setupActions()
         createTextFieldArray()
+        setupHideKeyboardOnTap()
     }
 }
 
@@ -41,7 +42,7 @@ private extension AuthorisationViewController {
     func navigationBarAppearance() {
         navigationController?.isNavigationBarHidden = false
         title = "Log In"
-        navigationController?.navigationBar.barTintColor = ColorResources.black
+        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
     }
     

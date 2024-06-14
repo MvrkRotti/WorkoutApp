@@ -73,8 +73,9 @@ private extension ProfileScreenViewController {
         let logOutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonDidTapped))
         
         navigationItem.title = "My Profile"
-        navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
+        tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationItem.rightBarButtonItem = editButton
         navigationItem.leftBarButtonItem = logOutButton
@@ -110,7 +111,8 @@ private extension ProfileScreenViewController {
     }
 }
 
-//MARK: - Profile filling
+// MARK: - Profile filling
+
 extension ProfileScreenViewController {
     
     func fillProfileData() {

@@ -55,6 +55,7 @@ final class EditProfileViewController: UIViewController {
         fetchPhotoProfile()
         imagePicker.delegate = self
         selectPhotoButton.addTarget(self, action: #selector(addPhotoDidTapped), for: .touchUpInside)
+        setupHideKeyboardOnTap()
     }
     
     override func viewWillAppear(_ animated: Bool) {

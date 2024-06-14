@@ -45,6 +45,9 @@ final class RegistrationViewController: UIViewController {
         setupActions()
         setupLayout()
         createTextFieldArray()
+        setupHideKeyboardOnTap()
+//        navigationController?.isNavigationBarHidden = false
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,7 +61,8 @@ private extension RegistrationViewController {
     
     func navigationBarAppearance() {
         title = "Registration"
-        navigationController?.navigationBar.barTintColor = ColorResources.black
+        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
+//        navigationController?.navigationBar.backgroundColor = UIColor.red
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
     }
     
