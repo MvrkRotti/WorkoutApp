@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8A011DA72C20AC0A0079D36D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A011DA62C20AC0A0079D36D /* GoogleService-Info.plist */; };
+		8A011DA92C20AE4D0079D36D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8A011DA82C20AE4D0079D36D /* FirebaseAuth */; };
+		8A504F922C2431590030FEA5 /* Localizable(ru).strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A504F902C2431590030FEA5 /* Localizable(ru).strings */; };
+		8A504F952C244DE50030FEA5 /* Localizable(en).strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A504F932C244DE50030FEA5 /* Localizable(en).strings */; };
 		8A6395912C049E9400A8A928 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8A6395902C049E9400A8A928 /* Realm */; };
 		8A7978052C03CD6500733F81 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 8A7978042C03CD6500733F81 /* FirebaseAppCheck */; };
-		8A7978072C03CD6500733F81 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8A7978062C03CD6500733F81 /* FirebaseAuth */; };
 		8A7978092C03CD6500733F81 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8A7978082C03CD6500733F81 /* FirebaseDatabase */; };
 		8A79780B2C03CD6500733F81 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8A79780A2C03CD6500733F81 /* FirebaseFirestore */; };
 		8A79780D2C03CD6500733F81 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A79780C2C03CD6500733F81 /* FirebaseFirestoreSwift */; };
@@ -118,7 +121,6 @@
 		CEDC92242BD14FA400902268 /* ResetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92232BD14FA400902268 /* ResetLabel.swift */; };
 		CEDC92262BD14FB400902268 /* ResetPasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */; };
 		CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */; };
-		CEEAECF72BE133D700721D33 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CEEAECF62BE133D700721D33 /* GoogleService-Info.plist */; };
 		CEF2AB522BBD769100205B60 /* NotesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB512BBD769100205B60 /* NotesAssembler.swift */; };
 		CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */; };
 		CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */; };
@@ -131,6 +133,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8A011DA62C20AC0A0079D36D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A504F912C2431590030FEA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Localizable(ru).strings"; sourceTree = "<group>"; };
+		8A504F942C244DE50030FEA5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "en.lproj/Localizable(en).strings"; sourceTree = "<group>"; };
 		8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CE00CCD92B922DAB001E1E8B /* ExerciseNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNameLabel.swift; sourceTree = "<group>"; };
 		CE00CCDB2B922DB7001E1E8B /* ExerciseTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTypeLabel.swift; sourceTree = "<group>"; };
@@ -235,7 +240,6 @@
 		CEDC92232BD14FA400902268 /* ResetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetLabel.swift; sourceTree = "<group>"; };
 		CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordButton.swift; sourceTree = "<group>"; };
 		CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResetPasswordButton.swift; sourceTree = "<group>"; };
-		CEEAECF62BE133D700721D33 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CEF2AB512BBD769100205B60 /* NotesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAssembler.swift; sourceTree = "<group>"; };
 		CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCustomTextField.swift; sourceTree = "<group>"; };
 		CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseButton.swift; sourceTree = "<group>"; };
@@ -256,7 +260,7 @@
 				8A7978092C03CD6500733F81 /* FirebaseDatabase in Frameworks */,
 				8A7978052C03CD6500733F81 /* FirebaseAppCheck in Frameworks */,
 				8A79780F2C03CD6500733F81 /* FirebaseStorage in Frameworks */,
-				8A7978072C03CD6500733F81 /* FirebaseAuth in Frameworks */,
+				8A011DA92C20AE4D0079D36D /* FirebaseAuth in Frameworks */,
 				CE7294032BE5146E009C867F /* SwipeCellKit in Frameworks */,
 				8A6395912C049E9400A8A928 /* Realm in Frameworks */,
 				8A79780B2C03CD6500733F81 /* FirebaseFirestore in Frameworks */,
@@ -567,7 +571,7 @@
 				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
 				CE8D50E22B88939000A14719 /* EditProfileScreen */,
 				CED9EB0B2B6E4BBB0065FE23 /* Info.plist */,
-				CEEAECF62BE133D700721D33 /* GoogleService-Info.plist */,
+				8A011DA62C20AC0A0079D36D /* GoogleService-Info.plist */,
 			);
 			path = "WorkoutApp(pet)";
 			sourceTree = "<group>";
@@ -575,6 +579,8 @@
 		CED9EB142B6E4CE70065FE23 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8A504F902C2431590030FEA5 /* Localizable(ru).strings */,
+				8A504F932C244DE50030FEA5 /* Localizable(en).strings */,
 				CED9EB152B6E4D060065FE23 /* Extensions */,
 				CE5CD4522BC86EAC0065991D /* TextFieldResources.swift */,
 				CE5CD4542BC86EB90065991D /* StringResources.swift */,
@@ -822,13 +828,13 @@
 			packageProductDependencies = (
 				CE7294022BE5146E009C867F /* SwipeCellKit */,
 				8A7978042C03CD6500733F81 /* FirebaseAppCheck */,
-				8A7978062C03CD6500733F81 /* FirebaseAuth */,
 				8A7978082C03CD6500733F81 /* FirebaseDatabase */,
 				8A79780A2C03CD6500733F81 /* FirebaseFirestore */,
 				8A79780C2C03CD6500733F81 /* FirebaseFirestoreSwift */,
 				8A79780E2C03CD6500733F81 /* FirebaseStorage */,
 				8A79781B2C03D41C00733F81 /* RealmSwift */,
 				8A6395902C049E9400A8A928 /* Realm */,
+				8A011DA82C20AE4D0079D36D /* FirebaseAuth */,
 			);
 			productName = "WorkoutApp(pet)";
 			productReference = CED9EAFA2B6E4BB80065FE23 /* WorkoutApp(pet).app */;
@@ -877,9 +883,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A504F952C244DE50030FEA5 /* Localizable(en).strings in Resources */,
 				CED9EB0A2B6E4BBB0065FE23 /* LaunchScreen.storyboard in Resources */,
+				8A504F922C2431590030FEA5 /* Localizable(ru).strings in Resources */,
 				CED9EB072B6E4BBB0065FE23 /* Assets.xcassets in Resources */,
-				CEEAECF72BE133D700721D33 /* GoogleService-Info.plist in Resources */,
+				8A011DA72C20AC0A0079D36D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,6 +1013,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		8A504F902C2431590030FEA5 /* Localizable(ru).strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A504F912C2431590030FEA5 /* en */,
+			);
+			name = "Localizable(ru).strings";
+			sourceTree = "<group>";
+		};
+		8A504F932C244DE50030FEA5 /* Localizable(en).strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8A504F942C244DE50030FEA5 /* en */,
+			);
+			name = "Localizable(en).strings";
+			sourceTree = "<group>";
+		};
 		CED9EB082B6E4BBB0065FE23 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1225,6 +1249,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		8A011DA82C20AE4D0079D36D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
 		8A6395902C049E9400A8A928 /* Realm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8A79781A2C03D41C00733F81 /* XCRemoteSwiftPackageReference "realm-swift" */;
@@ -1234,11 +1263,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAppCheck;
-		};
-		8A7978062C03CD6500733F81 /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
 		};
 		8A7978082C03CD6500733F81 /* FirebaseDatabase */ = {
 			isa = XCSwiftPackageProductDependency;
