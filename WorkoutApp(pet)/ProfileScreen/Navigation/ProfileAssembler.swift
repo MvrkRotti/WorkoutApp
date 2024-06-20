@@ -22,17 +22,3 @@ struct ProfileAssembler {
     }
 }
 
-//struct EditProfileScreenAssembler {
-//
-//    static func buildModule() -> UIViewController {
-//
-//        let viewModel = EditProfileViewModel()
-//        let viewController = EditProfileViewController(viewModel: viewModel)
-//        let router = EditProfileScreenRouter(viewController: viewController)
-//
-//        viewController.router = router
-//        viewModel.router = router
-//
-//        return viewController
-//    }
-//}

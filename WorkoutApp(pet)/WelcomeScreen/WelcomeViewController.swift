@@ -8,7 +8,6 @@
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    
     //MARK: - Variables
     
     private let signUpButton = SignUpButton()
@@ -16,10 +15,7 @@ class WelcomeViewController: UIViewController {
     private let mainLogo = MainLogo(frame: CGRect())
     private let signInLabel = SignInLabel()
     
-    var router: WelcomeRouter!
-    
-    
-    
+    var router: WelcomeRouterProtocol?
     //MARK: - UI Components
     
     private lazy var registrStack: UIStackView = {
@@ -29,8 +25,6 @@ class WelcomeViewController: UIViewController {
         stack.alignment = .center
         return stack
     }()
-    
-    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -44,7 +38,7 @@ class WelcomeViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
 }
-
+    //MARK: - UI setup and layout
 private extension WelcomeViewController {
     func setupUI() {
         
@@ -53,21 +47,18 @@ private extension WelcomeViewController {
         view.setupView(mainLogo)
         view.setupView(signUpButton)
         view.setupView(registrStack)
-        
     }
     
     func setupActions() {
         signUpButton.signUpTapped = { [weak self] in
             guard let self = self else { return }
-            self.router.pushRegistrationScreen()
+            self.router?.pushRegistrationScreen()
         }
         
         signInButton.signInTapped = { [weak self ] in
             guard let self = self else { return }
-            self.router.pushAutoristrationScreen()
+            self.router?.pushAutoristrationScreen()
         }
-        
-        
     }
     
     func setupLayout() {
@@ -84,7 +75,6 @@ private extension WelcomeViewController {
             registrStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             registrStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40)
         ])
-        
     }
 }
 

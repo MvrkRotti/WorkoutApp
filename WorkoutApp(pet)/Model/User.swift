@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 struct User: Codable {
+    var profileImageURL: String?
     var firstName: String?
     var lastName: String?
     var email: String?
@@ -18,6 +19,7 @@ struct User: Codable {
     var weight: String?
     var height: String?
     var bmi: String?
+    var bmiDescription: String?
 }
 
 enum Gender: String, Codable {

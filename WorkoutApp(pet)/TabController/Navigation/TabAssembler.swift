@@ -12,10 +12,10 @@ struct TabAssembler {
     static func buildModule() -> UIViewController {
         
         let viewController = TabController()
-        let router = TabRouter()
+//        let router = TabRouter()
         
-        viewController.router = router
-        router.tabController = viewController
+//        viewController.router = router
+//        router.tabController = viewController
         
         return viewController
     }

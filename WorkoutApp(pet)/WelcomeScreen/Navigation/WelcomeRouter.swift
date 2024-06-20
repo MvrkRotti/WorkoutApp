@@ -7,7 +7,12 @@
 
 import UIKit
 
-final class WelcomeRouter {
+protocol WelcomeRouterProtocol {
+    func pushRegistrationScreen()
+    func pushAutoristrationScreen()
+}
+
+final class WelcomeRouter: WelcomeRouterProtocol {
     
     weak var welcomeViewController: WelcomeViewController?
 

@@ -40,7 +40,6 @@ final class NotesScreenViewController: UIViewController {
         setupAction()
         navigationBarAppearance()
         loadNotes()
-    
         
         viewModel.onDeleteNote = { [weak self] indexPath in
             self?.trainCollectionView.deleteItems(at: [indexPath])
@@ -59,7 +58,7 @@ final class NotesScreenViewController: UIViewController {
 extension NotesScreenViewController {
     
     func navigationBarAppearance() {
-        navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
+        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
         navigationController?.navigationBar.topItem?.title = StringResources.NavigationBarHeaders.notesScreen
     }
@@ -93,7 +92,7 @@ extension NotesScreenViewController {
             
             trainViewLabel.topAnchor.constraint(equalTo: trainCollectionView.topAnchor, constant: 15),
             trainViewLabel.leadingAnchor.constraint(equalTo: trainCollectionView.leadingAnchor, constant: 20),
-
+            
             addNoteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             addNoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
             addNoteButton.heightAnchor.constraint(equalToConstant: 65),
@@ -115,7 +114,6 @@ extension NotesScreenViewController {
 extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //        return viewModel.getAllNotes().count
         return viewModel.notes.count
     }
     
@@ -128,9 +126,6 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
         cell.delegate = self
         cell.layer.cornerRadius = 15
         cell.layer.masksToBounds = true
-        
-        //        let day = viewModel.getAllNotes()[indexPath.row].trainName
-        //        let name = viewModel.getAllNotes()[indexPath.row].kindOfMuscle
         
         let day = viewModel.notes[indexPath.row].trainName
         let name = viewModel.notes[indexPath.row].kindOfMuscle
@@ -172,10 +167,6 @@ extension NotesScreenViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         return CGSize(width: self.view.frame.width, height: 50)
     }
-    
-//    func collectionView(_ collectionView: UICollectionView, canEditItemAt indexPath: IndexPath) -> Bool {
-//        return true
-//    }
 }
 
 extension NotesScreenViewController: SwipeCollectionViewCellDelegate {
@@ -192,13 +183,6 @@ extension NotesScreenViewController: SwipeCollectionViewCellDelegate {
         
         return [deleteAction]
     }
-//
-//    func collectionView(_ collectionView: UICollectionView, editActionsOptionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> SwipeOptions {
-//        var options = SwipeOptions()
-//        options.expansionStyle = .destructive
-//        options.transitionStyle = .drag
-//        return options
-//    }
 }
 
 extension NotesScreenViewController: AddNoteDelegate {

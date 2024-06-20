@@ -18,8 +18,6 @@ final class ResetPasswordViewController: UIViewController {
     private let infoLabel = ResetLabel()
     private let resetButton = ResetPasswordButton()
     
-    
-    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,8 +40,8 @@ final class ResetPasswordViewController: UIViewController {
     }
 }
 
+//MARK: - UI Setup
 private extension ResetPasswordViewController {
-    //MARK: - UI Setup
     func setupUI() {
         view.backgroundColor = ColorResources.black
         
@@ -91,13 +89,8 @@ private extension ResetPasswordViewController {
     }
 }
 
-//MARK: - Alert Controllers
+    //MARK: - Alert Controllers
 private extension ResetPasswordViewController {
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: StringResources.NavigationBarHeaders.resetPassword, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
-    }
     
     func showSuccessAlert() {
         let alertController = UIAlertController(title: StringResources.NavigationBarHeaders.resetPassword, message: StringResources.AlertResources.resetPassInfo, preferredStyle: .alert)

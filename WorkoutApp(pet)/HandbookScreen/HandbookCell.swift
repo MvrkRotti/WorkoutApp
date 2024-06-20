@@ -9,10 +9,9 @@ import UIKit
 
 final class HandbookCell: UITableViewCell {
     
-    static let identifier = "ExerciseCell"
-    
     //MARK: - Variables
     
+    static let identifier = "ExerciseCell"
     private(set) var exercise: HandbookExercise!
     
     //MARK: - UI Components
@@ -53,7 +52,7 @@ final class HandbookCell: UITableViewCell {
     public func configure(with exercise: HandbookExercise) {
         self.exercise = exercise
         
-        self.cellNameLabel.text = exercise.muscle.uppercased()
+        self.cellNameLabel.text = exercise.muscle.uppercased().replacingOccurrences(of: "_", with: " ")
     }
     
     //MARK: - PrepareForReuse

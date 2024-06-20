@@ -36,7 +36,7 @@ class HandbookViewModel {
         urlRequest.allHTTPHeaderFields = headers
         urlRequest.httpMethod = "GET"
         
-        //Используем NetworkService для получения данных
+        //Получение данных через networkService
         networkService.fetchData(request: urlRequest) { (result: Result<[HandbookExercise], Error>) in
             switch result {
             case .success(let data):

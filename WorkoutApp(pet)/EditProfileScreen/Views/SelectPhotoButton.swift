@@ -14,7 +14,6 @@ final class SelectPhotoButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAppearance()
-        setupAction()
         makeSystem(self)
     }
     @available(*, unavailable)
@@ -29,7 +28,7 @@ private extension SelectPhotoButton {
         setTitleColor(ColorResources.black, for: .normal)
         setTitleColor(.systemBlue, for: .normal)
         titleLabel?.textAlignment = .center
-        titleLabel?.font = FontResources.autLabelFont
+        titleLabel?.font = FontResources.addExerciseLabelFont
         sizeToFit()
         
         let buttonTitleStr = NSMutableAttributedString(string: StringResources.CommonStrings.selectPhoto)
@@ -40,14 +39,5 @@ private extension SelectPhotoButton {
         
         setAttributedTitle(buttonTitleStr, for: .normal)
         titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-    }
-    
-    @objc
-    func selectPhotoDidTapped() {
-        selectPhotoTapped?()
-    }
-    
-    func setupAction() {
-        addTarget(self, action: #selector(selectPhotoDidTapped), for: .touchUpInside)
     }
 }

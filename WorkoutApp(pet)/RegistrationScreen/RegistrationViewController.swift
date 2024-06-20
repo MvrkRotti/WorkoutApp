@@ -24,7 +24,6 @@ final class RegistrationViewController: UIViewController {
     private let regSighUpButton = SignUpButton()
     
     private var textFieldArray = [UITextField]()
-    
     //MARK: - UIComponents
     
     private lazy var textFieldStack: UIStackView = {
@@ -36,8 +35,6 @@ final class RegistrationViewController: UIViewController {
         stack.alignment = .center
         return stack
     }()
-    
-    
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -48,6 +45,9 @@ final class RegistrationViewController: UIViewController {
         setupActions()
         setupLayout()
         createTextFieldArray()
+        setupHideKeyboardOnTap()
+//        navigationController?.isNavigationBarHidden = false
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -55,18 +55,16 @@ final class RegistrationViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
 }
-
 //MARK: - UI Setup
 
 private extension RegistrationViewController {
     
     func navigationBarAppearance() {
         title = "Registration"
-        navigationController?.navigationBar.barTintColor = ColorResources.black
+        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
+//        navigationController?.navigationBar.backgroundColor = UIColor.red
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
     }
-    
-    
     
     func setupUI() {
         view.backgroundColor = UIColor(
@@ -87,22 +85,25 @@ private extension RegistrationViewController {
     
     func setupActions() {
         regSighUpButton.signUpTapped = {
-            guard let firstName = self.nameField.text, !firstName.isEmpty ,
-                  let lastName = self.lastNameField.text, !lastName.isEmpty,
-                  let email = self.emailField.text, !email.isEmpty,
-                  let password = self.passwordField.text, !password.isEmpty,
-                  let confirmPassword = self.confirmPasswordField.text, !confirmPassword.isEmpty else {
-                self.showAlert(message: StringResources.AlertResources.fillAllFields)
-                return
-            }
-                        
-            self.viewModel.registerUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword) { [weak self] user, error in
-                guard let self = self else { return }
-                if let error = error {
-                    self.showAlert(message: error)
-                } else if user != nil {
-                    self.router?.pushHomeScreen()
+            if ValidateField.voidValidateFields(textFields: self.textFieldArray) {
+                guard let firstName = self.nameField.text, !firstName.isEmpty ,
+                      let lastName = self.lastNameField.text, !lastName.isEmpty,
+                      let email = self.emailField.text, !email.isEmpty,
+                      let password = self.passwordField.text, !password.isEmpty,
+                      let confirmPassword = self.confirmPasswordField.text, !confirmPassword.isEmpty else {
+                    return
                 }
+                
+                self.viewModel.registerUser(firstName: firstName, lastName: lastName, email: email, password: password, confirmPassword: confirmPassword) { [weak self] user, error in
+                    guard let self = self else { return }
+                    if let error = error {
+                        self.showAlert(message: error)
+                    } else if user != nil {
+                        self.router?.pushHomeScreen()
+                    }
+                }
+            } else {
+                self.showAlert(message: StringResources.AlertResources.fillAllFields)
             }
         }
     }
@@ -151,27 +152,6 @@ extension RegistrationViewController: UITextFieldDelegate {
             break
         }
         return true
-    }
-
-//MARK: - Backlight setting for missed textfields
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        for textField in textFieldArray {
-            if textField.text?.isEmpty ?? true {
-                textField.layer.borderWidth = 1.0
-                textField.layer.borderColor = ColorResources.emptyTextFieldBorderColor.cgColor
-            } else {
-                textField.layer.borderWidth = 0.0
-            }
-        }
-    }
-}
-
-//MARK: - Alert Controller
-private extension RegistrationViewController {
-    func showAlert(message: String) {
-        let alert = UIAlertController(title: StringResources.AlertResources.alertTitle, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: StringResources.AlertResources.cancelAction, style: .cancel, handler: nil))
-        present(alert, animated: true, completion: nil)
     }
 }
 

@@ -19,14 +19,22 @@ final class ProfilePhotoView: UIImageView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = bounds.width / 2
+    }
 }
 
 private extension ProfilePhotoView {
     func setupAppearance() {
-        contentMode = .scaleAspectFit
+        contentMode = .scaleAspectFill
         backgroundColor = ColorResources.customGray
         layer.borderWidth = 1.5
         layer.borderColor = ColorResources.customDarkGrey.cgColor
-        layer.cornerRadius = 140 / 2
+        layer.cornerRadius = bounds.width / 2
+        clipsToBounds = true
     }
+    
+
 }

@@ -13,6 +13,6 @@ enum FontResources {
     static let registrationLabelFont = UIFont.systemFont(ofSize: 26, weight: .bold)
     static let cellNameLabelFont = UIFont.systemFont(ofSize: 20, weight: .semibold)
     static let profileLabelFont = UIFont.systemFont(ofSize: 22)
-    static let bmiDescriptionFont = UIFont.systemFont(ofSize: 12)
+    static let bmiDescriptionFont = UIFont.systemFont(ofSize: 15, weight: .bold)
     static let addExerciseLabelFont = UIFont.systemFont(ofSize: 18)
 }

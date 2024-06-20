@@ -6,14 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 final class EditProfileScreenRouter {
-    
-//    weak var editProfileViewController: EditProfileViewController?
-//
-//    func navigateBack() {
-//        editProfileViewController?.navigationController?.popViewController(animated: true)
-//    }
     
     weak var viewController: UIViewController?
     

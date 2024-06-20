@@ -1,0 +1,46 @@
+/* 
+  Localizable.strings
+  WorkoutApp(pet)
+
+  Created by Danil Pestov on 20.06.2024.
+  
+*/
+
+"sighUp" = "Регистрация";
+"alreadyHaveAcc" = "Уже есть аккаунт?";
+"sighIn" = "Войти";
+"back" = "Назад";
+"signUpTitle" = "Создание профиля"
+"firstName" = "Имя";
+"lastName" = "Фамилия";
+"email" = "Электронная почта";
+"password" = "Пароль";
+"confirmPassword" = "Подтвержение пароля";
+"resetPassword" = "Забыл пароль";
+"resetPasswordInfo" = "Этот адрес электронной почты будет использован для сброса вашего пароля.";
+"handbook" = "Справочник";
+"notes" = "Заметки";
+"profile" = "Профиль";
+"age" = "Возраст";
+"gender" = "Пол";
+"weight" = "Вес";
+"height" = "Рост";
+"BMI" = "ИМТ",
+"BMIDescriptionLow" = "";
+"BMIDescriptionNormal" = "";
+"BMIDescriptionHight" = "";
+"nonHeightAndWeight" = "Пожалуйста, укажите ваш вес и рост для получения результата.";
+"years" = "лет";
+"kg" = "кг";
+"cm" = "см";
+"logOut" = "Выйти";
+"myProfile" = "Мой профиль";
+"edit" = "Редактировать";
+"editProfile" = "Редактирование профиля";
+"save" = "Сохранить";
+"selectPhoto" = "Выбрать фото";
+"male" = "Мужчина";
+"female" = "Женщина";
+
+
+

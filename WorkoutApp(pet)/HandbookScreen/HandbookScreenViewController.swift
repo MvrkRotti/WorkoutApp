@@ -10,7 +10,6 @@ import UIKit
 final class HandbookScreenViewController: UIViewController {
     //MARK: - Variables
     private let viewModel: HandbookViewModel
-//    var router: HomeRouter!
     private let tableView = UITableView()
     private let activityIndicator = CustomActivityIndicator(frame: CGRect(), text: "Loading")
     
@@ -40,9 +39,11 @@ final class HandbookScreenViewController: UIViewController {
     }
 }
 
+    //MARK: - UI setup and layout
 private extension HandbookScreenViewController {
     
     func setupUI() {
+        tableView.backgroundColor = ColorResources.black
         view.setupView(tableView)
         tableView.setupView(activityIndicator)
     }
@@ -62,8 +63,10 @@ private extension HandbookScreenViewController {
     func navigationBarAppearance() {
         navigationItem.title = "Home"
         navigationController?.isNavigationBarHidden = false
-        navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
-        navigationController?.navigationBar.alpha = 0.9
+//        navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
+//       navigationController?.navigationBar.alpha = 0.9
+        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
+        tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
     }
     
     func tableViewSettings() {
@@ -79,7 +82,6 @@ private extension HandbookScreenViewController {
     }
 }
 
-
 extension HandbookScreenViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -91,9 +93,9 @@ extension HandbookScreenViewController: UITableViewDataSource, UITableViewDelega
         let exercise = viewModel.allExercises[indexPath.row]
         cell.configure(with: exercise)
         activityIndicator.stopAnimating()
+        cell.backgroundColor = .clear
         return cell
     }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         80
