@@ -7,6 +7,10 @@
 
 import UIKit
 
+fileprivate struct Const {
+    static let signUp = NSLocalizedString("signUp", comment: "")
+}
+
 final class SignUpButton: UIButton {
     
     var signUpTapped: (() -> Void)?
@@ -27,7 +31,7 @@ final class SignUpButton: UIButton {
 private extension SignUpButton {
     func setupAppearance() {
         
-        setTitle(StringResources.AutorizedScreenStrings.signUp, for: .normal)
+        setTitle(Const.signUp, for: .normal)
         setTitleColor(ColorResources.black, for: .normal)
         layer.cornerRadius = 15
         backgroundColor = ColorResources.customCoral

@@ -7,6 +7,10 @@
 
 import UIKit
 
+fileprivate struct Const {
+    static let signUp = NSLocalizedString("sighUp", comment: "")
+}
+
 class WelcomeViewController: UIViewController {
     //MARK: - Variables
     
@@ -42,7 +46,9 @@ class WelcomeViewController: UIViewController {
 private extension WelcomeViewController {
     func setupUI() {
         
-        view.backgroundColor = ColorResources.customDarkGrey
+//        view.backgroundColor = ColorResources.customDarkGrey
+        view.backgroundColor = UIColor(
+            patternImage: UIImage(named: "backGroundImage")!)
         
         view.setupView(mainLogo)
         view.setupView(signUpButton)

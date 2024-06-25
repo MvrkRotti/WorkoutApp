@@ -7,6 +7,15 @@
 
 import UIKit
 
+fileprivate struct Const {
+    static let firstName = NSLocalizedString("firstName", comment: "")
+    static let lastName = NSLocalizedString("lastName", comment: "")
+    static let email = NSLocalizedString("email", comment: "")
+    static let password = NSLocalizedString("password", comment: "")
+    static let confirmPassword = NSLocalizedString("confirmPassword", comment: "")
+
+}
+
 final class CustomTextField: UITextField {
     
     enum CustomTextFieldType {
@@ -28,20 +37,20 @@ final class CustomTextField: UITextField {
         
         switch fieldType {
         case .name:
-            placeholder = TextFieldResources.PlaceholderString.firstName
+            placeholder = Const.firstName
         case .lastName:
-            placeholder = TextFieldResources.PlaceholderString.lastName
+            placeholder = Const.lastName
         case .email:
-            placeholder = TextFieldResources.PlaceholderString.email
+            placeholder = Const.email
             keyboardType = .emailAddress
             textContentType = .emailAddress
         case .password:
-            placeholder = TextFieldResources.PlaceholderString.password
+            placeholder = Const.password
             textContentType = .newPassword
             isSecureTextEntry = true
             addPasswordVisibilityButton()
         case .confirmPassword:
-            placeholder = TextFieldResources.PlaceholderString.confirmPassword
+            placeholder = Const.confirmPassword
             textContentType = .newPassword
             isSecureTextEntry = true
             addPasswordVisibilityButton()

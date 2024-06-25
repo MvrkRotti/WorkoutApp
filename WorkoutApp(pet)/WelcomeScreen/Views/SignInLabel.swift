@@ -7,6 +7,10 @@
 
 import UIKit
 
+fileprivate struct Const {
+    static let haveAccountText = NSLocalizedString("alreadyHaveAcc", comment: "")
+}
+
 final class SignInLabel: UILabel {
     
     override init(frame: CGRect) {
@@ -26,7 +30,7 @@ private extension SignInLabel {
         textColor = ColorResources.white
         textAlignment = .left
         font = FontResources.autLabelFont
-        text = StringResources.AutorizedScreenStrings.alreadyHaveAcc
+        text = Const.haveAccountText
     }
 }
 

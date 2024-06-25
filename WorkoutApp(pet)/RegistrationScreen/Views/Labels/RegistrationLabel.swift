@@ -7,6 +7,10 @@
 
 import UIKit
 
+fileprivate struct Const {
+    static let mainLabel = NSLocalizedString("signUpTitle", comment: "")
+}
+
 final class RegistrationLabel: UILabel {
     
     override init(frame: CGRect) {
@@ -25,7 +29,7 @@ private extension RegistrationLabel {
     
     func setupAppearance() {
         
-        text = StringResources.RegistrationScreenStrings.registrationLabel
+        text = Const.mainLabel
         font = FontResources.registrationLabelFont
         textAlignment = .left
         numberOfLines = 0

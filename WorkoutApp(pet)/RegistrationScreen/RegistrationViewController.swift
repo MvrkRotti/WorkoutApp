@@ -8,6 +8,10 @@
 import UIKit
 import FirebaseAuth
 
+fileprivate struct Const {
+    static let navTitle = NSLocalizedString("signUp", comment: "")
+}
+
 final class RegistrationViewController: UIViewController {
     
     //MARK: - Variables
@@ -60,10 +64,12 @@ final class RegistrationViewController: UIViewController {
 private extension RegistrationViewController {
     
     func navigationBarAppearance() {
-        title = "Registration"
-        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
+        title = Const.navTitle
+        
+//        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
 //        navigationController?.navigationBar.backgroundColor = UIColor.red
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
     }
     
     func setupUI() {

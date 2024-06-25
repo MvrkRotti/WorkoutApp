@@ -7,6 +7,10 @@
 
 import UIKit
 
+fileprivate struct Const {
+    static let sighIn = NSLocalizedString("sighIn", comment: "")
+}
+
 final class SignInButton: UIButton {
     
     var signInTapped: (() -> Void)?
@@ -27,9 +31,9 @@ final class SignInButton: UIButton {
 private extension SignInButton {
     func setupAppearance() {
         
-        setTitle(StringResources.AutorizedScreenStrings.signIn, for: .normal)
+        setTitle(Const.sighIn, for: .normal)
         setTitleColor(ColorResources.customCoral, for: .normal)
-        let buttonTitleStr = NSMutableAttributedString(string: StringResources.AutorizedScreenStrings.signIn)
+        let buttonTitleStr = NSMutableAttributedString(string: Const.sighIn)
         buttonTitleStr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, buttonTitleStr.length))
         setAttributedTitle(buttonTitleStr, for: .normal)
 
