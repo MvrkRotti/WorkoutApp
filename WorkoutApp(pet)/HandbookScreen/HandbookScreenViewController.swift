@@ -11,7 +11,7 @@ final class HandbookScreenViewController: UIViewController {
     //MARK: - Variables
     private let viewModel: HandbookViewModel
     private let tableView = UITableView()
-    private let activityIndicator = CustomActivityIndicator(frame: CGRect(), text: "Loading")
+    private let activityIndicator = CustomActivityIndicator(frame: CGRect(), text: Const.loading)
     
     //MARK: - Lifecycle
     init(_ viewModel: HandbookViewModel = HandbookViewModel()) {
@@ -61,7 +61,7 @@ private extension HandbookScreenViewController {
     }
     
     func navigationBarAppearance() {
-        navigationItem.title = "Home"
+        navigationItem.title = Const.handbook
         navigationController?.isNavigationBarHidden = false
 //        navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
 //       navigationController?.navigationBar.alpha = 0.9

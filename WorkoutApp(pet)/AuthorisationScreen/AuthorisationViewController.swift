@@ -35,15 +35,20 @@ final class AuthorisationViewController: UIViewController {
         createTextFieldArray()
         setupHideKeyboardOnTap()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
 }
+
 
 private extension AuthorisationViewController {
     
     func navigationBarAppearance() {
-        navigationController?.isNavigationBarHidden = false
-        title = "Log In"
-        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
+        title = Const.sighIn
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
     }
     
     func setupUI() {
@@ -64,13 +69,13 @@ private extension AuthorisationViewController {
                 }
                 self.viewModel.authorisation(email: email, password: password) { [weak self] success, error in
                     if error != nil {
-                        self?.showAlert(message: StringResources.AlertResources.incorrectFilling)
+                        self?.showAlert(message: Const.incorrectFilling)
                     } else {
                         self?.router?.pushHomeScreen()
                     }
                 }
             } else {
-                self.showAlert(message: StringResources.AlertResources.emptyField)
+                self.showAlert(message: Const.emptyFields)
             }
         }
         

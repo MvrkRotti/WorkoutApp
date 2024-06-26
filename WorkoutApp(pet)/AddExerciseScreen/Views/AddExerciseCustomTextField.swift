@@ -26,11 +26,11 @@ final class AddExerciseCustomTextField: UITextField {
         
         switch fieldType {
         case .numberOfSets:
-            placeholder = TextFieldResources.PlaceholderString.numberOfSets
+            placeholder = Const.numberOfSets
         case .numberOfReps:
-            placeholder = TextFieldResources.PlaceholderString.numberOfReps
+            placeholder = Const.numberOfReps
         case .restTime:
-            placeholder = TextFieldResources.PlaceholderString.restTime
+            placeholder = Const.restTime
         }
     }
     

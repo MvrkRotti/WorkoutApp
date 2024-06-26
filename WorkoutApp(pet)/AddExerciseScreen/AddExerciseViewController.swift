@@ -24,9 +24,9 @@ final class AddExerciseViewController: UIViewController {
     private let numberOfRepsTextField = AddExerciseCustomTextField(fieldType: .numberOfReps)
     private let restTimeTextField = AddExerciseCustomTextField(fieldType: .restTime)
     
-    private let setsLabel = AddExerciseCustomLabel(labelType: .sets)
-    private let repsLabel = AddExerciseCustomLabel(labelType: .reps)
-    private let minLabel = AddExerciseCustomLabel(labelType: .min)
+//    private let setsLabel = AddExerciseCustomLabel(labelType: .sets)
+//    private let repsLabel = AddExerciseCustomLabel(labelType: .reps)
+//    private let minLabel = AddExerciseCustomLabel(labelType: .min)
     
     private let cancelButton = AddExerciseCustomButton(buttonType: .cancel)
     private let saveButton = AddExerciseCustomButton(buttonType: .save)
@@ -41,14 +41,14 @@ final class AddExerciseViewController: UIViewController {
         return stack
     }()
     
-    private lazy var labelStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [setsLabel, repsLabel, minLabel])
-        stack.alignment = .leading
-        stack.axis = .vertical
-        stack.spacing = 20
-        stack.distribution = .fillEqually
-        return stack
-    }()
+//    private lazy var labelStack: UIStackView = {
+//        let stack = UIStackView(arrangedSubviews: [setsLabel, repsLabel, minLabel])
+//        stack.alignment = .leading
+//        stack.axis = .vertical
+//        stack.spacing = 20
+//        stack.distribution = .fillEqually
+//        return stack
+//    }()
     
     private lazy var buttonStack: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [cancelButton, saveButton])
@@ -85,7 +85,7 @@ private extension AddExerciseViewController {
         view.backgroundColor = ColorResources.customDarkGrey
         view.setupView(exerciseNameTextField)
         view.setupView(textFieldStack)
-        view.setupView(labelStack)
+//        view.setupView(labelStack)
         view.setupView(buttonStack)
     }
     
@@ -100,9 +100,9 @@ private extension AddExerciseViewController {
             textFieldStack.topAnchor.constraint(equalTo: exerciseNameTextField.bottomAnchor, constant: 20),
             textFieldStack.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20),
             
-            labelStack.topAnchor.constraint(equalTo: exerciseNameTextField.bottomAnchor, constant: 20),
-            labelStack.leadingAnchor.constraint(equalTo: textFieldStack.trailingAnchor, constant: 15),
-            labelStack.bottomAnchor.constraint(equalTo: textFieldStack.bottomAnchor),
+//            labelStack.topAnchor.constraint(equalTo: exerciseNameTextField.bottomAnchor, constant: 20),
+//            labelStack.leadingAnchor.constraint(equalTo: textFieldStack.trailingAnchor, constant: 15),
+//            labelStack.bottomAnchor.constraint(equalTo: textFieldStack.bottomAnchor),
             
             buttonStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 35),
             buttonStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -35),

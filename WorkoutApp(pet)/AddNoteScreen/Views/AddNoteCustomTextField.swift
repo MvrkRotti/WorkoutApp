@@ -27,11 +27,11 @@ final class AddNoteCustomTextField: UITextField {
         
         switch fieldType {
         case .trainingName:
-            placeholder = TextFieldResources.PlaceholderString.trainingName
+            placeholder = Const.trainingName
         case .kindOfMuscle:
-            placeholder = TextFieldResources.PlaceholderString.muscle
+            placeholder = Const.muscle
         case .exerciseName:
-            placeholder = TextFieldResources.PlaceholderString.exerciseName
+            placeholder = Const.exerciseName
             
         }
     }

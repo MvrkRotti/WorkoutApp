@@ -22,7 +22,7 @@ final class AgeTextField: UITextField {
 private extension AgeTextField {
     func setupAppearance() {
         layer.cornerRadius = 10
-        placeholder = TextFieldResources.PlaceholderString.age
+        placeholder = Const.age
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         textColor = ColorResources.white
         backgroundColor = ColorResources.black

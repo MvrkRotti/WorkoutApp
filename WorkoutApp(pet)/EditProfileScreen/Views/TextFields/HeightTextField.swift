@@ -22,7 +22,7 @@ final class HeightTextField: UITextField {
 private extension HeightTextField {
     func setupAppearance() {
         layer.cornerRadius = 10
-        placeholder = TextFieldResources.PlaceholderString.height
+        placeholder = Const.height
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         textColor = ColorResources.white
         backgroundColor = ColorResources.black

@@ -69,10 +69,10 @@ final class ProfileScreenViewController: UIViewController {
 private extension ProfileScreenViewController {
     
     func navigationBarAppearance() {
-        let editButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(editButtonDidTapped))
-        let logOutButton = UIBarButtonItem(title: "Log Out", style: .plain, target: self, action: #selector(logOutButtonDidTapped))
+        let editButton = UIBarButtonItem(title: Const.edit, style: .plain, target: self, action: #selector(editButtonDidTapped))
+        let logOutButton = UIBarButtonItem(title: Const.logOut, style: .plain, target: self, action: #selector(logOutButtonDidTapped))
         
-        navigationItem.title = "My Profile"
+        navigationItem.title = Const.myProfile
         navigationController?.isNavigationBarHidden = true
         navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
         tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
@@ -117,24 +117,24 @@ extension ProfileScreenViewController {
     
     func fillProfileData() {
         if let name = viewModel.name {
-            nameLabel.text = "Name: \(name)"
+            nameLabel.text = Const.firstName + name
         }
         if let age = viewModel.age {
-            ageLabel.text = "Age: \(age) years"
+            ageLabel.text = Const.age + String(age) + Const.years
         }
         if let weight = viewModel.weight {
-            weightLabel.text = "Weight: \(weight) kg"
+            weightLabel.text = Const.weight + String(weight) + Const.kg
         }
         if let height = viewModel.height {
-            heightLabel.text = "Height: \(height) cm"
+            heightLabel.text = Const.height + String(height) + Const.cm
         }
         if let gender = viewModel.gender {
-            genderLabel.text = "Gender: \(gender)"
+            genderLabel.text = Const.gender + gender
         }
         
         if let bmi = viewModel.bmi {
             let roundedBMI = String(format: "%.2f", bmi) // Округляем до 2 знаков после запятой
-            bmiLabel.text = "BMI: \(roundedBMI)"
+            bmiLabel.text = Const.BMI + String(roundedBMI)
         }
         
         if let bmiDescription = viewModel.bmiDescription {

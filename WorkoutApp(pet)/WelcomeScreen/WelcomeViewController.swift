@@ -7,9 +7,6 @@
 
 import UIKit
 
-fileprivate struct Const {
-    static let signUp = NSLocalizedString("sighUp", comment: "")
-}
 
 class WelcomeViewController: UIViewController {
     //MARK: - Variables

@@ -52,15 +52,15 @@ final class ProfileViewModel {
         let veryOverweightRange = 30.0...
         
         if underweightRange.contains(bmi) {
-            return StringResources.BMIDescription.underweight
+            return Const.BMILowIntex
         } else if normalRange.contains(bmi) {
-            return StringResources.BMIDescription.normal
+            return Const.BMINormalIndex
         } else if overweightRange.contains(bmi) {
-            return StringResources.BMIDescription.overweight
+            return Const.BMIOverweightIndex
         } else if veryOverweightRange.contains(bmi) {
-            return StringResources.BMIDescription.veryOverweight
+            return Const.BMIVeryOverweightIndex
         } else {
-            return StringResources.BMIDescription.noData
+            return Const.nonHeightAndWeight
         }
     }
     

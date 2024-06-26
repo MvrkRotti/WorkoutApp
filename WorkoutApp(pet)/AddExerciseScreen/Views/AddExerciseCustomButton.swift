@@ -31,11 +31,11 @@ final class AddExerciseCustomButton: UIButton {
         case .save:
             addTarget(self, action: #selector(saveDidTapped), for: .touchUpInside)
             backgroundColor = ColorResources.customCoral
-            setTitle(StringResources.CommonStrings.save, for: .normal)
+            setTitle(Const.save, for: .normal)
         case .cancel:
             addTarget(self, action: #selector(cancelDidTapped), for: .touchUpInside)
             backgroundColor = ColorResources.white
-            setTitle(StringResources.CommonStrings.cancel, for: .normal)
+            setTitle(Const.cancel, for: .normal)
         }
     }
     

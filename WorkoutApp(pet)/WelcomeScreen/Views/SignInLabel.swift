@@ -7,9 +7,6 @@
 
 import UIKit
 
-fileprivate struct Const {
-    static let haveAccountText = NSLocalizedString("alreadyHaveAcc", comment: "")
-}
 
 final class SignInLabel: UILabel {
     

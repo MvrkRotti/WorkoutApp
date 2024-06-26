@@ -45,7 +45,7 @@ private extension ResetPasswordViewController {
     func setupUI() {
         view.backgroundColor = ColorResources.black
         
-        navigationItem.title = StringResources.NavigationBarHeaders.resetPassword
+        navigationItem.title = Const.resetPassword
         
         view.setupView(emailTextField)
         view.setupView(infoLabel)
@@ -73,7 +73,7 @@ private extension ResetPasswordViewController {
     func setupAction() {
         resetButton.resetTapped = {
             guard let email = self.emailTextField.text, !email.isEmpty else {
-                self.showAlert(message: StringResources.AlertResources.enterEmail)
+                self.showAlert(message: Const.enterEmail)
                 return }
             self.viewModel.resetPassword(forEmail: email) { [weak self] result in
                 DispatchQueue.main.async {
@@ -93,7 +93,7 @@ private extension ResetPasswordViewController {
 private extension ResetPasswordViewController {
     
     func showSuccessAlert() {
-        let alertController = UIAlertController(title: StringResources.NavigationBarHeaders.resetPassword, message: StringResources.AlertResources.resetPassInfo, preferredStyle: .alert)
+        let alertController = UIAlertController(title: Const.resetPassword, message: Const.resetPassInfo, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.router.popScreen()
         }

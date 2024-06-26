@@ -68,10 +68,10 @@ final class AddNoteViewController: UIViewController {
 //MARK: - Setup UI
 private extension AddNoteViewController {
     func navigationBarAppearance() {
-        let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action:
+        let saveButton = UIBarButtonItem(title: Const.save, style: .plain, target: self, action:
                                          #selector(saveDidTapped))
         
-        navigationItem.title = "Add note"
+        navigationItem.title = Const.addNote
         navigationItem.rightBarButtonItem = saveButton
     }
     

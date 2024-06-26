@@ -25,6 +25,6 @@ private extension GenderLabel {
     func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.profileLabelFont
-        text = "Gender: "
+        text = Const.gender
     }
 }

@@ -21,14 +21,15 @@
 "handbook" = "Handbook";
 "notes" = "Notes";
 "profile" = "Profile";
-"age" = "Age";
-"gender" = "Gender";
-"weight" = "Weight";
-"height" = "Height";
-"BMI" = "BMI";
-"BMIDescriptionLow" = "";
-"BMIDescriptionNormal" = "";
-"BMIDescriptionHight" = "";
+"age" = "Age:";
+"gender" = "Gender:";
+"weight" = "Weight:";
+"height" = "Height:";
+"BMI" = "BMI:";
+"BMIDescriptionLow" = "Underweight. Possible nutritional deficiency and osteoporosis.";
+"BMIDescriptionNormal" = "Normal value. Low healthy risk.";
+"BMIDescriptionHight" = "Mild to moderate overweight. Moderate risk of developing heart disease, high blood pressure, stroke, diabetes mellitus.";
+"BMIDescriptionOverHight" = "Very overweight to obese. High risk of developing heart disease, high blood pressure, stroke, diabetes mellitus. Metabolic Syndrome.";
 "nonHeightAndWeight" = "Please enter your weight and height for getting result.";
 "years" = "years";
 "kg" = "kg";
@@ -37,7 +38,36 @@
 "myProfile" = "My profile";
 "edit" = "Edit";
 "editProfile" = "Edit profile";
-"save" = "Save";
-"selectPhoto" = "Select photo";
 "male" = "Male";
 "female" = "Female";
+"selectPhoto" = "Select photo";
+"sets" = "sets";
+"reps" = "reps";
+"min" = "min";
+"save" = "SAVE";
+"cancel" = "CANCEL";
+"gender" = "Gender";
+"yourPhoto" = "Your\nPhoto";
+"muscle" = "Muscle";
+"trainingName" = "Training name";
+"exerciseName" = "Exercise name";
+"restTime" = "rest time(min)";
+"loading" = "Loading";
+"addNewExercise" = "Add new exercise";
+"addNote" = "Add note";
+
+
+//Alert strings
+
+"fillAllFields" = "Please fill in all fields";
+"emptyFields" = "Email or password is empty";
+"incorrectFilling" = "Check your email or password";
+"alertTitle" = "Alert";
+"cancelAction" = "Try Again";
+"enterEmail" = "Enter your Email";
+"resetPassInfo" = "Password reset instructions sent to your email.";
+"needLogIn" = "You should be authorised user!";
+
+
+
+

@@ -25,6 +25,6 @@ private extension HeightLabel {
     func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.profileLabelFont
-        text = "Height: "
+//        text = Const.height
     }
 }

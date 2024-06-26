@@ -22,7 +22,7 @@ final class WeightTextField: UITextField {
 private extension WeightTextField {
     func setupAppearance() {
         layer.cornerRadius = 10
-        placeholder = TextFieldResources.PlaceholderString.weight
+        placeholder = Const.weight
         layer.sublayerTransform = CATransform3DMakeTranslation(15, 0, 0)
         textColor = ColorResources.white
         backgroundColor = ColorResources.black

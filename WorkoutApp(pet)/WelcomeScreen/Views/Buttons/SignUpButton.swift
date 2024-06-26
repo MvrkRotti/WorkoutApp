@@ -7,10 +7,6 @@
 
 import UIKit
 
-fileprivate struct Const {
-    static let signUp = NSLocalizedString("signUp", comment: "")
-}
-
 final class SignUpButton: UIButton {
     
     var signUpTapped: (() -> Void)?

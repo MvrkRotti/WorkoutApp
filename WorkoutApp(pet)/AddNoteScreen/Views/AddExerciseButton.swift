@@ -26,7 +26,7 @@ final class AddExerciseButton: UIButton {
 
 private extension AddExerciseButton {
     func setupAppearance() {
-        setTitle("Add new exercise", for: .normal)
+        setTitle(Const.addNewExercise, for: .normal)
         setTitleColor(ColorResources.black, for: .normal)
         titleLabel?.textAlignment = .center
         layer.cornerRadius = 15

@@ -7,15 +7,6 @@
 
 import UIKit
 
-fileprivate struct Const {
-    static let firstName = NSLocalizedString("firstName", comment: "")
-    static let lastName = NSLocalizedString("lastName", comment: "")
-    static let email = NSLocalizedString("email", comment: "")
-    static let password = NSLocalizedString("password", comment: "")
-    static let confirmPassword = NSLocalizedString("confirmPassword", comment: "")
-
-}
-
 final class CustomTextField: UITextField {
     
     enum CustomTextFieldType {

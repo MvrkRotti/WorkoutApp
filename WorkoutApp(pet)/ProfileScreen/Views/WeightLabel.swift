@@ -25,6 +25,6 @@ private extension WeightLabel {
     func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.profileLabelFont
-        text = "Weight: "
+//        text = Const.weight
     }
 }

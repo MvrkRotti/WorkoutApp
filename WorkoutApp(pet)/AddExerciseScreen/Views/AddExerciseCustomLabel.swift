@@ -25,11 +25,11 @@ final class AddExerciseCustomLabel: UILabel {
         
         switch labelType {
         case .sets:
-            text = StringResources.CommonStrings.sets
+            text = Const.sets
         case .reps:
-            text = StringResources.CommonStrings.reps
+            text = Const.reps
         case .min:
-            text = StringResources.CommonStrings.min
+            text = Const.min
         }
     }
     

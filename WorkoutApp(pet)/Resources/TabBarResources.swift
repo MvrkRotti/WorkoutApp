@@ -19,9 +19,9 @@ enum TabBarResources {
     
     static func title(for tab: Tabs) -> String {
         switch tab {
-        case .exercises: return "Handbook"
-        case .notes: return "Notes"
-        case .profile: return "Profile"
+        case .exercises: return Const.handbook
+        case .notes: return Const.notes
+        case .profile: return Const.profile
         }
     }
 }

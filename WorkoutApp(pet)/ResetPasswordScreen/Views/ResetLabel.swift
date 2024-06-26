@@ -20,7 +20,7 @@ final class ResetLabel: UILabel {
 
 private extension ResetLabel {
     func setupAppearance() {
-        text = StringResources.CommonStrings.resetPassLabelText
+        text = Const.resetPasswordInfo
         font = FontResources.addExerciseLabelFont
         numberOfLines = 0
         textColor = ColorResources.white

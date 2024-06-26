@@ -24,9 +24,7 @@ final class BMIDescriptionLabel: UILabel {
 private extension BMIDescriptionLabel {
     func setupAppearance() {
         textColor = ColorResources.black
-        font = FontResources.bmiDescriptionFont
-//        text = "BMI Description"
-        
+        font = FontResources.bmiDescriptionFont        
         numberOfLines = 0
     }
 }

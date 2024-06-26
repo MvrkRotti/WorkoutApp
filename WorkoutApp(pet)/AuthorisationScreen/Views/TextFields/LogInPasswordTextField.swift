@@ -26,7 +26,7 @@ private extension LogInPasswordTextField {
         
         layer.cornerRadius = 15
         textContentType = .password
-        placeholder = TextFieldResources.PlaceholderString.password
+        placeholder = Const.password
         textColor = ColorResources.white
         backgroundColor = ColorResources.customDarkGrey
         autocorrectionType = .no

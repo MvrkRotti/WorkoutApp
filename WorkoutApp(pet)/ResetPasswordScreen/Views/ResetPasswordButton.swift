@@ -26,7 +26,7 @@ final class ResetPasswordButton: UIButton {
 }
 private extension ResetPasswordButton {
     func setupAppearance() {
-        setTitle(StringResources.NavigationBarHeaders.resetPassword, for: .normal)
+        setTitle(Const.resetPassword, for: .normal)
         setTitleColor(ColorResources.black, for: .normal)
         backgroundColor = ColorResources.customCoral
         layer.cornerRadius = 15

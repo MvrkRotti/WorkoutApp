@@ -21,7 +21,7 @@ final class ResetEmailTextField: UITextField {
 
 extension ResetEmailTextField {
     func setupAppearance() {
-        placeholder = TextFieldResources.PlaceholderString.email
+        placeholder = Const.email
         backgroundColor = ColorResources.customDarkGrey
         layer.cornerRadius = 15
         textColor = ColorResources.white

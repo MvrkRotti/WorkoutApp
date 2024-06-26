@@ -19,7 +19,7 @@ final class EditProfileViewController: UIViewController {
     private let ageTextField = AgeTextField()
     private let weightTextField = WeightTextField()
     private let heightTextField = HeightTextField()
-    private let genderSelector = GenderSegmentController(items: ["Female", "Male"])
+    private let genderSelector = GenderSegmentController(items: [Const.female, Const.male])
     private let selectPhotoButton = SelectPhotoButton()
     
     private var isImageSelected = false
@@ -67,9 +67,9 @@ final class EditProfileViewController: UIViewController {
 
 private extension EditProfileViewController {
     func navigationBarAppearance() {
-        let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveDidTapped))
+        let saveButton = UIBarButtonItem(title: Const.save, style: .done, target: self, action: #selector(saveDidTapped))
         
-        navigationItem.title = "Edit profile"
+        navigationItem.title = Const.editProfile
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
         navigationController?.navigationBar.alpha = 0.9
@@ -118,10 +118,10 @@ private extension EditProfileViewController {
               let heightText = heightTextField.text, let height = Double(heightText) else { return }
         
         let genderIndex = genderSelector.selectedSegmentIndex
-        let gender = genderIndex == 0 ? "Female" : "Male"
+        let gender = genderIndex == 0 ? Const.female : Const.male
         
         guard let userID = Auth.auth().currentUser?.uid else {
-            return showAlert(message: "You should be authorised user!")
+            return showAlert(message: Const.needLogIn)
         }
         
         viewModel.saveUserData(age: age, weight: weight, height: height, gender: gender, userID: userID)

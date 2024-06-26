@@ -25,6 +25,6 @@ private extension NameLabel {
     func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.profileLabelFont
-        text = "Name: "
+        text = Const.firstName
     }
 }

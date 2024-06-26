@@ -7,10 +7,6 @@
 
 import UIKit
 
-fileprivate struct Const {
-    static let mainLabel = NSLocalizedString("signUpTitle", comment: "")
-}
-
 final class RegistrationLabel: UILabel {
     
     override init(frame: CGRect) {

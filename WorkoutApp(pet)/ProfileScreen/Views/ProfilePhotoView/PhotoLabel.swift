@@ -27,6 +27,6 @@ private extension PhotoLabel {
         font = FontResources.autLabelFont
         numberOfLines = 0
         textAlignment = .center
-        text = "Your\nPhoto"
+        text = Const.yourPhoto
     }
 } 

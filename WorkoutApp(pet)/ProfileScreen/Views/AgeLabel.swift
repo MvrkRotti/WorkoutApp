@@ -25,6 +25,6 @@ private extension AgeLabel {
     func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.profileLabelFont
-        text = "Age: "
+//        text = Const.age
     }
 }
