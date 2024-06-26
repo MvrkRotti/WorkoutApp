@@ -30,6 +30,5 @@ private extension RegistrationLabel {
         textAlignment = .left
         numberOfLines = 0
         textColor = ColorResources.white
-        
     }
 }

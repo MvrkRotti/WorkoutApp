@@ -63,9 +63,6 @@ private extension HandbookScreenViewController {
     func navigationBarAppearance() {
         navigationItem.title = Const.handbook
         navigationController?.isNavigationBarHidden = false
-//        navigationController?.navigationBar.barTintColor = ColorResources.customDarkGrey
-//       navigationController?.navigationBar.alpha = 0.9
-        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
         tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
     }
     

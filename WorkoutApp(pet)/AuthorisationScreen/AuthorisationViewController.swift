@@ -16,10 +16,11 @@ final class AuthorisationViewController: UIViewController {
     
     var viewModel = AuthorisationViewModel()
     
-    let emailTextField = LogInEmailTextField()
-    let passwordTextField = LogInPasswordTextField()
-    let authSignInButton = AuthSignInButton()
+    private let emailTextField = LogInEmailTextField()
+    private let passwordTextField = LogInPasswordTextField()
+    private let authSignInButton = AuthSignInButton()
     private let resetPasswordButton = AuthResetPasswordButton()
+    private let navBarButton = CustomNavBarButton(type: .system)
     
     private var textFieldArray = [UITextField] ()
     
@@ -49,6 +50,17 @@ private extension AuthorisationViewController {
         title = Const.sighIn
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
+        
+        let backButton = UIBarButtonItem(customView: navBarButton)
+        navBarButton.setTitle(Const.back, for: .normal)
+        navBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 25)
+        navBarButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        navBarButton.tintColor = ColorResources.customCoral
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    @objc func backTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setupUI() {

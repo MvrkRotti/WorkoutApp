@@ -11,6 +11,7 @@
 		8A011DA92C20AE4D0079D36D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8A011DA82C20AE4D0079D36D /* FirebaseAuth */; };
 		8A6395912C049E9400A8A928 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8A6395902C049E9400A8A928 /* Realm */; };
 		8A67553F2C2B5D48001D187B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A67553D2C2B5D48001D187B /* Localizable.strings */; };
+		8A6755422C2CBDE5001D187B /* CustomNavBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6755412C2CBDE5001D187B /* CustomNavBarButton.swift */; };
 		8A7978052C03CD6500733F81 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 8A7978042C03CD6500733F81 /* FirebaseAppCheck */; };
 		8A7978092C03CD6500733F81 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8A7978082C03CD6500733F81 /* FirebaseDatabase */; };
 		8A79780B2C03CD6500733F81 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8A79780A2C03CD6500733F81 /* FirebaseFirestore */; };
@@ -135,6 +136,7 @@
 		8A011DA62C20AC0A0079D36D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8A67553E2C2B5D48001D187B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A6755402C2B5D63001D187B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8A6755412C2CBDE5001D187B /* CustomNavBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarButton.swift; sourceTree = "<group>"; };
 		8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CE00CCD92B922DAB001E1E8B /* ExerciseNameLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseNameLabel.swift; sourceTree = "<group>"; };
 		CE00CCDB2B922DB7001E1E8B /* ExerciseTypeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTypeLabel.swift; sourceTree = "<group>"; };
@@ -657,6 +659,7 @@
 			children = (
 				CE3C13002BB32E9D003F3561 /* TextField */,
 				CED9EB302B6E7FA30065FE23 /* Labels */,
+				8A6755412C2CBDE5001D187B /* CustomNavBarButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -996,6 +999,7 @@
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
 				CE40637E2BF232D40088C135 /* ValidateField.swift in Sources */,
 				CEAC7E0F2B81F41600AF05CD /* NotesRouter.swift in Sources */,
+				8A6755422C2CBDE5001D187B /* CustomNavBarButton.swift in Sources */,
 				CE00CCDE2B922DC8001E1E8B /* EquipmentLabel.swift in Sources */,
 				CEDC921C2BD14B3400902268 /* ResetPasswordViewModel.swift in Sources */,
 				CE1A8BD52B87E62500ACB21C /* NameLabel.swift in Sources */,

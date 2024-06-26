@@ -22,6 +22,7 @@ final class RegistrationViewController: UIViewController {
     private let passwordField = CustomTextField(fieldType: .password)
     private let confirmPasswordField = CustomTextField(fieldType: .confirmPassword)
     private let regSighUpButton = SignUpButton()
+    private let navBarButton = CustomNavBarButton(type: .system)
     
     private var textFieldArray = [UITextField]()
     //MARK: - UIComponents
@@ -62,10 +63,19 @@ private extension RegistrationViewController {
     func navigationBarAppearance() {
         title = Const.signUp
         
-//        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
-//        navigationController?.navigationBar.backgroundColor = UIColor.red
+        let backButton = UIBarButtonItem(customView: navBarButton)
+        navBarButton.setTitle(Const.back, for: .normal)
+        navBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 25)
+        navBarButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        navBarButton.tintColor = ColorResources.customCoral
+        navigationItem.leftBarButtonItem = backButton
+        
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
+    }
+    
+    @objc func backTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setupUI() {
