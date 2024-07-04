@@ -12,7 +12,7 @@ final class ProfileScreenViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: ProfileRouterProtocol?
+    var router: Router
     var viewModel: ProfileViewModel
     
     private let photoView = ProfilePhotoView(frame: .zero)
@@ -39,8 +39,9 @@ final class ProfileScreenViewController: UIViewController {
     }()
     //    MARK: - Lifecycle
     
-    init(viewModel: ProfileViewModel) {
+    init(viewModel: ProfileViewModel, router: Router) {
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -92,11 +93,11 @@ private extension ProfileScreenViewController {
     }
     
     @objc func editButtonDidTapped() {
-        router?.pushEditScreen()
+//        router?.pushEditScreen()
     }
     
     @objc func logOutButtonDidTapped() {
-        router?.popToRoot(form: self)
+//        router.popToRoot(form: self)
     }
     
     

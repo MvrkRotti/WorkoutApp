@@ -16,7 +16,7 @@ class WelcomeViewController: UIViewController {
     private let mainLogo = MainLogo(frame: CGRect())
     private let signInLabel = SignInLabel()
     
-    var router: WelcomeRouterProtocol?
+    var router: Router
     //MARK: - UI Components
     
     private lazy var registrStack: UIStackView = {
@@ -27,6 +27,14 @@ class WelcomeViewController: UIViewController {
         return stack
     }()
     //MARK: - Lifecycle
+    init(router: Router) {
+        self.router = router
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,12 +63,12 @@ private extension WelcomeViewController {
     func setupActions() {
         signUpButton.signUpTapped = { [weak self] in
             guard let self = self else { return }
-            self.router?.pushRegistrationScreen()
+            self.router.navigateToRegister(from: navigationController)
         }
         
         signInButton.signInTapped = { [weak self ] in
             guard let self = self else { return }
-            self.router?.pushAutoristrationScreen()
+            self.router.navigateToLogin(from: navigationController)
         }
     }
     

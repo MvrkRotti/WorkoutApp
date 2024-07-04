@@ -9,13 +9,16 @@ import UIKit
 
 final class HandbookScreenViewController: UIViewController {
     //MARK: - Variables
+    private let router: Router
     private let viewModel: HandbookViewModel
+    
     private let tableView = UITableView()
     private let activityIndicator = CustomActivityIndicator(frame: CGRect(), text: Const.loading)
     
     //MARK: - Lifecycle
-    init(_ viewModel: HandbookViewModel = HandbookViewModel()) {
+    init(viewModel: HandbookViewModel, router: Router) {
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     

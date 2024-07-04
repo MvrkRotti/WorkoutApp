@@ -12,9 +12,9 @@ final class AuthorisationViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: AutoristaionRouter!
+    var router: Router
     
-    var viewModel = AuthorisationViewModel()
+    var viewModel: AuthorisationViewModel
     
     private let emailTextField = LogInEmailTextField()
     private let passwordTextField = LogInPasswordTextField()
@@ -26,6 +26,16 @@ final class AuthorisationViewController: UIViewController {
     
     
     //MARK: - Lifecycle
+    
+    init(router: Router, viewModel: AuthorisationViewModel) {
+        self.router = router
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +93,7 @@ private extension AuthorisationViewController {
                     if error != nil {
                         self?.showAlert(message: Const.incorrectFilling)
                     } else {
-                        self?.router?.pushHomeScreen()
+                        self?.router.navigateToTabBar(from: self?.navigationController)
                     }
                 }
             } else {
@@ -93,7 +103,7 @@ private extension AuthorisationViewController {
         
         resetPasswordButton.resetTapped = { [weak self ] in
             guard let self = self else { return }
-            self.router.pushResetPasswordScreen()
+//            self.router.pushResetPasswordScreen()
         }
     }
     

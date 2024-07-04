@@ -10,6 +10,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 final class RegistrationViewModel {
+        
     func registerUser(firstName: String, lastName: String, email: String,
                       password: String, confirmPassword: String,
                       completion: @escaping(User?, String?) -> Void)

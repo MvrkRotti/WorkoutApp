@@ -12,13 +12,13 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     
     //MARK: - Variables
     
-    private let router: NotesRouter
+    private let router: Router
     private let viewModel: NotesViewModel
     
     private var notesCollectionView: UICollectionView!
     private let addButton = UIButton()
     
-    init(router: NotesRouter, viewModel: NotesViewModel) {
+    init(router: Router, viewModel: NotesViewModel) {
         self.router = router
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -34,10 +34,11 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
         viewModel.delegate = self
         setupCollection()
         setupAddButton()
+        setupUI()
     }
     
     private func setupUI() {
-        self.title = "Notes"
+        navigationItem.title = Const.notes
     }
     
     private func setupCollection() {
@@ -50,8 +51,8 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
         notesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         notesCollectionView.delegate = self
         notesCollectionView.dataSource = self
-        notesCollectionView.register(NoteCell.self, forCellWithReuseIdentifier: "noteCell")
-        notesCollectionView.register(NotesHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        notesCollectionView.register(NoteCell.self, forCellWithReuseIdentifier: NoteCell.identifier)
+        notesCollectionView.register(NotesHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: NotesHeader.identifier)
         notesCollectionView.backgroundColor = .clear
         
         view.addSubview(notesCollectionView)
@@ -86,8 +87,7 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     }
     
     @objc private func addNoteTapped() {
-        let addVC = AddNoteViewController()
-        router.pushNextScreen(on: addVC)
+        router.navigateToAddNote(from: self)
     }
 }
 

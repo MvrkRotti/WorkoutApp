@@ -12,8 +12,8 @@ final class RegistrationViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: RegistrationRouter!
-    var viewModel = RegistrationViewModel()
+    private let router: Router
+    private let viewModel: RegistrationViewModel
     
     private let registrationLabel = RegistrationLabel()
     private let nameField = CustomTextField(fieldType: .name)
@@ -37,6 +37,15 @@ final class RegistrationViewController: UIViewController {
         return stack
     }()
     //MARK: - Lifecycle
+    init(router: Router, viewModel: RegistrationViewModel) {
+        self.router = router
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,7 +120,7 @@ private extension RegistrationViewController {
                     if let error = error {
                         self.showAlert(message: error)
                     } else if user != nil {
-                        self.router?.pushHomeScreen()
+                        self.router.navigateToTabBar(from: navigationController)
                     }
                 }
             } else {
