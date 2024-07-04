@@ -8,14 +8,30 @@
 import UIKit
 
 protocol NotesRouterProtocol {
-    func pushNextScreen(on viewContoller: UIViewController, delegate: AddNoteDelegate)
+    func navigateToAddNote()
 }
 
-final class NotesRouter: NotesRouterProtocol {
-    func pushNextScreen(on viewContoller: UIViewController, delegate: AddNoteDelegate) {
-        let addNoteViewController = AddNoteViewController(AddNoteViewModel(), router: AddNoteRouter())
-        addNoteViewController.delegate = delegate
-        viewContoller.navigationController?.pushViewController(addNoteViewController, animated: true)
+class NotesRouter: NotesRouterProtocol {
+    private weak var assembler: Assembler?
+    private weak var navigationController: UINavigationController?
+    
+    init(assembler: Assembler) {
+        self.assembler = assembler
     }
+    
+    func setRootViewController(_ viewController: UIViewController, in window: UIWindow) {
+            let navigationController = UINavigationController(rootViewController: viewController)
+            self.navigationController = navigationController
+            window.rootViewController = navigationController
+            window.makeKeyAndVisible()
+        }
+    
+    func navigateToAddNote() {
+            guard let assembler = assembler else { return }
+        let addNoteVC = assembler.buildModule() as AddNoteViewController
+            navigationController?.present(addNoteVC, animated: true, completion: nil)
+        }
+    
+
 }
 

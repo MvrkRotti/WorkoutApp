@@ -26,14 +26,12 @@ final class AddNoteButton: UIButton {
 
 private extension AddNoteButton {
     func setupAppearance() {
-        frame = CGRect(x: 0, y: 0, width: 65, height: 65)
-        
         setTitle("+", for: .normal)
         titleLabel?.font = FontResources.registrationLabelFont
         setTitleColor(ColorResources.black, for: .normal)
         
         backgroundColor = ColorResources.customCoral
-        layer.cornerRadius = frame.width / 2
+        layer.cornerRadius = self.bounds.width / 2
     }
     
     @objc

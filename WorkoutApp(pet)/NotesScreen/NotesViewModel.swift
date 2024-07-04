@@ -6,41 +6,53 @@
 //
 
 import Foundation
-import RealmSwift
-import SwipeCellKit
+import Firebase
+import FirebaseFirestore
+import FirebaseAuth
 
 protocol NotesViewModelDelegate: AnyObject {
-    func reloadCollectionView()
+    func notesDidChange()
 }
 
 final class NotesViewModel {
+    private(set) var notes = [Note]()
+    private var db = Firestore.firestore()
+    private var listenerRegistration: ListenerRegistration?
     weak var delegate: NotesViewModelDelegate?
-    let realm = try! Realm()
-    var notes: Results<ExerciseNote>!
-    var onDeleteNote: ((IndexPath) -> Void)?
     
-    func getAllNotes() {
-        notes = realm.objects(ExerciseNote.self)
+    init() {
+        fetchNotes()
     }
     
-    func addNote(_ trainingName: String, _ muscle: String) {
-        let newNote = ExerciseNote()
-        newNote.trainName = trainingName
-        newNote.kindOfMuscle = muscle
-        
-        try! realm.write {
-            realm.add(newNote)
-        }
-    }
-    
-    func deleteNote(at indexPath: IndexPath) {
-        do {
-            try realm.write {
-                realm.delete(notes[indexPath.item])
+    func fetchNotes() {
+        guard let user = Auth.auth().currentUser else { return }
+        listenerRegistration = db.collection("notes")
+            .whereField("iserID", isEqualTo: user.uid)
+            .addSnapshotListener { [weak self] (querySnapshot, error) in
+                if let error = error {
+                    print("Error getting documents: \(error)")
+                    return
+                }
+                self?.notes = querySnapshot?.documents.compactMap {
+                    try? $0.data(as: Note.self)
+                } ?? []
             }
-            onDeleteNote?(indexPath)
+        self.delegate?.notesDidChange()
+    }
+    
+    
+    func addNote(title: String, content: String, category: NoteCategory) {
+        guard let user = Auth.auth().currentUser else { return }
+        let newNote = Note(
+            title: title,
+            content: content,
+            category: category,
+            userID: user.uid
+        )
+        do {
+            _ = try db.collection("notes").addDocument(from: newNote)
         } catch {
-            print("Error deleting note: \(error)")
+            print("Error adding note: \(error)")
         }
     }
 }

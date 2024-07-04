@@ -15,10 +15,8 @@ struct AddNoteAssembler: AssemblerProtocol {
     
     func buildModule() -> UIViewController {
         
-        let viewModel = AddNoteViewModel()
-        let viewController = AddNoteViewController(viewModel, router: AddNoteRouter())
+        let viewController = AddNoteViewController()
 
-        
         return viewController
     }
 }

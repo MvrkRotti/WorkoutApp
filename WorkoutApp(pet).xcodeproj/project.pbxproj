@@ -8,16 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		8A011DA72C20AC0A0079D36D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8A011DA62C20AC0A0079D36D /* GoogleService-Info.plist */; };
-		8A011DA92C20AE4D0079D36D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8A011DA82C20AE4D0079D36D /* FirebaseAuth */; };
-		8A6395912C049E9400A8A928 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8A6395902C049E9400A8A928 /* Realm */; };
+		8A3A723A2C370A330066A743 /* NotesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3A72392C370A330066A743 /* NotesHeader.swift */; };
+		8A3A723D2C3716E30066A743 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A723C2C3716E30066A743 /* FirebaseAppCheck */; };
+		8A3A723F2C3716E30066A743 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A723E2C3716E30066A743 /* FirebaseAuth */; };
+		8A3A72412C3716E30066A743 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A72402C3716E30066A743 /* FirebaseDatabase */; };
+		8A3A72432C3716E30066A743 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A72422C3716E30066A743 /* FirebaseFirestore */; };
+		8A3A72452C3716E30066A743 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A72442C3716E30066A743 /* FirebaseFirestoreSwift */; };
+		8A3A72472C3716E30066A743 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A72462C3716E30066A743 /* FirebaseStorage */; };
 		8A67553F2C2B5D48001D187B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A67553D2C2B5D48001D187B /* Localizable.strings */; };
 		8A6755422C2CBDE5001D187B /* CustomNavBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6755412C2CBDE5001D187B /* CustomNavBarButton.swift */; };
-		8A7978052C03CD6500733F81 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 8A7978042C03CD6500733F81 /* FirebaseAppCheck */; };
-		8A7978092C03CD6500733F81 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8A7978082C03CD6500733F81 /* FirebaseDatabase */; };
-		8A79780B2C03CD6500733F81 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8A79780A2C03CD6500733F81 /* FirebaseFirestore */; };
-		8A79780D2C03CD6500733F81 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A79780C2C03CD6500733F81 /* FirebaseFirestoreSwift */; };
-		8A79780F2C03CD6500733F81 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8A79780E2C03CD6500733F81 /* FirebaseStorage */; };
-		8A79781C2C03D41C00733F81 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A79781B2C03D41C00733F81 /* RealmSwift */; };
 		8AEEDDCD2C1CEF310055E216 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */; };
 		CE00CCDA2B922DAB001E1E8B /* ExerciseNameLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCD92B922DAB001E1E8B /* ExerciseNameLabel.swift */; };
 		CE00CCDC2B922DB7001E1E8B /* ExerciseTypeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCDB2B922DB7001E1E8B /* ExerciseTypeLabel.swift */; };
@@ -26,9 +25,7 @@
 		CE00CCE22B922DE6001E1E8B /* InstructionsLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCE12B922DE6001E1E8B /* InstructionsLabel.swift */; };
 		CE00CCE42B9232C1001E1E8B /* ExerciseInfoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCE32B9232C1001E1E8B /* ExerciseInfoViewModel.swift */; };
 		CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCE52B923763001E1E8B /* MuscleLabel.swift */; };
-		CE00CCED2B977C70001E1E8B /* TrainCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEC2B977C70001E1E8B /* TrainCollectionView.swift */; };
 		CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */; };
-		CE00CCF22B98E0A4001E1E8B /* TrainViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */; };
 		CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */; };
 		CE0CC2E92BF37C7300501CD9 /* FetchPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */; };
 		CE1A8BBF2B822F2D00ACB21C /* HandbookExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */; };
@@ -44,15 +41,12 @@
 		CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BDC2B87E64E00ACB21C /* HeightLabel.swift */; };
 		CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */; };
 		CE1A8BE12B87E67900ACB21C /* BMIDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */; };
-		CE25756F2BC2D8D3005708F2 /* ExerciseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */; };
-		CE3746AD2BC59EE500D2D10A /* AddNoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3746AC2BC59EE500D2D10A /* AddNoteViewModel.swift */; };
 		CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C12FE2BB32086003F3561 /* CustomTextField.swift */; };
 		CE3C13032BB5D606003F3561 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */; };
 		CE3C13052BB9724C003F3561 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13042BB9724C003F3561 /* Note.swift */; };
 		CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13062BBB25D4003F3561 /* AddNoteButton.swift */; };
 		CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */; };
 		CE3C13382BBD5169003F3561 /* AddNoteAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */; };
-		CE3C133A2BBD5173003F3561 /* AddNoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */; };
 		CE40637E2BF232D40088C135 /* ValidateField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40637D2BF232D40088C135 /* ValidateField.swift */; };
 		CE4063812BF23EEA0088C135 /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4063802BF23EEA0088C135 /* AlertController.swift */; };
 		CE4063862BF2A3F60088C135 /* ImageScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4063852BF2A3F60088C135 /* ImageScaler.swift */; };
@@ -66,7 +60,6 @@
 		CE5CD4592BC86EE70065991D /* ImageResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4582BC86EE70065991D /* ImageResources.swift */; };
 		CE5CD45B2BC86EF40065991D /* FontResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD45A2BC86EF40065991D /* FontResources.swift */; };
 		CE5CD45D2BC873910065991D /* TabBarResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD45C2BC873910065991D /* TabBarResources.swift */; };
-		CE7294032BE5146E009C867F /* SwipeCellKit in Frameworks */ = {isa = PBXBuildFile; productRef = CE7294022BE5146E009C867F /* SwipeCellKit */; };
 		CE7294062BE7E043009C867F /* ProfileScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7294052BE7E043009C867F /* ProfileScreenViewModel.swift */; };
 		CE72940A2BE91BBD009C867F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7294092BE91BBD009C867F /* EditProfileViewModel.swift */; };
 		CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8214972BCDAADC001D32AB /* UITextField.swift */; };
@@ -124,16 +117,11 @@
 		CEF2AB522BBD769100205B60 /* NotesAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB512BBD769100205B60 /* NotesAssembler.swift */; };
 		CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */; };
 		CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */; };
-		CEF2AB5F2BBF092600205B60 /* AddExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */; };
-		CEF2AB622BBF09F700205B60 /* AddExerciseAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB612BBF09F700205B60 /* AddExerciseAssembler.swift */; };
-		CEF2AB642BBF0A0000205B60 /* AddExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB632BBF0A0000205B60 /* AddExerciseRouter.swift */; };
-		CEF2AB672BBF0D3B00205B60 /* AddExerciseCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB662BBF0D3B00205B60 /* AddExerciseCustomTextField.swift */; };
-		CEF2AB692BBF105600205B60 /* AddExerciseCustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB682BBF105600205B60 /* AddExerciseCustomLabel.swift */; };
-		CEF2AB6B2BBF143900205B60 /* AddExerciseCustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB6A2BBF143900205B60 /* AddExerciseCustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		8A011DA62C20AC0A0079D36D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8A3A72392C370A330066A743 /* NotesHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesHeader.swift; sourceTree = "<group>"; };
 		8A67553E2C2B5D48001D187B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A6755402C2B5D63001D187B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A6755412C2CBDE5001D187B /* CustomNavBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarButton.swift; sourceTree = "<group>"; };
@@ -145,9 +133,7 @@
 		CE00CCE12B922DE6001E1E8B /* InstructionsLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsLabel.swift; sourceTree = "<group>"; };
 		CE00CCE32B9232C1001E1E8B /* ExerciseInfoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoViewModel.swift; sourceTree = "<group>"; };
 		CE00CCE52B923763001E1E8B /* MuscleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleLabel.swift; sourceTree = "<group>"; };
-		CE00CCEC2B977C70001E1E8B /* TrainCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainCollectionView.swift; sourceTree = "<group>"; };
 		CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNoteCell.swift; sourceTree = "<group>"; };
-		CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainViewLabel.swift; sourceTree = "<group>"; };
 		CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesInfoViewController.swift; sourceTree = "<group>"; };
 		CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoHelper.swift; sourceTree = "<group>"; };
 		CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookExercise.swift; sourceTree = "<group>"; };
@@ -163,15 +149,12 @@
 		CE1A8BDC2B87E64E00ACB21C /* HeightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightLabel.swift; sourceTree = "<group>"; };
 		CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILabel.swift; sourceTree = "<group>"; };
 		CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIDescriptionLabel.swift; sourceTree = "<group>"; };
-		CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseModel.swift; sourceTree = "<group>"; };
-		CE3746AC2BC59EE500D2D10A /* AddNoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewModel.swift; sourceTree = "<group>"; };
 		CE3C12FE2BB32086003F3561 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		CE3C13022BB5D606003F3561 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
 		CE3C13042BB9724C003F3561 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		CE3C13062BBB25D4003F3561 /* AddNoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteButton.swift; sourceTree = "<group>"; };
 		CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteAssembler.swift; sourceTree = "<group>"; };
-		CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteRouter.swift; sourceTree = "<group>"; };
 		CE40637D2BF232D40088C135 /* ValidateField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateField.swift; sourceTree = "<group>"; };
 		CE4063802BF23EEA0088C135 /* AlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertController.swift; sourceTree = "<group>"; };
 		CE4063852BF2A3F60088C135 /* ImageScaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScaler.swift; sourceTree = "<group>"; };
@@ -244,12 +227,6 @@
 		CEF2AB512BBD769100205B60 /* NotesAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesAssembler.swift; sourceTree = "<group>"; };
 		CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCustomTextField.swift; sourceTree = "<group>"; };
 		CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseButton.swift; sourceTree = "<group>"; };
-		CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseViewController.swift; sourceTree = "<group>"; };
-		CEF2AB612BBF09F700205B60 /* AddExerciseAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseAssembler.swift; sourceTree = "<group>"; };
-		CEF2AB632BBF0A0000205B60 /* AddExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseRouter.swift; sourceTree = "<group>"; };
-		CEF2AB662BBF0D3B00205B60 /* AddExerciseCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCustomTextField.swift; sourceTree = "<group>"; };
-		CEF2AB682BBF105600205B60 /* AddExerciseCustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCustomLabel.swift; sourceTree = "<group>"; };
-		CEF2AB6A2BBF143900205B60 /* AddExerciseCustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseCustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,15 +234,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A79781C2C03D41C00733F81 /* RealmSwift in Frameworks */,
-				8A7978092C03CD6500733F81 /* FirebaseDatabase in Frameworks */,
-				8A7978052C03CD6500733F81 /* FirebaseAppCheck in Frameworks */,
-				8A79780F2C03CD6500733F81 /* FirebaseStorage in Frameworks */,
-				8A011DA92C20AE4D0079D36D /* FirebaseAuth in Frameworks */,
-				CE7294032BE5146E009C867F /* SwipeCellKit in Frameworks */,
-				8A6395912C049E9400A8A928 /* Realm in Frameworks */,
-				8A79780B2C03CD6500733F81 /* FirebaseFirestore in Frameworks */,
-				8A79780D2C03CD6500733F81 /* FirebaseFirestoreSwift in Frameworks */,
+				8A3A72452C3716E30066A743 /* FirebaseFirestoreSwift in Frameworks */,
+				8A3A72412C3716E30066A743 /* FirebaseDatabase in Frameworks */,
+				8A3A72432C3716E30066A743 /* FirebaseFirestore in Frameworks */,
+				8A3A723D2C3716E30066A743 /* FirebaseAppCheck in Frameworks */,
+				8A3A723F2C3716E30066A743 /* FirebaseAuth in Frameworks */,
+				8A3A72472C3716E30066A743 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,9 +278,8 @@
 		CE00CCF02B98E06B001E1E8B /* TrainNotesView */ = {
 			isa = PBXGroup;
 			children = (
-				CE00CCF12B98E0A4001E1E8B /* TrainViewLabel.swift */,
-				CE00CCEC2B977C70001E1E8B /* TrainCollectionView.swift */,
 				CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */,
+				8A3A72392C370A330066A743 /* NotesHeader.swift */,
 			);
 			path = TrainNotesView;
 			sourceTree = "<group>";
@@ -332,7 +305,6 @@
 			children = (
 				CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */,
 				CE3C13042BB9724C003F3561 /* Note.swift */,
-				CE25756E2BC2D8D3005708F2 /* ExerciseModel.swift */,
 				CE5CD44B2BC83C320065991D /* User.swift */,
 			);
 			path = Model;
@@ -420,7 +392,6 @@
 				CEF2AB532BBDA8C100205B60 /* Views */,
 				CE3C133B2BBD517A003F3561 /* Navigation */,
 				CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */,
-				CE3746AC2BC59EE500D2D10A /* AddNoteViewModel.swift */,
 			);
 			path = AddNoteScreen;
 			sourceTree = "<group>";
@@ -429,7 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				CE3C13372BBD5169003F3561 /* AddNoteAssembler.swift */,
-				CE3C13392BBD5173003F3561 /* AddNoteRouter.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -567,7 +537,6 @@
 				CEAA4EC62B8CFBCD0004F369 /* ExerciseInfoScreen */,
 				CED9EB652B7259560065FE23 /* NotesScreen */,
 				CE3C13342BBD5143003F3561 /* AddNoteScreen */,
-				CEF2AB5D2BBED6F000205B60 /* AddExerciseScreen */,
 				CE00CCF42B9AF745001E1E8B /* NotesInfoScreen */,
 				CEAC7E012B81F27900AF05CD /* ProfileScreen */,
 				CE8D50E22B88939000A14719 /* EditProfileScreen */,
@@ -781,35 +750,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CEF2AB5D2BBED6F000205B60 /* AddExerciseScreen */ = {
-			isa = PBXGroup;
-			children = (
-				CEF2AB652BBF0C3300205B60 /* Views */,
-				CEF2AB602BBF09E800205B60 /* Navigation */,
-				CEF2AB5E2BBF092600205B60 /* AddExerciseViewController.swift */,
-			);
-			path = AddExerciseScreen;
-			sourceTree = "<group>";
-		};
-		CEF2AB602BBF09E800205B60 /* Navigation */ = {
-			isa = PBXGroup;
-			children = (
-				CEF2AB612BBF09F700205B60 /* AddExerciseAssembler.swift */,
-				CEF2AB632BBF0A0000205B60 /* AddExerciseRouter.swift */,
-			);
-			path = Navigation;
-			sourceTree = "<group>";
-		};
-		CEF2AB652BBF0C3300205B60 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CEF2AB662BBF0D3B00205B60 /* AddExerciseCustomTextField.swift */,
-				CEF2AB682BBF105600205B60 /* AddExerciseCustomLabel.swift */,
-				CEF2AB6A2BBF143900205B60 /* AddExerciseCustomButton.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -827,15 +767,12 @@
 			);
 			name = "WorkoutApp(pet)";
 			packageProductDependencies = (
-				CE7294022BE5146E009C867F /* SwipeCellKit */,
-				8A7978042C03CD6500733F81 /* FirebaseAppCheck */,
-				8A7978082C03CD6500733F81 /* FirebaseDatabase */,
-				8A79780A2C03CD6500733F81 /* FirebaseFirestore */,
-				8A79780C2C03CD6500733F81 /* FirebaseFirestoreSwift */,
-				8A79780E2C03CD6500733F81 /* FirebaseStorage */,
-				8A79781B2C03D41C00733F81 /* RealmSwift */,
-				8A6395902C049E9400A8A928 /* Realm */,
-				8A011DA82C20AE4D0079D36D /* FirebaseAuth */,
+				8A3A723C2C3716E30066A743 /* FirebaseAppCheck */,
+				8A3A723E2C3716E30066A743 /* FirebaseAuth */,
+				8A3A72402C3716E30066A743 /* FirebaseDatabase */,
+				8A3A72422C3716E30066A743 /* FirebaseFirestore */,
+				8A3A72442C3716E30066A743 /* FirebaseFirestoreSwift */,
+				8A3A72462C3716E30066A743 /* FirebaseStorage */,
 			);
 			productName = "WorkoutApp(pet)";
 			productReference = CED9EAFA2B6E4BB80065FE23 /* WorkoutApp(pet).app */;
@@ -867,9 +804,7 @@
 			);
 			mainGroup = CED9EAF12B6E4BB80065FE23;
 			packageReferences = (
-				CE7294012BE5146D009C867F /* XCRemoteSwiftPackageReference "SwipeCellKit" */,
-				8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				8A79781A2C03D41C00733F81 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = CED9EAFB2B6E4BB80065FE23 /* Products */;
 			projectDirPath = "";
@@ -900,7 +835,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3C13032BB5D606003F3561 /* ActivityIndicator.swift in Sources */,
-				CE00CCF22B98E0A4001E1E8B /* TrainViewLabel.swift in Sources */,
 				CE00CCE22B922DE6001E1E8B /* InstructionsLabel.swift in Sources */,
 				CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */,
 				CEAC7E132B81F43700AF05CD /* ProfileRouter.swift in Sources */,
@@ -915,11 +849,9 @@
 				CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */,
 				CED9EB522B715A870065FE23 /* RegistrationAssembler.swift in Sources */,
 				CEAC7E172B81F47100AF05CD /* AutoristaionRouter.swift in Sources */,
-				CEF2AB622BBF09F700205B60 /* AddExerciseAssembler.swift in Sources */,
 				CEAC7E152B81F46500AF05CD /* AuthorisationAssembler.swift in Sources */,
 				CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */,
 				CEF2AB522BBD769100205B60 /* NotesAssembler.swift in Sources */,
-				CE3C133A2BBD5173003F3561 /* AddNoteRouter.swift in Sources */,
 				CE5CD4552BC86EB90065991D /* StringResources.swift in Sources */,
 				CE3C13382BBD5169003F3561 /* AddNoteAssembler.swift in Sources */,
 				CE00CCDC2B922DB7001E1E8B /* ExerciseTypeLabel.swift in Sources */,
@@ -930,8 +862,6 @@
 				CE1A8BD72B87E63000ACB21C /* GenderLabel.swift in Sources */,
 				CED9EB272B6E72C80065FE23 /* WelcomeAssembler.swift in Sources */,
 				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
-				CEF2AB5F2BBF092600205B60 /* AddExerciseViewController.swift in Sources */,
-				CEF2AB672BBF0D3B00205B60 /* AddExerciseCustomTextField.swift in Sources */,
 				CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */,
 				CEDC921A2BD14B2800902268 /* ResetPasswordViewController.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
@@ -940,6 +870,7 @@
 				CE4063862BF2A3F60088C135 /* ImageScaler.swift in Sources */,
 				CE00CCE02B922DDA001E1E8B /* DifficultyLabel.swift in Sources */,
 				CE486C6A2BD7BE91006B5E3D /* NotesViewModel.swift in Sources */,
+				8A3A723A2C370A330066A743 /* NotesHeader.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
 				CE1A8BBF2B822F2D00ACB21C /* HandbookExercise.swift in Sources */,
 				CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */,
@@ -950,7 +881,6 @@
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
 				CE00CCE62B923763001E1E8B /* MuscleLabel.swift in Sources */,
 				CEDC92242BD14FA400902268 /* ResetLabel.swift in Sources */,
-				CE3746AD2BC59EE500D2D10A /* AddNoteViewModel.swift in Sources */,
 				CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */,
 				CEDC92202BD14B6B00902268 /* ResetPasswordAssembler.swift in Sources */,
 				CE3C13052BB9724C003F3561 /* Note.swift in Sources */,
@@ -961,11 +891,9 @@
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
 				CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */,
-				CEF2AB692BBF105600205B60 /* AddExerciseCustomLabel.swift in Sources */,
 				CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */,
 				CE5CD45B2BC86EF40065991D /* FontResources.swift in Sources */,
 				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
-				CEF2AB6B2BBF143900205B60 /* AddExerciseCustomButton.swift in Sources */,
 				CE1A8BC52B82644D00ACB21C /* HandbookViewModel.swift in Sources */,
 				CEDC921E2BD14B5B00902268 /* ResetPasswordRouter.swift in Sources */,
 				CE7294062BE7E043009C867F /* ProfileScreenViewModel.swift in Sources */,
@@ -980,10 +908,8 @@
 				CED9EB4D2B715A1A0065FE23 /* HandbookScreenViewController.swift in Sources */,
 				CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */,
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
-				CE00CCED2B977C70001E1E8B /* TrainCollectionView.swift in Sources */,
 				CE1A8BD22B87E60200ACB21C /* PhotoLabel.swift in Sources */,
 				CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */,
-				CE25756F2BC2D8D3005708F2 /* ExerciseModel.swift in Sources */,
 				CE8D50F12B88E9EF00A14719 /* WeightTextField.swift in Sources */,
 				CE5CD4572BC86EC90065991D /* ColorResources.swift in Sources */,
 				CE00CCDA2B922DAB001E1E8B /* ExerciseNameLabel.swift in Sources */,
@@ -991,7 +917,6 @@
 				CED9EB292B6E796E0065FE23 /* MainLogo.swift in Sources */,
 				CE4063812BF23EEA0088C135 /* AlertController.swift in Sources */,
 				CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */,
-				CEF2AB642BBF0A0000205B60 /* AddExerciseRouter.swift in Sources */,
 				CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */,
 				CE5CD4512BC843170065991D /* AuthorizationViewModel.swift in Sources */,
 				CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */,
@@ -1219,77 +1144,46 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.26.0;
-			};
-		};
-		8A79781A2C03D41C00733F81 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = exactVersion;
-				version = 10.48.0;
-			};
-		};
-		CE7294012BE5146D009C867F /* XCRemoteSwiftPackageReference "SwipeCellKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SwipeCellKit/SwipeCellKit";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.7.1;
+				minimumVersion = 10.28.1;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		8A011DA82C20AE4D0079D36D /* FirebaseAuth */ = {
+		8A3A723C2C3716E30066A743 /* FirebaseAppCheck */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		8A6395902C049E9400A8A928 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A79781A2C03D41C00733F81 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		8A7978042C03CD6500733F81 /* FirebaseAppCheck */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAppCheck;
 		};
-		8A7978082C03CD6500733F81 /* FirebaseDatabase */ = {
+		8A3A723E2C3716E30066A743 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8A3A72402C3716E30066A743 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseDatabase;
 		};
-		8A79780A2C03CD6500733F81 /* FirebaseFirestore */ = {
+		8A3A72422C3716E30066A743 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		8A79780C2C03CD6500733F81 /* FirebaseFirestoreSwift */ = {
+		8A3A72442C3716E30066A743 /* FirebaseFirestoreSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestoreSwift;
 		};
-		8A79780E2C03CD6500733F81 /* FirebaseStorage */ = {
+		8A3A72462C3716E30066A743 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 8A7978032C03CD6500733F81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
-		};
-		8A79781B2C03D41C00733F81 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8A79781A2C03D41C00733F81 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
-		};
-		CE7294022BE5146E009C867F /* SwipeCellKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CE7294012BE5146D009C867F /* XCRemoteSwiftPackageReference "SwipeCellKit" */;
-			productName = SwipeCellKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -6,16 +6,18 @@
 //
 
 import Foundation
-import RealmSwift
+import FirebaseFirestoreSwift
 
-class ExerciseNote: Object {
-    @objc dynamic var trainName: String = ""
-    @objc dynamic var kindOfMuscle: String = ""
-    let exercises = List<Exercise>()
-    
-    convenience init(trainName: String, kindOfMuscle: String) {
-        self.init()
-        self.trainName = trainName
-        self.kindOfMuscle = kindOfMuscle
-    }
+struct Note: Identifiable, Codable {
+    @DocumentID var id: String?
+    var title: String
+    var content: String
+    var category: NoteCategory
+    var userID: String
+}
+
+enum NoteCategory: String, Codable, CaseIterable{
+    case sport = "Sport"
+    case nutrition = "Nutrition"
+    case others = "Others"
 }

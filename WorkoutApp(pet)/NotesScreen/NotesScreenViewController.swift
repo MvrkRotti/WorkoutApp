@@ -8,23 +8,19 @@
 import UIKit
 import SwipeCellKit
 
-final class NotesScreenViewController: UIViewController {
+final class NotesScreenViewController: UIViewController, NotesViewModelDelegate {
     
     //MARK: - Variables
     
-    let networkService = NetworkService()
-    var router: NotesRouter
-    private var viewModel: NotesViewModel
+    private let router: NotesRouter
+    private let viewModel: NotesViewModel
     
-    private let trainViewLabel = TrainViewLabel()
-    private let trainCollectionView = TrainCollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-    private let addNoteButton = AddNoteButton()
+    private var notesCollectionView: UICollectionView!
+    private let addButton = UIButton()
     
-    //MARK: - Lifecycle
-    
-    init(_ viewModel: NotesViewModel, router: NotesRouter) {
-        self.viewModel = viewModel
+    init(router: NotesRouter, viewModel: NotesViewModel) {
         self.router = router
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -34,160 +30,90 @@ final class NotesScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
-        setupLayout()
-        setDelegates()
-        setupAction()
-        navigationBarAppearance()
-        loadNotes()
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
+        viewModel.delegate = self
+        setupCollection()
+        setupAddButton()
+    }
+    
+    private func setupUI() {
+        self.title = "Notes"
+    }
+    
+    private func setupCollection() {
+        let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        layout.itemSize = CGSize(width: view.frame.width - 20, height: 100)
+        layout.scrollDirection = .vertical
+        layout.headerReferenceSize = CGSize(width: view.frame.size.width, height: 50)
         
-        viewModel.onDeleteNote = { [weak self] indexPath in
-            self?.trainCollectionView.deleteItems(at: [indexPath])
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        trainCollectionView.reloadData()
-        navigationController?.isNavigationBarHidden = false
-        tabBarController?.tabBar.isHidden = false
-    }
-}
-//MARK: - NavBar appearance
-
-extension NotesScreenViewController {
-    
-    func navigationBarAppearance() {
-//        navigationController?.navigationBar.alpha = 0.9
-        navigationController?.navigationBar.topItem?.title = Const.notes
-    }
-    
-    //MARK: - Set Delegates
-    
-    private func loadNotes() {
-        viewModel.getAllNotes()
-    }
-    
-    private func setDelegates() {
-        trainCollectionView.delegate = self
-        trainCollectionView.dataSource = self
-    }
-    //MARK: - UI Setup
-    
-    func setupUI() {
+        notesCollectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
+        notesCollectionView.delegate = self
+        notesCollectionView.dataSource = self
+        notesCollectionView.register(NoteCell.self, forCellWithReuseIdentifier: "noteCell")
+        notesCollectionView.register(NotesHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
+        notesCollectionView.backgroundColor = .clear
         
-        view.setupView(trainCollectionView)
-        view.setupView(addNoteButton)
-        trainCollectionView.setupView(trainViewLabel)
-        
+        view.addSubview(notesCollectionView)
     }
     
-    func setupLayout() {
+    private func setupAddButton() {
+        addButton.setImage(UIImage(systemName: "plus"), for: .normal)
+        addButton.backgroundColor = ColorResources.customCoral
+        addButton.tintColor = .white
+        addButton.layer.cornerRadius = 30
+        addButton.layer.shadowColor = UIColor.black.cgColor
+        addButton.layer.shadowOpacity = 0.3
+        addButton.layer.shadowOffset = CGSize(width: 2, height: 2)
+        addButton.layer.shadowRadius = 5
+        addButton.addTarget(self, action: #selector(addNoteTapped), for: .touchUpInside)
+        
+        view.addSubview(addButton)
+        addButton.translatesAutoresizingMaskIntoConstraints = false
+        
         NSLayoutConstraint.activate([
-            trainCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            trainCollectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            trainCollectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            trainCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            
-            trainViewLabel.topAnchor.constraint(equalTo: trainCollectionView.topAnchor, constant: 15),
-            trainViewLabel.leadingAnchor.constraint(equalTo: trainCollectionView.leadingAnchor, constant: 20),
-            
-            addNoteButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            addNoteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
-            addNoteButton.heightAnchor.constraint(equalToConstant: 65),
-            addNoteButton.widthAnchor.constraint(equalToConstant: 65)
+            addButton.widthAnchor.constraint(equalToConstant: 60),
+            addButton.heightAnchor.constraint(equalToConstant: 60),
+            addButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            addButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
     
-    func setupAction() {
-        addNoteButton.addButtonTapped = { [weak self] in
-            guard let self = self else { return }
-            self.router.pushNextScreen(on: self, delegate: self)
+    func notesDidChange() {
+        DispatchQueue.main.async {
+            self.notesCollectionView.reloadData()
         }
     }
     
+    @objc private func addNoteTapped() {
+        let addVC = AddNoteViewController()
+        router.pushNextScreen(on: addVC)
+    }
 }
-
-//MARK: - UICollectionView Delegate and Data Source
 
 extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return NoteCategory.allCases.count
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.notes.count
+        let category = NoteCategory.allCases[section]
+        return viewModel.notes.filter { $0.category == category }.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: TrainNoteCell.identifier,
-                for: indexPath) as? TrainNoteCell
-        else { fatalError("Failed to dequeue CustomCollectionViewCell in viewController")
-        }
-        cell.delegate = self
-        cell.layer.cornerRadius = 15
-        cell.layer.masksToBounds = true
-        
-        let day = viewModel.notes[indexPath.row].trainName
-        let name = viewModel.notes[indexPath.row].kindOfMuscle
-        cell.configure(with: day, and: name)
-        
-        cell.contentView.layer.cornerRadius = 15
-        
-        DispatchQueue.main.async {
-            collectionView.reloadData()
-        }
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoteCell.identifier, for: indexPath) as! NoteCell
+        let category = NoteCategory.allCases[indexPath.section]
+        let notes = viewModel.notes.filter { $0.category == category }
+        let note = notes[indexPath.row]
+        cell.configure(with: note)
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = TrainNotesInfoViewController()
-        present(vc, animated: true, completion: nil)
-    }
-    
-}
-
-//MARK: - Collection view appearence settings
-extension NotesScreenViewController: UICollectionViewDelegateFlowLayout {
-    
-    //Setup size for cells
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let widthSize = (view.frame.width) - 40
-        let heightSize = (view.frame.height / 8)
-        
-        return CGSize(width: widthSize, height: heightSize)
-    }
-    
-    //Vertical spacing
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 15
-    }
-    
-    //Setup header space
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        return CGSize(width: self.view.frame.width, height: 50)
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NotesHeader.identifier, for: indexPath) as! NotesHeader
+        headerView.titleLabel.text = NoteCategory.allCases[indexPath.section].rawValue
+        return headerView
     }
 }
-
-extension NotesScreenViewController: SwipeCollectionViewCellDelegate {
-    func collectionView(_ collectionView: UICollectionView, editActionsForItemAt indexPath: IndexPath, for orientation: SwipeActionsOrientation) -> [SwipeAction]? {
-        guard orientation == .right else { return nil }
-        
-        let deleteAction = SwipeAction(style: .destructive, title: "Remove") { action, indexPath in
-            self.viewModel.deleteNote(at: indexPath)
-        }
-        
-        deleteAction.backgroundColor = .red
-        deleteAction.textColor = .black
-        deleteAction.image = UIImage(systemName: "trash")
-        
-        return [deleteAction]
-    }
-}
-
-extension NotesScreenViewController: AddNoteDelegate {
-    func didAddNote(_ note: ExerciseNote) {
-        viewModel.addNote(note.trainName, note.kindOfMuscle)
-        trainCollectionView.reloadData()
-    }
-}
-

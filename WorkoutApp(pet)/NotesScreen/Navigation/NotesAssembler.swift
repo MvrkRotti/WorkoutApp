@@ -6,13 +6,15 @@
 //
 
 import UIKit
+protocol Assembler {
+    func buildModule() -> AddNoteViewController
+}
 
-struct NotesAssembler {
+class NotesAssembler: Assembler {
     
-    static func buildModule() -> UIViewController {
+    func buildModule() -> AddNoteViewController {
         
         let viewModel = NotesViewModel()
-        let viewController = NotesScreenViewController(viewModel, router: NotesRouter())
         
 //        let viewController = NotesScreenViewController()
 //        let router = NotesRouter()
@@ -20,7 +22,7 @@ struct NotesAssembler {
 //        viewController.router = router
 //        router.notesViewController = viewController
         
-        return viewController
+        return AddNoteViewController(viewModel: viewModel)
     }
 }
 
