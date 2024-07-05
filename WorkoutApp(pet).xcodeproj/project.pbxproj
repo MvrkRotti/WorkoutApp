@@ -72,7 +72,7 @@
 		CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F62B8A40BD00A14719 /* SelectPhotoButton.swift */; };
 		CEAA4EC82B8D09C70004F369 /* ExerciseInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAA4EC72B8D09C70004F369 /* ExerciseInfoController.swift */; };
 		CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */; };
-		CEAC7E0F2B81F41600AF05CD /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E0E2B81F41600AF05CD /* Router.swift */; };
+		CEAC7E0F2B81F41600AF05CD /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E0E2B81F41600AF05CD /* Assembler.swift */; };
 		CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EAFD2B6E4BB80065FE23 /* AppDelegate.swift */; };
 		CED9EB002B6E4BB80065FE23 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EAFF2B6E4BB80065FE23 /* SceneDelegate.swift */; };
 		CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB012B6E4BB80065FE23 /* WelcomeViewController.swift */; };
@@ -101,7 +101,7 @@
 		CEDC92242BD14FA400902268 /* ResetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92232BD14FA400902268 /* ResetLabel.swift */; };
 		CEDC92262BD14FB400902268 /* ResetPasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */; };
 		CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */; };
-		CEF2AB522BBD769100205B60 /* Assembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB512BBD769100205B60 /* Assembler.swift */; };
+		CEF2AB522BBD769100205B60 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB512BBD769100205B60 /* Router.swift */; };
 		CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */; };
 		CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */; };
 /* End PBXBuildFile section */
@@ -167,7 +167,7 @@
 		CE8D50F62B8A40BD00A14719 /* SelectPhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
 		CEAA4EC72B8D09C70004F369 /* ExerciseInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInfoController.swift; sourceTree = "<group>"; };
 		CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
-		CEAC7E0E2B81F41600AF05CD /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		CEAC7E0E2B81F41600AF05CD /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
 		CED9EAFA2B6E4BB80065FE23 /* WorkoutApp(pet).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WorkoutApp(pet).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED9EAFD2B6E4BB80065FE23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED9EAFF2B6E4BB80065FE23 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 		CEDC92232BD14FA400902268 /* ResetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetLabel.swift; sourceTree = "<group>"; };
 		CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordButton.swift; sourceTree = "<group>"; };
 		CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResetPasswordButton.swift; sourceTree = "<group>"; };
-		CEF2AB512BBD769100205B60 /* Assembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembler.swift; sourceTree = "<group>"; };
+		CEF2AB512BBD769100205B60 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCustomTextField.swift; sourceTree = "<group>"; };
 		CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -223,8 +223,8 @@
 		8A3A72482C3734AF0066A743 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				CEAC7E0E2B81F41600AF05CD /* Router.swift */,
-				CEF2AB512BBD769100205B60 /* Assembler.swift */,
+				CEAC7E0E2B81F41600AF05CD /* Assembler.swift */,
+				CEF2AB512BBD769100205B60 /* Router.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -751,7 +751,7 @@
 				CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */,
 				CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */,
 				CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */,
-				CEF2AB522BBD769100205B60 /* Assembler.swift in Sources */,
+				CEF2AB522BBD769100205B60 /* Router.swift in Sources */,
 				CE5CD4552BC86EB90065991D /* StringResources.swift in Sources */,
 				CE00CCDC2B922DB7001E1E8B /* ExerciseTypeLabel.swift in Sources */,
 				CE5CD45D2BC873910065991D /* TabBarResources.swift in Sources */,
@@ -815,7 +815,7 @@
 				CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */,
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
 				CE40637E2BF232D40088C135 /* ValidateField.swift in Sources */,
-				CEAC7E0F2B81F41600AF05CD /* Router.swift in Sources */,
+				CEAC7E0F2B81F41600AF05CD /* Assembler.swift in Sources */,
 				8A6755422C2CBDE5001D187B /* CustomNavBarButton.swift in Sources */,
 				CE00CCDE2B922DC8001E1E8B /* EquipmentLabel.swift in Sources */,
 				CEDC921C2BD14B3400902268 /* ResetPasswordViewModel.swift in Sources */,

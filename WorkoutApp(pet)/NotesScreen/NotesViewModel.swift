@@ -21,29 +21,6 @@ final class NotesViewModel {
     private let db = Firestore.firestore()
     private var listenerRegistration: ListenerRegistration?
     
-    init() {
-        fetchNotes()
-    }
-    
-//    func fetchNotes() {
-//        guard let user = Auth.auth().currentUser else { return }
-//        print("Current user ID: \(user.uid)")
-//
-//        listenerRegistration = db.collection("notes")
-//            .whereField("iserID", isEqualTo: user.uid)
-//            .addSnapshotListener { [weak self] (querySnapshot, error) in
-//                if let error = error {
-//                    self?.delegate?.didFailWithError(error)
-//                    print("Error getting documents: \(error)")
-//                    return
-//                }
-//                self?.notes = querySnapshot?.documents.compactMap {
-//                    try? $0.data(as: Note.self)
-//                } ?? []
-//            }
-//        print("Fetched notes: \(notes.count)") // Добавьте это для проверки данных
-//        self.delegate?.notesDidChange()
-//    }
     func fetchNotes() {
         guard let user = Auth.auth().currentUser else { return }
         listenerRegistration = db.collection("notes")
@@ -89,11 +66,53 @@ final class NotesViewModel {
         }
     }
     
-    func getNotes(for category: NoteCategory) -> [Note] {
-        return notes.filter { $0.category == category }
+    func deleteNote(at index: Int, category: NoteCategory) {
+        guard index >= 0 else {
+            print("Index is out of range")
+            return
+        }
+        
+        let notesForCategory = notes.filter { $0.category == category }
+        
+        guard index < notesForCategory.count else {
+            print("Index is out of range for category: \(category.rawValue)")
+            return
+        }
+        
+        let noteToDelete = notesForCategory[index]
+        
+        guard let noteID = noteToDelete.id else {
+            print("Note ID is nil")
+            return
+        }
+        
+        db.collection("notes").document(noteID).delete { [weak self] error in
+            guard let self = self else { return }
+            
+            if let error = error {
+                print("Error removing document: \(error)")
+                return
+            }
+            
+            print("Document successfully removed")
+            
+            if let indexToDelete = self.notes.firstIndex(where: { $0.id == noteToDelete.id }) {
+                self.notes.remove(at: indexToDelete)
+            }
+            
+            self.delegate?.notesDidChange()
+        }
     }
     
-    deinit {
-        listenerRegistration?.remove()
+    func getNotes(for category: NoteCategory) -> [Note] {
+            return notes.filter { $0.category == category }
+        }
+        
+        deinit {
+            listenerRegistration?.remove()
+        }
     }
-}
+
+    
+    
+

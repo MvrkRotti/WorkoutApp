@@ -1,69 +1,53 @@
 //
-//  NotesRouter.swift
+//  NotesAssembler.swift
 //  WorkoutApp(pet)
 //
-//  Created by Danilius on 18.02.2024.
+//  Created by Danil Pestov on 03.04.2024.
 //
-
 import UIKit
 
-protocol Assembler: AnyObject {
-    func resolve() -> WelcomeViewController
-    func resolve() -> AuthorisationViewController
-    func resolve() -> RegistrationViewController
-    func resolve() -> HandbookScreenViewController
-    func resolve() -> NotesScreenViewController
-    func resolve() -> AddNoteViewController
-    func resolve() -> ProfileScreenViewController
+protocol Router {
+    func navigateToLogin(from navigationController: UINavigationController?)
+    func navigateToRegister(from navigationController: UINavigationController?)
+    func navigateToTabBar(from navigationController: UINavigationController?)
+    func navigateToAddNote(from navigationController: UINavigationController?)
 }
 
-class DefaultAssembler: Assembler {
-    
-    func resolve() -> WelcomeViewController {
-        let router = DefaultRouter(assembler: self)
-        let viewController = WelcomeViewController(router: router)
-        return viewController
+class DefaultRouter: Router {
+    private weak var assembler: Assembler?
+
+    init(assembler: Assembler) {
+        self.assembler = assembler
     }
 
-    func resolve() -> AuthorisationViewController {
-        let viewModel = AuthorisationViewModel()
-        let router = DefaultRouter(assembler: self)
-        let viewController = AuthorisationViewController(router: router, viewModel: viewModel)
-        return viewController
+    func setRootViewController(_ viewController: UIViewController, in window: UIWindow) {
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
     }
 
-    func resolve() -> RegistrationViewController {
-        let router = DefaultRouter(assembler: self)
-        let viewModel = RegistrationViewModel()
-        let viewController = RegistrationViewController(router: router, viewModel: viewModel)
-        return viewController
+    func navigateToLogin(from navigationController: UINavigationController?) {
+        guard let assembler = assembler else { return }
+        let loginVC = assembler.resolve() as AuthorisationViewController
+        navigationController?.pushViewController(loginVC, animated: true)
     }
 
-    func resolve() -> HandbookScreenViewController {
-        let viewModel = HandbookViewModel()
-        let router = DefaultRouter(assembler: self)
-        let viewController = HandbookScreenViewController(viewModel: viewModel, router: router)
-        return viewController
+    func navigateToRegister(from navigationController: UINavigationController?) {
+        guard let assembler = assembler else { return }
+        let registerVC = assembler.resolve() as RegistrationViewController
+        navigationController?.pushViewController(registerVC, animated: true)
     }
 
-    func resolve() -> NotesScreenViewController {
-        let viewModel = NotesViewModel()
-        let router = DefaultRouter(assembler: self)
-        let viewController = NotesScreenViewController(router: router, viewModel: viewModel)
-        viewModel.delegate = viewController
-        return viewController
+    func navigateToTabBar(from navigationController: UINavigationController?) {
+        guard let assembler = assembler else { return }
+        let tabBarController = TabController(assembler: assembler)
+        navigationController?.setViewControllers([tabBarController], animated: true)
     }
-    
-    func resolve() -> AddNoteViewController {
-            let viewModel = NotesViewModel()
-            let viewController = AddNoteViewController(viewModel: viewModel)
-        viewModel.delegate = viewController as? any NotesViewModelDelegate
-            return viewController
+
+    func navigateToAddNote(from navigationController: UINavigationController?) {
+            guard let assembler = assembler else { return }
+            let addNoteVC = assembler.resolve() as AddNoteViewController
+            navigationController?.pushViewController(addNoteVC, animated: true)
         }
-    func resolve() -> ProfileScreenViewController {
-        let viewModel = ProfileViewModel()
-        let router = DefaultRouter(assembler: self)
-        let viewController = ProfileScreenViewController(viewModel: viewModel, router: router)
-        return viewController
-    }
 }
+

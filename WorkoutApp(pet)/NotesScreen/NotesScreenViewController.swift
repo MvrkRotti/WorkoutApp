@@ -41,6 +41,7 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
     }
@@ -93,16 +94,13 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     
     func notesDidChange() {
         DispatchQueue.main.async {
-            guard self.isCollectionViewSetup else {
-                return
-            }
             self.notesCollectionView.reloadData()
         }
     }
     
     func didFailWithError(_ error: Error) {
         print("Failed to fetch notes: \(error.localizedDescription)")
-
+        
     }
     
     @objc private func addNoteTapped() {
@@ -133,5 +131,28 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NotesHeader.identifier, for: indexPath) as! NotesHeader
         headerView.titleLabel.text = NoteCategory.allCases[indexPath.section].rawValue
         return headerView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil) { [weak self] _ -> UIMenu? in
+            guard let self = self else { return nil }
+            
+            let category = NoteCategory.allCases[indexPath.section]
+            
+            let notesForCategory = self.viewModel.getNotes(for: category)
+            
+            guard indexPath.item < notesForCategory.count else {
+                return nil
+            }
+            
+            let noteToDelete = notesForCategory[indexPath.item]
+            
+            let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash.fill"), attributes: .destructive) { [weak self] _ in
+                guard let self = self else { return }
+                
+                self.viewModel.deleteNote(at: indexPath.item, category: category)
+            }
+            return UIMenu(title: "", children: [deleteAction])
+        }
     }
 }
