@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwipeCellKit
 
 final class NotesScreenViewController: UIViewController, NotesViewModelDelegate {
     
@@ -17,6 +16,8 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     
     private var notesCollectionView: UICollectionView!
     private let addButton = UIButton()
+    
+    private var isCollectionViewSetup = false
     
     init(router: Router, viewModel: NotesViewModel) {
         self.router = router
@@ -30,14 +31,22 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
-        viewModel.delegate = self
         setupCollection()
         setupAddButton()
         setupUI()
+        
+        viewModel.delegate = self
+        viewModel.fetchNotes()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = false
+        tabBarController?.tabBar.isHidden = false
     }
     
     private func setupUI() {
+        view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
         navigationItem.title = Const.notes
     }
     
@@ -56,6 +65,8 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
         notesCollectionView.backgroundColor = .clear
         
         view.addSubview(notesCollectionView)
+        
+        isCollectionViewSetup = true
     }
     
     private func setupAddButton() {
@@ -82,12 +93,20 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     
     func notesDidChange() {
         DispatchQueue.main.async {
+            guard self.isCollectionViewSetup else {
+                return
+            }
             self.notesCollectionView.reloadData()
         }
     }
     
+    func didFailWithError(_ error: Error) {
+        print("Failed to fetch notes: \(error.localizedDescription)")
+
+    }
+    
     @objc private func addNoteTapped() {
-        router.navigateToAddNote(from: self)
+        router.navigateToAddNote(from: navigationController)
     }
 }
 
@@ -105,8 +124,7 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NoteCell.identifier, for: indexPath) as! NoteCell
         let category = NoteCategory.allCases[indexPath.section]
-        let notes = viewModel.notes.filter { $0.category == category }
-        let note = notes[indexPath.row]
+        let note = viewModel.getNotes(for: category)[indexPath.row]
         cell.configure(with: note)
         return cell
     }

@@ -113,7 +113,8 @@ class NoteCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setGradientBackground()
-        contentView.layer.cornerRadius = 8
+        layer.cornerRadius = 10
+        layer.masksToBounds = true
         contentView.addSubview(titleLabel)
         
         NSLayoutConstraint.activate([
@@ -130,6 +131,7 @@ class NoteCell: UICollectionViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         gradientLayer.frame = self.bounds
+        layer.cornerRadius = 10
     }
     
     override func prepareForReuse() {

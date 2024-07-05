@@ -57,6 +57,7 @@ class DefaultAssembler: Assembler {
     func resolve() -> AddNoteViewController {
             let viewModel = NotesViewModel()
             let viewController = AddNoteViewController(viewModel: viewModel)
+        viewModel.delegate = viewController as? any NotesViewModelDelegate
             return viewController
         }
     func resolve() -> ProfileScreenViewController {

@@ -29,10 +29,14 @@ class AddNoteViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = true
+    }
 
     private func setupUI() {
         self.title = "Новая заметка"
-        view.backgroundColor = .white
+        view.backgroundColor = .purple
         
         titleTextField.placeholder = "Заголовок"
         contentTextField.placeholder = "Содержание"
@@ -57,7 +61,7 @@ class AddNoteViewController: UIViewController {
     }
     
     @objc private func cancel() {
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc private func saveNote() {
@@ -65,7 +69,7 @@ class AddNoteViewController: UIViewController {
               let content = contentTextField.text, !content.isEmpty else { return }
         
         viewModel.addNote(title: title, content: content, category: selectedCategory)
-        dismiss(animated: true, completion: nil)
+        navigationController?.popViewController(animated: true)
     }
 }
 

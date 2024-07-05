@@ -10,7 +10,7 @@ protocol Router {
     func navigateToLogin(from navigationController: UINavigationController?)
     func navigateToRegister(from navigationController: UINavigationController?)
     func navigateToTabBar(from navigationController: UINavigationController?)
-    func navigateToAddNote(from viewController: UIViewController?)
+    func navigateToAddNote(from navigationController: UINavigationController?)
 }
 
 class DefaultRouter: Router {
@@ -44,10 +44,10 @@ class DefaultRouter: Router {
         navigationController?.setViewControllers([tabBarController], animated: true)
     }
 
-    func navigateToAddNote(from viewController: UIViewController?) {
+    func navigateToAddNote(from navigationController: UINavigationController?) {
             guard let assembler = assembler else { return }
             let addNoteVC = assembler.resolve() as AddNoteViewController
-            viewController?.present(addNoteVC, animated: true, completion: nil)
+            navigationController?.pushViewController(addNoteVC, animated: true)
         }
 }
 
