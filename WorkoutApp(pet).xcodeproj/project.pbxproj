@@ -102,8 +102,6 @@
 		CEDC92262BD14FB400902268 /* ResetPasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */; };
 		CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */; };
 		CEF2AB522BBD769100205B60 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB512BBD769100205B60 /* Router.swift */; };
-		CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */; };
-		CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -199,8 +197,6 @@
 		CEDC92252BD14FB400902268 /* ResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordButton.swift; sourceTree = "<group>"; };
 		CEDC92272BD1697900902268 /* AuthResetPasswordButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResetPasswordButton.swift; sourceTree = "<group>"; };
 		CEF2AB512BBD769100205B60 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteCustomTextField.swift; sourceTree = "<group>"; };
-		CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExerciseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -345,7 +341,6 @@
 		CE3C13342BBD5143003F3561 /* AddNoteScreen */ = {
 			isa = PBXGroup;
 			children = (
-				CEF2AB532BBDA8C100205B60 /* Views */,
 				CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */,
 			);
 			path = AddNoteScreen;
@@ -646,15 +641,6 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CEF2AB532BBDA8C100205B60 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				CEF2AB542BBDA8D300205B60 /* AddNoteCustomTextField.swift */,
-				CEF2AB582BBED36200205B60 /* AddExerciseButton.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -785,7 +771,6 @@
 				CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */,
 				CED9EAFE2B6E4BB80065FE23 /* AppDelegate.swift in Sources */,
 				CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */,
-				CEF2AB552BBDA8D300205B60 /* AddNoteCustomTextField.swift in Sources */,
 				CE5CD45B2BC86EF40065991D /* FontResources.swift in Sources */,
 				CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */,
 				CE1A8BC52B82644D00ACB21C /* HandbookViewModel.swift in Sources */,
@@ -812,7 +797,6 @@
 				CED9EB6A2B7259BB0065FE23 /* NotesScreenViewController.swift in Sources */,
 				CE5CD4512BC843170065991D /* AuthorizationViewModel.swift in Sources */,
 				CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */,
-				CEF2AB592BBED36200205B60 /* AddExerciseButton.swift in Sources */,
 				CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */,
 				CE40637E2BF232D40088C135 /* ValidateField.swift in Sources */,
 				CEAC7E0F2B81F41600AF05CD /* Assembler.swift in Sources */,
