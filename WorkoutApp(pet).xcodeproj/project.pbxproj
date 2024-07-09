@@ -15,6 +15,7 @@
 		8A3A72432C3716E30066A743 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A72422C3716E30066A743 /* FirebaseFirestore */; };
 		8A3A72452C3716E30066A743 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A72442C3716E30066A743 /* FirebaseFirestoreSwift */; };
 		8A3A72472C3716E30066A743 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A72462C3716E30066A743 /* FirebaseStorage */; };
+		8A3A72522C3D5A370066A743 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A72512C3D5A370066A743 /* DGCharts */; };
 		8A67553F2C2B5D48001D187B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A67553D2C2B5D48001D187B /* Localizable.strings */; };
 		8A6755422C2CBDE5001D187B /* CustomNavBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6755412C2CBDE5001D187B /* CustomNavBarButton.swift */; };
 		8AEEDDCD2C1CEF310055E216 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */; };
@@ -51,7 +52,7 @@
 		CE4063862BF2A3F60088C135 /* ImageScaler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4063852BF2A3F60088C135 /* ImageScaler.swift */; };
 		CE486C6A2BD7BE91006B5E3D /* NotesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE486C692BD7BE91006B5E3D /* NotesViewModel.swift */; };
 		CE5CD44A2BC83B0B0065991D /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */; };
-		CE5CD44C2BC83C320065991D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD44B2BC83C320065991D /* User.swift */; };
+		CE5CD44C2BC83C320065991D /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD44B2BC83C320065991D /* AppUser.swift */; };
 		CE5CD4512BC843170065991D /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4502BC843170065991D /* AuthorizationViewModel.swift */; };
 		CE5CD4532BC86EAC0065991D /* TextFieldResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4522BC86EAC0065991D /* TextFieldResources.swift */; };
 		CE5CD4552BC86EB90065991D /* StringResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5CD4542BC86EB90065991D /* StringResources.swift */; };
@@ -144,7 +145,7 @@
 		CE4063852BF2A3F60088C135 /* ImageScaler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScaler.swift; sourceTree = "<group>"; };
 		CE486C692BD7BE91006B5E3D /* NotesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewModel.swift; sourceTree = "<group>"; };
 		CE5CD4492BC83B0B0065991D /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
-		CE5CD44B2BC83C320065991D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CE5CD44B2BC83C320065991D /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		CE5CD4502BC843170065991D /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		CE5CD4522BC86EAC0065991D /* TextFieldResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldResources.swift; sourceTree = "<group>"; };
 		CE5CD4542BC86EB90065991D /* StringResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringResources.swift; sourceTree = "<group>"; };
@@ -209,6 +210,7 @@
 				8A3A72432C3716E30066A743 /* FirebaseFirestore in Frameworks */,
 				8A3A723D2C3716E30066A743 /* FirebaseAppCheck in Frameworks */,
 				8A3A723F2C3716E30066A743 /* FirebaseAuth in Frameworks */,
+				8A3A72522C3D5A370066A743 /* DGCharts in Frameworks */,
 				8A3A72472C3716E30066A743 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,7 +286,7 @@
 			children = (
 				CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */,
 				CE3C13042BB9724C003F3561 /* Note.swift */,
-				CE5CD44B2BC83C320065991D /* User.swift */,
+				CE5CD44B2BC83C320065991D /* AppUser.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -664,6 +666,7 @@
 				8A3A72422C3716E30066A743 /* FirebaseFirestore */,
 				8A3A72442C3716E30066A743 /* FirebaseFirestoreSwift */,
 				8A3A72462C3716E30066A743 /* FirebaseStorage */,
+				8A3A72512C3D5A370066A743 /* DGCharts */,
 			);
 			productName = "WorkoutApp(pet)";
 			productReference = CED9EAFA2B6E4BB80065FE23 /* WorkoutApp(pet).app */;
@@ -696,6 +699,7 @@
 			mainGroup = CED9EAF12B6E4BB80065FE23;
 			packageReferences = (
 				8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8A3A72502C3D5A370066A743 /* XCRemoteSwiftPackageReference "Charts" */,
 			);
 			productRefGroup = CED9EAFB2B6E4BB80065FE23 /* Products */;
 			projectDirPath = "";
@@ -730,7 +734,7 @@
 				CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */,
 				CE1A8BC72B826BC800ACB21C /* HandbookCell.swift in Sources */,
 				CE1A8BE12B87E67900ACB21C /* BMIDescriptionLabel.swift in Sources */,
-				CE5CD44C2BC83C320065991D /* User.swift in Sources */,
+				CE5CD44C2BC83C320065991D /* AppUser.swift in Sources */,
 				CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */,
 				CEDC92222BD14F6C00902268 /* ResetEmailTextField.swift in Sources */,
 				CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */,
@@ -1028,6 +1032,14 @@
 				minimumVersion = 10.28.1;
 			};
 		};
+		8A3A72502C3D5A370066A743 /* XCRemoteSwiftPackageReference "Charts" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ChartsOrg/Charts";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1060,6 +1072,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8A3A723B2C3716E30066A743 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		8A3A72512C3D5A370066A743 /* DGCharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8A3A72502C3D5A370066A743 /* XCRemoteSwiftPackageReference "Charts" */;
+			productName = DGCharts;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

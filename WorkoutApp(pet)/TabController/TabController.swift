@@ -57,7 +57,7 @@ final class TabController: UITabBarController {
 
     private func getController(for tab: Tabs) -> UIViewController {
         switch tab {
-        case .exercises: return assembler.resolve() as HandbookScreenViewController
+        case .exercises: return assembler.resolve() as StepCounterViewController
         case .notes: return assembler.resolve() as NotesScreenViewController
         case .profile: return assembler.resolve() as ProfileScreenViewController
         }

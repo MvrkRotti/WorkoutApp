@@ -22,11 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         assembler = DefaultAssembler()
         let router = DefaultRouter(assembler: assembler)
         
-//        let welcomeViewController = assembler.resolve() as WelcomeViewController
-//        router.setRootViewController(welcomeViewController, in: window!)
-        let tabBarController = TabController(assembler: assembler)
-                window?.rootViewController = tabBarController
-                window?.makeKeyAndVisible()
+        let welcomeViewController = assembler.resolve() as WelcomeViewController
+        router.setRootViewController(welcomeViewController, in: window!)
+//        let tabBarController = TabController(assembler: assembler)
+//                window?.rootViewController = tabBarController
+//                window?.makeKeyAndVisible()
     }
 }
 

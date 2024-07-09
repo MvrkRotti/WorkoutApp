@@ -11,7 +11,7 @@ protocol Assembler: AnyObject {
     func resolve() -> WelcomeViewController
     func resolve() -> AuthorisationViewController
     func resolve() -> RegistrationViewController
-    func resolve() -> HandbookScreenViewController
+    func resolve() -> StepCounterViewController
     func resolve() -> NotesScreenViewController
     func resolve() -> AddNoteViewController
     func resolve() -> ProfileScreenViewController
@@ -39,10 +39,10 @@ class DefaultAssembler: Assembler {
         return viewController
     }
 
-    func resolve() -> HandbookScreenViewController {
-        let viewModel = HandbookViewModel()
+    func resolve() -> StepCounterViewController {
+        let viewModel = StepCounterViewModel()
         let router = DefaultRouter(assembler: self)
-        let viewController = HandbookScreenViewController(viewModel: viewModel, router: router)
+        let viewController = StepCounterViewController(viewModel: viewModel, router: router)
         return viewController
     }
 

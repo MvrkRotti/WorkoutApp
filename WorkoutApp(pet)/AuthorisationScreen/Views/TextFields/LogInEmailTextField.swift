@@ -24,6 +24,7 @@ private extension LogInEmailTextField {
     
     func setupAppearance() {
         layer.cornerRadius = 15
+        keyboardType = .emailAddress
         textContentType = .emailAddress
         placeholder = Const.email
         textColor = ColorResources.white
