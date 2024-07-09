@@ -67,6 +67,14 @@ private extension HandbookScreenViewController {
         navigationItem.title = Const.handbook
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: FontResources.navigationTitleFont,
+            .foregroundColor: ColorResources.white
+        ]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
     }
     
     func tableViewSettings() {

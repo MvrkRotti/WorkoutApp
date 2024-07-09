@@ -20,4 +20,15 @@ enum NoteCategory: String, Codable, CaseIterable{
     case sport = "Sport"
     case nutrition = "Nutrition"
     case others = "Others"
+    
+    var localizedName: String {
+        switch self {
+        case .sport:
+            return NSLocalizedString("sport", comment: "")
+        case .nutrition:
+            return NSLocalizedString("nutrition", comment: "")
+        case .others:
+            return NSLocalizedString("others", comment: "")
+        }
+    }
 }

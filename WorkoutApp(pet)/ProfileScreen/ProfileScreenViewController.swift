@@ -82,8 +82,6 @@ private extension ProfileScreenViewController {
         editBarButton.setTitle(Const.edit, for: .normal)
         editBarButton.frame = CGRect(x: 0, y: 0, width: 90, height: 20)
         editBarButton.addTarget(self, action: #selector(editButtonDidTapped), for: .touchUpInside)
-//        let editButton = UIBarButtonItem(title: Const.edit, style: .plain, target: self, action: #selector(editButtonDidTapped))
-//        let logOutButton = UIBarButtonItem(title: Const.logOut, style: .plain, target: self, action: #selector(logOutButtonDidTapped))
         
         navigationItem.title = Const.myProfile
         navigationController?.isNavigationBarHidden = true
@@ -104,6 +102,14 @@ private extension ProfileScreenViewController {
     func setupUI() {
         view.setupView(photoView)
         view.setupView(profileStackView)
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: FontResources.navigationTitleFont,
+            .foregroundColor: ColorResources.white
+        ]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
     }
     
     
@@ -127,7 +133,7 @@ extension ProfileScreenViewController {
     
     func fillProfileData() {
         if let name = viewModel.name {
-            nameLabel.text = Const.firstName + name
+            nameLabel.text = Const.firstName + ": " + name
         }
         if let age = viewModel.age {
             ageLabel.text = Const.age + String(age) + Const.years

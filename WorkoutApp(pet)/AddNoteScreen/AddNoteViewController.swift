@@ -10,11 +10,9 @@ import UIKit
 class AddNoteViewController: UIViewController {
     var viewModel: NotesViewModel
     
+    private let categoryPicker = UISegmentedControl(items: [NoteCategory.sport.localizedName, NoteCategory.nutrition.localizedName, NoteCategory.others.localizedName])
     private let titleTextField = UITextField()
-    private let contentTextField = UITextField()
-    private let categoryPicker = UIPickerView()
-    
-    private var selectedCategory: NoteCategory = .sport
+    private let contentTextView = UITextView()
     
     init(viewModel: NotesViewModel) {
         self.viewModel = viewModel
@@ -28,6 +26,7 @@ class AddNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        setupLayout()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,29 +34,54 @@ class AddNoteViewController: UIViewController {
     }
 
     private func setupUI() {
-        self.title = "Новая заметка"
+        self.title = Const.newNote
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: FontResources.addExerciseLabelFont,
+            .foregroundColor: ColorResources.white
+        ]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        
         view.backgroundColor = .purple
         
-        titleTextField.placeholder = "Заголовок"
-        contentTextField.placeholder = "Содержание"
-        categoryPicker.delegate = self
-        categoryPicker.dataSource = self
+        view.addSubview(categoryPicker)
+        view.addSubview(titleTextField)
+        view.addSubview(contentTextView)
+
+        titleTextField.placeholder = Const.title
+        titleTextField.borderStyle = .roundedRect
+        titleTextField.layer.cornerRadius = 10
+        titleTextField.translatesAutoresizingMaskIntoConstraints = false
         
-        let stackView = UIStackView(arrangedSubviews: [titleTextField, contentTextField, categoryPicker])
-        stackView.axis = .vertical
-        stackView.spacing = 10
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        view.addSubview(stackView)
-        
-        NSLayoutConstraint.activate([
-            stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-        ])
+        contentTextView.layer.cornerRadius = 10
+        contentTextView.translatesAutoresizingMaskIntoConstraints = false
+
+        categoryPicker.selectedSegmentIndex = 0
+        categoryPicker.layer.cornerRadius = 10
+        categoryPicker.translatesAutoresizingMaskIntoConstraints = false
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveNote))
+    }
+    
+    private func setupLayout() {
+        
+        NSLayoutConstraint.activate([
+            categoryPicker.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            categoryPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            categoryPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            categoryPicker.heightAnchor.constraint(equalToConstant: 40),
+
+            titleTextField.topAnchor.constraint(equalTo: categoryPicker.bottomAnchor, constant: 15),
+            titleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            titleTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            
+            contentTextView.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 15),
+            contentTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            contentTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            contentTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
+        ])
     }
     
     @objc private func cancel() {
@@ -66,27 +90,18 @@ class AddNoteViewController: UIViewController {
     
     @objc private func saveNote() {
         guard let title = titleTextField.text, !title.isEmpty,
-              let content = contentTextField.text, !content.isEmpty else { return }
+              let content = contentTextView.text, !content.isEmpty else { return }
         
-        viewModel.addNote(title: title, content: content, category: selectedCategory)
+        let selectedCategoryIndex = categoryPicker.selectedSegmentIndex
+        let category: NoteCategory
+        switch selectedCategoryIndex {
+        case 0: category = .sport
+        case 1: category = .nutrition
+        case 2: category = .others
+        default: category = .others
+        }
+        
+        viewModel.addNote(title: title, content: content, category: category)
         navigationController?.popViewController(animated: true)
-    }
-}
-
-extension AddNoteViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return NoteCategory.allCases.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return NoteCategory.allCases[row].rawValue
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedCategory = NoteCategory.allCases[row]
     }
 }

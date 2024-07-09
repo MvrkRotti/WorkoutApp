@@ -49,6 +49,14 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     private func setupUI() {
         view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
         navigationItem.title = Const.notes
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: FontResources.navigationTitleFont,
+            .foregroundColor: ColorResources.white
+        ]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
     }
     
     private func setupCollection() {
@@ -73,7 +81,7 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     private func setupAddButton() {
         addButton.setImage(UIImage(systemName: "plus"), for: .normal)
         addButton.backgroundColor = ColorResources.customCoral
-        addButton.tintColor = .white
+        addButton.tintColor = ColorResources.black
         addButton.layer.cornerRadius = 30
         addButton.layer.shadowColor = UIColor.black.cgColor
         addButton.layer.shadowOpacity = 0.3
@@ -129,7 +137,9 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NotesHeader.identifier, for: indexPath) as! NotesHeader
-        headerView.titleLabel.text = NoteCategory.allCases[indexPath.section].rawValue
+        //        headerView.titleLabel.text = NoteCategory.allCases[indexPath.section].rawValue
+        let category = NoteCategory.allCases[indexPath.section]
+        headerView.titleLabel.text = category.localizedName
         return headerView
     }
     
@@ -145,9 +155,9 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
                 return nil
             }
             
-            let noteToDelete = notesForCategory[indexPath.item]
+//            let noteToDelete = notesForCategory[indexPath.item]
             
-            let deleteAction = UIAction(title: "Delete", image: UIImage(systemName: "trash.fill"), attributes: .destructive) { [weak self] _ in
+            let deleteAction = UIAction(title: Const.delete, image: UIImage(systemName: "trash.fill"), attributes: .destructive) { [weak self] _ in
                 guard let self = self else { return }
                 
                 self.viewModel.deleteNote(at: indexPath.item, category: category)
