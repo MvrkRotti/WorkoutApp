@@ -22,7 +22,7 @@ final class RegistrationViewController: UIViewController {
     private let passwordField = CustomTextField(fieldType: .password)
     private let confirmPasswordField = CustomTextField(fieldType: .confirmPassword)
     private let regSighUpButton = SignUpButton()
-    private let navBarButton = CustomNavBarButton(type: .system)
+    private let navBarButton = CustomNavBarButton(type: .custom)
     
     private var textFieldArray = [UITextField]()
     //MARK: - UIComponents
@@ -56,8 +56,6 @@ final class RegistrationViewController: UIViewController {
         setupLayout()
         createTextFieldArray()
         setupHideKeyboardOnTap()
-//        navigationController?.isNavigationBarHidden = false
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -72,15 +70,17 @@ private extension RegistrationViewController {
     func navigationBarAppearance() {
         title = Const.signUp
         
+        view.backgroundColor = ColorResources.white
+        
         let backButton = UIBarButtonItem(customView: navBarButton)
         navBarButton.setTitle(Const.back, for: .normal)
         navBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 25)
         navBarButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-        navBarButton.tintColor = ColorResources.customBlue
         navigationItem.leftBarButtonItem = backButton
         
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.black]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
+        
     }
     
     @objc func backTapped() {
@@ -88,8 +88,6 @@ private extension RegistrationViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = UIColor(
-            patternImage: UIImage(named: "backGroundImage")!)
         
         view.setupView(registrationLabel)
         view.setupView(textFieldStack)
@@ -137,7 +135,8 @@ private extension RegistrationViewController {
             
             textFieldStack.topAnchor.constraint(equalTo: registrationLabel.bottomAnchor, constant: 30),
             textFieldStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textFieldStack.widthAnchor.constraint(equalTo: view.widthAnchor),
+            textFieldStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            textFieldStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             regSighUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             regSighUpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),

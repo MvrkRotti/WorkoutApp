@@ -15,11 +15,13 @@ final class AuthorisationViewController: UIViewController {
     var router: Router
     var viewModel: AuthorisationViewModel
     
-    private let emailTextField = LogInEmailTextField()
-    private let passwordTextField = LogInPasswordTextField()
+//    private let emailTextField = LogInEmailTextField()
+    private let emailTextField = CustomTextField(fieldType: .email)
+    private let passwordTextField = CustomTextField(fieldType: .password)
+//    private let passwordTextField = LogInPasswordTextField()
     private let authSignInButton = AuthSignInButton()
     private let resetPasswordButton = AuthResetPasswordButton()
-    private let navBarButton = CustomNavBarButton(type: .system)
+    private let navBarButton = CustomNavBarButton(type: .custom)
     
     private var textFieldArray = [UITextField] ()
     
@@ -57,14 +59,14 @@ private extension AuthorisationViewController {
     
     func navigationBarAppearance() {
         title = Const.sighIn
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.black]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
         
         let backButton = UIBarButtonItem(customView: navBarButton)
         navBarButton.setTitle(Const.back, for: .normal)
         navBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 25)
         navBarButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-        navBarButton.tintColor = ColorResources.customBlue
+//        navBarButton.tintColor = ColorResources.customBlue
         navigationItem.leftBarButtonItem = backButton
     }
     
@@ -73,8 +75,7 @@ private extension AuthorisationViewController {
     }
     
     func setupUI() {
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
-        
+        view.backgroundColor = ColorResources.white
         view.setupView(emailTextField)
         view.setupView(passwordTextField)
         view.setupView(authSignInButton)

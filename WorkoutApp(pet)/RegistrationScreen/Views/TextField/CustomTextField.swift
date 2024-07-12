@@ -24,8 +24,7 @@ final class CustomTextField: UITextField {
         super.init(frame: .zero)
         
         setupLayout()
-        setupAppearance()
-        
+
         switch fieldType {
         case .name:
             placeholder = Const.firstName
@@ -45,20 +44,28 @@ final class CustomTextField: UITextField {
             textContentType = .newPassword
             isSecureTextEntry = true
             addPasswordVisibilityButton()
-
         }
+        setupAppearance()
+
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        if let bottomBorder = self.layer.sublayers?.first(where: { $0.borderColor == UIColor.black.cgColor }) {
+            bottomBorder.frame = CGRect(x: 0, y: self.frame.size.height - bottomBorder.borderWidth, width: self.frame.size.width, height: bottomBorder.borderWidth)
+        }
+    }
 }
 
 private extension CustomTextField {
     func setupAppearance() {
-        backgroundColor = ColorResources.customDarkGrey
+        
         layer.cornerRadius = 15
-        textColor = ColorResources.white
+        textColor = ColorResources.black
         alpha = 0.95
         
         returnKeyType = .done
@@ -70,6 +77,18 @@ private extension CustomTextField {
         leftViewMode = .always
         leftView = UIView(frame: CGRect(x: 0, y: 0, width: 15, height: self.frame.size.height))
         
+        let bottomBorder = CALayer()
+        let borderWidth = CGFloat(1.0)
+        bottomBorder.borderColor = UIColor.black.cgColor
+        bottomBorder.frame = CGRect(x: 0, y: self.frame.size.height - borderWidth, width: self.frame.size.width, height: borderWidth)
+        bottomBorder.borderWidth = borderWidth
+        self.layer.addSublayer(bottomBorder)
+        self.layer.masksToBounds = true
+        
+        self.attributedPlaceholder = NSAttributedString(
+            string: placeholder!,
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
     }
     
     func setupLayout() {
