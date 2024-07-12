@@ -80,7 +80,7 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     
     private func setupAddButton() {
         addButton.setImage(UIImage(systemName: "plus"), for: .normal)
-        addButton.backgroundColor = ColorResources.customCoral
+        addButton.backgroundColor = ColorResources.customBlue
         addButton.tintColor = ColorResources.black
         addButton.layer.cornerRadius = 30
         addButton.layer.shadowColor = UIColor.black.cgColor

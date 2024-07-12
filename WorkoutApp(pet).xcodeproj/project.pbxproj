@@ -29,7 +29,7 @@
 		CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */; };
 		CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */; };
 		CE0CC2E92BF37C7300501CD9 /* FetchPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */; };
-		CE1A8BBF2B822F2D00ACB21C /* HandbookExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */; };
+		CE1A8BBF2B822F2D00ACB21C /* StepData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BBE2B822F2D00ACB21C /* StepData.swift */; };
 		CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC22B8256C000ACB21C /* NetworkService.swift */; };
 		CE1A8BC52B82644D00ACB21C /* HandbookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC42B82644D00ACB21C /* HandbookViewModel.swift */; };
 		CE1A8BC72B826BC800ACB21C /* HandbookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BC62B826BC800ACB21C /* HandbookCell.swift */; };
@@ -122,7 +122,7 @@
 		CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNoteCell.swift; sourceTree = "<group>"; };
 		CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesInfoViewController.swift; sourceTree = "<group>"; };
 		CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoHelper.swift; sourceTree = "<group>"; };
-		CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookExercise.swift; sourceTree = "<group>"; };
+		CE1A8BBE2B822F2D00ACB21C /* StepData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepData.swift; sourceTree = "<group>"; };
 		CE1A8BC22B8256C000ACB21C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CE1A8BC42B82644D00ACB21C /* HandbookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookViewModel.swift; sourceTree = "<group>"; };
 		CE1A8BC62B826BC800ACB21C /* HandbookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookCell.swift; sourceTree = "<group>"; };
@@ -284,7 +284,7 @@
 		CE1A8BBD2B822F1E00ACB21C /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				CE1A8BBE2B822F2D00ACB21C /* HandbookExercise.swift */,
+				CE1A8BBE2B822F2D00ACB21C /* StepData.swift */,
 				CE3C13042BB9724C003F3561 /* Note.swift */,
 				CE5CD44B2BC83C320065991D /* AppUser.swift */,
 			);
@@ -758,7 +758,7 @@
 				CE486C6A2BD7BE91006B5E3D /* NotesViewModel.swift in Sources */,
 				8A3A723A2C370A330066A743 /* NotesHeader.swift in Sources */,
 				CED9EB022B6E4BB80065FE23 /* WelcomeViewController.swift in Sources */,
-				CE1A8BBF2B822F2D00ACB21C /* HandbookExercise.swift in Sources */,
+				CE1A8BBF2B822F2D00ACB21C /* StepData.swift in Sources */,
 				CE8D50E92B88986800A14719 /* EditProfileScreenAssembler.swift in Sources */,
 				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
 				CE8D50F32B88EA7400A14719 /* HeightTextField.swift in Sources */,

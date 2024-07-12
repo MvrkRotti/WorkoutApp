@@ -14,7 +14,7 @@ final class SignUpButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAppearance()
-//        setupAction()
+        setupAction()
         makeSystem(self)
     }
     
@@ -28,18 +28,18 @@ private extension SignUpButton {
     func setupAppearance() {
         
         setTitle(Const.signUp, for: .normal)
-        setTitleColor(ColorResources.black, for: .normal)
+        setTitleColor(ColorResources.white, for: .normal)
         layer.cornerRadius = 15
-        backgroundColor = ColorResources.customCoral
+        backgroundColor = ColorResources.customBlue
     }
     
-//    @objc func signUpDidTapped() {
-//        signUpTapped?()
-//    }
-//    
-//    func setupAction() {
-//        addTarget(self, action: #selector(signUpDidTapped), for: .touchUpInside)
-//    }
+    @objc func signUpDidTapped() {
+        signUpTapped?()
+    }
+    
+    func setupAction() {
+        addTarget(self, action: #selector(signUpDidTapped), for: .touchUpInside)
+    }
 }
 
 

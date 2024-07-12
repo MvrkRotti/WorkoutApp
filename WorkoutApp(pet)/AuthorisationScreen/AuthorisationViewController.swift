@@ -13,7 +13,6 @@ final class AuthorisationViewController: UIViewController {
     //MARK: - Variables
     
     var router: Router
-    
     var viewModel: AuthorisationViewModel
     
     private let emailTextField = LogInEmailTextField()
@@ -65,7 +64,7 @@ private extension AuthorisationViewController {
         navBarButton.setTitle(Const.back, for: .normal)
         navBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 25)
         navBarButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-        navBarButton.tintColor = ColorResources.customCoral
+        navBarButton.tintColor = ColorResources.customBlue
         navigationItem.leftBarButtonItem = backButton
     }
     

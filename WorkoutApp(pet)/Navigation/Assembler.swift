@@ -33,8 +33,8 @@ class DefaultAssembler: Assembler {
     }
 
     func resolve() -> RegistrationViewController {
-        let router = DefaultRouter(assembler: self)
         let viewModel = RegistrationViewModel()
+        let router = DefaultRouter(assembler: self)
         let viewController = RegistrationViewController(router: router, viewModel: viewModel)
         return viewController
     }

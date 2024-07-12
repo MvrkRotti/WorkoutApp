@@ -140,7 +140,7 @@ class NoteCell: UICollectionViewCell {
         }
     
     func setGradientBackground() {
-        let firstColor = ColorResources.customCoral.cgColor
+        let firstColor = ColorResources.customBlue.cgColor
         
         let secondColor = ColorResources.white.withAlphaComponent(0.7).cgColor
         

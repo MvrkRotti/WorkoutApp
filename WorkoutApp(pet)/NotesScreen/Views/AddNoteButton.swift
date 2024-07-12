@@ -30,7 +30,7 @@ private extension AddNoteButton {
         titleLabel?.font = FontResources.registrationLabelFont
         setTitleColor(ColorResources.black, for: .normal)
         
-        backgroundColor = ColorResources.customCoral
+        backgroundColor = ColorResources.customBlue
         layer.cornerRadius = self.bounds.width / 2
     }
     
