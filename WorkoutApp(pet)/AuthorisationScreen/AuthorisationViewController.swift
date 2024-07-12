@@ -15,10 +15,8 @@ final class AuthorisationViewController: UIViewController {
     var router: Router
     var viewModel: AuthorisationViewModel
     
-//    private let emailTextField = LogInEmailTextField()
     private let emailTextField = CustomTextField(fieldType: .email)
     private let passwordTextField = CustomTextField(fieldType: .password)
-//    private let passwordTextField = LogInPasswordTextField()
     private let authSignInButton = AuthSignInButton()
     private let resetPasswordButton = AuthResetPasswordButton()
     private let navBarButton = CustomNavBarButton(type: .custom)
@@ -66,7 +64,6 @@ private extension AuthorisationViewController {
         navBarButton.setTitle(Const.back, for: .normal)
         navBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 25)
         navBarButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
-//        navBarButton.tintColor = ColorResources.customBlue
         navigationItem.leftBarButtonItem = backButton
     }
     
@@ -93,6 +90,7 @@ private extension AuthorisationViewController {
                     if error != nil {
                         self?.showAlert(message: Const.incorrectFilling)
                     } else {
+                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
                         self?.router.navigateToTabBar(from: self?.navigationController)
                     }
                 }

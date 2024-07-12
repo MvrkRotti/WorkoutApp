@@ -95,7 +95,7 @@ private extension ProfileScreenViewController {
     }
     
     @objc func logOutButtonDidTapped() {
-//        router.popToRoot(form: self)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     

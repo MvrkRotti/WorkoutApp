@@ -87,8 +87,6 @@
 		CED9EB2B2B6E7AE10065FE23 /* SignInLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB2A2B6E7AE10065FE23 /* SignInLabel.swift */; };
 		CED9EB332B6E8B6E0065FE23 /* RegistrationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB322B6E8B6E0065FE23 /* RegistrationLabel.swift */; };
 		CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB3F2B7011970065FE23 /* AuthorisationViewController.swift */; };
-		CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */; };
-		CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */; };
 		CED9EB492B7146760065FE23 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB482B7146760065FE23 /* UIView.swift */; };
 		CED9EB4D2B715A1A0065FE23 /* HandbookScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB4C2B715A1A0065FE23 /* HandbookScreenViewController.swift */; };
 		CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */; };
@@ -182,8 +180,6 @@
 		CED9EB2A2B6E7AE10065FE23 /* SignInLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInLabel.swift; sourceTree = "<group>"; };
 		CED9EB322B6E8B6E0065FE23 /* RegistrationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLabel.swift; sourceTree = "<group>"; };
 		CED9EB3F2B7011970065FE23 /* AuthorisationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorisationViewController.swift; sourceTree = "<group>"; };
-		CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInEmailTextField.swift; sourceTree = "<group>"; };
-		CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInPasswordTextField.swift; sourceTree = "<group>"; };
 		CED9EB482B7146760065FE23 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		CED9EB4C2B715A1A0065FE23 /* HandbookScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandbookScreenViewController.swift; sourceTree = "<group>"; };
 		CED9EB542B715DCA0065FE23 /* AuthSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthSignInButton.swift; sourceTree = "<group>"; };
@@ -310,7 +306,6 @@
 			isa = PBXGroup;
 			children = (
 				CED9EB422B7012240065FE23 /* Buttons */,
-				CED9EB412B7012160065FE23 /* TextFields */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -566,15 +561,6 @@
 			path = AuthorisationScreen;
 			sourceTree = "<group>";
 		};
-		CED9EB412B7012160065FE23 /* TextFields */ = {
-			isa = PBXGroup;
-			children = (
-				CED9EB432B7015AF0065FE23 /* LogInEmailTextField.swift */,
-				CED9EB462B71130C0065FE23 /* LogInPasswordTextField.swift */,
-			);
-			path = TextFields;
-			sourceTree = "<group>";
-		};
 		CED9EB422B7012240065FE23 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,7 +723,6 @@
 				CE5CD44C2BC83C320065991D /* AppUser.swift in Sources */,
 				CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */,
 				CEDC92222BD14F6C00902268 /* ResetEmailTextField.swift in Sources */,
-				CED9EB442B7015AF0065FE23 /* LogInEmailTextField.swift in Sources */,
 				CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */,
 				CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */,
 				CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */,
@@ -747,7 +732,6 @@
 				CE5CD45D2BC873910065991D /* TabBarResources.swift in Sources */,
 				CE8D50EF2B88E53400A14719 /* AgeTextField.swift in Sources */,
 				CE1A8BD72B87E63000ACB21C /* GenderLabel.swift in Sources */,
-				CED9EB472B71130C0065FE23 /* LogInPasswordTextField.swift in Sources */,
 				CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */,
 				CEDC921A2BD14B2800902268 /* ResetPasswordViewController.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,

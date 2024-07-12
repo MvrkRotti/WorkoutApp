@@ -64,9 +64,7 @@ final class CustomTextField: UITextField {
 private extension CustomTextField {
     func setupAppearance() {
         
-        layer.cornerRadius = 15
         textColor = ColorResources.black
-        alpha = 0.95
         
         returnKeyType = .done
         autocorrectionType = .no

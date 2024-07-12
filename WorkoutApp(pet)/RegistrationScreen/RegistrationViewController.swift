@@ -118,6 +118,7 @@ private extension RegistrationViewController {
                     if let error = error {
                         self.showAlert(message: error)
                     } else if user != nil {
+                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
                         self.router.navigateToTabBar(from: navigationController)
                     }
                 }

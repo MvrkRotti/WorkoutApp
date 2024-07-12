@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,11 +23,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         assembler = DefaultAssembler()
         let router = DefaultRouter(assembler: assembler)
         
-        let welcomeViewController = assembler.resolve() as WelcomeViewController
-        router.setRootViewController(welcomeViewController, in: window!)
-//        let tabBarController = TabController(assembler: assembler)
-//                window?.rootViewController = tabBarController
-//                window?.makeKeyAndVisible()
+//        let welcomeViewController = assembler.resolve() as WelcomeViewController
+//        router.setRootViewController(welcomeViewController, in: window!)
+
+
+        
+        if UserDefaults.standard.bool(forKey: "isLoggedIn") {
+            let tabBarController = TabController(assembler: assembler)
+            window?.rootViewController = tabBarController
+            window?.makeKeyAndVisible()
+        } else {
+            let welcomeViewController = assembler.resolve() as WelcomeViewController
+            router.setRootViewController(welcomeViewController, in: window!)
+        }
     }
 }
 
