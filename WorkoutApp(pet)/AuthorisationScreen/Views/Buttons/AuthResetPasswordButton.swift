@@ -29,8 +29,7 @@ private extension AuthResetPasswordButton {
     func setupAppearance() {
         
         setTitle(Const.resetPassword, for: .normal)
-        setTitleColor(ColorResources.customCoral, for: .normal)
-        backgroundColor = ColorResources.customDarkGrey
+        setTitleColor(ColorResources.black, for: .normal)
         layer.cornerRadius = 15
     }
     

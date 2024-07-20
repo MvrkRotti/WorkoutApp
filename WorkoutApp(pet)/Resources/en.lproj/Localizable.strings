@@ -55,6 +55,15 @@
 "loading" = "Loading";
 "addNewExercise" = "Add new exercise";
 "addNote" = "Add note";
+"back" = "Back";
+
+"delete" = "Delete";
+"newNote" = "New note";
+"title" = "Title";
+"sport" = "Sport";
+"nutrition" = "Nutrition";
+"others" = "Others";
+
 
 
 //Alert strings

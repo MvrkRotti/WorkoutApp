@@ -12,7 +12,7 @@ final class ProfileScreenViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: ProfileRouterProtocol?
+    var router: Router
     var viewModel: ProfileViewModel
     
     private let photoView = ProfilePhotoView(frame: .zero)
@@ -23,6 +23,8 @@ final class ProfileScreenViewController: UIViewController {
     private let heightLabel = HeightLabel()
     private let bmiLabel = BMILabel()
     private let bmiDescriptionLabel = BMIDescriptionLabel()
+    private let backBarButton = CustomNavBarButton(type: .system)
+    private let editBarButton = CustomNavBarButton(type: .system)
     
     //MARK: - UI Components
     
@@ -37,8 +39,9 @@ final class ProfileScreenViewController: UIViewController {
     }()
     //    MARK: - Lifecycle
     
-    init(viewModel: ProfileViewModel) {
+    init(viewModel: ProfileViewModel, router: Router) {
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -69,31 +72,44 @@ final class ProfileScreenViewController: UIViewController {
 private extension ProfileScreenViewController {
     
     func navigationBarAppearance() {
-        let editButton = UIBarButtonItem(title: Const.edit, style: .plain, target: self, action: #selector(editButtonDidTapped))
-        let logOutButton = UIBarButtonItem(title: Const.logOut, style: .plain, target: self, action: #selector(logOutButtonDidTapped))
+        let logOutButton = UIBarButtonItem(customView: backBarButton)
+        backBarButton.setTitle(Const.logOut, for: .normal)
+        backBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 20)
+        backBarButton.addTarget(self, action: #selector(logOutButtonDidTapped), for: .touchUpInside)
+        backBarButton.tintColor = ColorResources.customRed
+        
+        let editButton = UIBarButtonItem(customView: editBarButton)
+        editBarButton.setTitle(Const.edit, for: .normal)
+        editBarButton.frame = CGRect(x: 0, y: 0, width: 90, height: 20)
+        editBarButton.addTarget(self, action: #selector(editButtonDidTapped), for: .touchUpInside)
         
         navigationItem.title = Const.myProfile
         navigationController?.isNavigationBarHidden = true
-        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
         tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
-        navigationController?.navigationBar.alpha = 0.9
-        navigationItem.rightBarButtonItem = editButton
         navigationItem.leftBarButtonItem = logOutButton
-        navigationItem.leftBarButtonItem?.tintColor = .red
+        navigationItem.rightBarButtonItem = editButton
     }
     
     @objc func editButtonDidTapped() {
-        router?.pushEditScreen()
+//        router?.pushEditScreen()
     }
     
     @objc func logOutButtonDidTapped() {
-        router?.popToRoot(form: self)
+        navigationController?.popToRootViewController(animated: true)
     }
     
     
     func setupUI() {
         view.setupView(photoView)
         view.setupView(profileStackView)
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: FontResources.navigationTitleFont,
+            .foregroundColor: ColorResources.white
+        ]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
     }
     
     
@@ -117,7 +133,7 @@ extension ProfileScreenViewController {
     
     func fillProfileData() {
         if let name = viewModel.name {
-            nameLabel.text = Const.firstName + name
+            nameLabel.text = Const.firstName + ": " + name
         }
         if let age = viewModel.age {
             ageLabel.text = Const.age + String(age) + Const.years
@@ -129,7 +145,7 @@ extension ProfileScreenViewController {
             heightLabel.text = Const.height + String(height) + Const.cm
         }
         if let gender = viewModel.gender {
-            genderLabel.text = Const.gender + gender
+            genderLabel.text = Const.gender + ": " + gender
         }
         
         if let bmi = viewModel.bmi {

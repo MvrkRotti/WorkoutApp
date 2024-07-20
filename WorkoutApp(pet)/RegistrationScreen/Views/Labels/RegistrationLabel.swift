@@ -29,7 +29,6 @@ private extension RegistrationLabel {
         font = FontResources.registrationLabelFont
         textAlignment = .left
         numberOfLines = 0
-        textColor = ColorResources.white
-        
+        textColor = ColorResources.black
     }
 }

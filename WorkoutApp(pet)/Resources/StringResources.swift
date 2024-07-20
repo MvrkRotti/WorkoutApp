@@ -106,6 +106,13 @@ struct Const {
     static let loading = NSLocalizedString("loading", comment: "")
     static let addNewExercise = NSLocalizedString("addNewExercise", comment: "")
     static let addNote = NSLocalizedString("addNote", comment: "")
+    static let back = NSLocalizedString("back", comment: "")
+    static let delete = NSLocalizedString("delete", comment: "")
+    static let newNote = NSLocalizedString("newNote", comment: "")
+    static let title = NSLocalizedString("title", comment: "")
+    static let sport = NSLocalizedString("sport", comment: "")
+    static let nutrition = NSLocalizedString("nutrition", comment: "")
+    static let others = NSLocalizedString("others", comment: "")
 
     //Alert resources
     static let fillAllFields = NSLocalizedString("fillAllFields", comment: "")

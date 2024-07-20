@@ -6,153 +6,102 @@
 //
 
 import UIKit
-import RealmSwift
 
-protocol AddNoteDelegate: AnyObject {
-    func didAddNote(_ note: ExerciseNote)
-}
-
-final class AddNoteViewController: UIViewController {
+class AddNoteViewController: UIViewController {
+    var viewModel: NotesViewModel
     
-    //MARK: - Variables
+    private let categoryPicker = UISegmentedControl(items: [NoteCategory.sport.localizedName, NoteCategory.nutrition.localizedName, NoteCategory.others.localizedName])
+    private let titleTextField = UITextField()
+    private let contentTextView = UITextView()
     
-    var viewModel: AddNoteViewModel
-    var router: AddNoteRouter
-    var array: [ExerciseNote] = []
-    
-    weak var delegate: AddNoteDelegate?
-    
-    private let trainingNameTextField = AddNoteCustomTextField(fieldType: .trainingName)
-    private let muscleTextField = AddNoteCustomTextField(fieldType: .kindOfMuscle)
-    private let tableView = UITableView(frame: .zero)
-    private let addExerciseButton = AddExerciseButton()
-    
-    //    var router: AddNoteRouter
-    
-    //MARK: - UI Components
-    
-    private lazy var textFieldStack: UIStackView = {
-        let stack = UIStackView(arrangedSubviews: [trainingNameTextField, muscleTextField])
-        stack.alignment = .center
-        stack.axis = .vertical
-        stack.spacing = 20
-        return stack
-    }()
-    
-    //MARK: - Lifecycle
-    
-    init(_ viewModel: AddNoteViewModel, router: AddNoteRouter) {
+    init(viewModel: NotesViewModel) {
         self.viewModel = viewModel
-        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBarAppearance()
         setupUI()
-        tableViewSettings()
         setupLayout()
-        setupAction()
-        viewModel.loadExercises()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = true
     }
-}
 
-//MARK: - Setup UI
-private extension AddNoteViewController {
-    func navigationBarAppearance() {
-        let saveButton = UIBarButtonItem(title: Const.save, style: .plain, target: self, action:
-                                         #selector(saveDidTapped))
+    private func setupUI() {
+        self.title = Const.newNote
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: FontResources.addExerciseLabelFont,
+            .foregroundColor: ColorResources.white
+        ]
         
-        navigationItem.title = Const.addNote
-        navigationItem.rightBarButtonItem = saveButton
+        navigationController?.navigationBar.standardAppearance = appearance
+        
+        view.backgroundColor = .purple
+        
+        view.addSubview(categoryPicker)
+        view.addSubview(titleTextField)
+        view.addSubview(contentTextView)
+
+        titleTextField.placeholder = Const.title
+        titleTextField.borderStyle = .roundedRect
+        titleTextField.layer.cornerRadius = 10
+        titleTextField.translatesAutoresizingMaskIntoConstraints = false
+        
+        contentTextView.layer.cornerRadius = 10
+        contentTextView.translatesAutoresizingMaskIntoConstraints = false
+
+        categoryPicker.selectedSegmentIndex = 0
+        categoryPicker.layer.cornerRadius = 10
+        categoryPicker.translatesAutoresizingMaskIntoConstraints = false
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveNote))
     }
     
-    func setupUI() {
-        view.backgroundColor = ColorResources.customDarkGrey
+    private func setupLayout() {
         
-        view.setupView(textFieldStack)
-        view.setupView(tableView)
-        view.setupView(addExerciseButton)
-    }
-    
-    func setupLayout() {
         NSLayoutConstraint.activate([
-            textFieldStack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 30),
-            textFieldStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            textFieldStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            categoryPicker.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            categoryPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            categoryPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            categoryPicker.heightAnchor.constraint(equalToConstant: 40),
+
+            titleTextField.topAnchor.constraint(equalTo: categoryPicker.bottomAnchor, constant: 15),
+            titleTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            titleTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            tableView.topAnchor.constraint(equalTo: textFieldStack.bottomAnchor, constant: 20),
-            tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            tableView.bottomAnchor.constraint(equalTo: addExerciseButton.topAnchor, constant: -30),
-            
-            addExerciseButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20),
-            addExerciseButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 92),
-            addExerciseButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -92),
+            contentTextView.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 15),
+            contentTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            contentTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            contentTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
     
-    @objc func saveDidTapped() {
-        guard let trainName = trainingNameTextField.text, !trainName.isEmpty,
-              let muscle = muscleTextField.text, !muscle.isEmpty else { return }
-        let note = ExerciseNote(trainName: trainName, kindOfMuscle: muscle)
-        delegate?.didAddNote(note)
-        
+    @objc private func cancel() {
         navigationController?.popViewController(animated: true)
     }
     
-    //MARK: - TableView ssettings
-    func tableViewSettings() {
-        tableView.backgroundColor = ColorResources.customDarkGrey
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+    @objc private func saveNote() {
+        guard let title = titleTextField.text, !title.isEmpty,
+              let content = contentTextView.text, !content.isEmpty else { return }
         
-    }
-    
-    //MARK: - Setup Action
-    func setupAction() {
-        addExerciseButton.addExerciseButtonTapped = { [weak self] in
-            guard let self = self else { return }
-            self.router.presentNextScreen(on: self, delegate: self)
+        let selectedCategoryIndex = categoryPicker.selectedSegmentIndex
+        let category: NoteCategory
+        switch selectedCategoryIndex {
+        case 0: category = .sport
+        case 1: category = .nutrition
+        case 2: category = .others
+        default: category = .others
         }
+        
+        viewModel.addNote(title: title, content: content, category: category)
+        navigationController?.popViewController(animated: true)
     }
 }
-
-extension AddNoteViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.exercises?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = viewModel.exercises?[indexPath.row].exerciseName
-        cell.backgroundColor = ColorResources.customDarkGrey
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            viewModel.deleteExercise(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        }
-    }
-}
-
-
-extension AddNoteViewController: AddExerciseDelegate {
-    func didAddExercise(_ exercise: [Exercise]) {
-        viewModel.addExercise(exercise)
-        tableView.reloadData()
-        dismiss(animated: true, completion: nil)
-    }
-}
-

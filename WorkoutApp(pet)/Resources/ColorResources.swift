@@ -8,7 +8,8 @@
 import UIKit
 
 enum ColorResources {
-    static let customCoral = UIColor(hexString: "#6ADADA")
+    static let customMainBlue = UIColor(hexString: "#007FFF")
+    static let customBlue = UIColor(named: "MyColor")!
     static let customDarkGrey = UIColor(hexString: "#393939")
     static let customGray = UIColor(hexString: "#D9D9D9")
     static let white = UIColor(hexString: "#FFFFFF")
@@ -17,7 +18,7 @@ enum ColorResources {
     static let gradientMiddleColor = UIColor(hexString: "#65ACF4")
     static let gradientBottomColor = UIColor(hexString: "#82EED4")
     static let emptyTextFieldBorderColor = UIColor(hexString: "#FF1F00")
-    static let customBlue = UIColor(hexString: "#000AFF")
+//    static let customBlue = UIColor(hexString: "#000AFF")
     static let customGreen = UIColor(hexString: "#007C05")
     static let customOrange = UIColor(hexString: "#DB9E00")
     static let customRed = UIColor(hexString: "#FF0000")

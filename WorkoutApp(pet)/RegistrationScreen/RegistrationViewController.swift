@@ -12,8 +12,8 @@ final class RegistrationViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: RegistrationRouter!
-    var viewModel = RegistrationViewModel()
+    private let router: Router
+    private let viewModel: RegistrationViewModel
     
     private let registrationLabel = RegistrationLabel()
     private let nameField = CustomTextField(fieldType: .name)
@@ -22,6 +22,7 @@ final class RegistrationViewController: UIViewController {
     private let passwordField = CustomTextField(fieldType: .password)
     private let confirmPasswordField = CustomTextField(fieldType: .confirmPassword)
     private let regSighUpButton = SignUpButton()
+    private let navBarButton = CustomNavBarButton(type: .custom)
     
     private var textFieldArray = [UITextField]()
     //MARK: - UIComponents
@@ -36,6 +37,15 @@ final class RegistrationViewController: UIViewController {
         return stack
     }()
     //MARK: - Lifecycle
+    init(router: Router, viewModel: RegistrationViewModel) {
+        self.router = router
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,8 +56,6 @@ final class RegistrationViewController: UIViewController {
         setupLayout()
         createTextFieldArray()
         setupHideKeyboardOnTap()
-//        navigationController?.isNavigationBarHidden = false
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -62,15 +70,24 @@ private extension RegistrationViewController {
     func navigationBarAppearance() {
         title = Const.signUp
         
-//        navigationController?.navigationBar.backgroundColor = ColorResources.customDarkGrey
-//        navigationController?.navigationBar.backgroundColor = UIColor.red
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
+        view.backgroundColor = ColorResources.white
+        
+        let backButton = UIBarButtonItem(customView: navBarButton)
+        navBarButton.setTitle(Const.back, for: .normal)
+        navBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 25)
+        navBarButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = backButton
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.black]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
+        
+    }
+    
+    @objc func backTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setupUI() {
-        view.backgroundColor = UIColor(
-            patternImage: UIImage(named: "backGroundImage")!)
         
         view.setupView(registrationLabel)
         view.setupView(textFieldStack)
@@ -101,7 +118,8 @@ private extension RegistrationViewController {
                     if let error = error {
                         self.showAlert(message: error)
                     } else if user != nil {
-                        self.router?.pushHomeScreen()
+                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                        self.router.navigateToTabBar(from: navigationController)
                     }
                 }
             } else {
@@ -118,7 +136,8 @@ private extension RegistrationViewController {
             
             textFieldStack.topAnchor.constraint(equalTo: registrationLabel.bottomAnchor, constant: 30),
             textFieldStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            textFieldStack.widthAnchor.constraint(equalTo: view.widthAnchor),
+            textFieldStack.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            textFieldStack.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
             regSighUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             regSighUpButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -10),

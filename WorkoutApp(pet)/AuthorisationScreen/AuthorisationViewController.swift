@@ -12,19 +12,29 @@ final class AuthorisationViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: AutoristaionRouter!
+    var router: Router
+    var viewModel: AuthorisationViewModel
     
-    var viewModel = AuthorisationViewModel()
-    
-    let emailTextField = LogInEmailTextField()
-    let passwordTextField = LogInPasswordTextField()
-    let authSignInButton = AuthSignInButton()
+    private let emailTextField = CustomTextField(fieldType: .email)
+    private let passwordTextField = CustomTextField(fieldType: .password)
+    private let authSignInButton = AuthSignInButton()
     private let resetPasswordButton = AuthResetPasswordButton()
+    private let navBarButton = CustomNavBarButton(type: .custom)
     
     private var textFieldArray = [UITextField] ()
     
     
     //MARK: - Lifecycle
+    
+    init(router: Router, viewModel: AuthorisationViewModel) {
+        self.router = router
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +57,22 @@ private extension AuthorisationViewController {
     
     func navigationBarAppearance() {
         title = Const.sighIn
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.white]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.black]
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
+        
+        let backButton = UIBarButtonItem(customView: navBarButton)
+        navBarButton.setTitle(Const.back, for: .normal)
+        navBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 25)
+        navBarButton.addTarget(self, action: #selector(backTapped), for: .touchUpInside)
+        navigationItem.leftBarButtonItem = backButton
+    }
+    
+    @objc func backTapped() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func setupUI() {
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
-        
+        view.backgroundColor = ColorResources.white
         view.setupView(emailTextField)
         view.setupView(passwordTextField)
         view.setupView(authSignInButton)
@@ -71,7 +90,8 @@ private extension AuthorisationViewController {
                     if error != nil {
                         self?.showAlert(message: Const.incorrectFilling)
                     } else {
-                        self?.router?.pushHomeScreen()
+                        UserDefaults.standard.set(true, forKey: "isLoggedIn")
+                        self?.router.navigateToTabBar(from: self?.navigationController)
                     }
                 }
             } else {
@@ -81,7 +101,7 @@ private extension AuthorisationViewController {
         
         resetPasswordButton.resetTapped = { [weak self ] in
             guard let self = self else { return }
-            self.router.pushResetPasswordScreen()
+//            self.router.pushResetPasswordScreen()
         }
     }
     

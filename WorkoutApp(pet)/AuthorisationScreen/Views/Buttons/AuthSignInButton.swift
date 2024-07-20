@@ -30,7 +30,7 @@ private extension AuthSignInButton {
         setTitle(Const.sighIn, for: .normal)
         setTitleColor(ColorResources.black, for: .normal)
         layer.cornerRadius = 15
-        backgroundColor = ColorResources.customCoral
+        backgroundColor = ColorResources.customBlue
     }
 
     @objc

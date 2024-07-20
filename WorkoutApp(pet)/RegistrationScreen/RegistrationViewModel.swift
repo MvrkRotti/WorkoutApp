@@ -10,9 +10,10 @@ import FirebaseAuth
 import FirebaseDatabase
 
 final class RegistrationViewModel {
+        
     func registerUser(firstName: String, lastName: String, email: String,
                       password: String, confirmPassword: String,
-                      completion: @escaping(User?, String?) -> Void)
+                      completion: @escaping(AppUser?, String?) -> Void)
     {
         guard password == confirmPassword else {
             completion(nil, "Password do not match")
@@ -26,7 +27,7 @@ final class RegistrationViewModel {
                 }
                 return
             }
-            let userData = User(firstName: firstName, lastName: lastName, email: email, password: password)
+            let userData = AppUser(firstName: firstName, lastName: lastName, email: email, password: password)
             UserDefaults.standard.set(firstName, forKey: "name_\(user.uid)")
             UserDefaults.standard.set(user.uid, forKey: "UserID")
             self.saveUser(userData, forUserID: user.uid)
@@ -34,7 +35,7 @@ final class RegistrationViewModel {
         }
     }
     
-    private func saveUser(_ user: User, forUserID userID: String) {
+    private func saveUser(_ user: AppUser, forUserID userID: String) {
         UserDefaults.standard.set(["name": user.firstName], forKey: "User_ \(userID)")
     }
 }

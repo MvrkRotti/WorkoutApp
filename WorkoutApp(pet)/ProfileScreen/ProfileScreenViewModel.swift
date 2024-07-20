@@ -75,7 +75,7 @@ final class ProfileViewModel {
         
         switch bmi {
         case ..<18.5:
-            return ColorResources.customBlue
+            return ColorResources.customMainBlue
         case 18.5..<24.9:
             return ColorResources.customGreen
         case 24.9..<30.0:
