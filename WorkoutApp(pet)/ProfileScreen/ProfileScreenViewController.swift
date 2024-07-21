@@ -57,6 +57,10 @@ final class ProfileScreenViewController: UIViewController {
         setGradientBackground()
         fillProfile()
         loadProfilePhoto()
+        
+        viewModel.didLogout = { [weak self] in
+                    self?.handleLogout()
+                }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -95,25 +99,16 @@ private extension ProfileScreenViewController {
     }
     
     @objc func logOutButtonDidTapped() {
-        handleLogout()
+        viewModel.logout()
     }
     
-    func handleLogout() {
-            do {
-                try Auth.auth().signOut()
-                UserDefaults.standard.set(false, forKey: "isLoggedIn")
-                
-                if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-                    let welcomeViewController = sceneDelegate.assembler.resolve() as WelcomeViewController
-                    router.setRootViewController(welcomeViewController, in: sceneDelegate.window!)
-                }
-            } catch let signOutError as NSError {
-                print("Error signing out: %@", signOutError)
-            }
+    private func handleLogout() {
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+            let welcomeViewController = sceneDelegate.assembler.resolve() as WelcomeViewController
+            router.setRootViewController(welcomeViewController, in: sceneDelegate.window!)
         }
+    }
 
-    
-    
     func setupUI() {
         view.setupView(photoView)
         view.setupView(profileStackView)

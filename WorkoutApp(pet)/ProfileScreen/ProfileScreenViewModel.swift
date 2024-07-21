@@ -19,6 +19,7 @@ final class ProfileViewModel {
     }
     
     private var userProfile: AppUser?
+    var didLogout: (() -> Void)?
     
     func fetchUserProfile(completion: @escaping(AppUser?, String?) -> Void) {
         guard let userID = userID else {
@@ -113,4 +114,14 @@ final class ProfileViewModel {
         }
     }
 
+    func logout() {
+        do {
+            try Auth.auth().signOut()
+            UserDefaults.standard.set(false, forKey: "isLoggedIn")
+            didLogout?()
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
+    
 }
