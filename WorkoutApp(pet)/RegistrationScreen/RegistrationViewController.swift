@@ -84,7 +84,7 @@ private extension RegistrationViewController {
     }
     
     @objc func backTapped() {
-        self.navigationController?.popViewController(animated: true)
+        self.router.popScreen(from: navigationController)
     }
     
     func setupUI() {

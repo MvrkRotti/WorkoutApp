@@ -28,7 +28,7 @@ private extension AuthSignInButton {
     func setupAppearance() {
 
         setTitle(Const.sighIn, for: .normal)
-        setTitleColor(ColorResources.black, for: .normal)
+        setTitleColor(ColorResources.white, for: .normal)
         layer.cornerRadius = 15
         backgroundColor = ColorResources.customBlue
     }

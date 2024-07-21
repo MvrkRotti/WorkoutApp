@@ -7,36 +7,62 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseFirestore
 import UIKit
 
 final class ProfileViewModel {
+    
+    private let db = Firestore.firestore()
+    
     var userID: String? {
         return Auth.auth().currentUser?.uid
     }
     
+    private var userProfile: AppUser?
+    
+    func fetchUserProfile(completion: @escaping(AppUser?, String?) -> Void) {
+        guard let userID = userID else {
+            completion(nil, "User not logged in")
+            return
+        }
+        
+        let userStorage = db.collection("users").document(userID)
+        userStorage.getDocument(source: .cache) { document, error in
+            if let document = document, document.exists {
+                let data = document.data()
+                let name = data?["name"] as? String ?? ""
+                let age = data?["age"] as? Int ?? 0
+                let weight = data?["weight"] as? Double ?? 0.0
+                let height = data?["height"] as? Double ?? 0.0
+                let gender = data?["gender"] as? String ?? ""
+                
+                self.userProfile = AppUser(firstName: name, age: age, gender: gender, weight: weight, height: height)
+                
+                completion(self.userProfile, nil)
+            } else {
+                completion(nil, "Document does not exist or offline cache unavailable")
+            }
+        }
+    }
+    
     var name: String? {
-        guard let userID = userID else { return nil}
-        return UserDefaults.standard.string(forKey: "name_\(userID)")
+        return userProfile?.firstName
     }
     
     var age: Int? {
-        guard let userID = userID else { return nil }
-        return UserDefaults.standard.integer(forKey: "age_\(userID)")
+        return userProfile?.age
     }
     
     var weight: Double? {
-        guard let userID = userID else { return nil }
-        return UserDefaults.standard.double(forKey: "weight_\(userID)")
+        return userProfile?.weight
     }
     
     var height: Double? {
-        guard let userID = userID else { return nil }
-        return UserDefaults.standard.double(forKey: "height_\(userID)")
+        return userProfile?.height
     }
     
     var gender: String? {
-        guard let userID = userID else { return nil }
-        return UserDefaults.standard.string(forKey: "gender_\(userID)")
+        return userProfile?.gender
     }
     
     var bmi: Double? {
@@ -45,7 +71,7 @@ final class ProfileViewModel {
         return bmiValue
     }
     
-    func getBMIDesctription(bmi: Double) -> String {
+    private func getBMIDesctription(bmi: Double) -> String {
         let underweightRange = 0.0..<18.5
         let normalRange = 18.5..<24.9
         let overweightRange = 24.9..<29.9
@@ -86,4 +112,5 @@ final class ProfileViewModel {
             return ColorResources.black
         }
     }
+
 }

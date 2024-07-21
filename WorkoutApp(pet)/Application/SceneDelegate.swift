@@ -13,6 +13,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var assembler: Assembler!
+    var router: DefaultRouter!
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = scene as? UIWindowScene else { return }
@@ -22,20 +23,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         assembler = DefaultAssembler()
         let router = DefaultRouter(assembler: assembler)
+        let initialViewController: UIViewController
         
-//        let welcomeViewController = assembler.resolve() as WelcomeViewController
-//        router.setRootViewController(welcomeViewController, in: window!)
+        let welcomeViewController = assembler.resolve() as WelcomeViewController
+        router.setRootViewController(welcomeViewController, in: window!)
 
-
-        
         if UserDefaults.standard.bool(forKey: "isLoggedIn") {
-            let tabBarController = TabController(assembler: assembler)
-            window?.rootViewController = tabBarController
-            window?.makeKeyAndVisible()
+            initialViewController = TabController(assembler: assembler)
         } else {
-            let welcomeViewController = assembler.resolve() as WelcomeViewController
-            router.setRootViewController(welcomeViewController, in: window!)
+            initialViewController = assembler.resolve() as WelcomeViewController
         }
+        
+        if var initialViewControllerWithRouter = initialViewController as? RouterAccessible {
+            initialViewControllerWithRouter.router = router
+        }
+        
+        router.setRootViewController(initialViewController, in: window!)
     }
-}
+    }
 
+protocol RouterAccessible {
+    var router: DefaultRouter? { get set }
+}

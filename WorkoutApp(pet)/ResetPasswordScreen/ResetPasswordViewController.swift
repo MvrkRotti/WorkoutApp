@@ -10,15 +10,26 @@ import UIKit
 final class ResetPasswordViewController: UIViewController {
     
     //MARK: - Variables
-    var router: ResetPasswordRouter!
+    var router: Router
+    var viewModel: ResetPasswordViewModel
     
-    var viewModel = ResetPasswordViewModel()
-    
-    private let emailTextField = ResetEmailTextField()
+    private let emailTextField = CustomTextField(fieldType: .email)
     private let infoLabel = ResetLabel()
     private let resetButton = ResetPasswordButton()
     
     //MARK: - Lifecycle
+    
+    init(router: Router, viewModel: ResetPasswordViewModel) {
+        self.router = router
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -32,7 +43,7 @@ final class ResetPasswordViewController: UIViewController {
     }
     
     func resetPasswordDidSucceed() {
-        self.router.popScreen()
+        self.router.popScreen(from: navigationController)
     }
     
     func resetPasswordDidFail(with error: Error) {
@@ -43,7 +54,7 @@ final class ResetPasswordViewController: UIViewController {
 //MARK: - UI Setup
 private extension ResetPasswordViewController {
     func setupUI() {
-        view.backgroundColor = ColorResources.black
+        view.backgroundColor = ColorResources.white
         
         navigationItem.title = Const.resetPassword
         
@@ -95,7 +106,7 @@ private extension ResetPasswordViewController {
     func showSuccessAlert() {
         let alertController = UIAlertController(title: Const.resetPassword, message: Const.resetPassInfo, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default) { _ in
-            self.router.popScreen()
+            self.router.popScreen(from: self.navigationController)
         }
         alertController.addAction(okAction)
         present(alertController, animated: true)

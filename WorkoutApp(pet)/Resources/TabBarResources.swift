@@ -9,19 +9,19 @@ import UIKit
 
 enum TabBarResources {
     
-    static func icon(for tab: Tabs) -> UIImage? {
-        switch tab {
-        case .exercises: return UIImage(named: "ExercisesTabIcon")
-        case .notes: return UIImage(named: "notesTabIcon")
-        case .profile: return UIImage(named: "porfileTabIcon")
-        }
-    }
+//    static func icon(for tab: Tabs) -> UIImage? {
+//        switch tab {
+//        case .stats: return UIImage(named: "statIcon")
+//        case .notes: return UIImage(named: "notesIcon")
+//        case .profile: return UIImage(named: "profileIcon")
+//        }
+//    }
     
-    static func title(for tab: Tabs) -> String {
-        switch tab {
-        case .exercises: return Const.handbook
-        case .notes: return Const.notes
-        case .profile: return Const.profile
-        }
-    }
+//    static func title(for tab: Tabs) -> String {
+//        switch tab {
+//        case .stats: return Const.handbook
+//        case .notes: return Const.notes
+//        case .profile: return Const.profile
+//        }
+//    }
 }

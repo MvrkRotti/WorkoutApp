@@ -23,7 +23,7 @@ private extension ResetLabel {
         text = Const.resetPasswordInfo
         font = FontResources.addExerciseLabelFont
         numberOfLines = 0
-        textColor = ColorResources.white
+        textColor = ColorResources.black
         textAlignment = .center
     }
 }
