@@ -19,6 +19,7 @@
 "resetPassword" = "Reset password";
 "resetPasswordInfo" = "This email adress will used for reset your password.";
 "age" = "Age";
+"notes" = "Notes";
 "gender" = "Gender";
 "weight" = "Weight";
 "height" = "Height";
