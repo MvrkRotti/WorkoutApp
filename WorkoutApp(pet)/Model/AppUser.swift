@@ -17,10 +17,10 @@ struct AppUser: Codable, Identifiable {
     var lastName: String?
     var email: String?
     var password: String?
-    var age: String?
+    var age: Int?
     var gender: String?
-    var weight: String?
-    var height: String?
+    var weight: Double?
+    var height: Double?
     var bmi: String?
     var bmiDescription: String?
 }

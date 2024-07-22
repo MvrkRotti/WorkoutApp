@@ -8,15 +8,33 @@
 import Foundation
 import FirebaseAuth
 import FirebaseStorage
+import FirebaseFirestore
 import UIKit
 
 class EditProfileViewModel {
     
-    func saveUserData(age: Int, weight: Double, height: Double, gender: String, userID: String) {
-        UserDefaults.standard.set(age, forKey: "age_\(userID)")
-        UserDefaults.standard.set(weight, forKey: "weight_\(userID)")
-        UserDefaults.standard.set(height, forKey: "height_\(userID)")
-        UserDefaults.standard.set(gender, forKey: "gender_\(userID)")
+    private let db = Firestore.firestore()
+    
+    func saveUserData(age: Int, weight: Double, height: Double, gender: String, completion: @escaping(Bool, String?) -> Void) {
+        guard let userID = Auth.auth().currentUser?.uid else {
+            completion(false, "User not logged in")
+            return
+        }
+        
+        let userStorage = db.collection("users").document(userID)
+        let data: [String: Any] = [
+            "age": age,
+            "weight": weight,
+            "height": height,
+            "gender": gender
+        ]
+        userStorage.updateData(data) { error in
+            if let error = error {
+                completion(false, "Failed to save user data: \(error.localizedDescription)")
+            } else {
+                completion(true, nil)
+            }
+        }
     }
     
     func uploadImage(image: UIImage, completion: @escaping (String?) -> Void) {

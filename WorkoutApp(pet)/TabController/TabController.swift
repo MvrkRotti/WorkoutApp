@@ -8,7 +8,7 @@
 import UIKit
 
 enum Tabs: Int, CaseIterable {
-    case exercises
+    case stats
     case notes
     case profile
 }
@@ -46,7 +46,7 @@ final class TabController: UITabBarController {
         
         let controllers: [UIViewController] = Tabs.allCases.map { tab in
             let controller = UINavigationController(rootViewController: getController(for: tab))
-            controller.tabBarItem = UITabBarItem(title: tabTitle(for: tab),
+            controller.tabBarItem = UITabBarItem(title: "",
                                                  image: tabIcon(for: tab),
                                                  tag: tab.rawValue)
             return controller
@@ -57,7 +57,7 @@ final class TabController: UITabBarController {
 
     private func getController(for tab: Tabs) -> UIViewController {
         switch tab {
-        case .exercises: return assembler.resolve() as StepCounterViewController
+        case .stats: return assembler.resolve() as StepCounterViewController
         case .notes: return assembler.resolve() as NotesScreenViewController
         case .profile: return assembler.resolve() as ProfileScreenViewController
         }
@@ -65,7 +65,7 @@ final class TabController: UITabBarController {
 
     private func tabTitle(for tab: Tabs) -> String {
         switch tab {
-        case .exercises: return Const.handbook
+        case .stats: return Const.handbook
         case .notes: return Const.notes
         case .profile: return Const.profile
         }
@@ -73,9 +73,9 @@ final class TabController: UITabBarController {
 
     private func tabIcon(for tab: Tabs) -> UIImage? {
         switch tab {
-        case .exercises: return UIImage(named: "ExercisesTabIcon")
-        case .notes: return UIImage(named: "notesTabIcon")
-        case .profile: return UIImage(named: "porfileTabIcon")
+        case .stats: return UIImage(named: "statIcon")
+        case .notes: return UIImage(named: "notesIcon")
+        case .profile: return UIImage(named: "profileIcon")
         }
     }
 }

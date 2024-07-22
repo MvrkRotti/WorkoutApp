@@ -68,7 +68,7 @@ private extension AuthorisationViewController {
     }
     
     @objc func backTapped() {
-        self.navigationController?.popViewController(animated: true)
+        self.router.popScreen(from: navigationController)
     }
     
     func setupUI() {
@@ -101,7 +101,7 @@ private extension AuthorisationViewController {
         
         resetPasswordButton.resetTapped = { [weak self ] in
             guard let self = self else { return }
-//            self.router.pushResetPasswordScreen()
+            self.router.navigateToResetPassword(from: navigationController)
         }
     }
     
