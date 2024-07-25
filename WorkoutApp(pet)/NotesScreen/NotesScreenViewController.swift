@@ -15,7 +15,7 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     private let viewModel: NotesViewModel
     
     private var notesCollectionView: UICollectionView!
-    private let addButton = UIButton()
+    private let addButton = AddNoteButton()
     
     private var isCollectionViewSetup = false
     
@@ -31,12 +31,14 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.delegate = self
+        viewModel.fetchNotes()
+        
         setupCollection()
         setupAddButton()
         setupUI()
         
-        viewModel.delegate = self
-        viewModel.fetchNotes()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -79,18 +81,14 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     }
     
     private func setupAddButton() {
-        addButton.setImage(UIImage(systemName: "plus"), for: .normal)
-        addButton.backgroundColor = ColorResources.customBlue
-        addButton.tintColor = ColorResources.black
-        addButton.layer.cornerRadius = 30
-        addButton.layer.shadowColor = UIColor.black.cgColor
-        addButton.layer.shadowOpacity = 0.3
-        addButton.layer.shadowOffset = CGSize(width: 2, height: 2)
-        addButton.layer.shadowRadius = 5
-        addButton.addTarget(self, action: #selector(addNoteTapped), for: .touchUpInside)
         
         view.addSubview(addButton)
         addButton.translatesAutoresizingMaskIntoConstraints = false
+        
+        addButton.addButtonTapped = { [weak self] in
+            guard let self = self else { return }
+            self.router.navigateToAddNote(from: navigationController)
+        }
         
         NSLayoutConstraint.activate([
             addButton.widthAnchor.constraint(equalToConstant: 60),
@@ -111,9 +109,9 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
         
     }
     
-    @objc private func addNoteTapped() {
-        router.navigateToAddNote(from: navigationController)
-    }
+//    @objc private func addNoteTapped() {
+//        router.navigateToAddNote(from: navigationController)
+//    }
 }
 
 extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -137,7 +135,6 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: NotesHeader.identifier, for: indexPath) as! NotesHeader
-        //        headerView.titleLabel.text = NoteCategory.allCases[indexPath.section].rawValue
         let category = NoteCategory.allCases[indexPath.section]
         headerView.titleLabel.text = category.localizedName
         return headerView
@@ -154,9 +151,7 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
             guard indexPath.item < notesForCategory.count else {
                 return nil
             }
-            
-//            let noteToDelete = notesForCategory[indexPath.item]
-            
+                        
             let deleteAction = UIAction(title: Const.delete, image: UIImage(systemName: "trash.fill"), attributes: .destructive) { [weak self] _ in
                 guard let self = self else { return }
                 

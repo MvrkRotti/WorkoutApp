@@ -47,6 +47,7 @@ final class NotesViewModel {
                 self?.notes = notes
                 self?.delegate?.notesDidChange()
             }
+        
     }
     
     
@@ -64,6 +65,8 @@ final class NotesViewModel {
         } catch {
             print("Error adding note: \(error)")
         }
+        self.delegate?.notesDidChange()
+
     }
     
     func deleteNote(at index: Int, category: NoteCategory) {

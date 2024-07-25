@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct StepData {
-    let date: Date
-    let steps: Int
+struct StepModel {
+    var steps: Int
+    var goal: Int
 }
