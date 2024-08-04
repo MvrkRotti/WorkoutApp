@@ -16,4 +16,5 @@ enum FontResources {
     static let bmiDescriptionFont = UIFont.systemFont(ofSize: 15, weight: .bold)
     static let addExerciseLabelFont = UIFont.systemFont(ofSize: 18)
     static let navigationTitleFont = UIFont.systemFont(ofSize: 20, weight: .bold)
+    static let currentStepLabel = UIFont.systemFont(ofSize: 45)
 }

@@ -15,7 +15,6 @@ class StepCounterViewController: UIViewController {
     private let viewModel: StepCounterViewModel
     private let router: Router
     
-    private let progressView = CircularProgressView()
     
     init(viewModel: StepCounterViewModel, router: Router) {
         self.viewModel = viewModel
@@ -31,4 +30,8 @@ class StepCounterViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
     }
+}
+
+private extension StepCounterViewController {
+
 }

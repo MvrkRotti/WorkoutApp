@@ -18,8 +18,8 @@
 		8A3A72522C3D5A370066A743 /* DGCharts in Frameworks */ = {isa = PBXBuildFile; productRef = 8A3A72512C3D5A370066A743 /* DGCharts */; };
 		8A67553F2C2B5D48001D187B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8A67553D2C2B5D48001D187B /* Localizable.strings */; };
 		8A6755422C2CBDE5001D187B /* CustomNavBarButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A6755412C2CBDE5001D187B /* CustomNavBarButton.swift */; };
+		8AD3141B2C5F55D0007D68E1 /* StepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD3141A2C5F55D0007D68E1 /* StepModel.swift */; };
 		8AEEDDCD2C1CEF310055E216 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */; };
-		8AF70E412C52D69C0086E03D /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AF70E402C52D69C0086E03D /* CircularProgressView.swift */; };
 		CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */; };
 		CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */; };
 		CE0CC2E92BF37C7300501CD9 /* FetchPhotoHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */; };
@@ -95,8 +95,8 @@
 		8A67553E2C2B5D48001D187B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A6755402C2B5D63001D187B /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8A6755412C2CBDE5001D187B /* CustomNavBarButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBarButton.swift; sourceTree = "<group>"; };
+		8AD3141A2C5F55D0007D68E1 /* StepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepModel.swift; sourceTree = "<group>"; };
 		8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		8AF70E402C52D69C0086E03D /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNoteCell.swift; sourceTree = "<group>"; };
 		CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesInfoViewController.swift; sourceTree = "<group>"; };
 		CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchPhotoHelper.swift; sourceTree = "<group>"; };
@@ -282,7 +282,6 @@
 		CE3C13012BB5D5F8003F3561 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8AF70E402C52D69C0086E03D /* CircularProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -506,6 +505,7 @@
 				CE3C13012BB5D5F8003F3561 /* Views */,
 				CED9EB4C2B715A1A0065FE23 /* StepCounterViewController.swift */,
 				CE1A8BC42B82644D00ACB21C /* StepCounterViewModel.swift */,
+				8AD3141A2C5F55D0007D68E1 /* StepModel.swift */,
 			);
 			path = StepCounterScreen;
 			sourceTree = "<group>";
@@ -639,10 +639,10 @@
 				CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */,
 				CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */,
 				CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */,
+				8AD3141B2C5F55D0007D68E1 /* StepModel.swift in Sources */,
 				CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */,
 				CEF2AB522BBD769100205B60 /* Router.swift in Sources */,
 				CE5CD4552BC86EB90065991D /* StringResources.swift in Sources */,
-				8AF70E412C52D69C0086E03D /* CircularProgressView.swift in Sources */,
 				CE5CD45D2BC873910065991D /* TabBarResources.swift in Sources */,
 				CE8D50EF2B88E53400A14719 /* AgeTextField.swift in Sources */,
 				CE1A8BD72B87E63000ACB21C /* GenderLabel.swift in Sources */,

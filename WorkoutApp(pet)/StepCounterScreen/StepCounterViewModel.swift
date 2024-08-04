@@ -1,137 +1,79 @@
 //
-//  StepCounterViewController.swift
+//  StepViewModel.swift
 //  WorkoutApp(pet)
 //
 //  Created by Danilius on 18.02.2024.
 //
 
 import Foundation
-import CoreMotion
+import Combine
 import FirebaseFirestore
-import Firebase
+import FirebaseAuth
 
-class StepCounterViewModel {
-    private let stepcounter = CMPedometer()
-    private var db: Firestore!
-    private var timer: Timer?
-    private let calendar = Calendar.current
+class StepViewModel: ObservableObject {
+    @Published var currentSteps: Int = 0
+    @Published var dailyGoal: Int = 10_000
+    @Published var weeklySteps: [StepData] = []
     
-    var stepcounterModel: StepModel {
-        didSet {
-            self.bindViewModelToController()
-        }
+    private var model: StepModel
+    private var cancellables = Set<AnyCancellable>()
+    private var db = Firestore.firestore()
+    
+    init(model: StepModel) {
+        self.model = model
+        self.bindModel()
     }
     
-    var weeklySteps: [Int] = [] {
-        didSet {
-            self.bindWeeklyStepsToController()
-        }
+    private func bindModel() {
+        self.currentSteps = model.currentSteps
+        self.dailyGoal = model.dailyGoal
+        self.weeklySteps = model.weeklySteps
     }
     
-    var bindViewModelToController: (() -> ()) = {}
-    var bindWeeklyStepsToController: (() -> ()) = {}
-    
-    init() {
-        self.stepcounterModel = StepModel(steps: 0, goal: 10_000)
-        self.db = Firestore.firestore()
-        startPedometrUpdates()
-        startDailyUpdate()
-        fetchWeeklySteps()
-    }
-    
-    private func startPedometrUpdates() {
-        guard CMPedometer.isStepCountingAvailable() else { return }
-        
-        stepcounter.startUpdates(from: Date()) { [weak self] data, error in
-            guard let self = self, error == nil, let data = data else { return }
-            
-            DispatchQueue.main.async {
-                self.stepcounterModel.steps = data.numberOfSteps.intValue
-                self.saveStepsToFirestore(steps: data.numberOfSteps.intValue)
-            }
-        }
-    }
-    
-    private func saveStepsToFirestore(steps: Int) {
+    func updateSteps(steps: Int) {
         guard let user = Auth.auth().currentUser else { return }
-        let docPath = db.collection("stepsData").document(user.uid)
+        let uid = user.uid
         
-        docPath.setData(["steps": steps, "goal": stepcounterModel.goal], merge: true) { error in
-            if let error = error {
-                print("Error saving steps: \(error.localizedDescription)")
-            } else {
-                print("Steps successfully saved!")
-            }
-        }
+        model.updateSteps(for: Date(), steps: steps)
+        self.bindModel()
+        
+        let stepData = StepData(steps: steps, date: Date())
+        db.collection("users").document(uid).collection("steps").addDocument(data: stepData.dictionary)
     }
     
-    private func saveWeeklyStepsToFirestore(weeklySteps: [Int]) {
+    func setDailyGoal(goal: Int) {
         guard let user = Auth.auth().currentUser else { return }
-        let docPath = db.collection("stepsData").document(user.uid)
+        let uid = user.uid
         
-        docPath.setData(["weeklySteps": weeklySteps], merge: true) { error in
-            if let error = error {
-                print("Error saving weekly steps: \(error.localizedDescription)")
-            } else {
-                print("Weekly steps successfully saved!")
-            }
-        }
+        model.dailyGoal = goal
+        self.dailyGoal = goal
+        
+        db.collection("users").document(uid).setData(["dailyGoal": goal], merge: true)
     }
     
-    func setGoal(_ goal: Int) {
-        stepcounterModel.goal = goal
-        saveGoalToFirebase(goal: goal)
+    func resetDailySteps() {
+        guard let user = Auth.auth().currentUser  else { return }
+        let uid = user.uid
+        
+        model.resetDailySteps()
+        self.currentSteps = model.currentSteps
+        
+        db.collection("users").document(uid).collection("steps").addDocument(data: StepData(steps: 0, date: Date()).dictionary)
     }
     
-    private func saveGoalToFirebase(goal: Int) {
+    func fetchUserData() {
         guard let user = Auth.auth().currentUser else { return }
-        let docPath = db.collection("stepsData").document(user.uid)
+        let uid = user.uid
         
-        docPath.setData(["goal": goal], merge: true) { error in
-            if let error = error {
-                print("Error saving goal: \(error.localizedDescription)")
-            } else {
-                print("Goal successfully saved!")
-            }
-        }
-    }
-    
-    private func startDailyUpdate() {
-        timer = Timer.scheduledTimer(withTimeInterval: 86400, repeats: true, block: { [weak self]  _ in
-            self?.resetDailySteps()
-        })
-    }
-    
-    private func resetDailySteps() {
-        guard let user = Auth.auth().currentUser else { return }
-        let docPath = db.collection("stepsData").document(user.uid)
-        
-        docPath.setData(["steps": 0]) { error in
-            if let error = error {
-                print("Error resetting daily steps: \(error)")
-            } else {
-                print("Daily steps successfully reset!")
-            }
+        db.collection("users").document(uid).getDocument { [weak self ] document, error in
+            guard let self = self, let document = document, document.exists, let data = document.data() 
+            else { return }
+            self.dailyGoal = data["dailyGoal"] as? Int ?? 10_000
         }
         
-        if weeklySteps.count >= 7 {
-            weeklySteps.removeFirst()
-        }
-        weeklySteps.append(stepcounterModel.steps)
-        saveWeeklyStepsToFirestore(weeklySteps: weeklySteps)
-    }
-    
-    private func fetchWeeklySteps() {
-        guard let user = Auth.auth().currentUser else { return }
-        let docPath = db.collection("stepsData").document(user.uid)
-        
-        docPath.getDocument { [weak self] document, error in
-            if let document = document, document.exists, let data = document.data() {
-                self?.weeklySteps = data["weeklySteps"] as? [Int] ?? []
-                self?.bindWeeklyStepsToController()
-            } else {
-                print("Document does not exist")
-            }
+        db.collection("users").document(uid).collection("steps").order(by: "date").limit(toLast: 7).getDocuments { [weak self] snapshot, error in
+            guard let self = self, let documents = snapshot?.documents else { return }
+            self.weeklySteps = documents.compactMap { StepData(document: $0) }
         }
     }
 }
