@@ -37,7 +37,7 @@ class AddNoteViewController: UIViewController {
         self.title = Const.newNote
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [
-            .font: FontResources.addExerciseLabelFont,
+            .font: FontResources.systemFont18,
             .foregroundColor: ColorResources.white
         ]
         

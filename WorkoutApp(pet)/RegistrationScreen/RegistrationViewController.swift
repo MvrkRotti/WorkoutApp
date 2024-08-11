@@ -79,7 +79,7 @@ private extension RegistrationViewController {
         navigationItem.leftBarButtonItem = backButton
         
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.black]
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.boldSystemFont26]
         
     }
     

@@ -24,7 +24,7 @@ final class AgeLabel: UILabel {
 private extension AgeLabel {
     func setupAppearance() {
         textColor = ColorResources.black
-        font = FontResources.profileLabelFont
+        font = FontResources.systemFont22
 //        text = Const.age
     }
 }

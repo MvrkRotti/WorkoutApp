@@ -23,7 +23,7 @@ class NotesHeader: UICollectionReusableView {
     
     private func setupUI() {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
-        titleLabel.font = FontResources.cellNameLabelFont
+        titleLabel.font = FontResources.semiboldSystemFont20
         addSubview(titleLabel)
         
         NSLayoutConstraint.activate([

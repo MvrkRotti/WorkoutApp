@@ -30,7 +30,7 @@ private extension SignInButton {
         
         setTitle(Const.sighIn, for: .normal)
         setTitleColor(ColorResources.white, for: .normal)
-        titleLabel?.font = FontResources.autLabelFont
+        titleLabel?.font = FontResources.systemFont15
         let buttonTitleStr = NSMutableAttributedString(string: Const.sighIn)
         buttonTitleStr.addAttribute(NSAttributedString.Key.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, buttonTitleStr.length))
         setAttributedTitle(buttonTitleStr, for: .normal)

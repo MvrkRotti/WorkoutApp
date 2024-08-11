@@ -115,7 +115,7 @@ private extension ProfileScreenViewController {
         
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [
-            .font: FontResources.navigationTitleFont,
+            .font: FontResources.boldSystemFont20,
             .foregroundColor: ColorResources.white
         ]
         

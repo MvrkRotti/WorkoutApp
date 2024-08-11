@@ -42,7 +42,7 @@ class DefaultAssembler: Assembler {
     }
     
     func resolve() -> StepCounterViewController {
-        let viewModel = StepCounterViewModel()
+        let viewModel = StepViewModel(model: StepModel())
         let router = DefaultRouter(assembler: self)
         let viewController = StepCounterViewController(viewModel: viewModel, router: router)
         return viewController

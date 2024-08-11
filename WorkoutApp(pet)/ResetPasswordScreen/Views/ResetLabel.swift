@@ -21,7 +21,7 @@ final class ResetLabel: UILabel {
 private extension ResetLabel {
     func setupAppearance() {
         text = Const.resetPasswordInfo
-        font = FontResources.addExerciseLabelFont
+        font = FontResources.systemFont18
         numberOfLines = 0
         textColor = ColorResources.black
         textAlignment = .center

@@ -12,11 +12,11 @@ import DGCharts
 class StepCounterViewController: UIViewController {
     //MARK: - Variables
     
-    private let viewModel: StepCounterViewModel
+    private let viewModel: StepViewModel
     private let router: Router
     
     
-    init(viewModel: StepCounterViewModel, router: Router) {
+    init(viewModel: StepViewModel, router: Router) {
         self.viewModel = viewModel
         self.router = router
         super.init(nibName: nil, bundle: nil)

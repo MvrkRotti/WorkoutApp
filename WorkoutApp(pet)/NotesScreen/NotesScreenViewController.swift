@@ -54,7 +54,7 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
         
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [
-            .font: FontResources.navigationTitleFont,
+            .font: FontResources.boldSystemFont20,
             .foregroundColor: ColorResources.white
         ]
         

@@ -26,7 +26,7 @@ private extension RegistrationLabel {
     func setupAppearance() {
         
         text = Const.mainLabel
-        font = FontResources.registrationLabelFont
+        font = FontResources.boldSystemFont26
         textAlignment = .left
         numberOfLines = 0
         textColor = ColorResources.black

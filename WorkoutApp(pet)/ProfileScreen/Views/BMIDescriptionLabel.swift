@@ -39,7 +39,7 @@ private extension BMIDescriptionLabel {
     func setupAppearance() {
         text = "0"
         textColor = ColorResources.black
-        font = FontResources.bmiDescriptionFont        
+        font = FontResources.boldSystemFont15        
         numberOfLines = 0
         backgroundColor = ColorResources.customDarkGrey
         layer.cornerRadius = 10

@@ -58,7 +58,7 @@ private extension AuthorisationViewController {
     func navigationBarAppearance() {
         title = Const.sighIn
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor : ColorResources.black]
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.registrationLabelFont]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font : FontResources.boldSystemFont26]
         
         let backButton = UIBarButtonItem(customView: navBarButton)
         navBarButton.setTitle(Const.back, for: .normal)

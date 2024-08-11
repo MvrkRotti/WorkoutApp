@@ -24,7 +24,7 @@ final class GenderLabel: UILabel {
 private extension GenderLabel {
     func setupAppearance() {
         textColor = ColorResources.black
-        font = FontResources.profileLabelFont
+        font = FontResources.systemFont22
         text = Const.gender
     }
 }
