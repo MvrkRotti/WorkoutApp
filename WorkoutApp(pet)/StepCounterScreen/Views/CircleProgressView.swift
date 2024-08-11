@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CircleProgressView: UIView {
+class CircleProgressView: UIView {
     var progress: Float = 0 {
         didSet {
             setNeedsDisplay()
@@ -15,19 +15,26 @@ final class CircleProgressView: UIView {
     }
 
     override func draw(_ rect: CGRect) {
-        let center = CGPoint(x: bounds.width / 2, y: bounds.height / 2)
-        let radius = min(bounds.width, bounds.height) / 2
-        let startAngle = -CGFloat.pi / 2
-        let endAngle = startAngle + 2 * CGFloat.pi * CGFloat(progress)
+        let inset: CGFloat = 20
+        let center = CGPoint(x: bounds.midX, y: bounds.midY)
+        let radius = (min(bounds.width, bounds.height) - inset * 2) / 2
+        let lineWidth: CGFloat = 20
+        
+        let gapAngle: CGFloat = 0.2 * CGFloat.pi //Угол разрыва
 
-        let backgroundPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let startAngle = CGFloat.pi / 2 + gapAngle
+        let endAngle = startAngle + 2 * CGFloat.pi * CGFloat(progress) - 2 * gapAngle
+
+        let backgroundPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: startAngle + 2 * CGFloat.pi - 2 * gapAngle, clockwise: true)
+        backgroundPath.lineWidth = lineWidth
+        backgroundPath.lineCapStyle = .round //Закругление краев среза
         UIColor.lightGray.setStroke()
-        backgroundPath.lineWidth = 10
         backgroundPath.stroke()
 
         let progressPath = UIBezierPath(arcCenter: center, radius: radius, startAngle: startAngle, endAngle: endAngle, clockwise: true)
-        UIColor.blue.setStroke()
-        progressPath.lineWidth = 10
+        progressPath.lineWidth = lineWidth
+        progressPath.lineCapStyle = .round
+        ColorResources.customBlue.setStroke()
         progressPath.stroke()
     }
 }

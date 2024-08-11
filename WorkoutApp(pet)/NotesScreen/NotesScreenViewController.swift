@@ -108,10 +108,6 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
         print("Failed to fetch notes: \(error.localizedDescription)")
         
     }
-    
-//    @objc private func addNoteTapped() {
-//        router.navigateToAddNote(from: navigationController)
-//    }
 }
 
 extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource {

@@ -20,7 +20,7 @@ final class TabController: UITabBarController {
         self.assembler = assembler
         super.init(nibName: nil, bundle: nil)
         configureAppearance()
-        switchTo(tab: .profile)
+        switchTo(tab: .stats)
     }
 
     required init?(coder: NSCoder) {
@@ -39,8 +39,8 @@ final class TabController: UITabBarController {
 
     private func configureAppearance() {
         tabBar.tintColor = ColorResources.customBlue
-        tabBar.unselectedItemTintColor = ColorResources.white
-        tabBar.barTintColor = ColorResources.customDarkGrey
+        tabBar.unselectedItemTintColor = ColorResources.black
+        tabBar.barTintColor = ColorResources.white
         tabBar.layer.masksToBounds = true
         tabBar.alpha = 0.9
         

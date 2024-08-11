@@ -13,5 +13,6 @@ final class GoalLabel: BaseLabel {
         font = FontResources.systemFont18
         textColor = ColorResources.black
         textAlignment = .center
+        text = "Test"
     }
 }

@@ -89,7 +89,7 @@ private extension ProfileScreenViewController {
         
         navigationItem.title = Const.myProfile
         navigationController?.isNavigationBarHidden = true
-        tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
+//        tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
         navigationItem.leftBarButtonItem = logOutButton
         navigationItem.rightBarButtonItem = editButton
     }

@@ -25,6 +25,8 @@
 		8AD314232C5FE9EC007D68E1 /* GoalLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD314222C5FE9EC007D68E1 /* GoalLabel.swift */; };
 		8AD314252C5FF0D6007D68E1 /* BaseLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD314242C5FF0D6007D68E1 /* BaseLabel.swift */; };
 		8AD314282C5FF42C007D68E1 /* SetGoalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD314272C5FF42C007D68E1 /* SetGoalButton.swift */; };
+		8AD3142A2C68DED7007D68E1 /* NavBarSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD314292C68DED7007D68E1 /* NavBarSeparator.swift */; };
+		8AD3142C2C68DEFE007D68E1 /* TabBarSeparator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD3142B2C68DEFE007D68E1 /* TabBarSeparator.swift */; };
 		8AEEDDCD2C1CEF310055E216 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */; };
 		CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */; };
 		CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */; };
@@ -108,6 +110,8 @@
 		8AD314222C5FE9EC007D68E1 /* GoalLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalLabel.swift; sourceTree = "<group>"; };
 		8AD314242C5FF0D6007D68E1 /* BaseLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseLabel.swift; sourceTree = "<group>"; };
 		8AD314272C5FF42C007D68E1 /* SetGoalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetGoalButton.swift; sourceTree = "<group>"; };
+		8AD314292C68DED7007D68E1 /* NavBarSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarSeparator.swift; sourceTree = "<group>"; };
+		8AD3142B2C68DEFE007D68E1 /* TabBarSeparator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarSeparator.swift; sourceTree = "<group>"; };
 		8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNoteCell.swift; sourceTree = "<group>"; };
 		CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesInfoViewController.swift; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 				CE4063802BF23EEA0088C135 /* AlertController.swift */,
 				CE4063852BF2A3F60088C135 /* ImageScaler.swift */,
 				CE0CC2E82BF37C7300501CD9 /* FetchPhotoHelper.swift */,
+				8AD314292C68DED7007D68E1 /* NavBarSeparator.swift */,
+				8AD3142B2C68DEFE007D68E1 /* TabBarSeparator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -678,6 +684,7 @@
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
 				8AD3141D2C5F6229007D68E1 /* CircleProgressView.swift in Sources */,
+				8AD3142A2C68DED7007D68E1 /* NavBarSeparator.swift in Sources */,
 				CE0CC2E92BF37C7300501CD9 /* FetchPhotoHelper.swift in Sources */,
 				CE4063862BF2A3F60088C135 /* ImageScaler.swift in Sources */,
 				CE486C6A2BD7BE91006B5E3D /* NotesViewModel.swift in Sources */,
@@ -691,6 +698,7 @@
 				CEDC92242BD14FA400902268 /* ResetLabel.swift in Sources */,
 				8AD314232C5FE9EC007D68E1 /* GoalLabel.swift in Sources */,
 				CE3C13052BB9724C003F3561 /* Note.swift in Sources */,
+				8AD3142C2C68DEFE007D68E1 /* TabBarSeparator.swift in Sources */,
 				CE5CD4532BC86EAC0065991D /* TextFieldResources.swift in Sources */,
 				CE1A8BC32B8256C000ACB21C /* NetworkService.swift in Sources */,
 				CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */,

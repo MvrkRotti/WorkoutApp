@@ -23,5 +23,6 @@ final class StepsLabel: UILabel {
         font = FontResources.boldSystemFont40
         textColor = ColorResources.customBlue
         textAlignment = .center
+        text = "test"
     }
 }

@@ -92,17 +92,13 @@ private extension WelcomeViewController {
             backgroundImageView.topAnchor.constraint(equalTo: view.topAnchor),
             backgroundImageView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             backgroundImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
+            backgroundImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            
             signInButton.centerXAnchor.constraint(equalTo: buttonContainer.centerXAnchor),
             signInButton.centerYAnchor.constraint(equalTo: buttonContainer.centerYAnchor),
             signInButton.widthAnchor.constraint(equalTo: buttonContainer.widthAnchor),
-            signInButton.heightAnchor.constraint(equalTo: buttonContainer.heightAnchor)
-        ])
-        
-        NSLayoutConstraint.activate([
+            signInButton.heightAnchor.constraint(equalTo: buttonContainer.heightAnchor),
+            
             mainLogo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             mainLogo.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.height / 6),
             
