@@ -14,6 +14,7 @@ class StepCounterViewController: UIViewController {
     //MARK: - Variables
     
     private let viewModel: StepViewModel
+    private var cancellables = Set<AnyCancellable>()
     private let router: Router
     
     private let progressView = CircleProgressView()
@@ -50,11 +51,13 @@ class StepCounterViewController: UIViewController {
         setupLayout()
         addNavigationBarSeparator()
         addTabBarSeparator()
+        bindViewModel()
+        viewModel.fetchUserData()
     }
 }
 
 private extension StepCounterViewController {
-
+    
     //MARK: - setupUI
     
     private func setupUI() {
@@ -66,8 +69,10 @@ private extension StepCounterViewController {
         progressView.backgroundColor = .clear
         
         progressView.addSubview(stepsStack)
-                
+        
         view.addSubview(setGoalButton)
+        
+        setGoalButton.addTarget(self, action: #selector(setGoalButtonTapped), for: .touchUpInside)
     }
     
     
@@ -88,5 +93,48 @@ private extension StepCounterViewController {
             setGoalButton.heightAnchor.constraint(equalToConstant: view.bounds.height / 20),
             setGoalButton.widthAnchor.constraint(equalTo: progressView.widthAnchor)
         ])
+    }
+    
+    private func bindViewModel() {
+        viewModel.$currentSteps
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] steps in
+                guard let self = self else { return }
+                let dailyGoal = self.viewModel.dailyGoal > 0 ? self.viewModel.dailyGoal : 10_000
+                let progress = Float(steps) / Float(dailyGoal)
+                
+                print("Steps: \(steps), Daily Goal: \(dailyGoal), Progress: \(progress)") // Отладочный вывод
+                
+                self.progressView.progress = min(max(progress, 0.0), 1.0)
+                
+                self.stepsLabel.text = "\(steps)"
+            }
+            .store(in: &cancellables)
+        
+        viewModel.$dailyGoal
+            .receive(on: DispatchQueue.main)
+            .sink { [ weak self] goal in
+                self?.goalLabel.text = "Goal:\(goal)"
+            }
+            .store(in: &cancellables)
+    }
+    
+    @objc private func setGoalButtonTapped() {
+        let alertController = UIAlertController(title: "Ежедневная цель", message: "Введите количество шагов", preferredStyle: .alert)
+        alertController.addTextField { textField in
+            textField.keyboardType = .numberPad
+            textField.placeholder = "10000"
+        }
+        let confirmAction = UIAlertAction(title: "ОК", style: .default) { [weak self] _ in
+            if let text = alertController.textFields?.first?.text, let goal = Int(text), goal > 0, goal < 1_000_000 {
+                self?.viewModel.setDailyGoal(goal: goal)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        alertController.addAction(confirmAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }

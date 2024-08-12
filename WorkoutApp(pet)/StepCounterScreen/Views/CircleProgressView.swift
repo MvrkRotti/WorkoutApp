@@ -38,3 +38,6 @@ class CircleProgressView: UIView {
         progressPath.stroke()
     }
 }
+
+
+
