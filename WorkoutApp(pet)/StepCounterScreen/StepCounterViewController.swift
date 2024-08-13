@@ -96,6 +96,13 @@ private extension StepCounterViewController {
     }
     
     private func bindViewModel() {
+        viewModel.$dailyGoal
+                    .receive(on: DispatchQueue.main)
+                    .sink { [ weak self] goal in
+                        self?.goalLabel.text = "Goal:\(goal)"
+                    }
+                    .store(in: &cancellables)
+        
         viewModel.$currentSteps
             .receive(on: DispatchQueue.main)
             .sink { [weak self] steps in
@@ -111,12 +118,7 @@ private extension StepCounterViewController {
             }
             .store(in: &cancellables)
         
-        viewModel.$dailyGoal
-            .receive(on: DispatchQueue.main)
-            .sink { [ weak self] goal in
-                self?.goalLabel.text = "Goal:\(goal)"
-            }
-            .store(in: &cancellables)
+        
     }
     
     @objc private func setGoalButtonTapped() {

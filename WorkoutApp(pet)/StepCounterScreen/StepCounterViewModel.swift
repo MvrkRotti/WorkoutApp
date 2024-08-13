@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreMotion
 import FirebaseFirestore
 import FirebaseAuth
 
@@ -18,6 +19,7 @@ class StepViewModel: ObservableObject {
     private var model: StepModel
     private var cancellables = Set<AnyCancellable>()
     private var db = Firestore.firestore()
+    private let stepCounter = CMPedometer()
     
     init(model: StepModel) {
         self.model = model
@@ -26,16 +28,28 @@ class StepViewModel: ObservableObject {
     }
     
     func startTrackingSteps() {
-        // Эмуляция обновления количества шагов через определенные промежутки времени
-        // На практике, это может быть интеграция с HealthKit или другим источником данных
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [weak self] _ in
-            self?.currentSteps += 100 // Например, добавляем 100 шагов каждую секунду
+        guard CMPedometer.isStepCountingAvailable() else {
+            print("Step counting is not available.")
+            return
+        }
+        
+        let startOfDay = Calendar.current.startOfDay(for: Date())
+        stepCounter.startUpdates(from: startOfDay) { [weak self] data, error in
+            guard let self = self, error == nil, let data = data else {
+                print("StepCounter error: \(String(describing: error))")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.currentSteps = data.numberOfSteps.intValue
+                self.updateSteps(steps: self.currentSteps)
+            }
         }
     }
     
     private func bindModel() {
-        self.currentSteps = model.currentSteps
         self.dailyGoal = model.dailyGoal
+        self.currentSteps = model.currentSteps
         self.weeklySteps = model.weeklySteps
     }
     
