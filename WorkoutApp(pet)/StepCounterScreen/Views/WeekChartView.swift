@@ -9,58 +9,82 @@ import UIKit
 import Charts
 import DGCharts
 
-final class WeekChartView: UIView {
-    private var barChartView: BarChartView = {
-        let chartView = BarChartView()
-        chartView.translatesAutoresizingMaskIntoConstraints = false
-        return chartView
-    }()
+final class WeekChartView: BarChartView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupChart()
+        commonInit()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupChart()
+        commonInit()
     }
 
-    private func setupChart() {
-        addSubview(barChartView)
+    private func commonInit() {
+        xAxis.labelPosition = .bottom
+        xAxis.labelRotationAngle = 45
+        xAxis.drawGridLinesEnabled = false
+        xAxis.granularity = 1
+        xAxis.setLabelCount(7, force: true)
+        xAxis.drawLabelsEnabled = false // Отключаем метки на оси X
 
-        NSLayoutConstraint.activate([
-            barChartView.topAnchor.constraint(equalTo: topAnchor),
-            barChartView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            barChartView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            barChartView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        ])
+        leftAxis.drawGridLinesEnabled = false
+        leftAxis.axisMinimum = 0
+        leftAxis.granularity = 1
+        leftAxis.labelCount = 7
+        leftAxis.valueFormatter = DefaultAxisValueFormatter(decimals: 0)
+
+        rightAxis.enabled = false
+        chartDescription.enabled = false
+        legend.enabled = false
     }
 
     func updateData(steps: [StepData]) {
+        let datesOfWeek = getDatesForCurrentWeek()
         var dataEntries: [BarChartDataEntry] = []
+        var maxSteps = 0
+        let currentDate = Date()
 
-        for (index, stepData) in steps.enumerated() {
-            let dataEntry = BarChartDataEntry(x: Double(index), y: Double(stepData.steps))
-            dataEntries.append(dataEntry)
+        for (index, date) in datesOfWeek.enumerated() {
+            if let stepData = steps.first(where: { Calendar.current.isDate($0.date, inSameDayAs: date) }) {
+                let dataEntry = BarChartDataEntry(x: Double(index), y: Double(stepData.steps))
+                dataEntries.append(dataEntry)
+                maxSteps = max(maxSteps, stepData.steps)
+            } else {
+                let dataEntry = BarChartDataEntry(x: Double(index), y: 0)
+                dataEntries.append(dataEntry)
+            }
         }
 
         let chartDataSet = BarChartDataSet(entries: dataEntries, label: "Шаги")
-        chartDataSet.colors = [.blue]
+        chartDataSet.colors = dataEntries.map { entry in
+            let isToday = Calendar.current.isDate(datesOfWeek[Int(entry.x)], inSameDayAs: currentDate)
+            return isToday ? ColorResources.customRed : ColorResources.customBlue
+        }
         let chartData = BarChartData(dataSet: chartDataSet)
 
-        barChartView.data = chartData
-        barChartView.xAxis.valueFormatter = IndexAxisValueFormatter(values: steps.map { stepData in
-            let formatter = DateFormatter()
-            formatter.dateFormat = "dd MMM"
-            return formatter.string(from: stepData.date)
-        })
-        barChartView.xAxis.granularity = 1
-        barChartView.xAxis.labelPosition = .bottom
-        barChartView.xAxis.drawGridLinesEnabled = false
-        barChartView.rightAxis.enabled = false
-        barChartView.leftAxis.drawGridLinesEnabled = false
-        barChartView.leftAxis.axisMinimum = 0
-        barChartView.animate(yAxisDuration: 1.0)
+        data = chartData
+        leftAxis.axisMaximum = Double(maxSteps) * 1.2
+        notifyDataSetChanged()
+    }
+    
+    private func getDatesForCurrentWeek() -> [Date] {
+        var dates: [Date] = []
+        let calendar = Calendar.current
+        let currentDate = Date()
+        
+        // Найти дату понедельника текущей недели
+        let weekDay = calendar.component(.weekday, from: currentDate)
+        let daysToMonday = (weekDay + 5) % 7
+        let startOfWeek = calendar.date(byAdding: .day, value: -daysToMonday, to: currentDate)!
+
+        for i in 0..<7 {
+            if let date = calendar.date(byAdding: .day, value: i, to: startOfWeek) {
+                dates.append(date)
+            }
+        }
+        
+        return dates
     }
 }

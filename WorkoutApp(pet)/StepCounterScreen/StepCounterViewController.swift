@@ -6,8 +6,8 @@
 //
 
 import UIKit
-//import Charts
-//import DGCharts
+import Charts
+import DGCharts
 import Combine
 
 class StepCounterViewController: UIViewController {
@@ -62,7 +62,7 @@ private extension StepCounterViewController {
     
     private func setupUI() {
         
-        navigationItem.title = "Step Counter"
+        navigationItem.title = Const.stepCounterMainTitle
         
         view.addSubview(progressView)
         progressView.translatesAutoresizingMaskIntoConstraints = false
@@ -72,11 +72,14 @@ private extension StepCounterViewController {
         
         view.addSubview(setGoalButton)
         
+        view.addSubview(weekChart)
+        weekChart.translatesAutoresizingMaskIntoConstraints = false
+        
         setGoalButton.addTarget(self, action: #selector(setGoalButtonTapped), for: .touchUpInside)
     }
     
     
-    //MARK: - SEtupLayout
+    //MARK: - SetupLayout
     
     private func setupLayout() {
         NSLayoutConstraint.activate([
@@ -91,15 +94,21 @@ private extension StepCounterViewController {
             setGoalButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             setGoalButton.topAnchor.constraint(equalTo: progressView.bottomAnchor, constant: 10),
             setGoalButton.heightAnchor.constraint(equalToConstant: view.bounds.height / 20),
-            setGoalButton.widthAnchor.constraint(equalTo: progressView.widthAnchor)
+            setGoalButton.widthAnchor.constraint(equalTo: progressView.widthAnchor),
+            
+            weekChart.topAnchor.constraint(equalTo: setGoalButton.bottomAnchor, constant: 30),
+            weekChart.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            weekChart.widthAnchor.constraint(equalTo: setGoalButton.widthAnchor),
+            weekChart.heightAnchor.constraint(equalToConstant: view.bounds.height / 5)
         ])
     }
     
+    //MARK: - Bind ViewModel
     private func bindViewModel() {
         viewModel.$dailyGoal
                     .receive(on: DispatchQueue.main)
                     .sink { [ weak self] goal in
-                        self?.goalLabel.text = "Goal:\(goal)"
+                        self?.goalLabel.text = Const.goalTitle + "\(goal)"
                     }
                     .store(in: &cancellables)
         
@@ -110,7 +119,7 @@ private extension StepCounterViewController {
                 let dailyGoal = self.viewModel.dailyGoal > 0 ? self.viewModel.dailyGoal : 10_000
                 let progress = Float(steps) / Float(dailyGoal)
                 
-                print("Steps: \(steps), Daily Goal: \(dailyGoal), Progress: \(progress)") // Отладочный вывод
+                print("Steps: \(steps), Daily Goal: \(dailyGoal), Progress: \(progress)")
                 
                 self.progressView.progress = min(max(progress, 0.0), 1.0)
                 
@@ -118,21 +127,27 @@ private extension StepCounterViewController {
             }
             .store(in: &cancellables)
         
-        
+        viewModel.$weeklySteps
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] weeklySteps in
+                self?.weekChart.updateData(steps: weeklySteps)
+            }
+            .store(in: &cancellables)
     }
     
+    
     @objc private func setGoalButtonTapped() {
-        let alertController = UIAlertController(title: "Ежедневная цель", message: "Введите количество шагов", preferredStyle: .alert)
+        let alertController = UIAlertController(title: Const.setDailyGoalTitle, message: Const.numberOfStepsTitle, preferredStyle: .alert)
         alertController.addTextField { textField in
             textField.keyboardType = .numberPad
             textField.placeholder = "10000"
         }
-        let confirmAction = UIAlertAction(title: "ОК", style: .default) { [weak self] _ in
+        let confirmAction = UIAlertAction(title: Const.okAction, style: .default) { [weak self] _ in
             if let text = alertController.textFields?.first?.text, let goal = Int(text), goal > 0, goal < 1_000_000 {
                 self?.viewModel.setDailyGoal(goal: goal)
             }
         }
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: Const.cancelAction, style: .cancel, handler: nil)
         
         alertController.addAction(confirmAction)
         alertController.addAction(cancelAction)

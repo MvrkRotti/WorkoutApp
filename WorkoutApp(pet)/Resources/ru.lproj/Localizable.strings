@@ -69,12 +69,21 @@
 "nutrition" = "Питание";
 "others" = "Другое";
 
+"dailyGoalButtonTitle" = "Установить ежедневную цель";
+"goalTitle" = "Цель:";
+"noChartDataTitle" = "Нет данных для отображения!";
+"stepCounterMainTitle" = "Шагомер";
+"setDailyGoalTitle" = "Ежедневная цель";
+"numberOfStepsTitle" = "Введите количество шагов";
+
+
 //Alert strings
 
 "fillAllFields" = "Пожалуйста, проверьте заполнение всех полей.";
 "emptyFields" = "Email или пароль не заполнены.";
 "incorrectFilling" = "Неверный Email или пароль.";
 "alertTitle" = "Ошибка!";
+"okAction" = "Ок";
 "cancelAction" = "Отмена";
 "enterEmail" = "Укажите Email";
 "resetPassInfo" = "Инструкция по сбросу пароля отправлена на указанный адрес.";

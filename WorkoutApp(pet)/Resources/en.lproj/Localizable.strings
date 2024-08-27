@@ -67,6 +67,12 @@
 "nutrition" = "Nutrition";
 "others" = "Others";
 
+"dailyGoalButtonTitle" = "Set Daily Goal";
+"goalTitle" = "Goal:";
+"noChartDataTitle" = "No chart data available!";
+"stepCounterMainTitle" = "Step Counter";
+"setDailyGoalTitle" = "Daily goal";
+"numberOfStepsTitle" = "Enter number of steps";
 
 
 //Alert strings
@@ -75,6 +81,7 @@
 "emptyFields" = "Email or password is empty";
 "incorrectFilling" = "Check your email or password";
 "alertTitle" = "Alert";
+"okAction" = "OK";
 "cancelAction" = "Try Again";
 "enterEmail" = "Enter your Email";
 "resetPassInfo" = "Password reset instructions sent to your email.";

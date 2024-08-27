@@ -25,18 +25,51 @@ class StepViewModel: ObservableObject {
         self.model = model
         self.bindModel()
         startTrackingSteps()
+        fetchWeeklySteps()
     }
+    
+//    func startTrackingSteps() {
+//        guard CMPedometer.isStepCountingAvailable() else {
+//            print("Step counting is not available.")
+//            return
+//        }
+//        
+//        let startOfDay = Calendar.current.startOfDay(for: Date())
+//        stepCounter.startUpdates(from: startOfDay) { [weak self] data, error in
+//            guard let self = self, error == nil, let data = data else {
+//                print("StepCounter error: \(String(describing: error))")
+//                return
+//            }
+//            
+//            DispatchQueue.main.async {
+//                self.currentSteps = data.numberOfSteps.intValue
+//                self.updateSteps(steps: self.currentSteps)
+//            }
+//        }
+//    }
     
     func startTrackingSteps() {
         guard CMPedometer.isStepCountingAvailable() else {
             print("Step counting is not available.")
             return
         }
-        
+
         let startOfDay = Calendar.current.startOfDay(for: Date())
-        stepCounter.startUpdates(from: startOfDay) { [weak self] data, error in
+        stepCounter.queryPedometerData(from: startOfDay, to: Date()) { [weak self] data, error in
             guard let self = self, error == nil, let data = data else {
-                print("StepCounter error: \(String(describing: error))")
+                print("Pedometer error: \(String(describing: error))")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.currentSteps = data.numberOfSteps.intValue
+                self.updateSteps(steps: self.currentSteps)
+            }
+        }
+
+        stepCounter.startUpdates(from: Date()) { [weak self] data, error in
+            guard let self = self, error == nil, let data = data else {
+                print("Pedometer error: \(String(describing: error))")
                 return
             }
             
@@ -62,6 +95,21 @@ class StepViewModel: ObservableObject {
         
         let stepData = StepData(steps: steps, date: Date())
         db.collection("usersSteps").document(uid).collection("steps").addDocument(data: stepData.dictionary)
+        
+        fetchWeeklySteps()
+    }
+    
+    func fetchWeeklySteps() {
+        guard let user = Auth.auth().currentUser else { return }
+        let uid = user.uid
+        
+        db.collection("usersSteps").document(uid).collection("steps")
+            .order(by: "date")
+            .limit(toLast: 7)
+            .getDocuments { [weak self] snapshot, error in
+                guard let self = self, let documents = snapshot?.documents else { return }
+                self.weeklySteps = documents.compactMap { StepData(document: $0) }
+            }
     }
     
     func setDailyGoal(goal: Int) {
@@ -82,6 +130,8 @@ class StepViewModel: ObservableObject {
         self.currentSteps = model.currentSteps
         
         db.collection("usersSteps").document(uid).collection("steps").addDocument(data: StepData(steps: 0, date: Date()).dictionary)
+        
+        fetchWeeklySteps()
     }
     
     func fetchUserData() {
@@ -98,5 +148,7 @@ class StepViewModel: ObservableObject {
             guard let self = self, let documents = snapshot?.documents else { return }
             self.weeklySteps = documents.compactMap { StepData(document: $0) }
         }
+        
+        fetchWeeklySteps()
     }
 }

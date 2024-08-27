@@ -26,8 +26,9 @@ final class SetGoalButton: UIButton {
         backgroundColor = ColorResources.customBlue
         layer.cornerRadius = 15
         translatesAutoresizingMaskIntoConstraints = false
-        setTitle("Set daily goal", for: .normal)
+        setTitle(Const.dailyGoalButtonTitle, for: .normal)
         setTitleColor(ColorResources.white, for: .normal)
+        
     }
     
     private func setupAction() {
