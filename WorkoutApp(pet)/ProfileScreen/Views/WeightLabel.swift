@@ -24,7 +24,7 @@ final class WeightLabel: UILabel {
 private extension WeightLabel {
     func setupAppearance() {
         textColor = ColorResources.black
-        font = FontResources.profileLabelFont
+        font = FontResources.systemFont22
 //        text = Const.weight
     }
 }

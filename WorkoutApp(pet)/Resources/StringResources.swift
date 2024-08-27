@@ -7,54 +7,6 @@
 
 import UIKit
 
-//enum StringResources {
-//    enum CommonStrings {
-//        static let selectPhoto = "Select Photo"
-//        static let sets = "Sets"
-//        static let reps = "Reps"
-//        static let min = "Min"
-//        static let save = "SAVE"
-//        static let cancel = "CANCEL"
-//        static let resetPassLabelText = "This email address will used for reset your password."
-//    }
-//    
-//    enum NavigationBarHeaders {
-//        static let exerciseScreen = "Handbook"
-//        static let notesScreen = "My Notes"
-//        static let profileScreen = "My Profile"
-//        static let resetPassword = "Reset Password"
-//    }
-//    
-//    enum AutorizedScreenStrings {
-//        static let signIn = "Sign In"
-//        static let signUp = "Sign Up"
-//        static let alreadyHaveAcc = "Already have an account?"
-//    }
-//    
-//    enum RegistrationScreenStrings {
-//        static let navBarText = "Registration"
-//        static let registrationLabel = "Create your account"
-//    }
-//    
-//    enum AlertResources {
-//        static let fillAllFields = "Please, fill in all fields"
-//        static let emptyField = "Email or password is empty"
-//        static let incorrectFilling = "Check your email or password"
-//        static let alertTitle = "Alert"
-//        static let cancelAction = "Try Again"
-//        static let enterEmail = "Enter your Email"
-//        static let resetPassInfo = "Password reset instructions sent to your email."
-//    }
-//    
-//    enum BMIDescription {
-//        static let underweight = "Underweight. Possible nutritional deficiency and osteoporosis."
-//        static let normal = "Normal value. Low healthy risk."
-//        static let overweight = "Mild to moderate overweight. Moderate risk of developing heart disease, high blood pressure, stroke, diabetes mellitus."
-//        static let veryOverweight = "Very overweight to obese. High risk of developing heart disease, high blood pressure, stroke, diabetes mellitus. Metabolic Syndrome."
-//        static let noData = "Please enter your height and weight for getting result."
-//    }
-//}
-
 struct Const {
     static let signUp = NSLocalizedString("signUp", comment: "")
     static let sighIn = NSLocalizedString("sighIn", comment: "")
@@ -74,6 +26,11 @@ struct Const {
     static let gender = NSLocalizedString("gender", comment: "")
     static let weight = NSLocalizedString("weight", comment: "")
     static let height = NSLocalizedString("height", comment: "")
+    static let noName = NSLocalizedString("noName", comment: "")
+    static let noAge = NSLocalizedString("NoAge", comment: "")
+    static let noWeight = NSLocalizedString("noWeight", comment: "")
+    static let noHeight = NSLocalizedString("noHeight", comment: "")
+    static let noGender = NSLocalizedString("noGender", comment: "")
     static let BMI = NSLocalizedString("BMI", comment: "")
     static let nonHeightAndWeight = NSLocalizedString("nonHeightAndWeight", comment: "")
     static let BMILowIntex = NSLocalizedString("BMIDescriptionLow", comment: "")
@@ -107,12 +64,25 @@ struct Const {
     static let addNewExercise = NSLocalizedString("addNewExercise", comment: "")
     static let addNote = NSLocalizedString("addNote", comment: "")
     static let back = NSLocalizedString("back", comment: "")
+    static let delete = NSLocalizedString("delete", comment: "")
+    static let newNote = NSLocalizedString("newNote", comment: "")
+    static let title = NSLocalizedString("title", comment: "")
+    static let sport = NSLocalizedString("sport", comment: "")
+    static let nutrition = NSLocalizedString("nutrition", comment: "")
+    static let others = NSLocalizedString("others", comment: "")
+    static let dailyGoalButtonTitle = NSLocalizedString("dailyGoalButtonTitle", comment: "")
+    static let goalTitle = NSLocalizedString("goalTitle", comment: "")
+    static let noChartDataTitle = NSLocalizedString("noChartDataTitle", comment: "")
+    static let stepCounterMainTitle = NSLocalizedString("stepCounterMainTitle", comment: "")
+    static let setDailyGoalTitle = NSLocalizedString("setDailyGoalTitle", comment: "")
+    static let numberOfStepsTitle = NSLocalizedString("numberOfStepsTitle", comment: "")
 
     //Alert resources
     static let fillAllFields = NSLocalizedString("fillAllFields", comment: "")
     static let emptyFields = NSLocalizedString("emptyFields", comment: "")
     static let incorrectFilling = NSLocalizedString("incorrectFilling", comment: "")
     static let alertTitle = NSLocalizedString("alertTitle", comment: "")
+    static let okAction = NSLocalizedString("okAction", comment: "")
     static let cancelAction = NSLocalizedString("cancelAction", comment: "")
     static let enterEmail = NSLocalizedString("enterEmail", comment: "")
     static let resetPassInfo = NSLocalizedString("resetPassInfo", comment: "")

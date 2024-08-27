@@ -24,7 +24,7 @@ final class NameLabel: UILabel {
 private extension NameLabel {
     func setupAppearance() {
         textColor = ColorResources.black
-        font = FontResources.profileLabelFont
+        font = FontResources.systemFont22
         text = Const.firstName
     }
 }

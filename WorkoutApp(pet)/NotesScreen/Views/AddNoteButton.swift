@@ -26,18 +26,20 @@ final class AddNoteButton: UIButton {
 
 private extension AddNoteButton {
     func setupAppearance() {
-        frame = CGRect(x: 0, y: 0, width: 65, height: 65)
+        setImage(UIImage(systemName: "plus"), for: .normal)
+        backgroundColor = ColorResources.customBlue
+        tintColor = ColorResources.black
+//        layer.cornerRadius = 30
+        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowOpacity = 0.3
+        layer.shadowOffset = CGSize(width: 2, height: 2)
+        layer.shadowRadius = 5
         
-        setTitle("+", for: .normal)
-        titleLabel?.font = FontResources.registrationLabelFont
-        setTitleColor(ColorResources.black, for: .normal)
-        
-        backgroundColor = ColorResources.customCoral
-        layer.cornerRadius = frame.width / 2
+        backgroundColor = ColorResources.customBlue
+        layer.cornerRadius = self.bounds.width / 2
     }
     
-    @objc
-    func AddButtonDidTapped() {
+    @objc func AddButtonDidTapped() {
         addButtonTapped?()
         
     }

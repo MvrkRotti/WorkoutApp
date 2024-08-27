@@ -6,13 +6,13 @@
 //
 
 import UIKit
-//import SDWebImage
+import FirebaseAuth
 
 final class ProfileScreenViewController: UIViewController {
     
     //MARK: - Variables
     
-    var router: ProfileRouterProtocol?
+    var router: DefaultRouter
     var viewModel: ProfileViewModel
     
     private let photoView = ProfilePhotoView(frame: .zero)
@@ -39,8 +39,9 @@ final class ProfileScreenViewController: UIViewController {
     }()
     //    MARK: - Lifecycle
     
-    init(viewModel: ProfileViewModel) {
+    init(viewModel: ProfileViewModel, router: DefaultRouter) {
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -54,15 +55,19 @@ final class ProfileScreenViewController: UIViewController {
         setupUI()
         setupLayout()
         setGradientBackground()
-        fillProfileData()
+        fillProfile()
         loadProfilePhoto()
+        
+        viewModel.didLogout = { [weak self] in
+                    self?.handleLogout()
+                }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.isNavigationBarHidden = false
         tabBarController?.tabBar.isHidden = false
-        fillProfileData()
+        fillProfile()
         loadProfilePhoto()
     }
 }
@@ -81,28 +86,40 @@ private extension ProfileScreenViewController {
         editBarButton.setTitle(Const.edit, for: .normal)
         editBarButton.frame = CGRect(x: 0, y: 0, width: 90, height: 20)
         editBarButton.addTarget(self, action: #selector(editButtonDidTapped), for: .touchUpInside)
-//        let editButton = UIBarButtonItem(title: Const.edit, style: .plain, target: self, action: #selector(editButtonDidTapped))
-//        let logOutButton = UIBarButtonItem(title: Const.logOut, style: .plain, target: self, action: #selector(logOutButtonDidTapped))
         
         navigationItem.title = Const.myProfile
         navigationController?.isNavigationBarHidden = true
-        tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
+//        tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
         navigationItem.leftBarButtonItem = logOutButton
         navigationItem.rightBarButtonItem = editButton
     }
     
     @objc func editButtonDidTapped() {
-        router?.pushEditScreen()
+        router.navigateToEditScreen(from: navigationController)
     }
     
     @objc func logOutButtonDidTapped() {
-        router?.popToRoot(form: self)
+        viewModel.logout()
     }
     
-    
+    private func handleLogout() {
+        if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
+            let welcomeViewController = sceneDelegate.assembler.resolve() as WelcomeViewController
+            router.setRootViewController(welcomeViewController, in: sceneDelegate.window!)
+        }
+    }
+
     func setupUI() {
         view.setupView(photoView)
         view.setupView(profileStackView)
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: FontResources.boldSystemFont20,
+            .foregroundColor: ColorResources.white
+        ]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
     }
     
     
@@ -122,24 +139,15 @@ private extension ProfileScreenViewController {
 
 // MARK: - Profile filling
 
-extension ProfileScreenViewController {
+private extension ProfileScreenViewController {
     
-    func fillProfileData() {
-        if let name = viewModel.name {
-            nameLabel.text = Const.firstName + name
-        }
-        if let age = viewModel.age {
-            ageLabel.text = Const.age + String(age) + Const.years
-        }
-        if let weight = viewModel.weight {
-            weightLabel.text = Const.weight + String(weight) + Const.kg
-        }
-        if let height = viewModel.height {
-            heightLabel.text = Const.height + String(height) + Const.cm
-        }
-        if let gender = viewModel.gender {
-            genderLabel.text = Const.gender + ": " + gender
-        }
+    func setProfileData() {
+        
+        nameLabel.text = Const.firstName + ": " + (viewModel.name ?? Const.noName)
+        ageLabel.text = viewModel.age != nil ? Const.age + ": " + "\(viewModel.age!)" : Const.noAge
+        weightLabel.text = viewModel.weight != nil ? Const.weight + ": " + "\(viewModel.weight!)" + Const.kg : Const.noWeight
+        heightLabel.text = viewModel.height != nil ? Const.height + ": " + "\(viewModel.height!)" + Const.cm : Const.noHeight
+        genderLabel.text = Const.gender + ": " + (viewModel.gender ?? Const.noGender)
         
         if let bmi = viewModel.bmi {
             let roundedBMI = String(format: "%.2f", bmi) // Округляем до 2 знаков после запятой
@@ -150,8 +158,18 @@ extension ProfileScreenViewController {
             bmiDescriptionLabel.text = "\(bmiDescription)"
             bmiDescriptionLabel.textColor = viewModel.textColor
         }
-        
-                
+    }
+    
+    func fillProfile() {
+        viewModel.fetchUserProfile { [weak self] user, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self?.showAlert(message: "Error: \(error)")
+                } else {
+                    self?.setProfileData()
+                }
+            }
+        }
     }
     
     func loadProfilePhoto() {

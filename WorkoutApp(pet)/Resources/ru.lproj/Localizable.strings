@@ -6,6 +6,8 @@
   
 */
 
+
+
 "signUp" = "Регистрация";
 "alreadyHaveAcc" = "Уже есть аккаунт?";
 "sighIn" = "Войти";
@@ -18,13 +20,16 @@
 "confirmPassword" = "Подтвержение пароля";
 "resetPassword" = "Сброс пароля";
 "resetPasswordInfo" = "Этот адрес электронной почты будет использован для сброса вашего пароля.";
-"handbook" = "Справочник";
 "notes" = "Заметки";
-"profile" = "Профиль";
-"age" = "Возраст: ";
-"gender" = "Пол: ";
-"weight" = "Вес: ";
-"height" = "Рост: ";
+"age" = "Возраст";
+"gender" = "Пол";
+"weight" = "Вес";
+"height" = "Рост";
+"noName" = "Имя не указано.";
+"noAge" = "Возраст не указан.";
+"noWeight" = "Вес не указан.";
+"noHeight" = "Рост не указан.";
+"noGender" = "Пол не указан.";
 "BMI" = "ИМТ: ";
 "BMIDescriptionLow" = "Пониженный вес. Возможная недостаточность питания и остеопороз.";
 "BMIDescriptionNormal" = "Значение в норме. Риск здоровью минимален.";
@@ -57,12 +62,28 @@
 "addNote" = "Добавить заметку";
 "back" = "Назад";
 
+"delete" = "Удалить";
+"newNote" = "Новая заметка";
+"title" = "Заголовок";
+"sport" = "Спорт";
+"nutrition" = "Питание";
+"others" = "Другое";
+
+"dailyGoalButtonTitle" = "Установить ежедневную цель";
+"goalTitle" = "Цель:";
+"noChartDataTitle" = "Нет данных для отображения!";
+"stepCounterMainTitle" = "Шагомер";
+"setDailyGoalTitle" = "Ежедневная цель";
+"numberOfStepsTitle" = "Введите количество шагов";
+
+
 //Alert strings
 
 "fillAllFields" = "Пожалуйста, проверьте заполнение всех полей.";
 "emptyFields" = "Email или пароль не заполнены.";
 "incorrectFilling" = "Неверный Email или пароль.";
 "alertTitle" = "Ошибка!";
+"okAction" = "Ок";
 "cancelAction" = "Отмена";
 "enterEmail" = "Укажите Email";
 "resetPassInfo" = "Инструкция по сбросу пароля отправлена на указанный адрес.";

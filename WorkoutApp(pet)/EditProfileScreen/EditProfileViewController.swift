@@ -11,8 +11,7 @@ import FirebaseAuth
 final class EditProfileViewController: UIViewController {
     
     //MARK: - Variables
-    var router: EditProfileScreenRouter?
-    
+    var router: Router
     var viewModel: EditProfileViewModel
     
     private let profilePhoto = ProfilePhotoView(frame: CGRect())
@@ -37,8 +36,9 @@ final class EditProfileViewController: UIViewController {
     
     //MARK: - Lifecycle
     
-    init(viewModel: EditProfileViewModel) {
+    init(viewModel: EditProfileViewModel, router: Router) {
         self.viewModel = viewModel
+        self.router = router
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -124,9 +124,16 @@ private extension EditProfileViewController {
             return showAlert(message: Const.needLogIn)
         }
         
-        viewModel.saveUserData(age: age, weight: weight, height: height, gender: gender, userID: userID)
+        viewModel.saveUserData(age: age, weight: weight, height: height, gender: gender) { success, error in
+            if success {
+                self.router.popScreen(from: self.navigationController)
+            } else {
+                self.showAlert(message: "error")
+                self.router.popScreen(from: self.navigationController)
+            }
+        }
         
-        router?.navigateBack()        
+        
     }
     
     func fetchPhotoProfile() {

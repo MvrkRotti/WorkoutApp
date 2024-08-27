@@ -45,7 +45,7 @@ class PasswordVisibilityButton: UIButton {
 extension UITextField {
     func addPasswordVisibilityButton() {
         let button = PasswordVisibilityButton(type: .custom)
-        button.tintColor = ColorResources.customCoral
+        button.tintColor = ColorResources.customBlue
         button.frame = CGRect(x: 0, y: 0, width: 40, height: 30)
         button.contentEdgeInsets = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
         button.addTarget(self, action: #selector(togglePasswordVisibility), for: .touchUpInside)
@@ -67,7 +67,7 @@ extension UITextField {
     func addSystemIconToLeft(systemName: String) {
         let iconView = UIImageView(frame: CGRect(x: 8, y: 0, width: 25, height: 25))
         iconView.image = UIImage(systemName: systemName)
-        iconView.tintColor = ColorResources.customCoral
+        iconView.tintColor = ColorResources.customBlue
         iconView.contentMode = .scaleAspectFit
         
         let iconContainerView: UIView = {

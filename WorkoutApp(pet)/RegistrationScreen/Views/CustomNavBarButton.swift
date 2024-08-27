@@ -18,7 +18,8 @@ final class CustomNavBarButton: UIButton {
     }
     
     private func setupAppearence() {
-        backgroundColor = ColorResources.customDarkGrey
+        backgroundColor = ColorResources.customBlue
+        tintColor = ColorResources.white
         layer.cornerRadius = 15
         clipsToBounds = true
     }

@@ -11,20 +11,23 @@
 "sighIn" = "Sign In";
 "back" = "Back";
 "signUpTitle" = "Create your profile";
-"firstName" = "First Name";
+"firstName" = "Name";
 "lastName" = "Last Name";
 "email" = "Email";
 "password" = "Password";
 "confirmPassword" = "Confirm Password";
 "resetPassword" = "Reset password";
 "resetPasswordInfo" = "This email adress will used for reset your password.";
-"handbook" = "Handbook";
+"age" = "Age";
 "notes" = "Notes";
-"profile" = "Profile";
-"age" = "Age:";
-"gender" = "Gender:";
-"weight" = "Weight:";
-"height" = "Height:";
+"gender" = "Gender";
+"weight" = "Weight";
+"height" = "Height";
+"noName" = "Name not available.";
+"noAge" = "Age not available.";
+"noWeight" = "Weight not available.";
+"noHeight" = "Height not available.";
+"noGender" = "Gender not available.";
 "BMI" = "BMI:";
 "BMIDescriptionLow" = "Underweight. Possible nutritional deficiency and osteoporosis.";
 "BMIDescriptionNormal" = "Normal value. Low healthy risk.";
@@ -57,6 +60,20 @@
 "addNote" = "Add note";
 "back" = "Back";
 
+"delete" = "Delete";
+"newNote" = "New note";
+"title" = "Title";
+"sport" = "Sport";
+"nutrition" = "Nutrition";
+"others" = "Others";
+
+"dailyGoalButtonTitle" = "Set Daily Goal";
+"goalTitle" = "Goal:";
+"noChartDataTitle" = "No chart data available!";
+"stepCounterMainTitle" = "Step Counter";
+"setDailyGoalTitle" = "Daily goal";
+"numberOfStepsTitle" = "Enter number of steps";
+
 
 //Alert strings
 
@@ -64,6 +81,7 @@
 "emptyFields" = "Email or password is empty";
 "incorrectFilling" = "Check your email or password";
 "alertTitle" = "Alert";
+"okAction" = "OK";
 "cancelAction" = "Try Again";
 "enterEmail" = "Enter your Email";
 "resetPassInfo" = "Password reset instructions sent to your email.";

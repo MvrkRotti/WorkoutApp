@@ -28,7 +28,7 @@ private extension SelectPhotoButton {
         setTitleColor(ColorResources.black, for: .normal)
         setTitleColor(.systemBlue, for: .normal)
         titleLabel?.textAlignment = .center
-        titleLabel?.font = FontResources.addExerciseLabelFont
+        titleLabel?.font = FontResources.systemFont18
         sizeToFit()
         
         let buttonTitleStr = NSMutableAttributedString(string: Const.selectPhoto)

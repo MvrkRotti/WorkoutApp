@@ -24,7 +24,7 @@ final class HeightLabel: UILabel {
 private extension HeightLabel {
     func setupAppearance() {
         textColor = ColorResources.black
-        font = FontResources.profileLabelFont
+        font = FontResources.systemFont22
 //        text = Const.height
     }
 }

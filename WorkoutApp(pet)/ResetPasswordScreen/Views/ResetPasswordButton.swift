@@ -11,7 +11,6 @@ final class ResetPasswordButton: UIButton {
     
     var resetTapped: (() -> Void)?
 
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAppearance()
@@ -27,8 +26,8 @@ final class ResetPasswordButton: UIButton {
 private extension ResetPasswordButton {
     func setupAppearance() {
         setTitle(Const.resetPassword, for: .normal)
-        setTitleColor(ColorResources.black, for: .normal)
-        backgroundColor = ColorResources.customCoral
+        setTitleColor(ColorResources.white, for: .normal)
+        backgroundColor = ColorResources.customBlue
         layer.cornerRadius = 15
     }
     

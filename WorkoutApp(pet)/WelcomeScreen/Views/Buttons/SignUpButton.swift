@@ -28,9 +28,9 @@ private extension SignUpButton {
     func setupAppearance() {
         
         setTitle(Const.signUp, for: .normal)
-        setTitleColor(ColorResources.black, for: .normal)
+        setTitleColor(ColorResources.white, for: .normal)
         layer.cornerRadius = 15
-        backgroundColor = ColorResources.customCoral
+        backgroundColor = ColorResources.customBlue
     }
     
     @objc func signUpDidTapped() {
