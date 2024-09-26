@@ -33,12 +33,11 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
         super.viewDidLoad()
         viewModel.delegate = self
         viewModel.fetchNotes()
-        
+        addTabBarSeparator()
+        addNavigationBarSeparator()
         setupCollection()
         setupAddButton()
         setupUI()
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,16 +48,9 @@ final class NotesScreenViewController: UIViewController, NotesViewModelDelegate 
     }
     
     private func setupUI() {
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "backGroundImage")!)
-        navigationItem.title = Const.notes
+        view.backgroundColor = ColorResources.white
         
-        let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes = [
-            .font: FontResources.boldSystemFont20,
-            .foregroundColor: ColorResources.white
-        ]
-        
-        navigationController?.navigationBar.standardAppearance = appearance
+        navBarSettingsWith(title: Const.notes)
     }
     
     private func setupCollection() {

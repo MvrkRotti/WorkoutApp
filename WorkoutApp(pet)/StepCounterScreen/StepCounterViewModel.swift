@@ -28,26 +28,6 @@ class StepViewModel: ObservableObject {
         fetchWeeklySteps()
     }
     
-//    func startTrackingSteps() {
-//        guard CMPedometer.isStepCountingAvailable() else {
-//            print("Step counting is not available.")
-//            return
-//        }
-//        
-//        let startOfDay = Calendar.current.startOfDay(for: Date())
-//        stepCounter.startUpdates(from: startOfDay) { [weak self] data, error in
-//            guard let self = self, error == nil, let data = data else {
-//                print("StepCounter error: \(String(describing: error))")
-//                return
-//            }
-//            
-//            DispatchQueue.main.async {
-//                self.currentSteps = data.numberOfSteps.intValue
-//                self.updateSteps(steps: self.currentSteps)
-//            }
-//        }
-//    }
-    
     func startTrackingSteps() {
         guard CMPedometer.isStepCountingAvailable() else {
             print("Step counting is not available.")

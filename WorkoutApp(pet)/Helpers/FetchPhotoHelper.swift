@@ -17,7 +17,7 @@ final class FetchProfilePhoto {
         }
         
         let storageRef = Storage.storage().reference().child("images/\(uid).jpg")
-        storageRef.getData(maxSize: 1 * 1024 * 1024) { (data, error) in
+        storageRef.getData(maxSize: 3 * 1024 * 1024) { (data, error) in
             if let error = error {
                 print("Error downloading profile image: \(error)")
                 completion(nil)

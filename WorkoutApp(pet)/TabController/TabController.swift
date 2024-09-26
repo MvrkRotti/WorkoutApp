@@ -9,6 +9,7 @@ import UIKit
 
 enum Tabs: Int, CaseIterable {
     case stats
+    case tracking
     case notes
     case profile
 }
@@ -20,7 +21,7 @@ final class TabController: UITabBarController {
         self.assembler = assembler
         super.init(nibName: nil, bundle: nil)
         configureAppearance()
-        switchTo(tab: .stats)
+        switchTo(tab: .tracking)
     }
 
     required init?(coder: NSCoder) {
@@ -58,22 +59,25 @@ final class TabController: UITabBarController {
     private func getController(for tab: Tabs) -> UIViewController {
         switch tab {
         case .stats: return assembler.resolve() as StepCounterViewController
+        case .tracking: return assembler.resolve() as TrackingScreenViewController
         case .notes: return assembler.resolve() as NotesScreenViewController
         case .profile: return assembler.resolve() as ProfileScreenViewController
         }
     }
 
-    private func tabTitle(for tab: Tabs) -> String {
-        switch tab {
-        case .stats: return Const.handbook
-        case .notes: return Const.notes
-        case .profile: return Const.profile
-        }
-    }
+//    private func tabTitle(for tab: Tabs) -> String {
+//        switch tab {
+//        case .stats: return Const.stats
+//        case .tracking: return ""
+//        case .notes: return Const.notes
+//        case .profile: return Const.profile
+//        }
+//    }
 
     private func tabIcon(for tab: Tabs) -> UIImage? {
         switch tab {
         case .stats: return UIImage(named: "statIcon")
+        case .tracking: return UIImage(named: "trackingIcon")
         case .notes: return UIImage(named: "notesIcon")
         case .profile: return UIImage(named: "profileIcon")
         }

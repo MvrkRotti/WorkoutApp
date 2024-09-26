@@ -18,5 +18,17 @@ extension UIViewController {
     @objc private func hideKeyboard() {
         view.endEditing(true)
     }
+    
+    func navBarSettingsWith(title: String) {
+        navigationItem.title = title
+        
+        let appearance = UINavigationBarAppearance()
+        appearance.titleTextAttributes = [
+            .font: FontResources.boldSystemFont20,
+            .foregroundColor: ColorResources.black
+        ]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+    }
 }
 

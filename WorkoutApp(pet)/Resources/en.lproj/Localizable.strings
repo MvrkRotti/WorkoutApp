@@ -20,6 +20,7 @@
 "resetPasswordInfo" = "This email adress will used for reset your password.";
 "age" = "Age";
 "notes" = "Notes";
+"trackingTitle" = "Tracking";
 "gender" = "Gender";
 "weight" = "Weight";
 "height" = "Height";

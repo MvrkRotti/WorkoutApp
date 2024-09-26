@@ -46,7 +46,7 @@ class StepCounterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = ColorResources.white
         setupUI()
         setupLayout()
         addNavigationBarSeparator()
@@ -62,7 +62,7 @@ private extension StepCounterViewController {
     
     private func setupUI() {
         
-        navigationItem.title = Const.stepCounterMainTitle
+        navBarSettingsWith(title: Const.stepCounterMainTitle)
         
         view.addSubview(progressView)
         progressView.translatesAutoresizingMaskIntoConstraints = false

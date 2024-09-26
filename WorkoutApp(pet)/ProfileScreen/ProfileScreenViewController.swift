@@ -54,6 +54,8 @@ final class ProfileScreenViewController: UIViewController {
         navigationBarAppearance()
         setupUI()
         setupLayout()
+//        addNavigationBarSeparator()
+//        addTabBarSeparator()
         setGradientBackground()
         fillProfile()
         loadProfilePhoto()
@@ -87,9 +89,9 @@ private extension ProfileScreenViewController {
         editBarButton.frame = CGRect(x: 0, y: 0, width: 90, height: 20)
         editBarButton.addTarget(self, action: #selector(editButtonDidTapped), for: .touchUpInside)
         
-        navigationItem.title = Const.myProfile
-        navigationController?.isNavigationBarHidden = true
-//        tabBarController?.tabBar.backgroundColor = ColorResources.customDarkGrey
+        navBarSettingsWith(title: Const.myProfile)
+//        navigationController?.isNavigationBarHidden = true
+
         navigationItem.leftBarButtonItem = logOutButton
         navigationItem.rightBarButtonItem = editButton
     }
@@ -112,14 +114,6 @@ private extension ProfileScreenViewController {
     func setupUI() {
         view.setupView(photoView)
         view.setupView(profileStackView)
-        
-        let appearance = UINavigationBarAppearance()
-        appearance.titleTextAttributes = [
-            .font: FontResources.boldSystemFont20,
-            .foregroundColor: ColorResources.white
-        ]
-        
-        navigationController?.navigationBar.standardAppearance = appearance
     }
     
     

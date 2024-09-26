@@ -10,12 +10,17 @@ import UIKit
 final class AddNoteButton: UIButton {
     
     var addButtonTapped: (() -> Void)?
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAppearance()
         makeSystem(self)
         setupAction()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.cornerRadius = self.frame.height / 2
     }
     
     @available(*, unavailable)
@@ -29,14 +34,12 @@ private extension AddNoteButton {
         setImage(UIImage(systemName: "plus"), for: .normal)
         backgroundColor = ColorResources.customBlue
         tintColor = ColorResources.black
-//        layer.cornerRadius = 30
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.3
         layer.shadowOffset = CGSize(width: 2, height: 2)
         layer.shadowRadius = 5
         
         backgroundColor = ColorResources.customBlue
-        layer.cornerRadius = self.bounds.width / 2
     }
     
     @objc func AddButtonDidTapped() {
