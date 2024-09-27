@@ -21,6 +21,7 @@ extension UIViewController {
     
     func navBarSettingsWith(title: String) {
         navigationItem.title = title
+        navigationController?.navigationBar.backgroundColor = ColorResources.white
         
         let appearance = UINavigationBarAppearance()
         appearance.titleTextAttributes = [
@@ -29,6 +30,21 @@ extension UIViewController {
         ]
         
         navigationController?.navigationBar.standardAppearance = appearance
+    }
+    
+    func setGradientBackground() {
+        let topColor = ColorResources.gradientTopColor.cgColor
+        
+        let middleColor = ColorResources.gradientMiddleColor.cgColor
+        
+        let bottomColor = ColorResources.gradientBottomColor.cgColor
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [topColor, middleColor, bottomColor]
+        gradientLayer.locations = [0.0, 0.5, 1.0]
+        gradientLayer.frame = self.view.bounds
+        
+        self.view.layer.insertSublayer(gradientLayer, at:0)
     }
 }
 

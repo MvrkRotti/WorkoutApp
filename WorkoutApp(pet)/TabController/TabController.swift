@@ -42,6 +42,7 @@ final class TabController: UITabBarController {
         tabBar.tintColor = ColorResources.customBlue
         tabBar.unselectedItemTintColor = ColorResources.black
         tabBar.barTintColor = ColorResources.white
+        tabBar.backgroundColor = ColorResources.white
         tabBar.layer.masksToBounds = true
         tabBar.alpha = 0.9
         
