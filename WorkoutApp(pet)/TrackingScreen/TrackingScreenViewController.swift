@@ -15,7 +15,7 @@ final class TrackingScreenViewController: UIViewController, MKMapViewDelegate {
     private let router: Router
     
     private var mapView: MKMapView!
-    
+    private let topView = TopView()
     
     //MARK: - Lifecycle
     init(viewModel: TrackingViewModel, router: Router) {
