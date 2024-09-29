@@ -62,4 +62,10 @@ final class TopView: UIView {
             label.numberOfLines = 0
         }
     }
+    
+    func setupValueForLabels(time: String, distance: String, calories: String) {
+        totalTimeLabel.text = time
+        distanceLabel.text = distance
+        caloriesLabel.text = calories
+    }
 }

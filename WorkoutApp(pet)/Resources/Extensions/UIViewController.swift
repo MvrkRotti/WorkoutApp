@@ -46,5 +46,12 @@ extension UIViewController {
         
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
+    
+    func setupViews(_ views: UIView...) {
+        views.forEach { UIElement in
+            view.addSubview(UIElement)
+            UIElement.translatesAutoresizingMaskIntoConstraints = false
+        }
+    }
 }
 
