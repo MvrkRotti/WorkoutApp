@@ -30,10 +30,9 @@ final class TrackingScreenViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
         setupMapView()
+        setupUI()
         setupLayoout()
-//        addNavigationBarSeparator()
         addTabBarSeparator()
     }
 }
@@ -42,6 +41,9 @@ private extension TrackingScreenViewController {
     func setupUI() {
         view.backgroundColor = ColorResources.white
         navBarSettingsWith(title: Const.tracking)
+        
+        view.addSubview(topView)
+        topView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     func setupLayoout() {
@@ -49,7 +51,12 @@ private extension TrackingScreenViewController {
             mapView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             mapView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             mapView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            mapView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
+            topView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            topView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            topView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            topView.heightAnchor.constraint(equalToConstant: self.view.bounds.height / 7)
         ])
     }
     
