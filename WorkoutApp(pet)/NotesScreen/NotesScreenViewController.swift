@@ -152,8 +152,6 @@ extension NotesScreenViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let selectedNote = viewModel.notes[indexPath.row]
         
-        let detailVC = NoteInfoViewController()
-        detailVC.note = selectedNote
-        navigationController?.pushViewController(detailVC, animated: true)
+        router.navigateToNoteInfo(from: navigationController, with: selectedNote)
     }
 }

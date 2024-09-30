@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Foundation
 
 protocol Assembler: AnyObject {
     func resolve() -> WelcomeViewController
@@ -15,6 +16,7 @@ protocol Assembler: AnyObject {
     func resolve() -> TrackingScreenViewController
     func resolve() -> NotesScreenViewController
     func resolve() -> AddNoteViewController
+    func resolve(note: Note) -> NoteInfoViewController
     func resolve() -> ProfileScreenViewController
     func resolve() -> ResetPasswordViewController
     func resolve() -> EditProfileViewController
@@ -69,6 +71,12 @@ class DefaultAssembler: Assembler {
         let viewModel = NotesViewModel()
         let viewController = AddNoteViewController(viewModel: viewModel)
         viewModel.delegate = viewController as? any NotesViewModelDelegate
+        return viewController
+    }
+    
+    func resolve(note: Note) -> NoteInfoViewController {
+        let viewController = NoteInfoViewController()
+        viewController.note = note
         return viewController
     }
     

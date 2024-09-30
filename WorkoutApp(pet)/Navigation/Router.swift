@@ -11,6 +11,7 @@ protocol Router {
     func navigateToRegister(from navigationController: UINavigationController?)
     func navigateToTabBar(from navigationController: UINavigationController?)
     func navigateToAddNote(from navigationController: UINavigationController?)
+    func navigateToNoteInfo(from navigationController: UINavigationController?, with note: Note)
     func navigateToResetPassword(from navigationController: UINavigationController?)
     func navigateToEditScreen(from navigationController: UINavigationController?)
     func popScreen(from navigationController: UINavigationController?)
@@ -52,6 +53,12 @@ class DefaultRouter: Router {
         guard let assembler = assembler else { return }
         let addNoteVC = assembler.resolve() as AddNoteViewController
         navigationController?.pushViewController(addNoteVC, animated: true)
+    }
+    
+    func navigateToNoteInfo(from navigationController: UINavigationController?, with note: Note) {
+        guard let assembler = assembler else { return }
+        let infoScreen = assembler.resolve(note: note) as NoteInfoViewController
+        navigationController?.pushViewController(infoScreen, animated: true)
     }
     
     func navigateToResetPassword(from navigationController: UINavigationController?) {
