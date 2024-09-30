@@ -54,6 +54,8 @@ private extension CustomTrackingButton {
             setTitle("Pause", for: .normal)
             setTitleColor(ColorResources.black, for: .normal)
             backgroundColor = ColorResources.white
+            layer.borderWidth = 1
+            layer.borderColor = ColorResources.customMainBlue.cgColor
             isHidden = true
         case .finish:
             setTitle("Finish", for: .normal)

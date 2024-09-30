@@ -124,7 +124,7 @@ private extension TrackingScreenViewController {
     
     private func updateTopView(distance: Double, time: TimeInterval, calories: Double) {
         let timeString = formatTimeInterval(time)
-        let distanceString = formatDistance(distance) // Форматируем расстояние для отображения
+        let distanceString = formatDistance(distance)
         topView.updateMetrics(distance: distanceString, time: timeString, calories: calories)
     }
 
@@ -140,9 +140,9 @@ private extension TrackingScreenViewController {
     private func formatDistance(_ distance: Double) -> String {
         if distance >= 1000 {
             let kilometers = distance / 1000
-            return String(format: "%.1f км", kilometers) // Отображаем в километрах с одним знаком после запятой
+            return String(format: "%.1f км", kilometers)
         } else {
-            return String(format: "%.0f м", distance) // Отображаем в метрах
+            return String(format: "%.0f м", distance)
         }
     }
     
@@ -150,6 +150,8 @@ private extension TrackingScreenViewController {
     private func updateButtons(isTracking: Bool, isPaused: Bool) {
         if isTracking {
             startButton.isHidden = true
+            bikeButton.isHidden = true
+            runningButton.isHidden = true
             pauseButton.isHidden = false
             finishButton.isHidden = false
             pauseButton.setTitle(isPaused ? "Возобновить" : "Пауза", for: .normal)
@@ -157,19 +159,21 @@ private extension TrackingScreenViewController {
             NSLayoutConstraint.activate([
                 pauseButton.heightAnchor.constraint(equalToConstant: view.bounds.height / 15),
                 pauseButton.centerYAnchor.constraint(equalTo: bikeButton.centerYAnchor),
-                pauseButton.leadingAnchor.constraint(equalTo: bikeButton.trailingAnchor, constant: 10),
-                pauseButton.widthAnchor.constraint(equalToConstant: self.view.bounds.width / 3.5),
+                pauseButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+                pauseButton.widthAnchor.constraint(equalToConstant: self.view.bounds.width / 2.5),
                 
                 finishButton.heightAnchor.constraint(equalToConstant: view.bounds.height / 15),
                 finishButton.centerYAnchor.constraint(equalTo: bikeButton.centerYAnchor),
-                finishButton.trailingAnchor.constraint(equalTo: runningButton.leadingAnchor, constant: -10),
-                finishButton.widthAnchor.constraint(equalToConstant: self.view.bounds.width / 3.5),
+                finishButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+                finishButton.widthAnchor.constraint(equalToConstant: self.view.bounds.width / 2.5),
 
             ])
         } else {
             startButton.isHidden = false
             pauseButton.isHidden = true
             finishButton.isHidden = true
+            bikeButton.isHidden = false
+            runningButton.isHidden = false
         }
     }
     
@@ -227,24 +231,30 @@ private extension TrackingScreenViewController {
 
 
 extension TrackingScreenViewController: CLLocationManagerDelegate {
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else { return }
-        
+
+        let region = MKCoordinateRegion(center: newLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
+        mapView.setRegion(region, animated: true)
+
+        guard viewModel.isTracking, !viewModel.isPaused else { return }
+
+        if let lastLocation = viewModel.lastLocationBeforePause {
+            viewModel.locations.append(lastLocation)
+            viewModel.lastLocationBeforePause = nil
+        }
+
         viewModel.locations.append(newLocation)
-        
+
         if let polyline = polyline {
             mapView.removeOverlay(polyline)
         }
-        
+
         let coordinates = viewModel.locations.map { $0.coordinate }
         polyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
         mapView.addOverlay(polyline!)
-        
-        let region = MKCoordinateRegion(center: newLocation.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
-        mapView.setRegion(region, animated: true)
     }
-    
+
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
         if let polyline = overlay as? MKPolyline {
             let renderer = MKPolylineRenderer(polyline: polyline)
