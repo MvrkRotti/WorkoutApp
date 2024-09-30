@@ -14,7 +14,7 @@ final class SelectPhotoButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAppearance()
-        makeSystem(self)
+        makeAnimate(self)
     }
     @available(*, unavailable)
     required init?(coder: NSCoder) {

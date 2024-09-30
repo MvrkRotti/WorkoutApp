@@ -14,7 +14,7 @@ final class AddNoteButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupAppearance()
-        makeSystem(self)
+        makeAnimate(self)
         setupAction()
     }
     

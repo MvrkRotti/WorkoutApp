@@ -63,9 +63,9 @@ final class TopView: UIView {
         }
     }
     
-    func setupValueForLabels(time: String, distance: String, calories: String) {
-        totalTimeLabel.text = time
-        distanceLabel.text = distance
-        caloriesLabel.text = calories
+    func updateMetrics(distance: Double, time: String, calories: Double) {
+        distanceLabel.text = String(format: "Дистанция: %.2f м", distance)
+        totalTimeLabel.text = "Время: \(time)"
+        caloriesLabel.text = String(format: "Калории: %.2f", calories)
     }
 }

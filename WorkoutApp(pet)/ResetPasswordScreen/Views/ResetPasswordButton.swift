@@ -16,7 +16,7 @@ final class ResetPasswordButton: UIButton {
         setupAppearance()
         setupLayout()
         setupAction()
-        makeSystem(self)
+        makeAnimate(self)
     }
     
     required init?(coder: NSCoder) {

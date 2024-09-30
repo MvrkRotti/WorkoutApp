@@ -41,8 +41,8 @@
     func resolve()</string>
 				<key>trailing</key>
 				<string>-&gt; TrackingScreenViewController {
-        let viewModel = TrackingViewModel()
-        let router = DefaultRouter(assembler: self)
+        let workoutService = WorkoutService()
+        let viewModel = TrackingViewModel(sportType: .running, workoutService: workoutService)
 </string>
 			</dict>
 			<key>title</key>

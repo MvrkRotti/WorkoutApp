@@ -11,12 +11,15 @@ enum SideButtonType {
     case bike
     case running
     case start
+    case pause
+    case finish
 }
 
-final class SideBottomButton: UIButton {
+final class CustomTrackingButton: UIButton {
     init(type: SideButtonType) {
         super.init(frame: .zero)
         configureButtonWith(type: type)
+        makeAnimate(self)
     }
     
     required init?(coder: NSCoder) {
@@ -29,7 +32,7 @@ final class SideBottomButton: UIButton {
     }
 }
 
-private extension SideBottomButton {
+private extension CustomTrackingButton {
     func configureButtonWith(type: SideButtonType) {
         switch type {
         case .bike:
@@ -47,7 +50,14 @@ private extension SideBottomButton {
         case .start:
             setTitle("Start", for: .normal)
             backgroundColor = ColorResources.customMainBlue
-
+        case .pause:
+            setTitle("Pause", for: .normal)
+            backgroundColor = .lightGray
+            isHidden = true
+        case .finish:
+            setTitle("Finish", for: .normal)
+            backgroundColor = ColorResources.customMainBlue
+            isHidden = true
         }
         
     }

@@ -50,7 +50,8 @@ class DefaultAssembler: Assembler {
     }
     
     func resolve() -> TrackingScreenViewController {
-        let viewModel = TrackingViewModel()
+        let workoutService = WorkoutService()
+        let viewModel = TrackingViewModel(sportType: .running, workoutService: workoutService)
         let router = DefaultRouter(assembler: self)
         let viewController = TrackingScreenViewController(viewModel: viewModel, router: router)
         return viewController

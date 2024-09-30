@@ -16,7 +16,7 @@ final class SignInButton: UIButton {
         self.frame = CGRect(x: 0, y: 0, width: 120, height: 30)
         setupAppearance()
         setupAction()
-        makeSystem(self)
+        makeAnimate(self)
     }
     
     @available(*, unavailable)

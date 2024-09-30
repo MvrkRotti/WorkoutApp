@@ -15,7 +15,7 @@ final class SetGoalButton: UIButton {
         super.init(frame: frame)
         setupAppearence()
         setupAction()
-        makeSystem(self)
+        makeAnimate(self)
     }
     
     required init?(coder: NSCoder) {

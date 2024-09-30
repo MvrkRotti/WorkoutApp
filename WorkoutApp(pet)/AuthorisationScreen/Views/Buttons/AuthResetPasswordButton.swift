@@ -16,7 +16,7 @@ final class AuthResetPasswordButton: UIButton {
         setupAppearance()
         setupAction()
         setupLayout()
-        makeSystem(self)
+        makeAnimate(self)
     }
     
     @available(*, unavailable)

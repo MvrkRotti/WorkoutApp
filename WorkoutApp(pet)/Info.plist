@@ -22,6 +22,12 @@
 	<true/>
 	<key>NSMotionUsageDescription</key>
 	<string>Мы используем данные активности для подсчета шагов.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Need your loc</string>
+	<key>NSLocationUsageDescription</key>
+	<string>need your loc too</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string></string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

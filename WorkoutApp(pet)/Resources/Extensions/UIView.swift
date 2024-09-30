@@ -9,7 +9,7 @@ import UIKit
 
 extension UIView {
     
-    func makeSystem(_ button: UIButton) {
+    func makeAnimate(_ button: UIButton) {
         button.addTarget(self, action: #selector(handleIn), for: [
             .touchDown,
             .touchDragInside
