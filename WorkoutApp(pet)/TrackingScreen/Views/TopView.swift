@@ -63,9 +63,9 @@ final class TopView: UIView {
         }
     }
     
-    func updateMetrics(distance: Double, time: String, calories: Double) {
-        distanceLabel.text = String(format: "Дистанция: %.2f м", distance)
-        totalTimeLabel.text = "Время: \(time)"
-        caloriesLabel.text = String(format: "Калории: %.2f", calories)
+    func updateMetrics(distance: String, time: String, calories: Double) {
+        distanceLabel.text = distance // Здесь передаем отформатированное расстояние
+        totalTimeLabel.text = time
+        caloriesLabel.text = String(format: "%.0f ккал", calories) // Если нужно отобразить калории
     }
 }

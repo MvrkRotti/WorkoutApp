@@ -47,9 +47,14 @@ final class TrackingScreenViewController: UIViewController, MKMapViewDelegate {
         setupLayoout()
         setupActions()
         addTabBarSeparator()
+        setupDefaultType()
         
         viewModel.onUpdateMetrics = { [weak self] distance, time, calories in
             self?.updateTopView(distance: distance, time: time, calories: calories)
+        }
+        
+        viewModel.onTrackingStatusChanged = { [weak self] isTracking, isPaused in
+            self?.updateButtons(isTracking: isTracking, isPaused: isPaused)
         }
     }
 }
@@ -88,7 +93,8 @@ private extension TrackingScreenViewController {
             startButton.heightAnchor.constraint(equalToConstant: self.view.bounds.height / 15),
             startButton.centerYAnchor.constraint(equalTo: bikeButton.centerYAnchor),
             startButton.leadingAnchor.constraint(equalTo: bikeButton.trailingAnchor, constant: 10),
-            startButton.trailingAnchor.constraint(equalTo: runningButton.leadingAnchor, constant: -10)
+            startButton.trailingAnchor.constraint(equalTo: runningButton.leadingAnchor, constant: -10),
+            
         ])
     }
     
@@ -101,61 +107,121 @@ private extension TrackingScreenViewController {
     }
     
     func locationManagerSetttings() {
-           locationManager = CLLocationManager()
-           locationManager.delegate = self
-           locationManager.requestWhenInUseAuthorization()
-           locationManager.desiredAccuracy = kCLLocationAccuracyBest
-           locationManager.startUpdatingLocation()
-       }
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.startUpdatingLocation()
+    }
     
     func setupActions() {
         bikeButton.addTarget(self, action: #selector(bikeTapped), for: .touchUpInside)
         runningButton.addTarget(self, action: #selector(reunTapped), for: .touchUpInside)
         startButton.addTarget(self, action: #selector(startTapped), for: .touchUpInside)
+        pauseButton.addTarget(self, action: #selector(pauseTapped), for: .touchUpInside)
+        finishButton.addTarget(self, action: #selector(finishTapped), for: .touchUpInside)
     }
     
     private func updateTopView(distance: Double, time: TimeInterval, calories: Double) {
         let timeString = formatTimeInterval(time)
-        topView.updateMetrics(distance: distance, time: timeString, calories: calories)
+        let distanceString = formatDistance(distance) // Форматируем расстояние для отображения
+        topView.updateMetrics(distance: distanceString, time: timeString, calories: calories)
     }
-    
+
+    // Форматирование времени
     private func formatTimeInterval(_ time: TimeInterval) -> String {
         let hours = Int(time) / 3600
         let minutes = (Int(time) % 3600) / 60
         let seconds = Int(time) % 60
         return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
     }
+
+    // Форматирование расстояния
+    private func formatDistance(_ distance: Double) -> String {
+        if distance >= 1000 {
+            let kilometers = distance / 1000
+            return String(format: "%.1f км", kilometers) // Отображаем в километрах с одним знаком после запятой
+        } else {
+            return String(format: "%.0f м", distance) // Отображаем в метрах
+        }
+    }
     
+    
+    private func updateButtons(isTracking: Bool, isPaused: Bool) {
+        if isTracking {
+            startButton.isHidden = true
+            pauseButton.isHidden = false
+            finishButton.isHidden = false
+            pauseButton.setTitle(isPaused ? "Возобновить" : "Пауза", for: .normal)
+            
+            NSLayoutConstraint.activate([
+                pauseButton.heightAnchor.constraint(equalToConstant: view.bounds.height / 15),
+                pauseButton.centerYAnchor.constraint(equalTo: bikeButton.centerYAnchor),
+                pauseButton.leadingAnchor.constraint(equalTo: bikeButton.trailingAnchor, constant: 10),
+                pauseButton.widthAnchor.constraint(equalToConstant: self.view.bounds.width / 3.5),
+                
+                finishButton.heightAnchor.constraint(equalToConstant: view.bounds.height / 15),
+                finishButton.centerYAnchor.constraint(equalTo: bikeButton.centerYAnchor),
+                finishButton.trailingAnchor.constraint(equalTo: runningButton.leadingAnchor, constant: -10),
+                finishButton.widthAnchor.constraint(equalToConstant: self.view.bounds.width / 3.5),
+
+            ])
+        } else {
+            startButton.isHidden = false
+            pauseButton.isHidden = true
+            finishButton.isHidden = true
+        }
+    }
     
     @objc func bikeTapped() {
         viewModel.sportType = .cycling
-        
+
         bikeButton.backgroundColor = ColorResources.customMainBlue
         bikeButton.tintColor = .red
-        runningButton.backgroundColor = .lightGray
+        runningButton.backgroundColor = ColorResources.white
         startButton.setTitle("Начать велоспорт", for: .normal)
     }
-    
+
     @objc func reunTapped() {
         viewModel.sportType = .running
-        
-        bikeButton.backgroundColor = .lightGray
+
+        bikeButton.backgroundColor = ColorResources.white
         runningButton.backgroundColor = ColorResources.customMainBlue
         runningButton.tintColor = .red
         startButton.setTitle("Начать бег", for: .normal)
     }
-    
+
     @objc func startTapped() {
         guard let userId = Auth.auth().currentUser?.uid else {
             print("User not logged in")
             return
         }
-        
+
         if viewModel.isTracking {
             viewModel.stopTracking(userId: userId)
         } else {
             viewModel.startTracking()
         }
+    }
+    
+    @objc func pauseTapped() {
+        viewModel.togglePauseTracking()
+    }
+
+    @objc func finishTapped() {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            print("User not logged in")
+            return
+        }
+
+        viewModel.finishTracking(userId: userId)
+        updateButtons(isTracking: false, isPaused: false)
+    }
+    
+    private func setupDefaultType() {
+        viewModel.sportType = .running
+        runningButton.backgroundColor = ColorResources.customMainBlue
+        startButton.setTitle("Начать бег", for: .normal)
     }
 }
 
@@ -164,6 +230,7 @@ extension TrackingScreenViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let newLocation = locations.last else { return }
+        
         viewModel.locations.append(newLocation)
         
         if let polyline = polyline {

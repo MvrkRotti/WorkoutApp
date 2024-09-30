@@ -37,13 +37,13 @@ private extension CustomTrackingButton {
         switch type {
         case .bike:
             setImage(UIImage(named: "bikeImage"), for: .normal)
-            backgroundColor = .lightGray
+            backgroundColor = ColorResources.white
             layer.borderWidth = 1
             layer.borderColor = ColorResources.customMainBlue.cgColor
             contentHorizontalAlignment = .center
         case .running:
             setImage(UIImage(named: "runningImage"), for: .normal)
-            backgroundColor = .lightGray
+            backgroundColor = ColorResources.white
             layer.borderWidth = 1
             layer.borderColor = ColorResources.customMainBlue.cgColor
             contentHorizontalAlignment = .center
@@ -52,11 +52,13 @@ private extension CustomTrackingButton {
             backgroundColor = ColorResources.customMainBlue
         case .pause:
             setTitle("Pause", for: .normal)
-            backgroundColor = .lightGray
+            setTitleColor(ColorResources.black, for: .normal)
+            backgroundColor = ColorResources.white
             isHidden = true
         case .finish:
             setTitle("Finish", for: .normal)
-            backgroundColor = ColorResources.customMainBlue
+            backgroundColor = ColorResources.customRed
+            setTitleColor(ColorResources.black, for: .normal)
             isHidden = true
         }
         
