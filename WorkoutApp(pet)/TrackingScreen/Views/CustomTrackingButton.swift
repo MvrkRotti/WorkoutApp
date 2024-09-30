@@ -48,17 +48,17 @@ private extension CustomTrackingButton {
             layer.borderColor = ColorResources.customMainBlue.cgColor
             contentHorizontalAlignment = .center
         case .start:
-            setTitle("Start", for: .normal)
+            setTitle(Const.startButtonTitle, for: .normal)
             backgroundColor = ColorResources.customMainBlue
         case .pause:
-            setTitle("Pause", for: .normal)
+            setTitle(Const.pauseButtonTitle, for: .normal)
             setTitleColor(ColorResources.black, for: .normal)
             backgroundColor = ColorResources.white
             layer.borderWidth = 1
             layer.borderColor = ColorResources.customMainBlue.cgColor
             isHidden = true
         case .finish:
-            setTitle("Finish", for: .normal)
+            setTitle(Const.finishButtonTitle, for: .normal)
             backgroundColor = ColorResources.customRed
             setTitleColor(ColorResources.black, for: .normal)
             isHidden = true

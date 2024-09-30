@@ -34,9 +34,9 @@ final class TopView: UIView {
         distanceLabel.translatesAutoresizingMaskIntoConstraints = false
         caloriesLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        totalTimeLabel.text = "00:00:00 \nTotal time"
-        distanceLabel.text = "0.00 \nDistance (km)"
-        caloriesLabel.text = "0 \nCalories(kcal)"
+        totalTimeLabel.text = Const.defaultTimeLabel
+        distanceLabel.text = Const.defaultDistanceLabel
+        caloriesLabel.text = Const.defaultCaloriesLabel
     }
         
     private func setupLayout() {
@@ -64,8 +64,8 @@ final class TopView: UIView {
     }
     
     func updateMetrics(distance: String, time: String, calories: Double) {
-        distanceLabel.text = distance // Здесь передаем отформатированное расстояние
+        distanceLabel.text = distance
         totalTimeLabel.text = time
-        caloriesLabel.text = String(format: "%.0f ккал", calories) // Если нужно отобразить калории
+        caloriesLabel.text = String(format: Const.caloriesLabel, calories)
     }
 }

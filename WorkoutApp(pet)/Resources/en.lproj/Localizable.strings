@@ -6,21 +6,43 @@
   
 */
 
+//MARK: - Welcome screen
 "signUp" = "Sign Up";
 "alreadyHaveAcc" = "Already have an account?";
 "sighIn" = "Sign In";
 "back" = "Back";
+
+//MARK: - SignUp screen
 "signUpTitle" = "Create your profile";
 "firstName" = "Name";
 "lastName" = "Last Name";
 "email" = "Email";
 "password" = "Password";
 "confirmPassword" = "Confirm Password";
+
+//MARK: - Reset password screen
 "resetPassword" = "Reset password";
 "resetPasswordInfo" = "This email adress will used for reset your password.";
-"age" = "Age";
-"notes" = "Notes";
+
+//MARK: - Tracking screen
 "trackingTitle" = "Tracking";
+"totalTimeLabel" = "%02d:%02d:%02d \n Total time";
+"distanceLabel" = "%.1f \n Distance(km)";
+"calories" = "%.0f \n Calories(kcal)";
+
+"defaultTimeLabel" = "00:00:00 \n Total time";
+"defaultDistanceLabel" = "0.0 \n Distance(km)";
+"defaultCaloriesLabel" = "0 \n Calories(kcal)";
+
+"startButtonTitle" = "Start";
+"pauseButtonTitle" = "Pause";
+"finishButtonTitle" = "Finish";
+"resumeBUttonTitle" = "Resume";
+"cyclingButtonTitle" = "Start cycling";
+"runningButtonTitle" = "Start runnig";
+
+//MARK: - Profile and edit profile screen
+"age" = "Age";
 "gender" = "Gender";
 "weight" = "Weight";
 "height" = "Height";
@@ -45,22 +67,17 @@
 "male" = "Male";
 "female" = "Female";
 "selectPhoto" = "Select photo";
-"sets" = "sets";
-"reps" = "reps";
 "min" = "min";
 "save" = "SAVE";
 "cancel" = "CANCEL";
 "gender" = "Gender";
 "yourPhoto" = "Your\nPhoto";
-"muscle" = "Muscle";
-"trainingName" = "Training name";
-"exerciseName" = "Exercise name";
-"restTime" = "rest time(min)";
 "loading" = "Loading";
-"addNewExercise" = "Add new exercise";
 "addNote" = "Add note";
 "back" = "Back";
 
+//MARK: - Note screen
+"notes" = "Notes";
 "delete" = "Delete";
 "newNote" = "New note";
 "title" = "Title";
@@ -68,6 +85,7 @@
 "nutrition" = "Nutrition";
 "others" = "Others";
 
+//MARK: - Stepcounter screen
 "dailyGoalButtonTitle" = "Set Daily Goal";
 "goalTitle" = "Goal:";
 "noChartDataTitle" = "No chart data available!";

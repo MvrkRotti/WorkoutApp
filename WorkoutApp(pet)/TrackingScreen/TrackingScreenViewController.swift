@@ -128,21 +128,19 @@ private extension TrackingScreenViewController {
         topView.updateMetrics(distance: distanceString, time: timeString, calories: calories)
     }
 
-    // Форматирование времени
     private func formatTimeInterval(_ time: TimeInterval) -> String {
         let hours = Int(time) / 3600
         let minutes = (Int(time) % 3600) / 60
         let seconds = Int(time) % 60
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
+        return String(format: Const.totalTimeLabel, hours, minutes, seconds)
     }
 
-    // Форматирование расстояния
     private func formatDistance(_ distance: Double) -> String {
         if distance >= 1000 {
             let kilometers = distance / 1000
-            return String(format: "%.1f км", kilometers)
+            return String(format: Const.distanceLabel, kilometers)
         } else {
-            return String(format: "%.0f м", distance)
+            return String(format: Const.distanceLabel, distance)
         }
     }
     
@@ -154,7 +152,7 @@ private extension TrackingScreenViewController {
             runningButton.isHidden = true
             pauseButton.isHidden = false
             finishButton.isHidden = false
-            pauseButton.setTitle(isPaused ? "Возобновить" : "Пауза", for: .normal)
+            pauseButton.setTitle(isPaused ? Const.resumeButtonTitle : Const.pauseButtonTitle, for: .normal)
             
             NSLayoutConstraint.activate([
                 pauseButton.heightAnchor.constraint(equalToConstant: view.bounds.height / 15),
@@ -183,7 +181,7 @@ private extension TrackingScreenViewController {
         bikeButton.backgroundColor = ColorResources.customMainBlue
         bikeButton.tintColor = .red
         runningButton.backgroundColor = ColorResources.white
-        startButton.setTitle("Начать велоспорт", for: .normal)
+        startButton.setTitle(Const.cyclingButtonTitle, for: .normal)
     }
 
     @objc func reunTapped() {
@@ -192,7 +190,7 @@ private extension TrackingScreenViewController {
         bikeButton.backgroundColor = ColorResources.white
         runningButton.backgroundColor = ColorResources.customMainBlue
         runningButton.tintColor = .red
-        startButton.setTitle("Начать бег", for: .normal)
+        startButton.setTitle(Const.runningButtonTitle, for: .normal)
     }
 
     @objc func startTapped() {
@@ -225,7 +223,7 @@ private extension TrackingScreenViewController {
     private func setupDefaultType() {
         viewModel.sportType = .running
         runningButton.backgroundColor = ColorResources.customMainBlue
-        startButton.setTitle("Начать бег", for: .normal)
+        startButton.setTitle(Const.runningButtonTitle, for: .normal)
     }
 }
 

@@ -8,20 +8,40 @@
 import UIKit
 
 struct Const {
+    //MARK: - Welcome screen
     static let signUp = NSLocalizedString("signUp", comment: "")
     static let sighIn = NSLocalizedString("sighIn", comment: "")
     static let mainLabel = NSLocalizedString("signUpTitle", comment: "")
     static let resetPassword = NSLocalizedString("resetPassword", comment: "")
     static let haveAccountText = NSLocalizedString("alreadyHaveAcc", comment: "")
+    
+    //MARK: - Registration screen
     static let firstName = NSLocalizedString("firstName", comment: "")
     static let lastName = NSLocalizedString("lastName", comment: "")
     static let password = NSLocalizedString("password", comment: "")
     static let confirmPassword = NSLocalizedString("confirmPassword", comment: "")
+    
+    //MARK: - Reset password screen
     static let email = NSLocalizedString("email", comment: "")
     static let resetPasswordInfo = NSLocalizedString("resetPasswordInfo", comment: "")
     static let stats = NSLocalizedString("handbook", comment: "")
-    static let notes = NSLocalizedString("notes", comment: "")
+
+    //MARK: - Tracking screen
     static let tracking = NSLocalizedString("trackingTitle", comment: "")
+    static let caloriesLabel = NSLocalizedString("calories", comment: "")
+    static let distanceLabel = NSLocalizedString("distanceLabel", comment: "")
+    static let totalTimeLabel = NSLocalizedString("totalTimeLabel", comment: "")
+    static let defaultTimeLabel = NSLocalizedString("defaultTimeLabel", comment: "")
+    static let defaultDistanceLabel = NSLocalizedString("defaultDistanceLabel", comment: "")
+    static let defaultCaloriesLabel = NSLocalizedString("defaultCaloriesLabel", comment: "")
+    static let startButtonTitle = NSLocalizedString("startButtonTitle", comment: "")
+    static let pauseButtonTitle = NSLocalizedString("pauseButtonTitle", comment: "")
+    static let finishButtonTitle = NSLocalizedString("finishButtonTitle", comment: "")
+    static let resumeButtonTitle = NSLocalizedString("resumeBUttonTitle", comment: "")
+    static let cyclingButtonTitle = NSLocalizedString("cyclingButtonTitle", comment: "")
+    static let runningButtonTitle = NSLocalizedString("runningButtonTitle", comment: "")
+
+    //MARK: - Profile screen
     static let profile = NSLocalizedString("profile", comment: "")
     static let age = NSLocalizedString("age", comment: "")
     static let gender = NSLocalizedString("gender", comment: "")
@@ -50,19 +70,13 @@ struct Const {
     static let selectPhoto = NSLocalizedString("selectPhoto", comment: "")
     static let male = NSLocalizedString("male", comment: "")
     static let female = NSLocalizedString("female", comment: "")
-    static let sets = NSLocalizedString("sets", comment: "")
-    static let reps = NSLocalizedString("reps", comment: "")
     static let min = NSLocalizedString("min", comment: "")
     static let cancel = NSLocalizedString("cancel", comment: "")
     static let yourPhoto = NSLocalizedString("yourPhoto", comment: "")
-    static let muscle = NSLocalizedString("muscle", comment: "")
-    static let exerciseName = NSLocalizedString("exerciseName", comment: "")
-    static let numberOfSets = NSLocalizedString("sets", comment: "")
-    static let numberOfReps = NSLocalizedString("reps", comment: "")
-    static let restTime = NSLocalizedString("restTime", comment: "")
-    static let trainingName = NSLocalizedString("trainingName", comment: "")
     static let loading = NSLocalizedString("loading", comment: "")
-    static let addNewExercise = NSLocalizedString("addNewExercise", comment: "")
+    
+    //MARK: - Note screen
+    static let notes = NSLocalizedString("notes", comment: "")
     static let addNote = NSLocalizedString("addNote", comment: "")
     static let back = NSLocalizedString("back", comment: "")
     static let delete = NSLocalizedString("delete", comment: "")
@@ -71,6 +85,8 @@ struct Const {
     static let sport = NSLocalizedString("sport", comment: "")
     static let nutrition = NSLocalizedString("nutrition", comment: "")
     static let others = NSLocalizedString("others", comment: "")
+    
+    //MARK: - Stepcounter screen
     static let dailyGoalButtonTitle = NSLocalizedString("dailyGoalButtonTitle", comment: "")
     static let goalTitle = NSLocalizedString("goalTitle", comment: "")
     static let noChartDataTitle = NSLocalizedString("noChartDataTitle", comment: "")

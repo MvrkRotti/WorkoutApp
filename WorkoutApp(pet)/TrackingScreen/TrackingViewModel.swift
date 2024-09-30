@@ -48,13 +48,11 @@ class TrackingViewModel {
     
     func togglePauseTracking() {
         if isPaused {
-            // Возобновление трекинга
             if let pauseStartTime = pauseStartTime {
                 totalPauseTime += Date().timeIntervalSince(pauseStartTime)
             }
             pauseStartTime = nil
         } else {
-            // Пауза трекинга
             pauseStartTime = Date()
             lastLocationBeforePause = locations.last
         }

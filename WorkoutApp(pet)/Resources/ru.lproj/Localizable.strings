@@ -7,21 +7,42 @@
 */
 
 
-
+//MARK: - Welcome screen
 "signUp" = "Регистрация";
 "alreadyHaveAcc" = "Уже есть аккаунт?";
 "sighIn" = "Войти";
 "back" = "Назад";
+
+//MARK: - SignUp screen
 "signUpTitle" = "Создание профиля";
 "firstName" = "Имя";
 "lastName" = "Фамилия";
 "email" = "Электронная почта";
 "password" = "Пароль";
 "confirmPassword" = "Подтвержение пароля";
+
+//MARK: - Reset password screen
 "resetPassword" = "Сброс пароля";
 "resetPasswordInfo" = "Этот адрес электронной почты будет использован для сброса вашего пароля.";
-"notes" = "Заметки";
+
+//MARK: - Tracking screen
 "trackingTitle" = "Трэкинг";
+"totalTimeLabel" = "%02d:%02d:%02d \n Общее время";
+"distanceLabel" = "%.1f \n Дистанция(км)";
+"calories" = "%.0f \n Калории(ккал)";
+
+"defaultTimeLabel" = "00:00:00 \n Общее время";
+"defaultDistanceLabel" = "0.0 \n Дистанция(км)";
+"defaultCaloriesLabel" = "0 \n Калории(ккал)";
+
+"startButtonTitle" = "Начать";
+"pauseButtonTitle" = "Пауза";
+"finishButtonTitle" = "Финиш";
+"resumeBUttonTitle" = "Продолжить";
+"cyclingButtonTitle" = "Начать велосипед";
+"runningButtonTitle" = "Начать бег";
+
+//MARK: - Profile and edit profile screen
 "age" = "Возраст";
 "gender" = "Пол";
 "weight" = "Вес";
@@ -47,22 +68,17 @@
 "male" = "Мужской";
 "female" = "Женский";
 "selectPhoto" = "Выбор фото";
-"sets" = "подходы";
-"reps" = "повторы";
 "min" = "минут";
 "save" = "Сохранить";
 "cancel" = "Отмена";
 "gender" = "Пол";
 "yourPhoto" = "Ваше\nфото";
-"muscle" = "Группа мышц";
-"trainingName" = "Название тренировки";
-"exerciseName" = "Название упражнения";
-"restTime" = "время отдыха(мин)";
 "loading" = "Загрузка";
-"addNewExercise" = "Добавить упражнение";
 "addNote" = "Добавить заметку";
 "back" = "Назад";
 
+//MARK: - Note screen
+"notes" = "Заметки";
 "delete" = "Удалить";
 "newNote" = "Новая заметка";
 "title" = "Заголовок";
@@ -70,6 +86,7 @@
 "nutrition" = "Питание";
 "others" = "Другое";
 
+//MARK: - Stepcounter screen
 "dailyGoalButtonTitle" = "Установить ежедневную цель";
 "goalTitle" = "Цель:";
 "noChartDataTitle" = "Нет данных для отображения!";
