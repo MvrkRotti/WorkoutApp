@@ -56,7 +56,7 @@ final class ProfileScreenViewController: UIViewController {
         setupLayout()
 //        addNavigationBarSeparator()
 //        addTabBarSeparator()
-        setGradientBackground()
+//        setGradientBackground()
         fillProfile()
         loadProfilePhoto()
         
@@ -112,6 +112,8 @@ private extension ProfileScreenViewController {
     }
 
     func setupUI() {
+        view.backgroundColor = ColorResources.white
+        
         view.setupView(photoView)
         view.setupView(profileStackView)
     }

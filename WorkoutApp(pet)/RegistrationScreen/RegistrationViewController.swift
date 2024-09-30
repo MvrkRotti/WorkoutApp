@@ -16,11 +16,11 @@ final class RegistrationViewController: UIViewController {
     private let viewModel: RegistrationViewModel
     
     private let registrationLabel = RegistrationLabel()
-    private let nameField = CustomTextField(fieldType: .name)
-    private let lastNameField = CustomTextField(fieldType: .lastName)
-    private let emailField = CustomTextField(fieldType: .email)
-    private let passwordField = CustomTextField(fieldType: .password)
-    private let confirmPasswordField = CustomTextField(fieldType: .confirmPassword)
+    private let nameField = RegistrationCustomTextField(fieldType: .name)
+    private let lastNameField = RegistrationCustomTextField(fieldType: .lastName)
+    private let emailField = RegistrationCustomTextField(fieldType: .email)
+    private let passwordField = RegistrationCustomTextField(fieldType: .password)
+    private let confirmPasswordField = RegistrationCustomTextField(fieldType: .confirmPassword)
     private let regSighUpButton = SignUpButton()
     private let navBarButton = CustomNavBarButton(type: .custom)
     

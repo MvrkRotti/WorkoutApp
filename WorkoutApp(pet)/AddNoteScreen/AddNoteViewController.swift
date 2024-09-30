@@ -43,23 +43,22 @@ class AddNoteViewController: UIViewController {
         
         navigationController?.navigationBar.standardAppearance = appearance
         
-        view.backgroundColor = .purple
+        view.backgroundColor = ColorResources.white
         
-        view.addSubview(categoryPicker)
-        view.addSubview(titleTextField)
-        view.addSubview(contentTextView)
+        setupViews(categoryPicker, titleTextField, contentTextView)
 
         titleTextField.placeholder = Const.title
         titleTextField.borderStyle = .roundedRect
         titleTextField.layer.cornerRadius = 10
-        titleTextField.translatesAutoresizingMaskIntoConstraints = false
         
         contentTextView.layer.cornerRadius = 10
-        contentTextView.translatesAutoresizingMaskIntoConstraints = false
+        contentTextView.layer.borderWidth = 1
+        contentTextView.layer.borderColor = ColorResources.customGray.cgColor
+        contentTextView.font = UIFont.systemFont(ofSize: 18)
 
         categoryPicker.selectedSegmentIndex = 0
         categoryPicker.layer.cornerRadius = 10
-        categoryPicker.translatesAutoresizingMaskIntoConstraints = false
+        categoryPicker.selectedSegmentTintColor = ColorResources.customMainBlue
         
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancel))
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveNote))

@@ -33,6 +33,7 @@
 		8AD94D2A2CA95A62001910D7 /* CustomTrackingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD94D292CA95A62001910D7 /* CustomTrackingButton.swift */; };
 		8AD94D2E2CA9BE56001910D7 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD94D2D2CA9BE56001910D7 /* Workout.swift */; };
 		8AD94D302CA9C3E6001910D7 /* WorkoutService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD94D2F2CA9C3E6001910D7 /* WorkoutService.swift */; };
+		8AD94D322CAB3253001910D7 /* EditProfileCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AD94D312CAB3253001910D7 /* EditProfileCustomTextField.swift */; };
 		8AEEDDCD2C1CEF310055E216 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */; };
 		CE00CCEF2B98CE07001E1E8B /* TrainNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */; };
 		CE00CCF62B9AF78A001E1E8B /* TrainNotesInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */; };
@@ -48,7 +49,7 @@
 		CE1A8BDD2B87E64E00ACB21C /* HeightLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BDC2B87E64E00ACB21C /* HeightLabel.swift */; };
 		CE1A8BDF2B87E65C00ACB21C /* BMILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */; };
 		CE1A8BE12B87E67900ACB21C /* BMIDescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */; };
-		CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C12FE2BB32086003F3561 /* CustomTextField.swift */; };
+		CE3C12FF2BB32086003F3561 /* RegistrationCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C12FE2BB32086003F3561 /* RegistrationCustomTextField.swift */; };
 		CE3C13052BB9724C003F3561 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13042BB9724C003F3561 /* Note.swift */; };
 		CE3C13072BBB25D4003F3561 /* AddNoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13062BBB25D4003F3561 /* AddNoteButton.swift */; };
 		CE3C13362BBD515C003F3561 /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */; };
@@ -68,9 +69,6 @@
 		CE72940A2BE91BBD009C867F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7294092BE91BBD009C867F /* EditProfileViewModel.swift */; };
 		CE8214982BCDAADC001D32AB /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8214972BCDAADC001D32AB /* UITextField.swift */; };
 		CE8D50E42B8894F300A14719 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */; };
-		CE8D50EF2B88E53400A14719 /* AgeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50EE2B88E53400A14719 /* AgeTextField.swift */; };
-		CE8D50F12B88E9EF00A14719 /* WeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F02B88E9EF00A14719 /* WeightTextField.swift */; };
-		CE8D50F32B88EA7400A14719 /* HeightTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F22B88EA7400A14719 /* HeightTextField.swift */; };
 		CE8D50F52B8A35BB00A14719 /* GenderSegmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F42B8A35BB00A14719 /* GenderSegmentController.swift */; };
 		CE8D50F72B8A40BD00A14719 /* SelectPhotoButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8D50F62B8A40BD00A14719 /* SelectPhotoButton.swift */; };
 		CEAC7E032B81F2FE00AF05CD /* ProfileScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */; };
@@ -122,6 +120,7 @@
 		8AD94D292CA95A62001910D7 /* CustomTrackingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTrackingButton.swift; sourceTree = "<group>"; };
 		8AD94D2D2CA9BE56001910D7 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		8AD94D2F2CA9C3E6001910D7 /* WorkoutService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutService.swift; sourceTree = "<group>"; };
+		8AD94D312CAB3253001910D7 /* EditProfileCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileCustomTextField.swift; sourceTree = "<group>"; };
 		8AEEDDCC2C1CEF310055E216 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		CE00CCEE2B98CE07001E1E8B /* TrainNoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNoteCell.swift; sourceTree = "<group>"; };
 		CE00CCF52B9AF78A001E1E8B /* TrainNotesInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainNotesInfoViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +136,7 @@
 		CE1A8BDC2B87E64E00ACB21C /* HeightLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightLabel.swift; sourceTree = "<group>"; };
 		CE1A8BDE2B87E65C00ACB21C /* BMILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMILabel.swift; sourceTree = "<group>"; };
 		CE1A8BE02B87E67900ACB21C /* BMIDescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BMIDescriptionLabel.swift; sourceTree = "<group>"; };
-		CE3C12FE2BB32086003F3561 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		CE3C12FE2BB32086003F3561 /* RegistrationCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationCustomTextField.swift; sourceTree = "<group>"; };
 		CE3C13042BB9724C003F3561 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
 		CE3C13062BBB25D4003F3561 /* AddNoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteButton.swift; sourceTree = "<group>"; };
 		CE3C13352BBD515C003F3561 /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
@@ -157,9 +156,6 @@
 		CE7294092BE91BBD009C867F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		CE8214972BCDAADC001D32AB /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		CE8D50E32B8894F300A14719 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
-		CE8D50EE2B88E53400A14719 /* AgeTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeTextField.swift; sourceTree = "<group>"; };
-		CE8D50F02B88E9EF00A14719 /* WeightTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightTextField.swift; sourceTree = "<group>"; };
-		CE8D50F22B88EA7400A14719 /* HeightTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeightTextField.swift; sourceTree = "<group>"; };
 		CE8D50F42B8A35BB00A14719 /* GenderSegmentController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSegmentController.swift; sourceTree = "<group>"; };
 		CE8D50F62B8A40BD00A14719 /* SelectPhotoButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoButton.swift; sourceTree = "<group>"; };
 		CEAC7E022B81F2FE00AF05CD /* ProfileScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScreenViewController.swift; sourceTree = "<group>"; };
@@ -319,7 +315,7 @@
 		CE3C13002BB32E9D003F3561 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				CE3C12FE2BB32086003F3561 /* CustomTextField.swift */,
+				CE3C12FE2BB32086003F3561 /* RegistrationCustomTextField.swift */,
 			);
 			path = TextField;
 			sourceTree = "<group>";
@@ -371,21 +367,19 @@
 		CE8D50EA2B88A0B600A14719 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE8D50EB2B88A0BD00A14719 /* TextFields */,
+				CE8D50EB2B88A0BD00A14719 /* TextField */,
 				CE8D50F42B8A35BB00A14719 /* GenderSegmentController.swift */,
 				CE8D50F62B8A40BD00A14719 /* SelectPhotoButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		CE8D50EB2B88A0BD00A14719 /* TextFields */ = {
+		CE8D50EB2B88A0BD00A14719 /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				CE8D50EE2B88E53400A14719 /* AgeTextField.swift */,
-				CE8D50F02B88E9EF00A14719 /* WeightTextField.swift */,
-				CE8D50F22B88EA7400A14719 /* HeightTextField.swift */,
+				8AD94D312CAB3253001910D7 /* EditProfileCustomTextField.swift */,
 			);
-			path = TextFields;
+			path = TextField;
 			sourceTree = "<group>";
 		};
 		CEAC7E012B81F27900AF05CD /* ProfileScreen */ = {
@@ -696,9 +690,9 @@
 				CEDC92282BD1697900902268 /* AuthResetPasswordButton.swift in Sources */,
 				CEF2AB522BBD769100205B60 /* Router.swift in Sources */,
 				CE5CD4552BC86EB90065991D /* StringResources.swift in Sources */,
-				CE8D50EF2B88E53400A14719 /* AgeTextField.swift in Sources */,
 				CE1A8BD72B87E63000ACB21C /* GenderLabel.swift in Sources */,
-				CE3C12FF2BB32086003F3561 /* CustomTextField.swift in Sources */,
+				CE3C12FF2BB32086003F3561 /* RegistrationCustomTextField.swift in Sources */,
+				8AD94D322CAB3253001910D7 /* EditProfileCustomTextField.swift in Sources */,
 				CEDC921A2BD14B2800902268 /* ResetPasswordViewController.swift in Sources */,
 				CED9EB492B7146760065FE23 /* UIView.swift in Sources */,
 				CE1A8BD92B87E63800ACB21C /* AgeLabel.swift in Sources */,
@@ -713,7 +707,6 @@
 				CE1A8BBF2B822F2D00ACB21C /* StepData.swift in Sources */,
 				8AD94D232CA5D9E0001910D7 /* TrackingViewModel.swift in Sources */,
 				CED9EB222B6E4E680065FE23 /* RegistrationViewController.swift in Sources */,
-				CE8D50F32B88EA7400A14719 /* HeightTextField.swift in Sources */,
 				CED9EB402B7011970065FE23 /* AuthorisationViewController.swift in Sources */,
 				CED9EB552B715DCA0065FE23 /* AuthSignInButton.swift in Sources */,
 				CEDC92242BD14FA400902268 /* ResetLabel.swift in Sources */,
@@ -741,7 +734,6 @@
 				CED9EB172B6E4D240065FE23 /* UIColor.swift in Sources */,
 				CE1A8BD22B87E60200ACB21C /* PhotoLabel.swift in Sources */,
 				CED9EB632B7258DD0065FE23 /* TabController.swift in Sources */,
-				CE8D50F12B88E9EF00A14719 /* WeightTextField.swift in Sources */,
 				8AD94D262CA7E9E2001910D7 /* TopView.swift in Sources */,
 				CE5CD4572BC86EC90065991D /* ColorResources.swift in Sources */,
 				8AEEDDCD2C1CEF310055E216 /* UIViewController.swift in Sources */,

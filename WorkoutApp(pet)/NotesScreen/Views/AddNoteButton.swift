@@ -33,7 +33,7 @@ private extension AddNoteButton {
     func setupAppearance() {
         setImage(UIImage(systemName: "plus"), for: .normal)
         backgroundColor = ColorResources.customBlue
-        tintColor = ColorResources.black
+        tintColor = ColorResources.white
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0.3
         layer.shadowOffset = CGSize(width: 2, height: 2)

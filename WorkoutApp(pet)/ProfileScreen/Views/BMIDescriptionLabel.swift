@@ -41,7 +41,9 @@ private extension BMIDescriptionLabel {
         textColor = ColorResources.black
         font = FontResources.boldSystemFont15        
         numberOfLines = 0
-        backgroundColor = ColorResources.customDarkGrey
+        backgroundColor = ColorResources.customGray
+        layer.borderWidth = 1
+        layer.borderColor = ColorResources.black.cgColor
         layer.cornerRadius = 10
         layer.masksToBounds = true
         clipsToBounds = true

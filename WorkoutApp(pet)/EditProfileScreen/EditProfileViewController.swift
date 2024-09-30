@@ -15,9 +15,9 @@ final class EditProfileViewController: UIViewController {
     var viewModel: EditProfileViewModel
     
     private let profilePhoto = ProfilePhotoView(frame: CGRect())
-    private let ageTextField = AgeTextField()
-    private let weightTextField = WeightTextField()
-    private let heightTextField = HeightTextField()
+    private let ageTextField = EditProfileCustomTextField(type: .age)
+    private let weightTextField = EditProfileCustomTextField(type: .weight)
+    private let heightTextField = EditProfileCustomTextField(type: .height)
     private let genderSelector = GenderSegmentController(items: [Const.female, Const.male])
     private let selectPhotoButton = SelectPhotoButton()
     
@@ -48,7 +48,7 @@ final class EditProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = ColorResources.customDarkGrey
+        view.backgroundColor = ColorResources.white
         navigationBarAppearance()
         setupUI()
         setupLayout()
@@ -77,10 +77,7 @@ private extension EditProfileViewController {
     }
     
     func setupUI() {
-        view.setupView(profilePhoto)
-        view.setupView(profileStack)
-        view.setupView(genderSelector)
-        view.setupView(selectPhotoButton)
+        setupViews(profilePhoto, profileStack, genderSelector, selectPhotoButton)
     }
     
     func setupLayout() {
@@ -102,7 +99,7 @@ private extension EditProfileViewController {
             profileStack.topAnchor.constraint(equalTo: selectPhotoButton.bottomAnchor, constant: 15),
             profileStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
-            genderSelector.topAnchor.constraint(equalTo: profileStack.bottomAnchor, constant: 15),
+            genderSelector.topAnchor.constraint(equalTo: profileStack.bottomAnchor, constant: 20),
             genderSelector.widthAnchor.constraint(equalTo: profileStack.widthAnchor),
             genderSelector.heightAnchor.constraint(equalToConstant: 44),
             genderSelector.centerXAnchor.constraint(equalTo: profileStack.centerXAnchor),
@@ -153,7 +150,7 @@ private extension EditProfileViewController {
 
 extension EditProfileViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     @objc func addPhotoDidTapped() {
-        if !isImageSelected { // Проверяем, выбрано ли уже изображение
+        if !isImageSelected {
             imagePicker.sourceType = .photoLibrary
             present(imagePicker, animated: true, completion: nil)
         }
@@ -167,7 +164,6 @@ extension EditProfileViewController: UIImagePickerControllerDelegate & UINavigat
             return
         }
         
-        // Загрузка изображения в Firebase Storage
         viewModel.uploadImage(image: image) { [weak self] imageURL in
             guard let imageURL = imageURL else { return }
             self?.updateImageView(with: imageURL)
@@ -179,7 +175,6 @@ extension EditProfileViewController: UIImagePickerControllerDelegate & UINavigat
             print("Invalid URL")
             return
         }
-        // Загрузка изображения из URL
         DispatchQueue.global().async {
             if let data = try? Data(contentsOf: url), let image = UIImage(data: data) {
                 DispatchQueue.main.async { [weak self] in

@@ -13,7 +13,7 @@ final class ResetPasswordViewController: UIViewController {
     var router: Router
     var viewModel: ResetPasswordViewModel
     
-    private let emailTextField = CustomTextField(fieldType: .email)
+    private let emailTextField = RegistrationCustomTextField(fieldType: .email)
     private let infoLabel = ResetLabel()
     private let resetButton = ResetPasswordButton()
     

@@ -25,6 +25,6 @@ private extension BMILabel {
     func setupAppearance() {
         textColor = ColorResources.black
         font = FontResources.systemFont22
-//        text = Const.BMI
+        text = Const.BMI + "0"
     }
 }

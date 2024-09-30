@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class CustomTextField: UITextField {
+final class RegistrationCustomTextField: UITextField {
     
     enum CustomTextFieldType {
         case name
@@ -61,7 +61,7 @@ final class CustomTextField: UITextField {
     }
 }
 
-private extension CustomTextField {
+private extension RegistrationCustomTextField {
     func setupAppearance() {
         
         textColor = ColorResources.black

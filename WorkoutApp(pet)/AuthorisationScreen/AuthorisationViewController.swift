@@ -15,8 +15,8 @@ final class AuthorisationViewController: UIViewController {
     var router: Router
     var viewModel: AuthorisationViewModel
     
-    private let emailTextField = CustomTextField(fieldType: .email)
-    private let passwordTextField = CustomTextField(fieldType: .password)
+    private let emailTextField = RegistrationCustomTextField(fieldType: .email)
+    private let passwordTextField = RegistrationCustomTextField(fieldType: .password)
     private let authSignInButton = AuthSignInButton()
     private let resetPasswordButton = AuthResetPasswordButton()
     private let navBarButton = CustomNavBarButton(type: .custom)
