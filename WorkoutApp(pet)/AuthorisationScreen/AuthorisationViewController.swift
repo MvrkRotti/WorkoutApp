@@ -19,7 +19,7 @@ final class AuthorisationViewController: UIViewController {
     private let passwordTextField = RegistrationCustomTextField(fieldType: .password)
     private let authSignInButton = AuthSignInButton()
     private let resetPasswordButton = AuthResetPasswordButton()
-    private let navBarButton = CustomNavBarButton(type: .custom)
+    private let navBarButton = CustomNavBarButton(type: .back)
     
     private var textFieldArray = [UITextField] ()
     

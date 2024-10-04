@@ -28,7 +28,7 @@ final class ProfileViewModel {
         }
         
         let userStorage = db.collection("users").document(userID)
-        userStorage.getDocument(source: .cache) { document, error in
+        userStorage.getDocument(source: .default) { document, error in
             if let document = document, document.exists {
                 let data = document.data()
                 let name = data?["name"] as? String ?? ""
@@ -41,7 +41,7 @@ final class ProfileViewModel {
                 
                 completion(self.userProfile, nil)
             } else {
-                completion(nil, "Document does not exist or offline cache unavailable")
+                completion(nil, "Document does not exist or offline cache unavailable.......")
             }
         }
     }

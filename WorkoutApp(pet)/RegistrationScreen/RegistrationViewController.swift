@@ -22,7 +22,7 @@ final class RegistrationViewController: UIViewController {
     private let passwordField = RegistrationCustomTextField(fieldType: .password)
     private let confirmPasswordField = RegistrationCustomTextField(fieldType: .confirmPassword)
     private let regSighUpButton = SignUpButton()
-    private let navBarButton = CustomNavBarButton(type: .custom)
+    private let navBarButton = CustomNavBarButton(type: .back)
     
     private var textFieldArray = [UITextField]()
     //MARK: - UIComponents

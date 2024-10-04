@@ -23,8 +23,8 @@ final class ProfileScreenViewController: UIViewController {
     private let heightLabel = HeightLabel()
     private let bmiLabel = BMILabel()
     private let bmiDescriptionLabel = BMIDescriptionLabel()
-    private let backBarButton = CustomNavBarButton(type: .system)
-    private let editBarButton = CustomNavBarButton(type: .system)
+    private let logOutBarButton = CustomNavBarButton(type: .logOut)
+    private let editBarButton = CustomNavBarButton(type: .edit)
     
     //MARK: - UI Components
     
@@ -78,11 +78,11 @@ final class ProfileScreenViewController: UIViewController {
 private extension ProfileScreenViewController {
     
     func navigationBarAppearance() {
-        let logOutButton = UIBarButtonItem(customView: backBarButton)
-        backBarButton.setTitle(Const.logOut, for: .normal)
-        backBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 20)
-        backBarButton.addTarget(self, action: #selector(logOutButtonDidTapped), for: .touchUpInside)
-        backBarButton.tintColor = ColorResources.customRed
+        let logOutButton = UIBarButtonItem(customView: logOutBarButton)
+        logOutBarButton.setTitle(Const.logOut, for: .normal)
+//        backBarButton.frame = CGRect(x: 0, y: 0, width: 70, height: 20)
+        logOutBarButton.addTarget(self, action: #selector(logOutButtonDidTapped), for: .touchUpInside)
+//        logOutBarButton.tintColor = ColorResources.customRed
         
         let editButton = UIBarButtonItem(customView: editBarButton)
         editBarButton.setTitle(Const.edit, for: .normal)
