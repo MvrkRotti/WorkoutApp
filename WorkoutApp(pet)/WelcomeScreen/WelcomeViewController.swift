@@ -20,10 +20,9 @@ class WelcomeViewController: UIViewController {
     
     //MARK: - UI Components
     private let backgroundImageView: UIImageView = {
-       let backgroundView = UIImageView()
+        let backgroundView = UIImageView()
         backgroundView.image = UIImage(named: "backGroundImage")
         backgroundView.contentMode = .scaleAspectFill
-        backgroundView.translatesAutoresizingMaskIntoConstraints = false
         return backgroundView
     }()
     
@@ -64,15 +63,11 @@ class WelcomeViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
 }
-    //MARK: - UI setup and layout
+//MARK: - UI setup and layout
 private extension WelcomeViewController {
     func setupUI() {
-        
-        view.addSubview(backgroundImageView)
-        view.setupView(mainLogo)
-        view.setupView(signUpButton)
         buttonContainer.addSubview(signInButton)
-        view.setupView(registrStack)
+        setupViews(backgroundImageView, mainLogo, signUpButton, registrStack)
     }
     
     func setupActions() {
@@ -99,16 +94,16 @@ private extension WelcomeViewController {
             signInButton.widthAnchor.constraint(equalTo: buttonContainer.widthAnchor),
             signInButton.heightAnchor.constraint(equalTo: buttonContainer.heightAnchor),
             
-            mainLogo.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            mainLogo.topAnchor.constraint(equalTo: self.view.topAnchor, constant: self.view.frame.height / 6),
+            mainLogo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            mainLogo.topAnchor.constraint(equalTo: view.topAnchor, constant: self.view.frame.height / 6),
             
-            signUpButton.bottomAnchor.constraint(equalTo: registrStack.topAnchor, constant: -self.view.bounds.height / 29),
+            signUpButton.bottomAnchor.constraint(equalTo: registrStack.topAnchor, constant: -view.bounds.height / 29),
             signUpButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            signUpButton.widthAnchor.constraint(equalToConstant: self.view.bounds.width / 1.11),
-            signUpButton.heightAnchor.constraint(equalToConstant: self.view.bounds.height / 15),
+            signUpButton.widthAnchor.constraint(equalToConstant: view.bounds.width / 1.11),
+            signUpButton.heightAnchor.constraint(equalToConstant: view.bounds.height / 15),
             
-            registrStack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            registrStack.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -40)
+            registrStack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            registrStack.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20)
         ])
     }
 }

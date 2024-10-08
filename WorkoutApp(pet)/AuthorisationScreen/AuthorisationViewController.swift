@@ -73,10 +73,7 @@ private extension AuthorisationViewController {
     
     func setupUI() {
         view.backgroundColor = ColorResources.white
-        view.setupView(emailTextField)
-        view.setupView(passwordTextField)
-        view.setupView(authSignInButton)
-        view.setupView(resetPasswordButton)
+        setupViews(emailTextField, passwordTextField, authSignInButton, resetPasswordButton)
     }
     
     func setupActions() {

@@ -26,7 +26,7 @@ private extension SignInLabel {
     func setupAppearance() {
         textColor = ColorResources.white
         textAlignment = .left
-        font = FontResources.systemFont15
+        font = FontResources.boldSystemFont15
         text = Const.haveAccountText
     }
 }

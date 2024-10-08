@@ -88,10 +88,7 @@ private extension RegistrationViewController {
     }
     
     func setupUI() {
-        
-        view.setupView(registrationLabel)
-        view.setupView(textFieldStack)
-        view.setupView(regSighUpButton)
+        setupViews(registrationLabel, textFieldStack, regSighUpButton)
     }
     
     func setupTextFieldDelegate() {
